@@ -1,0 +1,9 @@
+2024-04-10 16:58:26,768 INFO root: <module>: Starting main app
+2024-04-10 16:58:26,769 INFO TaskManager: __init__: Intialize TaskManaller singleton
+2024-04-10 16:58:26,770 INFO root: __init__: CameraManager Init
+2024-04-10 16:58:26,770 INFO root: start: CameraManager started
+2024-04-10 16:58:28,129 INFO root: __init__: Init HandDetector
+2024-04-10 16:58:28,130 INFO root: start: HandDetector Started
+2024-04-10 16:58:28,149 INFO websockets.server: wrap: server listening on 127.0.0.1:5000
+2024-04-10 16:58:28,149 INFO websockets.server: wrap: server listening on [::1]:5000
+2024-04-10 16:58:35,588 INFO websockets.server: handshake: connection open

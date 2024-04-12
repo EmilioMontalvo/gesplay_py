@@ -1,2 +1,5 @@
-res://Node2D.gd
 res://node_2d.tscn
+res://scripts/ws_server.gd
+res://scripts/udp_server.gd
+res://scenes/camera.tscn
+res://scripts/camera.gd

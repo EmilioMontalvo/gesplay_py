@@ -15,6 +15,10 @@ run/main_scene="res://node_2d.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UdPServer="*res://scripts/udp_server.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

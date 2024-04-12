@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://crxlp4j1ka3r2"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_56jns"]
+
+[node name="Camera" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_56jns")

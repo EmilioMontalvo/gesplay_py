@@ -2,7 +2,8 @@
 import logging
 from src.camera_manager import CameraManager
 from src.detectors.hand_detector import HandDetector
-from src.server.ws_server import WebSocketServer
+from src.udp.udp_client import UdpClient
+
 
 class Pipeline:
     def __init__(self):
@@ -10,7 +11,7 @@ class Pipeline:
 
     def pipeline_tick(self) -> None:
         frame_rgb = CameraManager().get_frame_rgb()
+        hand_position = HandDetector().get_hand_position(frame_rgb)        
+        UdpClient().send(hand_position)
 
-        hand_position = HandDetector().get_hand_position(frame_rgb)
-
-        #WebSocketServer().send_message(str(hand_position))
+       

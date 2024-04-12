@@ -1,6 +1,4 @@
 mediapipe
 opencv-python
-asyncio
-websockets
 python-dotenv
 python-decouple

@@ -27,14 +27,14 @@ class TaskManager(metaclass=Singleton):
     def start(self):
         if not self.is_started:          
             # Start singletons
+            from src.udp.udp_client import UdpClient
+            UdpClient().start()
+
             from src.camera_manager import CameraManager
             CameraManager().start()
 
             from src.detectors.hand_detector import HandDetector
             HandDetector().start()
-
-            from src.server.ws_server import WebSocketServer
-            WebSocketServer().start()            
 
             self.is_started = True
 
@@ -48,7 +48,8 @@ class TaskManager(metaclass=Singleton):
         from src.detectors.hand_detector import HandDetector
         HandDetector().destroy()
 
-        from server.ws_server import WebSocketServer
-        WebSocketServer().destroy()   
+        from src.udp.udp_client import UdpClient
+        UdpClient().destroy()
+
 
         exit()

@@ -1,7 +1,0 @@
-2024-04-11 19:25:28,719 INFO root: <module>: Starting main app
-2024-04-11 19:25:28,720 INFO TaskManager: __init__: Intialize TaskManaller singleton
-2024-04-11 19:25:28,720 INFO root: __init__: CameraManager Init
-2024-04-11 19:25:28,720 INFO root: start: CameraManager started
-2024-04-11 19:25:30,085 INFO root: __init__: Init HandDetector
-2024-04-11 19:25:30,086 INFO root: start: HandDetector Started
-2024-04-11 19:25:30,093 INFO root: __init__: Init Pipeline

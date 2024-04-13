@@ -25,14 +25,14 @@ func _process(delta):
 			# Assign the texture to the TextureRect
 			print("llegue",peerPacket.size())
 			cameraTexture.texture = create_texture_from_pool_byte_array(peerPacket)
+			#print(peerPacket)
 
 
 func set_cameraTexture(textureRect:TextureRect):
 	cameraTexture=textureRect
 
 func create_texture_from_pool_byte_array(byte_array):
-	var im = Image.new()
-	im.load_jpg_from_buffer(byte_array) 
-	var im_tx = ImageTexture.new()
-	im_tx.create_from_image(im)
-	return im_tx
+	var image = Image.new()
+	image.load_jpg_from_buffer(byte_array) 
+	var imageTexture = ImageTexture.create_from_image(image)
+	return imageTexture

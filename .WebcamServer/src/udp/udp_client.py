@@ -1,5 +1,6 @@
 import socket
 import logging
+import cv2
 
 from src.singleton_meta import Singleton
 
@@ -19,6 +20,10 @@ class UdpClient(metaclass=Singleton):
 
     def send(self, message):
         self.sock.sendto(str(message).encode(), (UDP_IP, UDP_PORT))
+    
+    def send_bytes(self, image):
+        buffer = cv2.imencode('.jpg', image)[1].tobytes()
+        self.sock.sendto(buffer, (UDP_IP, UDP_PORT))
 
     def close(self):
         self.sock.close()

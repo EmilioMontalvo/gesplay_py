@@ -1,5 +1,4 @@
 import cv2
-from PIL import Image
 import logging
 from src.singleton_meta import Singleton
 
@@ -16,9 +15,9 @@ class CameraManager(metaclass=Singleton):
             logging.info("CameraManager started")
             self.is_started = True
             self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-            self.cap.set(cv2.CAP_PROP_FPS, 60)
+            self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+            self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+            self.cap.set(cv2.CAP_PROP_FPS, 30)
 
     def get_frame_rgb(self):
         if self.is_started:
@@ -28,13 +27,13 @@ class CameraManager(metaclass=Singleton):
 
             return frame_rgb
         else:
-            return Image.open("placeholder.jpg")
+            return cv2.imread("placeholder.jpg")
     
     def get_frame(self):
         if self.is_started:
             return self.frame
         else:
-            return Image.open("placeholder.jpg")
+            return cv2.imread("placeholder.jpg")
 
     def release(self):
         self.cap.release()

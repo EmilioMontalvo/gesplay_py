@@ -1,9 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712876279
-icon.svg::CompressedTexture2D::3688384245900612936::1712605135::1712605139::1::::<><>::
-Node2D.gd::GDScript::-1::1712606390::0::1::::<>Node2D<>::
-node_2d.tscn::PackedScene::8188057723342415097::1712876279::0::1::::<><>::res://Node2D.gd
-::res://assets/::1712871094
-::res://scenes/::1712871089
-::res://scripts/::1712875775
-ws_server.gd::GDScript::-1::1712875775::0::1::::ServerNode<>Node<>::

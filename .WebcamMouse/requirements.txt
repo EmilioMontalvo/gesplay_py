@@ -1,4 +1,5 @@
-mediapipe
-opencv-python
-python-dotenv
-python-decouple
+mediapipe==0.10.11
+opencv-python==4.9.0.80
+python-dotenv==1.0.1
+python-decouple==3.8
+pyautogui==0.9.54

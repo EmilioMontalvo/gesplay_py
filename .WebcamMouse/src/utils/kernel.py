@@ -2,6 +2,7 @@ import numpy as np
 import numpy.typing as npt
 
 
+
 def calc_smooth_kernel(n: int) -> npt.ArrayLike:
     kernel = np.hamming(n * 2)[:n]
     kernel = kernel / kernel.sum()

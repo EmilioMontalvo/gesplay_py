@@ -2,7 +2,6 @@ import concurrent.futures as futures
 import logging
 import threading
 import time
-import tkinter as tk
 
 import numpy as np
 import numpy.typing as npt
@@ -10,7 +9,7 @@ import pyautogui
 
 import src.utils as utils
 from src.accel_graph import SigmoidAccel
-from src.config_manager import ConfigManager
+
 from src.singleton_meta import Singleton
 
 logger = logging.getLogger("MouseController")
@@ -47,15 +46,15 @@ class MouseController(metaclass=Singleton):
             self.screen_w, self.screen_h = pyautogui.size()
             self.calc_smooth_kernel()
 
-            self.is_active = tk.BooleanVar()
-            self.is_active.set(ConfigManager().config["auto_play"])
+            self.is_active = True#change with toggle
+            #self.is_active.set(False)#auto_play
 
             self.stop_flag = threading.Event()
             self.pool.submit(self.main_loop)
             self.is_started = True
 
     def calc_smooth_kernel(self):
-        new_pointer_smooth = ConfigManager().config["pointer_smooth"]
+        new_pointer_smooth = 63 #pointer_smooth
         if self.smooth_kernel is None:
             self.smooth_kernel = utils.calc_smooth_kernel(new_pointer_smooth)
 
@@ -67,14 +66,14 @@ class MouseController(metaclass=Singleton):
 
     def asymmetry_scale(self, vel_x, vel_y):
         if vel_x > 0:
-            vel_x *= ConfigManager().config["spd_right"]
+            vel_x *= 40
         else:
-            vel_x *= ConfigManager().config["spd_left"]
+            vel_x *= 40
 
         if vel_y > 0:
-            vel_y *= ConfigManager().config["spd_down"]
+            vel_y *= 40
         else:
-            vel_y *= ConfigManager().config["spd_up"]
+            vel_y *= 40
 
         return vel_x, vel_y
 
@@ -114,14 +113,14 @@ class MouseController(metaclass=Singleton):
 
             vel_x, vel_y = self.asymmetry_scale(vel_x, vel_y)
 
-            if ConfigManager().config["mouse_acceleration"]:
+            if False:#mouse_acceleration
                 vel_x *= self.accel(vel_x)
                 vel_y *= self.accel(vel_y)
 
             # pydirectinput is not working here
             pyautogui.move(xOffset=vel_x, yOffset=vel_y)
 
-            time.sleep(ConfigManager().config["tick_interval_ms"] / 1000)
+            time.sleep(16 / 1000)#tick_interval_ms
 
     def set_active(self, flag: bool) -> None:
         self.is_active.set(flag)

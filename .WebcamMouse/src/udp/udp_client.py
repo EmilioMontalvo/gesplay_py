@@ -22,7 +22,8 @@ class UdpClient(metaclass=Singleton):
         self.sock.sendto(str(message).encode(), (UDP_IP, UDP_PORT))
     
     def send_bytes(self, image):
-        buffer = cv2.imencode('.jpg', image)[1].tobytes()
+        res_image = cv2.resize(image, (320, 480))
+        buffer = cv2.imencode('.jpg', res_image)[1].tobytes()
         self.sock.sendto(buffer, (UDP_IP, UDP_PORT))
 
     def close(self):

@@ -23,7 +23,6 @@ func _process(delta):
 		var peerPacket=peers[i].get_packet()
 		if cameraTexture != null && peerPacket.size()!=0:
 			# Assign the texture to the TextureRect
-			print("llegue",peerPacket.size())
 			cameraTexture.texture = create_texture_from_pool_byte_array(peerPacket)
 			#print(peerPacket)
 
@@ -36,3 +35,12 @@ func create_texture_from_pool_byte_array(byte_array):
 	image.load_jpg_from_buffer(byte_array) 
 	var imageTexture = ImageTexture.create_from_image(image)
 	return imageTexture
+
+func send_array(message):
+	for i in range(0, peers.size()):
+		peers[i].put_packet(PackedByteArray(message))
+
+func send_string(message:String):
+	for i in range(0, peers.size()):
+		peers[i].put_packet(message.to_utf8_buffer())
+	

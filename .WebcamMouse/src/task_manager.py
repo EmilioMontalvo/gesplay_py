@@ -36,6 +36,9 @@ class TaskManager(metaclass=Singleton):
             from src.detectors.hand_detector import HandDetector
             HandDetector().start()
 
+            from src.controllers.mouse_controller import MouseController
+            MouseController().start()
+
             self.is_started = True
 
     def exit(self):
@@ -50,6 +53,9 @@ class TaskManager(metaclass=Singleton):
 
         from src.udp.udp_client import UdpClient
         UdpClient().destroy()
+
+        from src.controllers.mouse_controller import MouseController
+        MouseController().destroy()
 
 
         exit()

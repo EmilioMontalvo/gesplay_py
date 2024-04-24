@@ -12,7 +12,6 @@ class Pipeline:
     def pipeline_tick(self) -> None:
         frame_rgb = CameraManager().get_frame_rgb()
         hand_position = HandDetector().get_hand_position(frame_rgb)
-        print(hand_position)
         MouseController().act(track_loc=hand_position)        
         #UdpClient().send_bytes(frame_rgb)
     

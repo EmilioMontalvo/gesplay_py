@@ -6,6 +6,7 @@ import src.utils as utils
 import time
 import concurrent.futures as futures
 from src.singleton_meta import Singleton
+from src.cursor_config import CursorConfig
 
 # Max buffer number for apply smoothing.
 N_BUFFER = 100
@@ -45,19 +46,19 @@ class MouseController(metaclass=Singleton):
     
     def asymmetry_scale(self, vel_x, vel_y):
         if vel_x > 0:
-            vel_x *= 40
+            vel_x *= CursorConfig().spd_right
         else:
-            vel_x *= 40
+            vel_x *= CursorConfig().spd_left
 
         if vel_y > 0:
-            vel_y *= 40
+            vel_y *= CursorConfig().spd_down
         else:
-            vel_y *= 40
+            vel_y *= CursorConfig().spd_up
 
         return vel_x, vel_y
     
     def calc_smooth_kernel(self):
-        new_pointer_smooth = 63
+        new_pointer_smooth = CursorConfig().pointer_smooth
         if self.smooth_kernel is None:
             self.smooth_kernel = utils.calc_smooth_kernel(new_pointer_smooth)
 
@@ -93,7 +94,7 @@ class MouseController(metaclass=Singleton):
                 self.prev_y = smooth_py
                 
                 pyautogui.move(xOffset=vel_x, yOffset=vel_y)
-                time.sleep(16 / 1000)
+                time.sleep(CursorConfig().tick_interval_ms / 1000)
             
     def act(self, track_loc: npt.ArrayLike):
         

@@ -27,6 +27,10 @@ class TaskManager(metaclass=Singleton):
     def start(self):
         if not self.is_started:          
             # Start singletons
+
+            from src.cursor_config import CursorConfig
+            CursorConfig().start()
+
             from src.udp.udp_client import UdpClient
             UdpClient().start()
 

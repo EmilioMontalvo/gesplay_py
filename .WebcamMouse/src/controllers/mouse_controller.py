@@ -3,6 +3,7 @@ import pyautogui
 import numpy as np
 import numpy.typing as npt
 import src.utils as utils
+import time
 import concurrent.futures as futures
 from src.singleton_meta import Singleton
 
@@ -21,6 +22,7 @@ class MouseController(metaclass=Singleton):
         self.smooth_kernel=None
         self.curr_track_loc=None
         self.buffer =None
+        self.is_active=False
 
     def start(self):
         if not self.is_started:
@@ -71,6 +73,9 @@ class MouseController(metaclass=Singleton):
             return
         logging.info("MouseController thread started")
         while not self.is_stoped:
+            if not self.is_active:
+                time.sleep(0.001)
+                continue
             if self.curr_track_loc:
                 self.buffer = np.roll(self.buffer, shift=-1, axis=0)
                 self.buffer[-1] = self.curr_track_loc
@@ -88,13 +93,21 @@ class MouseController(metaclass=Singleton):
                 self.prev_y = smooth_py
                 
                 pyautogui.move(xOffset=vel_x, yOffset=vel_y)
+                time.sleep(16 / 1000)
             
     def act(self, track_loc: npt.ArrayLike):
+        
         if(track_loc):
+            if not self.is_active:
+                self.is_active=True
             self.curr_track_loc = track_loc
             print(track_loc)
+        else:
+            self.is_active=False
+        
     
     def destroy(self):
+        self.is_active=False
         self.is_started=False
         self.is_stoped=True
         self.is_destroyed=True

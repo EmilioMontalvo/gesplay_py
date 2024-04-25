@@ -39,7 +39,7 @@ class HandDetector(metaclass=Singleton):
                     
                     average_x=np.mean((landmarks_palm1.x+landmarks_palm2.x+landmarks_palm3.x)/3*width)
                     average_y=np.mean((landmarks_palm1.y+landmarks_palm2.y+landmarks_palm3.y)/3*height)
-                    self.hand_position = [average_x, average_y] 
+                    self.hand_position = [-average_x, average_y] 
             else:
                 self.hand_position = None               
         return self.hand_position

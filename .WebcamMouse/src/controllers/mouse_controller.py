@@ -102,7 +102,6 @@ class MouseController(metaclass=Singleton):
             if not self.is_active:
                 self.is_active=True
             self.curr_track_loc = track_loc
-            print(track_loc)
         else:
             self.is_active=False
         

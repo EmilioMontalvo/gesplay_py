@@ -16,5 +16,5 @@ func _on_button_pressed():
 	#UdPServer.send_string("hello from Godot")
 	#ConfigManager.load_config("default")
 	#print(CursorConf.get_as_json())
-	Pythonexecutor.activate()
+	Pythonexecutor.execute_tread()
 	

@@ -1,21 +1,26 @@
 import socket
 import logging
 import cv2
-
+import concurrent.futures as futures
 from src.singleton_meta import Singleton
 
 logger = logging.getLogger("TaskManager")
 
 UDP_IP = "127.0.0.1"
 UDP_PORT = 4242
+CLIENT_PORT= 4243
 
 class UdpClient(metaclass=Singleton):
     def __init__(self):        
         self.sock = None
+
     
     def start(self): 
         self.sock = socket.socket(socket.AF_INET, 
                     socket.SOCK_DGRAM)
+        self.sock.bind((UDP_IP,CLIENT_PORT))
+        self.pool = futures.ThreadPoolExecutor(max_workers=1)
+        self.pool.submit(self.receiveData)
 
 
     def send(self, message):
@@ -32,3 +37,12 @@ class UdpClient(metaclass=Singleton):
     def destroy(self):
         self.close()
         logger.info("UdpClient destroyed")
+
+    def receiveData(self):
+        logger.info("Listener Started...")
+        while True:            
+            try:
+                data,addr = self.sock.recvfrom(1024)
+                print(data.decode('utf-8'))
+            except:
+                print("Error")

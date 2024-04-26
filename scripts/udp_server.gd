@@ -15,12 +15,13 @@ func _process(delta):
 		var packet = peer.get_packet()
 		print("Accepted peer: %s:%s" % [peer.get_packet_ip(), peer.get_packet_port()])
 		# Reply so it knows we received the message.		
-		peer.put_packet(packet)
+		# peer.put_packet(packet)
 		# Keep a reference so we can keep contacting the remote peer.
 		peers.append(peer)
 
 	for i in range(0, peers.size()):
 		var peerPacket=peers[i].get_packet()
+		#TODO verify type of data that arrives
 		if cameraTexture != null && peerPacket.size()!=0:
 			# Assign the texture to the TextureRect
 			cameraTexture.texture = create_texture_from_pool_byte_array(peerPacket)

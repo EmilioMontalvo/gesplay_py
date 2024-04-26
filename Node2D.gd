@@ -13,8 +13,7 @@ func _process(delta):
 
 func _on_button_pressed():
 	#UdPServer.send_array(array)
-	#UdPServer.send_string("hello from Godot")
+	UdPServer.send_string("hello from Godot")
 	#ConfigManager.load_config("default")
 	#print(CursorConf.get_as_json())
-	Pythonexecutor.execute_tread()
 	

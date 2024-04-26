@@ -1,0 +1,9 @@
+2024-04-25 22:51:41,923 INFO root: <module>: Starting main app
+2024-04-25 22:51:41,923 INFO TaskManager: __init__: Intialize TaskManaller singleton
+2024-04-25 22:51:41,923 INFO root: __init__: CameraManager Init
+2024-04-25 22:51:41,923 INFO root: start: CameraManager started
+2024-04-25 22:51:43,214 INFO root: __init__: Init HandDetector
+2024-04-25 22:51:43,214 INFO root: start: HandDetector Started
+2024-04-25 22:51:43,220 INFO root: start: MouseController started
+2024-04-25 22:51:43,223 INFO root: main_loop: MouseController thread started
+2024-04-25 22:51:43,223 INFO root: __init__: Init Pipeline

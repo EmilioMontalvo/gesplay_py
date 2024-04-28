@@ -45,4 +45,5 @@ class UdpClient(metaclass=Singleton):
                 data,addr = self.sock.recvfrom(1024)
                 print(data.decode('utf-8'))
             except:
+                #TODO: Close the application is the server closes
                 print("Error")

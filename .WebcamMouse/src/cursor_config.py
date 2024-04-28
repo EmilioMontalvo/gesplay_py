@@ -1,3 +1,4 @@
+import json
 from src.singleton_meta import Singleton
 
 class CursorConfig(metaclass=Singleton):
@@ -12,3 +13,22 @@ class CursorConfig(metaclass=Singleton):
     
     def start(self):
         pass
+
+    def load_from_json(self, json_string):
+        data = json.loads(json_string)
+        self.camera_id = data["camera_id"]
+        self.spd_up = data["spd_up"]
+        self.spd_down = data["spd_down"]
+        self.spd_left = data["spd_left"]
+        self.spd_right = data["spd_right"]
+        self.pointer_smooth = data["pointer_smooth"]
+        self.tick_interval_ms = data["tick_interval_ms"]
+    
+    def load_from_dict(self, data):
+        self.camera_id = data["camera_id"]
+        self.spd_up = data["spd_up"]
+        self.spd_down = data["spd_down"]
+        self.spd_left = data["spd_left"]
+        self.spd_right = data["spd_right"]
+        self.pointer_smooth = data["pointer_smooth"]
+        self.tick_interval_ms = data["tick_interval_ms"]

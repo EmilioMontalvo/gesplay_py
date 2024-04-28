@@ -39,3 +39,6 @@ func set_from_json(config: Dictionary):
 	spd_right = config["spd_right"]
 	pointer_smooth = config["pointer_smooth"]
 	tick_interval_ms = config["tick_interval_ms"]
+
+func get_as_message(instruction:String):
+	return Message.new(instruction,get_as_json())

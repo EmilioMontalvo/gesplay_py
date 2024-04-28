@@ -13,7 +13,7 @@ func _process(delta):
 
 func _on_button_pressed():
 	#UdPServer.send_array(array)
-	var json_message=CursorConf.get_as_message("update")._to_string()
+	var json_message=CursorConf.get_as_message("update_cursor_config")._to_string()
 	UdPServer.send_string(json_message)
 	#ConfigManager.load_config("default")
 	#print(CursorConf.get_as_json())

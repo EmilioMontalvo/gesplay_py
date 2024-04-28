@@ -8,7 +8,7 @@ var spd_up=40
 var spd_down=40
 var spd_left=40
 var spd_right=40
-var pointer_smooth=63
+var pointer_smooth=65
 var tick_interval_ms=16
 
 

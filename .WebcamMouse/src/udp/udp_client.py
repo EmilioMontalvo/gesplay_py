@@ -2,6 +2,8 @@ import socket
 import logging
 import cv2
 import concurrent.futures as futures
+from src.udp.message import Message
+from src.udp.message_interpreter import MessageInterpreter
 from src.singleton_meta import Singleton
 
 logger = logging.getLogger("TaskManager")
@@ -13,6 +15,7 @@ CLIENT_PORT= 4243
 class UdpClient(metaclass=Singleton):
     def __init__(self):        
         self.sock = None
+        self.message_interpreter = MessageInterpreter()
 
     
     def start(self): 
@@ -43,7 +46,8 @@ class UdpClient(metaclass=Singleton):
         while True:            
             try:
                 data,addr = self.sock.recvfrom(1024)
-                print(data.decode('utf-8'))
+                message = Message.from_json(data.decode('utf-8'))
+                self.message_interpreter.interpret(message)
             except:
                 #TODO: Close the application is the server closes
                 print("Error")

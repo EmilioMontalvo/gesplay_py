@@ -13,5 +13,12 @@ class Message:
 
     @classmethod
     def from_json(cls, json_string):
-        data = json.loads(json_string)
-        return cls(data["instruction"], data["content"])
+        try:
+            data = json.loads(json_string)
+            return cls(data["instruction"], data["content"])
+        except:
+            return None
+        
+    
+    def __str__(self):
+        return self.to_json()

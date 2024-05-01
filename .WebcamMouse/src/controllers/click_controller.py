@@ -7,6 +7,7 @@ import tensorflow as tf
 import concurrent.futures as futures
 from src.singleton_meta import Singleton
 from src.landmark_processor import LandmarkProcessor
+from src.click_config import ClickConfig
 
 class ClickController(metaclass=singleton):
     def __init__(self) -> None:
@@ -42,7 +43,7 @@ class ClickController(metaclass=singleton):
                         landmark_list = LandmarkProcessor().calc_landmark_list(self.curr_image, hand_landmarks)
                         pre_process_landmark_list = LandmarkProcessor().pre_process_landmark(landmark_list)
                         gesture = KeyPointClassifier().predict_gesture(pre_process_landmark_list)
-                        if gesture in [0,1]:
+                        if gesture == ClickConfig().gesture_index:
                             pyautogui.click()
                 
     

@@ -42,6 +42,9 @@ class TaskManager(metaclass=Singleton):
 
             from src.controllers.mouse_controller import MouseController
             MouseController().start()
+            
+            from src.controllers.click_controller import ClickController
+            ClickController().start()
 
             self.is_started = True
 
@@ -60,6 +63,9 @@ class TaskManager(metaclass=Singleton):
 
         from src.controllers.mouse_controller import MouseController
         MouseController().destroy()
+        
+        from src.controllers.click_controller import ClickController
+        ClickController().destroy()
 
 
         exit()

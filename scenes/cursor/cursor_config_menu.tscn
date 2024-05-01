@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5c1r7udg87jb"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_p1mcc"]
+
+[node name="CursorConfigMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p1mcc")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0460069
+anchor_top = -0.0733025
+anchor_right = 1.04601
+anchor_bottom = 1.0733
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -823.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 143.0
+offset_top = 147.0
+offset_right = 838.0
+offset_bottom = 240.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+offset_right = 109.0
+offset_bottom = 38.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "Arriba"
+
+[node name="HSlider" type="HSlider" parent="Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 45.0
+offset_right = 292.0
+offset_bottom = 75.0
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 39.0
+offset_right = 445.0
+offset_bottom = 79.0

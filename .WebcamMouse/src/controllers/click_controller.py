@@ -45,8 +45,6 @@ class ClickController(metaclass=singleton):
                         if gesture in [0,1]:
                             pyautogui.click()
                 
-                
-                
     
     def act(self, image_results, image):
         if(landmarks and image):
@@ -56,4 +54,10 @@ class ClickController(metaclass=singleton):
             self.curr_image = copy.deepcopy(image)
         else:
             self.is_active = False
+            
+    def destroy(self):
+        self.is_active=False
+        self.is_started=False
+        self.is_stoped=True
+        self.is_destroyed=True
         

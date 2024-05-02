@@ -9,7 +9,7 @@ from src.singleton_meta import Singleton
 from src.landmark_processor import LandmarkProcessor
 from src.click_config import ClickConfig
 
-class ClickController(metaclass=singleton):
+class ClickController(metaclass=Singleton):
     def __init__(self) -> None:
         self.is_started = False
         self.is_stopped = True
@@ -44,11 +44,13 @@ class ClickController(metaclass=singleton):
                         pre_process_landmark_list = LandmarkProcessor().pre_process_landmark(landmark_list)
                         gesture = KeyPointClassifier().predict_gesture(pre_process_landmark_list)
                         if gesture == ClickConfig().gesture_index:
-                            pyautogui.click()
+                            pyautogui.mouseDown()
+                        else:
+                            pyautogui.mouseUp()
                 
     
     def act(self, image_results, image):
-        if(landmarks and image):
+        if(image_results and image):
             if not self.is_active:
                 self.is_active = True
             self.curr_image_results = image_results

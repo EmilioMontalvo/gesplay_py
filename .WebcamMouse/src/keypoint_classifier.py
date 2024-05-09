@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 from src.singleton_meta import Singleton
 
-class KeyPointClassifier(object, metaclass=Singleton):
+class KeyPointClassifier(metaclass=Singleton):
     def __init__(
         self,
         model_path = 'src/utils/models/keypoint_classifier.keras', 

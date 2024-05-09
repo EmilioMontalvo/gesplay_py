@@ -1,9 +1,10 @@
 import copy
 import itertools
+from src.singleton_meta import Singleton
 
-class LandmarkProcessor(object):
+class LandmarkProcessor(metaclass=Singleton):
     
-    def calc_landmark_list(image, landmarks):
+    def calc_landmark_list(self,image, landmarks):
         image_width, image_height = image.shape[1], image.shape[0]
 
         landmark_point = []
@@ -18,7 +19,7 @@ class LandmarkProcessor(object):
 
         return landmark_point
     
-    def pre_process_landmark(landmark_list):
+    def pre_process_landmark(self,landmark_list):
         temp_landmark_list = copy.deepcopy(landmark_list)
 
         # Convert to relative coordinates

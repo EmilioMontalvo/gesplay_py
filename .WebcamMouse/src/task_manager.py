@@ -30,9 +30,12 @@ class TaskManager(metaclass=Singleton):
 
             from src.cursor_config import CursorConfig
             CursorConfig().start()
+            
+            from src.click_config import ClickConfig
+            ClickConfig().start()
 
             from src.udp.udp_client import UdpClient
-            UdpClient().start()
+            # UdpClient().start()
 
             from src.camera_manager import CameraManager
             CameraManager().start()

@@ -34,6 +34,12 @@ class CameraManager(metaclass=Singleton):
             return self.frame
         else:
             return cv2.imread("placeholder.jpg")
+    
+    def get_fliped_frame(self):
+        if self.is_started:
+            return cv2.flip(self.frame,1)
+        else:
+            return cv2.imread("placeholder.jpg")
 
     def release(self):
         self.cap.release()

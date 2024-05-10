@@ -51,7 +51,7 @@ class ClickController(metaclass=Singleton):
                         pre_process_landmark_list = LandmarkProcessor().pre_process_landmark(landmark_list)
                         gesture = KeyPointClassifier().predict_gesture(pre_process_landmark_list)
                         print(gesture)
-                        if gesture == ClickConfig().gesture_index:
+                        if gesture == 1:
                             if not self.is_clicked:
                                 self.is_clicked = True
                                 pyautogui.mouseDown()

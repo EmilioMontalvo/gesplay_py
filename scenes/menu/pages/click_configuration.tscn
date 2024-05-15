@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://slim1xm70p63"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mo2un"]
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_3p8tm"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_yju7e"]
+[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="4_docx4"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="5_3vyt4"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_7osy7"]
+[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="7_174js"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_bojm5"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_5lfnl"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="10_jxrtb"]
+
+[node name="ClickConfiguration" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mo2un")
+
+[node name="ColorRect" parent="." instance=ExtResource("2_3p8tm")]
+layout_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_right = 106.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_yju7e")
+theme_override_font_sizes/font_size = 100
+text = "Configuración
+"
+
+[node name="LblClick" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 239.0
+offset_right = 531.0
+offset_bottom = 289.0
+theme_override_fonts/font = ExtResource("3_yju7e")
+theme_override_font_sizes/font_size = 40
+text = "Tipo de Clic"
+
+[node name="LblClick2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 322.0
+offset_right = 218.0
+offset_bottom = 372.0
+theme_override_fonts/font = ExtResource("5_3vyt4")
+theme_override_font_sizes/font_size = 35
+text = "Mano"
+
+[node name="BtnClickPinch" type="Button" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 405.0
+offset_right = 329.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_fonts/font = ExtResource("6_7osy7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("7_174js")
+text = "Pellizcar"
+
+[node name="BtnClickGrab" type="Button" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 502.0
+offset_right = 329.0
+offset_bottom = 554.0
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_fonts/font = ExtResource("6_7osy7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("7_174js")
+text = "Agarrar
+"
+
+[node name="AceptCancel" parent="." instance=ExtResource("4_docx4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = 410.0
+offset_right = -378.0
+offset_bottom = 410.0
+
+[node name="Cancel" parent="AceptCancel" index="1"]
+script = ExtResource("8_bojm5")
+scene = 4
+
+[node name="GoBack" parent="." instance=ExtResource("9_5lfnl")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 29.0
+offset_right = 142.0
+offset_bottom = 129.0
+scene = 4
+
+[node name="Home" parent="." instance=ExtResource("10_jxrtb")]
+layout_mode = 0
+offset_left = 1324.0
+offset_top = 27.0
+offset_right = 1420.0
+offset_bottom = 123.0
+
+[connection signal="pressed" from="AceptCancel/Cancel" to="AceptCancel/Cancel" method="_on_pressed"]
+
+[editable path="AceptCancel"]

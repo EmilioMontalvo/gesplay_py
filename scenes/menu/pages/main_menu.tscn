@@ -1,0 +1,188 @@
+[gd_scene load_steps=19 format=3 uid="uid://dd54atv3cfg7u"]
+
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
+[ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="2_bg1pn"]
+[ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_4rljh"]
+[ext_resource type="PackedScene" uid="uid://dkrpkt34vd8vj" path="res://scenes/menu/components/btn_menu.tscn" id="4_s0b3s"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="5_sfo2u"]
+[ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="6_xou64"]
+[ext_resource type="Theme" uid="uid://dxiaadhqntj3d" path="res://assets/buttons/themes/menu_button.tres" id="7_jbsl3"]
+[ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="8_k2wsd"]
+[ext_resource type="Texture2D" uid="uid://cxs3leoxcqj6b" path="res://assets/buttons/icons/ControlComputerIcon.png" id="9_kacvu"]
+[ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="10_s23mt"]
+[ext_resource type="Texture2D" uid="uid://fsbkcjx4xrna" path="res://assets/buttons/icons/Games.png" id="11_difrc"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="12_r5y54"]
+[ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="13_654sp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld27w"]
+atlas = ExtResource("6_xou64")
+region = Rect2(62, 0, 62, 62)
+margin = Rect2(15, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7e8j"]
+atlas = ExtResource("6_xou64")
+region = Rect2(124, 0, 62, 62)
+margin = Rect2(15, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy8f6"]
+atlas = ExtResource("6_xou64")
+region = Rect2(186, 0, 62, 62)
+margin = Rect2(15, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmmjv"]
+atlas = ExtResource("9_kacvu")
+region = Rect2(0, 0, 169, 93)
+margin = Rect2(114, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mslbd"]
+atlas = ExtResource("11_difrc")
+region = Rect2(7, -45, 166, 230)
+margin = Rect2(0, 3.19, 0, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_6ya5u")]
+layout_mode = 0
+
+[node name="Title" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AppIcon" parent="Title" instance=ExtResource("2_bg1pn")]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 92.0
+offset_right = 234.0
+offset_bottom = 230.54
+
+[node name="AppTitle" type="TextureRect" parent="Title"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 82.0
+offset_right = 808.0
+offset_bottom = 266.03
+texture = ExtResource("3_4rljh")
+expand_mode = 1
+
+[node name="MenuButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 105.0
+offset_top = 291.0
+offset_right = 145.0
+offset_bottom = 331.0
+
+[node name="BtnSelectProfile" parent="MenuButtons" instance=ExtResource("4_s0b3s")]
+layout_mode = 0
+script = ExtResource("5_sfo2u")
+scene = 3
+
+[node name="BtnReport" parent="MenuButtons" instance=ExtResource("4_s0b3s")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 112.0
+offset_right = 450.0
+offset_bottom = 203.0
+icon = SubResource("AtlasTexture_ld27w")
+
+[node name="Text" parent="MenuButtons/BtnReport" index="0"]
+text = "Reporte
+"
+
+[node name="BtnConfiguration" parent="MenuButtons" instance=ExtResource("4_s0b3s")]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 223.0
+offset_right = 451.0
+offset_bottom = 314.0
+icon = SubResource("AtlasTexture_e7e8j")
+script = ExtResource("5_sfo2u")
+scene = 4
+
+[node name="Text" parent="MenuButtons/BtnConfiguration" index="0"]
+text = "Configuración
+"
+
+[node name="BtnSelectWebcam" parent="MenuButtons" instance=ExtResource("4_s0b3s")]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 338.0
+offset_right = 451.0
+offset_bottom = 429.0
+icon = SubResource("AtlasTexture_dy8f6")
+
+[node name="Text" parent="MenuButtons/BtnSelectWebcam" index="0"]
+text = "Seleccionar Webcam
+"
+
+[node name="ControlComputer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 796.0
+offset_right = 1349.0
+offset_bottom = 934.0
+theme = ExtResource("7_jbsl3")
+theme_override_styles/normal = ExtResource("8_k2wsd")
+theme_override_styles/hover = ExtResource("8_k2wsd")
+theme_override_styles/pressed = ExtResource("8_k2wsd")
+icon = SubResource("AtlasTexture_nmmjv")
+
+[node name="Text" type="Label" parent="ControlComputer"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 45.0
+offset_right = 662.001
+offset_bottom = 68.0
+text = "Controlar Computador"
+
+[node name="Games" type="Button" parent="."]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 357.0
+offset_right = 1287.0
+offset_bottom = 673.0
+theme = ExtResource("7_jbsl3")
+theme_override_styles/normal = ExtResource("10_s23mt")
+theme_override_styles/hover = ExtResource("10_s23mt")
+theme_override_styles/pressed = ExtResource("10_s23mt")
+icon = SubResource("AtlasTexture_mslbd")
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("5_sfo2u")
+scene = 6
+
+[node name="Label" type="Label" parent="Games"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 238.0
+offset_right = 307.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 40
+text = "Juegos"
+
+[node name="HelpButton" parent="." instance=ExtResource("12_r5y54")]
+layout_mode = 0
+offset_left = 1293.0
+offset_top = 79.0
+offset_right = 1343.0
+offset_bottom = 129.0
+
+[node name="ButtonProfile" parent="." instance=ExtResource("13_654sp")]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 148.0
+offset_right = 1268.0
+offset_bottom = 242.0
+
+[connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
+
+[editable path="MenuButtons/BtnSelectProfile"]
+[editable path="MenuButtons/BtnReport"]
+[editable path="MenuButtons/BtnConfiguration"]
+[editable path="MenuButtons/BtnSelectWebcam"]

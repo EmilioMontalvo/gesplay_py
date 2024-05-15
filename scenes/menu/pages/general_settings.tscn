@@ -1,0 +1,269 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyh4poxlaa4ji"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_ri4pu"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="3_kmhl2"]
+[ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ilpxr"]
+[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_nw7jx"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
+[ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_sn6yy"]
+[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="8_8w3m3"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="9_dm4qa"]
+[ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_ov04w"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_ejfp2"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_86b1d"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_ik6jx"]
+
+[node name="GeneralSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ri4pu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.964706, 0.933333, 0.870588, 1)
+
+[node name="TitleText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.0
+offset_top = 50.0
+offset_right = 370.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_1jd16")
+theme_override_font_sizes/font_size = 100
+text = "Configuración"
+
+[node name="LblName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 243.0
+offset_right = 860.0
+offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("3_kmhl2")
+theme_override_font_sizes/font_size = 30
+text = "Nombre"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 300.0
+offset_right = 1224.0
+offset_bottom = 382.0
+
+[node name="TextureRect" type="TextureRect" parent="TextEdit"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_ilpxr")
+
+[node name="BtnGeneralSettings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 411.0
+offset_right = 1224.0
+offset_bottom = 495.0
+theme_override_styles/normal = ExtResource("5_nw7jx")
+icon_alignment = 2
+
+[node name="Label" type="Label" parent="BtnGeneralSettings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -19.0
+offset_right = 357.0
+offset_bottom = 19.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_font_sizes/font_size = 30
+text = "Configuración General"
+
+[node name="TextureRect" type="TextureRect" parent="BtnGeneralSettings"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_sn6yy")
+
+[node name="BtnCursorSettings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 522.0
+offset_right = 1224.0
+offset_bottom = 606.0
+theme_override_styles/normal = ExtResource("5_nw7jx")
+icon_alignment = 2
+script = ExtResource("9_dm4qa")
+scene = 5
+
+[node name="Label" type="Label" parent="BtnCursorSettings"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -19.0
+offset_right = 357.0
+offset_bottom = 19.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_font_sizes/font_size = 30
+text = "Configuración del Cursor
+"
+
+[node name="TextureRect" type="TextureRect" parent="BtnCursorSettings"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_sn6yy")
+
+[node name="BtnClicSettings3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 629.0
+offset_right = 1224.0
+offset_bottom = 713.0
+theme_override_styles/normal = ExtResource("5_nw7jx")
+icon_alignment = 2
+script = ExtResource("9_dm4qa")
+scene = 9
+
+[node name="Label" type="Label" parent="BtnClicSettings3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -19.0
+offset_right = 357.0
+offset_bottom = 19.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_font_sizes/font_size = 30
+text = "Configuración del Clic
+"
+
+[node name="TextureRect" type="TextureRect" parent="BtnClicSettings3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_sn6yy")
+
+[node name="BtnEditImage" type="Button" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 629.0
+offset_right = 649.0
+offset_bottom = 713.0
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("5_nw7jx")
+text = "Editar"
+icon_alignment = 2
+
+[node name="AceptCancel" parent="." instance=ExtResource("8_8w3m3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -396.0
+offset_top = -114.0
+offset_right = -396.0
+offset_bottom = -114.0
+grow_vertical = 0
+
+[node name="Acept" parent="AceptCancel" index="0"]
+script = ExtResource("9_dm4qa")
+scene = 1
+
+[node name="Cancel" parent="AceptCancel" index="1"]
+script = ExtResource("9_dm4qa")
+scene = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 284.0
+offset_right = 642.0
+offset_bottom = 608.0
+texture = ExtResource("10_ov04w")
+
+[node name="GoBack" parent="." instance=ExtResource("11_ejfp2")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 124.0
+scene = 1
+
+[node name="Home" parent="." instance=ExtResource("12_86b1d")]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 30.0
+offset_right = 1344.0
+offset_bottom = 126.0
+
+[node name="HelpButton" parent="." instance=ExtResource("13_ik6jx")]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 55.0
+offset_right = 1415.0
+offset_bottom = 105.0
+
+[connection signal="pressed" from="BtnCursorSettings" to="BtnCursorSettings" method="_on_pressed"]
+[connection signal="pressed" from="BtnClicSettings3" to="BtnClicSettings3" method="_on_pressed"]
+[connection signal="pressed" from="AceptCancel/Acept" to="BtnCursorSettings" method="_on_acept_pressed"]
+[connection signal="pressed" from="AceptCancel/Cancel" to="AceptCancel/Cancel" method="_on_pressed"]
+
+[editable path="AceptCancel"]

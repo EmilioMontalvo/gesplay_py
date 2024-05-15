@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jhfkcwhkj4oj"]
+
+[ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="1_f4dqd"]
+[ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_o7kdr"]
+
+[node name="HelpButton" type="Button"]
+offset_right = 50.0
+offset_bottom = 50.0
+theme = ExtResource("1_o7kdr")
+theme_override_styles/normal = ExtResource("1_f4dqd")
+text = "i"

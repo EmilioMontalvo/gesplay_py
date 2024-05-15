@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bv8eq0tigyo03"]
+
+[ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
+[ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
+[ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
+[ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="7_8rila"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]
+[ext_resource type="PackedScene" uid="uid://bpygnehhw7vhm" path="res://scenes/menu/components/cursor_level_button.tscn" id="10_8iayx"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="10_mmg1k"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="11_62lih"]
+
+[node name="Cursor" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_t3q83")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleText" parent="CanvasLayer" instance=ExtResource("5_km6w8")]
+offset_left = 534.0
+offset_top = 115.0
+offset_right = 930.0
+offset_bottom = 238.0
+text = "Niveles
+"
+
+[node name="AppIcon" parent="CanvasLayer" instance=ExtResource("6_l5dlr")]
+offset_left = 1299.0
+offset_top = 769.0
+offset_right = 1374.0
+offset_bottom = 842.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 240.0
+offset_top = 289.0
+offset_right = 1202.0
+offset_bottom = 771.0
+color = Color(0.909804, 0.843137, 0.72549, 0.560784)
+
+[node name="GoBack" parent="CanvasLayer" instance=ExtResource("10_mmg1k")]
+offset_left = 13.0
+offset_top = 17.0
+offset_right = 113.0
+offset_bottom = 117.0
+scene = 6
+
+[node name="Home" parent="CanvasLayer" instance=ExtResource("11_62lih")]
+offset_left = 1238.0
+offset_top = 30.0
+offset_right = 1334.0
+offset_bottom = 126.0
+
+[node name="cursor_level_button" parent="CanvasLayer" instance=ExtResource("10_8iayx")]
+offset_left = 341.0
+offset_top = 346.0
+offset_right = -979.0
+offset_bottom = -520.0
+script = ExtResource("7_8rila")
+scene = 12
+
+[node name="TileMap" parent="." instance=ExtResource("7_8kckn")]
+
+[node name="HelpButton" parent="." instance=ExtResource("9_4ky0y")]
+offset_left = 1339.0
+offset_top = 55.0
+offset_right = 1389.0
+offset_bottom = 105.0
+
+[connection signal="pressed" from="CanvasLayer/cursor_level_button" to="CanvasLayer/cursor_level_button" method="_on_pressed"]

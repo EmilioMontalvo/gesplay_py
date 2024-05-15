@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5c63gvj7nxk4"]
+
+[ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="1_4n8vf"]
+
+[node name="AppIcon" type="TextureRect"]
+offset_left = 93.0
+offset_top = 110.0
+offset_right = 228.0
+offset_bottom = 248.54
+texture = ExtResource("1_4n8vf")
+expand_mode = 1

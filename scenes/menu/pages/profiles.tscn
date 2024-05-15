@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqb2bcqpd5kki"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_awgda"]
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_bx8yf"]
+[ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_0f7a8"]
+[ext_resource type="PackedScene" uid="uid://m8o081e6tutt" path="res://scenes/menu/components/profile_button.tscn" id="4_xn568"]
+[ext_resource type="Texture2D" uid="uid://dh2ilv0eibjfe" path="res://assets/buttons/icons/Search.png" id="5_cmqiq"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="6_6huvo"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="7_ypxo0"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_cqyjp"]
+[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="9_lslf8"]
+
+[node name="Profiles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_awgda")
+
+[node name="Background" parent="." instance=ExtResource("1_bx8yf")]
+layout_mode = 0
+offset_right = 1438.0
+
+[node name="TitleText" parent="." instance=ExtResource("3_0f7a8")]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 66.0
+offset_right = 925.0
+offset_bottom = 189.0
+
+[node name="Profile" parent="." instance=ExtResource("4_xn568")]
+offset_left = 171.0
+offset_top = 381.0
+offset_right = 211.0
+offset_bottom = 421.0
+
+[node name="SearchBar" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 239.0
+offset_right = 1194.0
+offset_bottom = 298.0
+theme = ExtResource("1_awgda")
+placeholder_text = "Buscar"
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SearchBar"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 5.0
+offset_right = 67.0
+offset_bottom = 55.0
+texture = ExtResource("5_cmqiq")
+
+[node name="Home" parent="." instance=ExtResource("7_ypxo0")]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 28.0
+offset_right = 1304.0
+offset_bottom = 124.0
+
+[node name="GoBack" parent="." instance=ExtResource("6_6huvo")]
+layout_mode = 0
+scene = 1
+
+[node name="AceptCancel" parent="." instance=ExtResource("9_lslf8")]
+layout_mode = 1
+offset_left = 334.0
+offset_top = 903.0
+offset_right = -328.0
+offset_bottom = -65.0
+
+[node name="HelpButton" parent="." instance=ExtResource("9_cqyjp")]
+layout_mode = 0
+offset_left = 1318.0
+offset_top = 51.0
+offset_right = 1368.0
+offset_bottom = 101.0

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlnu3ca4sqm1x"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_18wvq"]
+[ext_resource type="Texture2D" uid="uid://bqbe7hrebg37w" path="res://assets/buttons/user_images/Placeholder.png" id="2_h2rb2"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="2_ravry"]
+[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_wp6qr"]
+
+[node name="ButtonProfile" type="Button"]
+offset_right = 325.0
+offset_bottom = 94.0
+theme = ExtResource("1_18wvq")
+script = ExtResource("2_ravry")
+scene = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 81.0
+offset_bottom = 80.0
+texture = ExtResource("2_h2rb2")
+expand_mode = 3
+
+[node name="Text" parent="." instance=ExtResource("3_wp6qr")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 28.0
+offset_right = 244.0
+offset_bottom = 66.0
+text = "Jhon Doe"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

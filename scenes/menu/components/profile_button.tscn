@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://m8o081e6tutt"]
+
+[ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_qf7h1"]
+[ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="2_jndbv"]
+[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_fur3o"]
+[ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="4_x8ul1"]
+[ext_resource type="Texture2D" uid="uid://bqbe7hrebg37w" path="res://assets/buttons/user_images/Placeholder.png" id="5_ey0g2"]
+[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="6_2cbie"]
+[ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="7_7cu2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n673"]
+atlas = ExtResource("7_7cu2v")
+region = Rect2(62, 0, 62, 62)
+margin = Rect2(13.055, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_str8x"]
+atlas = ExtResource("7_7cu2v")
+region = Rect2(124, 0, 62, 62)
+margin = Rect2(13.055, 0, 0, 0)
+
+[node name="Profile" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProfileButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1126.0
+offset_bottom = 137.0
+theme = ExtResource("1_qf7h1")
+theme_override_styles/normal = ExtResource("2_jndbv")
+theme_override_styles/hover = ExtResource("2_jndbv")
+theme_override_styles/pressed = ExtResource("2_jndbv")
+
+[node name="Text" parent="ProfileButton" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 48.0
+offset_right = 379.0
+offset_bottom = 86.0
+text = "Nombre Perfil"
+
+[node name="TextureRect2" type="TextureRect" parent="ProfileButton"]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 45.0
+offset_right = 1085.0
+offset_bottom = 95.0
+texture = ExtResource("4_x8ul1")
+
+[node name="TextureRect" type="TextureRect" parent="ProfileButton"]
+layout_mode = 2
+offset_left = 38.0
+offset_top = 17.0
+offset_right = 146.0
+offset_bottom = 125.0
+texture = ExtResource("5_ey0g2")
+
+[node name="Report" type="Button" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 23.0
+offset_right = 679.0
+offset_bottom = 112.0
+theme_override_styles/normal = ExtResource("6_2cbie")
+theme_override_styles/hover = ExtResource("6_2cbie")
+theme_override_styles/pressed = ExtResource("6_2cbie")
+icon = SubResource("AtlasTexture_4n673")
+
+[node name="Text" parent="Report" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 25.0
+offset_right = 210.0
+offset_bottom = 63.0
+text = "Reporte"
+
+[node name="Configure" type="Button" parent="."]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 25.0
+offset_right = 995.0
+offset_bottom = 114.0
+theme_override_styles/normal = ExtResource("6_2cbie")
+theme_override_styles/hover = ExtResource("6_2cbie")
+theme_override_styles/pressed = ExtResource("6_2cbie")
+icon = SubResource("AtlasTexture_str8x")
+
+[node name="Text" parent="Configure" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 25.0
+offset_right = 210.0
+offset_bottom = 63.0
+text = "Configurar"

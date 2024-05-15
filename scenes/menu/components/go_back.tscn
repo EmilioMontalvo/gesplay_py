@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqdyjpbtoy343"]
+
+[ext_resource type="Texture2D" uid="uid://g1wx40t35i52" path="res://assets/buttons/icons/GoBack.png" id="1_x1i85"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="2_4yjuv"]
+
+[node name="GoBack" type="TextureButton"]
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = ExtResource("1_x1i85")
+texture_pressed = ExtResource("1_x1i85")
+script = ExtResource("2_4yjuv")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

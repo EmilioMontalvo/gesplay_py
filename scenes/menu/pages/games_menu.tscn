@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://2r66exf5hp14"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mlqrc"]
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_xqmjn"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_pxpkt"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="4_frlh7"]
+[ext_resource type="FontFile" uid="uid://dluutf34frym6" path="res://assets/font/Montserrat-Regular.ttf" id="5_ns7g5"]
+[ext_resource type="Texture2D" uid="uid://bjl06j8mykbuq" path="res://assets/buttons/icons/cursor_game_icon.png" id="7_3jat4"]
+[ext_resource type="Texture2D" uid="uid://cf0j42h1j10ev" path="res://assets/click_game/click_game_icon.png" id="8_cm7wk"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_psuwc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkb3"]
+bg_color = Color(0.956863, 0.803922, 0.0431373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="GamesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mlqrc")
+
+[node name="Background" parent="." instance=ExtResource("2_xqmjn")]
+layout_mode = 0
+
+[node name="Home" parent="." instance=ExtResource("3_pxpkt")]
+layout_mode = 0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.5
+offset_top = 50.0
+offset_right = 187.5
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_frlh7")
+theme_override_font_sizes/font_size = 100
+text = "Juegos"
+
+[node name="BtnMouseGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -190.0
+offset_right = 685.0
+offset_bottom = 310.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ns7g5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vkb3")
+script = ExtResource("8_psuwc")
+scene = 10
+
+[node name="Label" type="Label" parent="BtnMouseGame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -69.5
+offset_right = 100.0
+offset_bottom = -31.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_fonts/font = ExtResource("4_frlh7")
+theme_override_font_sizes/font_size = 40
+text = "Juego Cursor"
+
+[node name="TextureRect2" type="TextureRect" parent="BtnMouseGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -175.0
+offset_right = 721.5
+offset_bottom = 723.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("7_3jat4")
+
+[node name="BtnClickGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -685.0
+offset_top = -190.0
+offset_right = -100.0
+offset_bottom = 310.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vkb3")
+script = ExtResource("8_psuwc")
+scene = 13
+
+[node name="Label" type="Label" parent="BtnClickGame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -69.5
+offset_right = 100.0
+offset_bottom = -31.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_fonts/font = ExtResource("4_frlh7")
+theme_override_font_sizes/font_size = 40
+text = "Juego Clic"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BtnClickGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -184.0
+offset_right = 702.5
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_cm7wk")
+
+[connection signal="pressed" from="BtnMouseGame" to="BtnMouseGame" method="_on_pressed"]
+[connection signal="pressed" from="BtnClickGame" to="BtnClickGame" method="_on_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcybi0df7qurw"]
+
+[ext_resource type="PackedScene" uid="uid://brrhiqo3x4rbb" path="res://scenes/menu/components/camera.tscn" id="2_fiv1n"]
+[ext_resource type="Texture2D" uid="uid://cgdfq1ppo7aw5" path="res://assets/cursor_game/pista.jpg" id="2_l407e"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="3_trpnq"]
+
+[node name="CursorGame" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(722.5, 509.625)
+scale = Vector2(3.20222, 3.23896)
+texture = ExtResource("2_l407e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera" parent="CanvasLayer" instance=ExtResource("2_fiv1n")]
+top_level = true
+expand_mode = 3
+stretch_mode = 2
+
+[node name="GoBack" parent="CanvasLayer" instance=ExtResource("3_trpnq")]

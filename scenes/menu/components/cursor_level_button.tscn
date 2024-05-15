@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpygnehhw7vhm"]
+
+[ext_resource type="Texture2D" uid="uid://btj0xf8pf765l" path="res://assets/cursor_game/levels/cookie_level120.png" id="2_umvsb"]
+
+[node name="level_button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_umvsb")

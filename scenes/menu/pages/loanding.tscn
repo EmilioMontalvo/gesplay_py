@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://816gnix7ys7p"]
+
+[ext_resource type="Script" path="res://scripts/loanding.gd" id="1_6i6va"]
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_p1322"]
+[ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="2_wk7c3"]
+[ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_3pv5o"]
+[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="4_yjjhy"]
+
+[node name="Loanding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6i6va")
+
+[node name="ColorRect" parent="." instance=ExtResource("1_p1322")]
+layout_mode = 0
+
+[node name="GestplayLogo" type="Sprite2D" parent="."]
+position = Vector2(693, 321)
+texture = ExtResource("2_wk7c3")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(698, 540)
+texture = ExtResource("3_3pv5o")
+
+[node name="Text" parent="." instance=ExtResource("4_yjjhy")]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 713.0
+offset_right = 794.0
+offset_bottom = 751.0
+text = "Cargando...."

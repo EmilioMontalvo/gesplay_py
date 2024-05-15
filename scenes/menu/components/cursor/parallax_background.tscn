@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb1f5aet2ji85"]
+
+[ext_resource type="Texture2D" uid="uid://cmvxcvfyt3ow4" path="res://assets/cursor_game/background/backgroundCastles.png" id="1_7fo4h"]
+[ext_resource type="Script" path="res://scenes/menu/pages/cursor/clouds.gd" id="2_ntckw"]
+[ext_resource type="Texture2D" uid="uid://buvgfpg2kbhlt" path="res://assets/cursor_game/background/cloudLayer2.png" id="3_xqy8k"]
+[ext_resource type="Texture2D" uid="uid://cxvwux6cvmeux" path="res://assets/cursor_game/background/backgroundColorGrassTransparent.png" id="4_75d32"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 3
+position = Vector2(722, 509.5)
+scale = Vector2(1.42969, 1.0166)
+texture = ExtResource("1_7fo4h")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(0, -54)
+script = ExtResource("2_ntckw")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(512, 838)
+scale = Vector2(1, 0.932)
+texture = ExtResource("3_xqy8k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1535, 848)
+scale = Vector2(1, 0.88)
+texture = ExtResource("3_xqy8k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(2558, 838)
+scale = Vector2(1, 0.868624)
+texture = ExtResource("3_xqy8k")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(3569, 848)
+scale = Vector2(1, 0.7744)
+texture = ExtResource("3_xqy8k")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(720, 704)
+scale = Vector2(1.4082, 1)
+texture = ExtResource("4_75d32")

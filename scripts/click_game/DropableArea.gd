@@ -8,7 +8,8 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.texture = icon
-	modulate = Color('#F6EEDE',0.7)
+	#modulate = Color('#F6EEDE',0.7)
+	modulate = Color('#000000',1.0)
 
 
 func get_type() -> String:

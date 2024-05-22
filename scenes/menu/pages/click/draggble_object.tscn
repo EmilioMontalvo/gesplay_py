@@ -7,7 +7,7 @@
 size = Vector2(128, 128)
 
 [node name="DraggbleObject" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_853hc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

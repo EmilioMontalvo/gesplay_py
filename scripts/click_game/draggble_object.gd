@@ -61,15 +61,17 @@ func _on_area_2d_body_exited(body):
 	if body.is_in_group('dropable'):
 		is_inside_dropable = false
 		body_ref_temp = null
-		body.modulate = Color('#F6EEDE',0.7)
+		#body.modulate = Color('#F6EEDE',0.7)
+		body.modulate = Color('#000000',1.0)
+		
 
 
 func _on_area_2d_mouse_entered():
 	if not GlobalClick.is_dragging:
 		draggable = true
-		scale = Vector2(2.05,2.05)
+		scale = Vector2(1.35,1.35)
 
 func _on_area_2d_mouse_exited():
 	if not GlobalClick.is_dragging:
 		draggable = false
-		scale = Vector2(2,2)
+		scale = Vector2(1.25,1.25)

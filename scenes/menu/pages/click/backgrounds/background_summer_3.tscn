@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4b3ftu4pdlk1"]
+
+[ext_resource type="Script" path="res://scripts/click_game/scenes_background/clouds.gd" id="1_58vap"]
+[ext_resource type="Texture2D" uid="uid://x2wik3t0hkgq" path="res://assets/click_game/backgrounds/background_summer3/1.png" id="2_80myi"]
+[ext_resource type="Texture2D" uid="uid://q0ov4hi0t0y7" path="res://assets/click_game/backgrounds/background_summer3/2.png" id="3_qvgmm"]
+[ext_resource type="Texture2D" uid="uid://cdsp6p85uypwa" path="res://assets/click_game/backgrounds/background_summer3/3.png" id="4_jr8sw"]
+[ext_resource type="Texture2D" uid="uid://cwvpkca4v8nmy" path="res://assets/click_game/backgrounds/background_summer3/4.png" id="5_uhlo8"]
+
+[node name="BackgroundSummer3" type="ParallaxBackground"]
+scale = Vector2(2.75, 2.75)
+transform = Transform2D(2.75, 0, 0, 2.75, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(253.818, 210.182)
+script = ExtResource("1_58vap")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_80myi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-573.818, 0)
+texture = ExtResource("2_80myi")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(253.818, 210.182)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_qvgmm")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(253.818, 210.182)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("4_jr8sw")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(253.818, 210.182)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture = ExtResource("5_uhlo8")

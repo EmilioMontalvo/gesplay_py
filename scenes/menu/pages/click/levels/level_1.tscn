@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://da1ikiog064lk"]
+
+[ext_resource type="PackedScene" uid="uid://cssvy00q3ty0b" path="res://scenes/menu/pages/click/backgrounds/background_summer.tscn" id="1_m3avc"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="1_tkvlx"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="2_amvfh"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="3_svxma"]
+[ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="4_qixhn"]
+[ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="5_dgay5"]
+[ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="6_weye8"]
+[ext_resource type="Texture2D" uid="uid://btrm5wxin2w5u" path="res://assets/click_game/animals/horse.png" id="7_0tr8u"]
+[ext_resource type="Texture2D" uid="uid://4t8tq2x2255o" path="res://assets/click_game/animals/turtle.png" id="8_h2ars"]
+[ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="9_xcc0w"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="BackgroundSummer" parent="." instance=ExtResource("1_m3avc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_top = -2.0
+offset_right = 1436.0
+offset_bottom = 128.0
+color = Color(0.909804, 0.843137, 0.72549, 1)
+
+[node name="GoBack" parent="CanvasLayer" instance=ExtResource("1_tkvlx")]
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 121.0
+offset_bottom = 117.0
+scene = 6
+
+[node name="Home" parent="CanvasLayer" instance=ExtResource("2_amvfh")]
+offset_left = 1253.0
+offset_top = 12.0
+offset_right = 1349.0
+offset_bottom = 108.0
+
+[node name="HelpButton" parent="CanvasLayer" instance=ExtResource("3_svxma")]
+offset_left = 1356.0
+offset_top = 37.0
+offset_right = 1406.0
+offset_bottom = 87.0
+
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("4_qixhn")]
+visible = false
+
+[node name="Button" parent="CanvasLayer/WinScreen" index="5"]
+scene = 13
+
+[node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("5_dgay5")]
+offset_left = 570.0
+offset_top = 18.0
+offset_right = 895.0
+offset_bottom = 112.0
+
+[node name="DropableArea" parent="." instance=ExtResource("6_weye8")]
+position = Vector2(783, 756)
+type = "horse"
+icon = ExtResource("7_0tr8u")
+
+[node name="DropableArea2" parent="." instance=ExtResource("6_weye8")]
+position = Vector2(1074, 890)
+type = "turtle"
+icon = ExtResource("8_h2ars")
+
+[node name="DraggbleObject" parent="." instance=ExtResource("9_xcc0w")]
+position = Vector2(138, 885)
+icon = ExtResource("7_0tr8u")
+type = "horse"
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("9_xcc0w")]
+position = Vector2(146, 587)
+icon = ExtResource("8_h2ars")
+type = "turtle"
+
+[editable path="CanvasLayer/WinScreen"]

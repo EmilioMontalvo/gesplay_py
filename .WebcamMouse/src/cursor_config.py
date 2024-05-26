@@ -9,7 +9,7 @@ class CursorConfig(metaclass=Singleton):
         self.spd_left = 40
         self.spd_right = 40
         self.pointer_smooth = 63
-        self.tick_interval_ms = 16
+        self.tick_interval_ms = 30
     
     def start(self):
         pass

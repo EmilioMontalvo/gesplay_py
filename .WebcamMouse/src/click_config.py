@@ -17,3 +17,4 @@ class ClickConfig(metaclass=Singleton):
     def load_from_dict(self, data):
         self.camera_id = data["camera_id"]
         self.gesture_index = data["gesture_index"]
+    

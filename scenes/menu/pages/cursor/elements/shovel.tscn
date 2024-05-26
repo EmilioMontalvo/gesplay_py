@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://katlaj0knpel"]
+
+[ext_resource type="Texture2D" uid="uid://duusfs7khmq0a" path="res://assets/cursor_game/tools/shovel.png" id="1_fprwg"]
+[ext_resource type="Script" path="res://scripts/cursor/shovel.gd" id="1_txfrr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjhsj"]
+radius = 11.3973
+height = 72.3626
+
+[node name="Shovel" type="Node2D"]
+script = ExtResource("1_txfrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 5.6252
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_fprwg")
+flip_h = true
+
+[node name="CollisionDetection" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionDetection"]
+polygon = PackedVector2Array(-9, 13, 13, -4, 25, 12, 23, 29, 5, 30)
+
+[node name="Destruccion" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Destruccion"]
+polygon = PackedVector2Array(-33, -30, 0, -46, 38, -32, 50, 0, 39, 41, 0, 56, -36, 38, -45, 0)
+
+[node name="GrabeDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabeDetection"]
+position = Vector2(-3, -1)
+rotation = -0.662836
+shape = SubResource("CapsuleShape2D_yjhsj")
+
+[connection signal="area_entered" from="CollisionDetection" to="." method="_on_collision_detection_area_entered"]
+[connection signal="body_entered" from="CollisionDetection" to="." method="_on_collision_detection_body_entered"]
+[connection signal="mouse_entered" from="GrabeDetection" to="." method="_on_area_2d_mouse_entered"]

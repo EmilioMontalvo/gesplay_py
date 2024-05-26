@@ -1,46 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://omguc2d7uttv"]
+[gd_scene load_steps=10 format=3 uid="uid://omguc2d7uttv"]
 
-[ext_resource type="Script" path="res://scripts/cursor/tileArea.gd" id="1_iqhpt"]
-[ext_resource type="Texture2D" uid="uid://xn3oxycxmgob" path="res://assets/cursor_game/background/bakery.jpg" id="2_8wujf"]
-[ext_resource type="Texture2D" uid="uid://bopmorhw5skt5" path="res://assets/cursor_game/levels/big_cookie.png" id="3_w8epu"]
-[ext_resource type="PackedScene" uid="uid://brrhiqo3x4rbb" path="res://scenes/menu/components/camera.tscn" id="4_0waxl"]
+[ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_16dhw"]
+[ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="1_c7tgo"]
+[ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="2_6fqg1"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="4_5eb84"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="5_xnbdh"]
+[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_jr1yo"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="6_mm05p"]
 [ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="8_qebgv"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="9_032qq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lilgo"]
-radius = 299.042
-
-[sub_resource type="TileSet" id="TileSet_qnjrc"]
-tile_shape = 3
-tile_size = Vector2i(100, 100)
-
 [node name="Level1" type="Node2D"]
+metadata/_edit_lock_ = true
 
-[node name="Bakery" type="Sprite2D" parent="."]
-position = Vector2(719, 507)
-scale = Vector2(1.39844, 1)
-texture = ExtResource("2_8wujf")
+[node name="level_container" type="Node2D" parent="."]
+script = ExtResource("1_16dhw")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_iqhpt")
+[node name="Terrain" parent="level_container" instance=ExtResource("1_c7tgo")]
+position = Vector2(908, 496)
 
-[node name="BigCookie" type="Sprite2D" parent="Area2D"]
-position = Vector2(743, 516)
-scale = Vector2(0.852857, 0.859599)
-texture = ExtResource("3_w8epu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(746, 513)
-shape = SubResource("CircleShape2D_lilgo")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_qnjrc")
-format = 2
-
-[node name="Camera" parent="." instance=ExtResource("4_0waxl")]
+[node name="Shovel" parent="level_container" instance=ExtResource("2_6fqg1")]
+position = Vector2(320, 474)
+scale = Vector2(1.5, 1.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -77,5 +58,10 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
-[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[node name="Camera2" parent="CanvasLayer" instance=ExtResource("6_jr1yo")]
+offset_left = 2.0
+offset_top = 705.0
+offset_right = 366.0
+offset_bottom = 1023.0
+
+[connection signal="touched" from="level_container/Shovel" to="level_container" method="_on_shovel_touched"]

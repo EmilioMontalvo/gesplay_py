@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://brrhiqo3x4rbb"]
-
-[ext_resource type="Script" path="res://scripts/camera.cs" id="1_uc6r3"]
+[gd_scene format=3 uid="uid://brrhiqo3x4rbb"]
 
 [node name="Camera" type="TextureRect"]
 offset_left = 2.0
@@ -10,4 +8,3 @@ offset_bottom = 1024.0
 expand_mode = 2
 stretch_mode = 5
 flip_h = true
-script = ExtResource("1_uc6r3")

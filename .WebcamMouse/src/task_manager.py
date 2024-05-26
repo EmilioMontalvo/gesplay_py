@@ -35,7 +35,7 @@ class TaskManager(metaclass=Singleton):
             ClickConfig().start()
 
             from src.udp.udp_client import UdpClient
-            # UdpClient().start()
+            UdpClient().start()
 
             from src.camera_manager import CameraManager
             CameraManager().start()

@@ -24,7 +24,7 @@ class Pipeline:
         send_frame=CameraManager().frame
         utils.draw_circle(send_frame, hand_position)
         send_frame=utils.invert_frame(send_frame)
-        # UdpClient().send_bytes(send_frame)
+        UdpClient().send_bytes(send_frame)
     
 
        

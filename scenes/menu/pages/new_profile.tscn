@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_q031h"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_jfn1o"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_po8wo"]
-[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_5j75d"]
+[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_5j75d"]
 [ext_resource type="Texture2D" uid="uid://boddnffiaaf7t" path="res://assets/buttons/icons/FileUpload.png" id="5_07omf"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_pxeno"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_fxcnd"]

@@ -7,6 +7,7 @@ var cameraTexture:TextureRect
 
 func _ready():
 	server.listen(4242)
+	print("UDP server listening:",server.is_listening())
 
 func _process(delta):
 	server.poll() # Important!

@@ -11,7 +11,7 @@ func _ready():
 		interpreter_path = ProjectSettings.globalize_path("res://.WebcamMouse/env/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://.WebcamMouse/main.py")
 	thread = Thread.new()
-	#thread.start(activate)
+	thread.start(activate)
 
 func activate():
 	var output=[]
@@ -20,5 +20,7 @@ func activate():
 
 func _exit_tree():
 	#TODO: send a message to webcam mouse to finish the process
-	#thread.wait_to_finish()
+	var terminate_message=Message.new("exit",{"info": "program terminated"})
+	UdPServer.send_string(terminate_message)
+	thread.wait_to_finish()
 	pass

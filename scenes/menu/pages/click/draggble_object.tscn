@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx8vw"]
 size = Vector2(128, 128)
 
-[node name="DraggbleObject" type="Node2D"]
+[node name="DraggbleObject" type="Node2D" groups=["draggable"]]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_853hc")
 

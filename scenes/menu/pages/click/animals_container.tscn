@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bihef4jxcmgrx"]
+
+[ext_resource type="Texture2D" uid="uid://crbhki0j4mkkn" path="res://assets/click_game/animals_container.png" id="1_bedi4"]
+
+[node name="AnimalsContainer" type="AspectRatioContainer"]
+offset_left = 173.0
+offset_top = 582.0
+offset_right = 213.0
+offset_bottom = 622.0
+scale = Vector2(1.34957, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bedi4")

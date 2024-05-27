@@ -12,6 +12,7 @@ transform = Transform2D(2.95, 0, 0, 2.95, 0, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(249.492, 184.407)
+motion_mirroring = Vector2(1400, 0)
 script = ExtResource("1_yhop3")
 speed = 2.5
 

@@ -12,8 +12,8 @@ var body_ref_temp
 var offset: Vector2
 var initial_pos: Vector2
 
-signal win
-signal lose
+signal success
+signal mistake
 
 func _ready():
 	sprite.texture = icon
@@ -39,10 +39,11 @@ func _process(delta):
 func check_types():
 	if body_ref_temp != null:
 		if body_ref_temp.get_type() == type:
-			win.emit()
+			success.emit()
 		else:
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"global_position",initial_pos,1.0).set_ease(Tween.EASE_OUT)
+			mistake.emit()
 
 func _on_area_2d_body_entered(body: StaticBody2D):
 	if body.is_in_group('dropable'):

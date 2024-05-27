@@ -12,6 +12,7 @@ transform = Transform2D(2.75, 0, 0, 2.75, 0, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(253.818, 210.182)
+motion_mirroring = Vector2(1400, 0)
 script = ExtResource("1_58vap")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]

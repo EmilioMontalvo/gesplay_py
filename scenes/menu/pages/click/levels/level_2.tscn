@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5cxedt52pyqe"]
+
+[ext_resource type="PackedScene" uid="uid://cwfgb1hlu7dei" path="res://scenes/menu/pages/click/backgrounds/background_summer_2.tscn" id="1_dplrj"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_1yvfh"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_e8tdb"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_6qugt"]
+[ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="5_5l8du"]
+[ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_shqn7"]
+[ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_txuhf"]
+[ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="8_82kuq"]
+[ext_resource type="Texture2D" uid="uid://bixltixvuqo7o" path="res://assets/click_game/animals/rabbit.png" id="9_kyrvk"]
+[ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="10_p0p40"]
+[ext_resource type="Texture2D" uid="uid://bc5on6xfb7cfb" path="res://assets/click_game/animals/bird.png" id="11_hd04w"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="BackgroundSummer2" parent="." instance=ExtResource("1_dplrj")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_top = -2.0
+offset_right = 1436.0
+offset_bottom = 128.0
+color = Color(0.909804, 0.843137, 0.72549, 1)
+
+[node name="GoBack" parent="CanvasLayer" instance=ExtResource("2_1yvfh")]
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 121.0
+offset_bottom = 117.0
+scene = 6
+
+[node name="Home" parent="CanvasLayer" instance=ExtResource("3_e8tdb")]
+offset_left = 1253.0
+offset_top = 12.0
+offset_right = 1349.0
+offset_bottom = 108.0
+
+[node name="HelpButton" parent="CanvasLayer" instance=ExtResource("4_6qugt")]
+offset_left = 1356.0
+offset_top = 37.0
+offset_right = 1406.0
+offset_bottom = 87.0
+
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("5_5l8du")]
+visible = false
+
+[node name="Button" parent="CanvasLayer/WinScreen" index="5"]
+scene = 13
+
+[node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("6_shqn7")]
+offset_left = 570.0
+offset_top = 18.0
+offset_right = 895.0
+offset_bottom = 112.0
+
+[node name="AnimalsContainer" parent="." instance=ExtResource("7_txuhf")]
+
+[node name="DraggbleObject" parent="." instance=ExtResource("8_82kuq")]
+position = Vector2(174, 326)
+icon = ExtResource("9_kyrvk")
+type = "rabit"
+
+[node name="DropableArea" parent="." instance=ExtResource("10_p0p40")]
+position = Vector2(1218, 823)
+type = "rabit"
+icon = ExtResource("9_kyrvk")
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("8_82kuq")]
+position = Vector2(174, 533)
+icon = ExtResource("11_hd04w")
+type = "bird"
+
+[node name="DropableArea2" parent="." instance=ExtResource("10_p0p40")]
+position = Vector2(859, 569)
+type = "bird"
+icon = ExtResource("11_hd04w")
+
+[editable path="CanvasLayer/WinScreen"]

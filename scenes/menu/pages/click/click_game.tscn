@@ -79,6 +79,4 @@ position = Vector2(690, 839)
 icon = ExtResource("12_olkwy")
 type = "dog"
 
-[connection signal="win" from="DraggbleObject" to="." method="_on_draggble_object_win"]
-
 [editable path="CanvasLayer/WinScreen"]

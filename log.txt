@@ -1,12 +1,2 @@
-2024-05-26 17:04:07,192 INFO root: <module>: Starting main app
-2024-05-26 17:04:07,192 INFO TaskManager: __init__: Intialize TaskManaller singleton
-2024-05-26 17:04:07,195 INFO TaskManager: receiveData: Listener Started...
-2024-05-26 17:04:07,195 INFO root: __init__: CameraManager Init
-2024-05-26 17:04:07,195 INFO root: start: CameraManager started
-2024-05-26 17:04:08,683 INFO root: __init__: Init HandDetector
-2024-05-26 17:04:08,684 INFO root: start: HandDetector Started
-2024-05-26 17:04:08,692 INFO root: start: MouseController started
-2024-05-26 17:04:08,693 INFO root: main_loop: MouseController thread started
-2024-05-26 17:04:08,693 INFO root: start: ClickController started
-2024-05-26 17:04:08,694 INFO root: main_loop: ClickController thread started
-2024-05-26 17:04:08,694 INFO root: __init__: Init Pipeline
+2024-05-26 18:47:32,346 INFO root: <module>: Starting main app
+2024-05-26 18:47:32,347 INFO TaskManager: __init__: Intialize TaskManaller singleton

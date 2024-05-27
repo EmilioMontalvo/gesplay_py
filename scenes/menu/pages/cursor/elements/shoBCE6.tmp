@@ -1,55 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://katlaj0knpel"]
+[gd_scene load_steps=5 format=3 uid="uid://katlaj0knpel"]
 
 [ext_resource type="Texture2D" uid="uid://duusfs7khmq0a" path="res://assets/cursor_game/tools/shovel.png" id="1_fprwg"]
 [ext_resource type="Script" path="res://scripts/cursor/shovel.gd" id="1_txfrr"]
 [ext_resource type="AudioStream" uid="uid://b4oa8w1wjy2n6" path="res://assets/cursor_game/audio/grabbed shovel.mp3" id="3_x76yn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjhsj"]
-radius = 15.343
+radius = 11.3973
 height = 72.3626
-
-[sub_resource type="Animation" id="Animation_vh3pm"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bunml"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 5)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f1xto"]
-_data = {
-"RESET": SubResource("Animation_bunml"),
-"idle": SubResource("Animation_vh3pm")
-}
 
 [node name="Shovel" type="Node2D"]
 script = ExtResource("1_txfrr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 5)
 rotation = 5.6252
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_fprwg")
@@ -74,12 +36,6 @@ shape = SubResource("CapsuleShape2D_yjhsj")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_x76yn")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_f1xto")
-}
-autoplay = "idle"
 
 [connection signal="area_entered" from="CollisionDetection" to="." method="_on_collision_detection_area_entered"]
 [connection signal="body_entered" from="CollisionDetection" to="." method="_on_collision_detection_body_entered"]

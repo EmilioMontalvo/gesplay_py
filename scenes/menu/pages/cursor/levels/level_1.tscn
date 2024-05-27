@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://omguc2d7uttv"]
+[gd_scene load_steps=12 format=3 uid="uid://omguc2d7uttv"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_16dhw"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="1_c7tgo"]
 [ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="2_6fqg1"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="4_5eb84"]
+[ext_resource type="Texture2D" uid="uid://bv8nvg818g1o" path="res://assets/cursor_game/textures/earth_backgroud.png" id="4_hsklx"]
+[ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="4_igknd"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="5_xnbdh"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_jr1yo"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="6_mm05p"]
@@ -11,17 +13,31 @@
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="9_032qq"]
 
 [node name="Level1" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="level_container" type="Node2D" parent="."]
 script = ExtResource("1_16dhw")
 
-[node name="Terrain" parent="level_container" instance=ExtResource("1_c7tgo")]
-position = Vector2(908, 496)
+[node name="TerrainContainer" type="Node2D" parent="level_container"]
+
+[node name="Terrain" parent="level_container/TerrainContainer" instance=ExtResource("1_c7tgo")]
+position = Vector2(726, 634)
+rotation = 0.3948
+scale = Vector2(6.5, 1.5)
+
+[node name="HardTerrainContainer" type="Node2D" parent="level_container"]
+
+[node name="Polygon2D" type="Polygon2D" parent="level_container/HardTerrainContainer"]
+texture_repeat = 3
+texture = ExtResource("4_hsklx")
+polygon = PackedVector2Array(197, 424, 1, 432, 4, 1021, 1441, 1025, 1441, 273, 723.763, 273, 4, 273, 1, 433, 197, 424, 241, 371, 276, 356, 335, 351, 377, 366, 411, 403, 439, 473, 1036, 716, 1114, 683, 1182, 697, 1233, 729, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 1001, 804, 406, 555, 373, 582, 327, 591, 279, 584, 244, 565, 212, 531, 195, 484)
 
 [node name="Shovel" parent="level_container" instance=ExtResource("2_6fqg1")]
-position = Vector2(320, 474)
+position = Vector2(311, 462)
 scale = Vector2(1.5, 1.5)
+
+[node name="Duck" parent="level_container" instance=ExtResource("4_igknd")]
+position = Vector2(1131, 809)
+scale = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -36,6 +52,7 @@ offset_left = 21.0
 offset_top = 17.0
 offset_right = 121.0
 offset_bottom = 117.0
+scene = 6
 
 [node name="Home" parent="CanvasLayer" instance=ExtResource("5_xnbdh")]
 offset_left = 1253.0

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdmfkqiubkrgr"]
+
+[ext_resource type="Script" path="res://scripts/click_game/level_selector.gd" id="1_14cs1"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="1_ytgyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24ijo"]
+bg_color = Color(0.909804, 0.843137, 0.72549, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="LevelSelector" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -1315.0
+offset_bottom = -899.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14cs1")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ytgyk")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/normal = SubResource("StyleBoxFlat_24ijo")
+text = "1"
+
+[connection signal="pressed" from="Button" to="." method="_on_press_change_to_level"]

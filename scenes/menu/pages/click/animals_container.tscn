@@ -10,4 +10,5 @@ offset_bottom = 622.0
 scale = Vector2(1.34957, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
 texture = ExtResource("1_bedi4")

@@ -34,6 +34,7 @@ func _process(delta):
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self,"global_position",initial_pos,0.2).set_ease(Tween.EASE_OUT)
+				mistake.emit()
 			check_types()
 
 func check_types():

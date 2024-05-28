@@ -1,9 +1,11 @@
 extends Node2D
 
+@onready var background=$Background
+@onready var poligonTerrain=$Polygon2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	background.polygon=poligonTerrain.polygon
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

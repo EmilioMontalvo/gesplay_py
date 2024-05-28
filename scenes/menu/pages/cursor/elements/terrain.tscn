@@ -1,22 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://rfr22tb2d23q"]
+[gd_scene load_steps=4 format=3 uid="uid://rfr22tb2d23q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/terrain.gd" id="1_x8tg2"]
-[ext_resource type="Texture2D" uid="uid://bv8nvg818g1o" path="res://assets/cursor_game/textures/earth_backgroud.png" id="2_jl4rs"]
+[ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="2_diaju"]
+[ext_resource type="Texture2D" uid="uid://5eibq3ywqgbi" path="res://assets/cursor_game/textures/dirt_texture_crack.png" id="3_kvovs"]
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource("1_x8tg2")
 
 [node name="Background" type="Polygon2D" parent="."]
-color = Color(0.317647, 0.14902, 0.0666667, 1)
+texture_filter = 1
+texture_repeat = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
+texture = ExtResource("2_diaju")
+texture_scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-texture_repeat = 3
-color = Color(0.627451, 0.321569, 0.176471, 1)
-texture = ExtResource("2_jl4rs")
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("3_kvovs")
+texture_scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-50, -50, -50, 50, 50, 50, 50, -50)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["destructible"]]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)

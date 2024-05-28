@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5cxedt52pyqe"]
+[gd_scene load_steps=13 format=3 uid="uid://b5cxedt52pyqe"]
 
 [ext_resource type="PackedScene" uid="uid://cwfgb1hlu7dei" path="res://scenes/menu/pages/click/backgrounds/background_summer_2.tscn" id="1_dplrj"]
+[ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_mjyec"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_1yvfh"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_e8tdb"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_6qugt"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bc5on6xfb7cfb" path="res://assets/click_game/animals/bird.png" id="11_hd04w"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_mjyec")
 
 [node name="BackgroundSummer2" parent="." instance=ExtResource("1_dplrj")]
 

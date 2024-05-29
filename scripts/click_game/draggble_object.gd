@@ -11,6 +11,7 @@ var body_ref
 var body_ref_temp
 var offset: Vector2
 var initial_pos: Vector2
+var inside_correct_dropable = false
 
 signal success
 signal mistake
@@ -20,7 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if draggable:
+	if draggable and  !inside_correct_dropable:
 		if Input.is_action_just_pressed("click"):
 			initial_pos = global_position
 			offset = get_global_mouse_position() - global_position
@@ -40,6 +41,7 @@ func _process(delta):
 func check_types():
 	if body_ref_temp != null:
 		if body_ref_temp.get_type() == type:
+			inside_correct_dropable = true
 			success.emit()
 		else:
 			var tween = get_tree().create_tween()
@@ -52,12 +54,6 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 		body.modulate = Color('#F6EEDE',1)
 		body_ref = body
 		body_ref_temp = body
-		'''
-		if body.get_type() == type:
-			win.emit()
-		else:
-			lose.emit()
-		'''
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group('dropable'):
@@ -65,8 +61,6 @@ func _on_area_2d_body_exited(body):
 		body_ref_temp = null
 		#body.modulate = Color('#F6EEDE',0.7)
 		body.modulate = Color('#000000',1.0)
-		
-
 
 func _on_area_2d_mouse_entered():
 	if not GlobalClick.is_dragging:

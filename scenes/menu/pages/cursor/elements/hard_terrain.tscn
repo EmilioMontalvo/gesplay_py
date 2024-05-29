@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hexa172hxqv2"]
+
+[ext_resource type="Script" path="res://scripts/cursor/hard_terrain.gd" id="1_bmoxt"]
+[ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="1_ina3t"]
+
+[node name="HardTerrain" type="Node2D"]
+script = ExtResource("1_bmoxt")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_ina3t")
+texture_scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)

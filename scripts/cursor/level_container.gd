@@ -22,7 +22,7 @@ func _on_shovel_touched(body):
 		get_points_from(body)
 		shovel.drop_end()
 		$Time.stop()
-		
+
 
 func destroy_terrain(body):
 	var terrain = body.get_parent()

@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=17 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
 [ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="3_2t78l"]
 [ext_resource type="Texture2D" uid="uid://5awuj8m5kixh" path="res://assets/cursor_game/tilemap/Grass.png" id="4_a1ok2"]
 [ext_resource type="Texture2D" uid="uid://comwkk8su7b1r" path="res://assets/cursor_game/tools/weel.png" id="5_bxqtj"]
-[ext_resource type="Texture2D" uid="uid://c18mqjmx2frjl" path="res://assets/cursor_game/textures/wall-1.jpg" id="6_g4v7a"]
 [ext_resource type="PackedScene" uid="uid://d04yhq1okfugp" path="res://scenes/menu/pages/cursor/elements/point.tscn" id="7_davyq"]
+[ext_resource type="PackedScene" uid="uid://hexa172hxqv2" path="res://scenes/menu/pages/cursor/elements/hard_terrain.tscn" id="7_n25we"]
 [ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="7_sfrg7"]
 [ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="8_c1atr"]
 [ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
+[ext_resource type="Texture2D" uid="uid://c0s7dag1nf71t" path="res://assets/cursor_game/tilemap/Terrain (16x16).png" id="11_8y8st"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
 texture = ExtResource("4_a1ok2")
@@ -38,32 +39,193 @@ texture = ExtResource("4_a1ok2")
 [sub_resource type="TileSet" id="TileSet_tosla"]
 sources/1 = SubResource("TileSetAtlasSource_ilkx7")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxnti"]
+texture = ExtResource("11_8y8st")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hdpn8"]
+sources/0 = SubResource("TileSetAtlasSource_hxnti")
+
 [node name="level_container" type="Node2D"]
 script = ExtResource("1_t7ag8")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -2
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-0.0178816, 0)
+scale = Vector2(0.991059, 1)
+color = Color(0.329412, 0.329412, 0.329412, 1)
+texture = ExtResource("3_2t78l")
+texture_scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(2, 257, -2, 1031, 1452, 1030, 1446.75, 580.482, 1443, 260)
 
 [node name="TerrainContainer" type="Node2D" parent="."]
 
 [node name="Terrain" parent="TerrainContainer" instance=ExtResource("2_7lave")]
 position = Vector2(493, 497)
 
-[node name="Polygon2D" parent="TerrainContainer/Terrain" index="1"]
-polygon = PackedVector2Array(-50, -50, -41, 2, -70, 13, -65, 54, -59, 88, 68, 108, 205, 190, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96)
+[node name="Polygon2D" parent="TerrainContainer/Terrain" index="0"]
+polygon = PackedVector2Array(-39, -82, -15, -18, -58, 14, -57, 79, 68, 108, 205, 190, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
 
 [node name="Terrain2" parent="TerrainContainer" instance=ExtResource("2_7lave")]
 position = Vector2(470, 614)
 
-[node name="Polygon2D" parent="TerrainContainer/Terrain2" index="1"]
+[node name="Polygon2D" parent="TerrainContainer/Terrain2" index="0"]
 position = Vector2(22, 6)
 polygon = PackedVector2Array(-88, -65, 121, 182, 397, 246, 510, 224, 492, 159, 556, 126, 370, 64, 77, -59)
 
 [node name="HardTerrainContainer" type="Node2D" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="HardTerrainContainer"]
-texture_filter = 1
-texture_repeat = 2
-texture = ExtResource("3_2t78l")
-texture_scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(197, 424, 1, 432, 4, 1021, 1441, 1025, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 197, 424, 241, 371, 276, 356, 335, 351, 377, 366, 411, 403, 446, 448, 661, 553, 741, 535, 712, 459, 761, 378, 856, 378, 931, 442, 915, 513, 870, 563, 922, 652, 1028, 659, 1114, 683, 1182, 697, 1233, 729, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 999, 836, 872, 853, 725, 818, 545, 702, 406, 555, 366, 578, 325, 585, 279, 584, 244, 565, 212, 531, 195, 484)
+[node name="HardTerrain" parent="HardTerrainContainer" instance=ExtResource("7_n25we")]
+position = Vector2(-1, 268)
+
+[node name="Polygon2D" parent="HardTerrainContainer/HardTerrain" index="0"]
+position = Vector2(-1, -272)
+polygon = PackedVector2Array(215, 423, 1, 432, 4, 1034, 1439, 1035, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 215, 423, 247, 378, 296, 361, 344, 356, 397, 375, 430, 422, 507, 452, 661, 553, 741, 535, 720, 496, 711, 448, 730, 407, 761, 378, 829, 369, 891, 378, 915, 404, 931, 442, 932, 484, 921, 519, 898, 545, 870, 563, 922, 652, 1028, 659, 1065, 691, 1134, 684, 1182, 697, 1235, 713, 1244.32, 735.974, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 993, 810, 876, 824, 743, 735, 545, 702, 427, 542, 350, 585, 258, 573, 208, 502)
 
 [node name="TileMap" type="TileMap" parent="HardTerrainContainer"]
 texture_filter = 1
@@ -73,15 +235,10 @@ format = 2
 layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196616, 65537, 0, 196617, 65537, 0, 196618, 65537, 0, 196619, 65537, 0, 196620, 65537, 0, 196621, 65537, 0, 196622, 65537, 0, 196623, 65537, 0, 196624, 65537, 0, 196625, 65537, 0)
 
 [node name="Well" type="Sprite2D" parent="HardTerrainContainer"]
+z_index = 2
 position = Vector2(1120, 197)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("5_bxqtj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="HardTerrainContainer"]
-z_index = -1
-position = Vector2(1147, 946)
-scale = Vector2(0.5, 0.325401)
-texture = ExtResource("6_g4v7a")
 
 [node name="PointsContainer" type="Node2D" parent="."]
 
@@ -89,7 +246,7 @@ texture = ExtResource("6_g4v7a")
 position = Vector2(822, 459)
 
 [node name="Shovel" parent="." instance=ExtResource("7_sfrg7")]
-position = Vector2(311, 462)
+position = Vector2(333, 462)
 scale = Vector2(1.5, 1.5)
 
 [node name="Duck" parent="." instance=ExtResource("8_c1atr")]
@@ -103,13 +260,50 @@ offset_right = 1323.0
 offset_bottom = 190.0
 
 [node name="Time" parent="." instance=ExtResource("11_5i0cn")]
-offset_left = 3.0
-offset_top = 192.0
-offset_right = 3.0
-offset_bottom = 192.0
+offset_left = 1.0
+offset_top = 177.0
+offset_right = 1.0
+offset_bottom = 177.0
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -2
+position = Vector2(0.675, 7.45)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_hdpn8")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245205, 458752, 1, 1245206, 458752, 5, 1245207, 458752, 5, 1245208, 458752, 5, 1245209, 458752, 5, 917530, 458752, 5, 589827, 458752, 5, 655363, 458752, 5, 1179669, 458752, 4, 1179670, 458752, 4, 1179671, 458752, 4, 1179672, 458752, 4, 1179673, 458752, 4, 720901, 458752, 8, 720902, 458752, 8, 720903, 458752, 8, 720904, 458752, 8, 720900, 458752, 8)
+
+[node name="LinesContainer" type="Node2D" parent="."]
+
+[node name="Line2D2" type="Line2D" parent="LinesContainer"]
+position = Vector2(493, 7)
+points = PackedVector2Array(235, 515, 213, 471, 225, 396, 291, 348, 385, 363, 434, 416, 436, 498, 387, 554)
+width = 20.0
+texture = ExtResource("3_2t78l")
+texture_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="Line2D" type="Line2D" parent="LinesContainer"]
+points = PackedVector2Array(408, 553, 346, 582, 254, 565, 203, 492, 212, 406, 255, 365, 328, 348, 393, 364, 431, 405)
+width = 20.0
+texture = ExtResource("3_2t78l")
+texture_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="Line2D3" type="Line2D" parent="LinesContainer"]
+position = Vector2(803, 328)
+points = PackedVector2Array(183, 486, 220, 555, 272, 585, 348, 595, 427, 571, 460, 511, 460, 445, 417, 376, 344, 347, 267, 353)
+width = 20.0
+texture = ExtResource("3_2t78l")
+texture_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1
 
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
 [connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]
 
 [editable path="TerrainContainer/Terrain"]
 [editable path="TerrainContainer/Terrain2"]
+[editable path="HardTerrainContainer/HardTerrain"]

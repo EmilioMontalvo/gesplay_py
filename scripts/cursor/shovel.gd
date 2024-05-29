@@ -10,6 +10,7 @@ class_name Shovel
 @export var grab_points=50
 @export var dig_points=50
 
+var can_destroy=true
 var grabbed = false
 var firstTime=true
 signal touched
@@ -51,4 +52,8 @@ func get_destruction_polygon():
 func drop_end():
 	grabbed=false
 	$GrabeDetection.queue_free()
+
+func out_of_terrain():
+	can_destroy=false
+	$Sprite2D.modulate = Color(0, 0, 1) # blue shade
 

@@ -48,3 +48,7 @@ func _on_collision_detection_body_entered(body):
 func get_destruction_polygon():
 	return destructionPoligon
 
+func drop_end():
+	grabbed=false
+	$GrabeDetection.queue_free()
+

@@ -13,14 +13,16 @@ func _process(delta):
 	pass
 
 
-func _on_shovel_touched(body):
-	
+func _on_shovel_touched(body):	
 	if body.is_in_group("destructible"):
 		destroy_terrain(body)
 	elif body.is_in_group("points"):
-		var pointNode=body.get_parent()
-		points.add_points(pointNode.get_value())
-		pointNode.explode()
+		get_points_from(body)
+	elif body.is_in_group("objective"):
+		get_points_from(body)
+		shovel.drop_end()
+		$Time.stop()
+		
 
 func destroy_terrain(body):
 	var terrain = body.get_parent()
@@ -44,6 +46,10 @@ func destroy_terrain(body):
 	else:
 		terrain.set_new_terrain_poligon(resultsArray)
 
+func get_points_from(body):
+	var pointNode=body.get_parent()
+	points.add_points(pointNode.get_value())
+	pointNode.explode()
 
 func _on_shovel_has_been_grabbed():
 	points.add_points(shovel.grab_points)

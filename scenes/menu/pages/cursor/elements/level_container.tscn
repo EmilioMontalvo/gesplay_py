@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=14 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="7_sfrg7"]
 [ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="8_c1atr"]
 [ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
+[ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
 texture = ExtResource("4_a1ok2")
@@ -97,9 +98,15 @@ scale = Vector2(3, 3)
 
 [node name="Points" parent="." instance=ExtResource("9_uqjid")]
 offset_left = 1323.0
-offset_top = 180.0
+offset_top = 190.0
 offset_right = 1323.0
-offset_bottom = 180.0
+offset_bottom = 190.0
+
+[node name="Time" parent="." instance=ExtResource("11_5i0cn")]
+offset_left = 3.0
+offset_top = 192.0
+offset_right = 3.0
+offset_bottom = 192.0
 
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
 [connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]

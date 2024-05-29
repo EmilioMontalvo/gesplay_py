@@ -19,6 +19,7 @@ func get_value():
 
 func explode():
 	audioPlayer.play()	
+	$StaticBody2D.queue_free()
 
 
 func _on_audio_stream_player_2d_finished():

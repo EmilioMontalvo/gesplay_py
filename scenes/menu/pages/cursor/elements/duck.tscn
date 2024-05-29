@@ -1,7 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://okkc7bx1vat6"]
+[gd_scene load_steps=28 format=3 uid="uid://okkc7bx1vat6"]
 
 [ext_resource type="Texture2D" uid="uid://cspj5w88wjmig" path="res://assets/cursor_game/ducky_3_spritesheet.png" id="1_ae08d"]
 [ext_resource type="Script" path="res://scripts/cursor/duck.gd" id="1_qeam3"]
+[ext_resource type="AudioStream" uid="uid://bw4ki8cgdcsys" path="res://assets/cursor_game/audio/level-passed.mp3" id="3_ydg0a"]
+[ext_resource type="AudioStream" uid="uid://bb4au6ajvetit" path="res://assets/cursor_game/audio/quack.mp3" id="4_xwvxw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msrpm"]
 atlas = ExtResource("1_ae08d")
@@ -103,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"happy",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -189,14 +191,18 @@ _data = {
 "idle": SubResource("Animation_araac")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4gi8"]
+radius = 12.0
+
 [node name="Duck" type="Node2D"]
 script = ExtResource("1_qeam3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pu6wr")
+animation = &"happy"
 autoplay = "default"
-frame_progress = 0.539068
+frame_progress = 0.0853351
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -204,3 +210,15 @@ libraries = {
 "": SubResource("AnimationLibrary_3epyr")
 }
 autoplay = "idle"
+
+[node name="ObjectiveBody2D" type="StaticBody2D" parent="." groups=["objective"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_h4gi8")
+
+[node name="WinAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ydg0a")
+
+[node name="Quack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xwvxw")

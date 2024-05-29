@@ -46,5 +46,5 @@ func get_time_to_complete_level():
 
 func show_win_screen():
 	var win_screen = preload("res://scenes/menu/pages/click/win_screen_click_game.tscn").instantiate()
-	win_screen.set_global_position(get_window().size / 2)
+	win_screen.set_global_position(get_viewport_rect().size / 2)
 	add_child(win_screen)

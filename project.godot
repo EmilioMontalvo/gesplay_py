@@ -23,6 +23,7 @@ ConfigManager="*res://scripts/config_manager.gd"
 Pythonexecutor="*res://scripts/pythonexecutor.gd"
 MenuManager="*res://scripts/menu/menu_manager.gd"
 GlobalClick="*res://scripts/click_game/GlobalClick.gd"
+CurrentClickLevel="*res://scripts/click_game/utils/CurrentClickLevel.gd"
 
 [display]
 

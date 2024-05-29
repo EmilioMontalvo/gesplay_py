@@ -4,9 +4,11 @@ var success_count = 0
 var success_to_win = 0
 var mistakes_count = 0
 var time_init
+var actual_level: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("actual level: ",actual_level)
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')
 	success_to_win = get_tree().get_nodes_in_group('dropable').size()
 	for draggable in dragabbles_list:
@@ -31,6 +33,7 @@ func increase_success():
 
 func check_success():
 	if success_count >= success_to_win:
+		show_win_screen()
 		print('win')
 		print('Time to complete level: ',get_time_to_complete_level())
 		
@@ -40,3 +43,8 @@ func increase_mistakes():
 	
 func get_time_to_complete_level():
 	return Time.get_unix_time_from_system() - time_init
+
+func show_win_screen():
+	var win_screen = preload("res://scenes/menu/pages/click/win_screen_click_game.tscn").instantiate()
+	win_screen.set_global_position(get_window().size / 2)
+	add_child(win_screen)

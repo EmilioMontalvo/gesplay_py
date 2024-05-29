@@ -13,5 +13,5 @@ func _process(delta):
 	pass
 
 func _on_press_change_to_level():
+	CurrentClickLevel.level = int(level)
 	get_tree().change_scene_to_file("res://scenes/menu/pages/click/levels/level_"+level+".tscn")
-	

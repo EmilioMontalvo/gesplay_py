@@ -16,7 +16,7 @@ enum MENU_LEVEL {
 		CURSOR_LEVELS,
 		LOGIN,
 		CURSOR_LEVEL1,
-		CLICK_GAME
+		CLICK_LEVELS
 	}
 var menus = {
 	MENU_LEVEL.MAIN : preload("res://scenes/menu/pages/main_menu.tscn"), 
@@ -31,7 +31,7 @@ var menus = {
 	MENU_LEVEL.CURSOR_LEVELS : preload("res://scenes/menu/pages/cursor/cursor_levels.tscn"),
 	MENU_LEVEL.LOGIN : preload("res://scenes/menu/pages/login.tscn"),
 	MENU_LEVEL.CURSOR_LEVEL1 : preload("res://scenes/menu/pages/cursor/levels/level_1.tscn"),
-	MENU_LEVEL.CLICK_GAME: preload("res://scenes/menu/pages/click/click_game.tscn")
+	MENU_LEVEL.CLICK_LEVELS: preload("res://scenes/menu/pages/click/click_levels.tscn")
 }
 
 var current_scene:Node

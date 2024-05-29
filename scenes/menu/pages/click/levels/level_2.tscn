@@ -59,24 +59,24 @@ offset_bottom = 112.0
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_txuhf")]
 
-[node name="DraggbleObject" parent="." instance=ExtResource("8_82kuq")]
-position = Vector2(174, 326)
-icon = ExtResource("9_kyrvk")
-type = "rabit"
-
 [node name="DropableArea" parent="." instance=ExtResource("10_p0p40")]
 position = Vector2(1218, 823)
 type = "rabit"
 icon = ExtResource("9_kyrvk")
 
-[node name="DraggbleObject2" parent="." instance=ExtResource("8_82kuq")]
-position = Vector2(174, 533)
-icon = ExtResource("11_hd04w")
-type = "bird"
-
 [node name="DropableArea2" parent="." instance=ExtResource("10_p0p40")]
 position = Vector2(859, 569)
 type = "bird"
 icon = ExtResource("11_hd04w")
+
+[node name="DraggbleObject" parent="." instance=ExtResource("8_82kuq")]
+position = Vector2(174, 326)
+icon = ExtResource("9_kyrvk")
+type = "rabit"
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("8_82kuq")]
+position = Vector2(174, 533)
+icon = ExtResource("11_hd04w")
+type = "bird"
 
 [editable path="CanvasLayer/WinScreen"]

@@ -1,14 +1,19 @@
 extends Node2D
 
+class_name Shovel
+
 @onready var audioPlayer=$AudioStreamPlayer2D
 @onready var destructionPoligon=$Destruccion/CollisionPolygon2D
 @onready var animation=$AnimationPlayer
 @onready var grab_timer = Timer.new()
 
+@export var grab_points=50
+@export var dig_points=50
+
 var grabbed = false
 var firstTime=true
 signal touched
-
+signal has_been_grabbed
 
 func _ready():
 	add_child(grab_timer)
@@ -31,6 +36,7 @@ func _on_collision_detection_area_entered(area:Area2D):
 func _on_area_2d_mouse_entered():
 	grabbed=true
 	if firstTime:
+		emit_signal("has_been_grabbed")
 		audioPlayer.play()
 		animation.stop()
 		firstTime=false

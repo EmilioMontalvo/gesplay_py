@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhjupdts1dg3q"]
+
+[ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
+[ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
+[ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="3_2t78l"]
+[ext_resource type="Texture2D" uid="uid://5awuj8m5kixh" path="res://assets/cursor_game/tilemap/Grass.png" id="4_a1ok2"]
+[ext_resource type="Texture2D" uid="uid://comwkk8su7b1r" path="res://assets/cursor_game/tools/weel.png" id="5_bxqtj"]
+[ext_resource type="Texture2D" uid="uid://c18mqjmx2frjl" path="res://assets/cursor_game/textures/wall-1.jpg" id="6_g4v7a"]
+[ext_resource type="PackedScene" uid="uid://d04yhq1okfugp" path="res://scenes/menu/pages/cursor/elements/point.tscn" id="7_davyq"]
+[ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="7_sfrg7"]
+[ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="8_c1atr"]
+[ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
+texture = ExtResource("4_a1ok2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tosla"]
+sources/1 = SubResource("TileSetAtlasSource_ilkx7")
+
+[node name="level_container" type="Node2D"]
+script = ExtResource("1_t7ag8")
+
+[node name="TerrainContainer" type="Node2D" parent="."]
+
+[node name="Terrain" parent="TerrainContainer" instance=ExtResource("2_7lave")]
+position = Vector2(493, 497)
+
+[node name="Polygon2D" parent="TerrainContainer/Terrain" index="1"]
+polygon = PackedVector2Array(-50, -50, -41, 2, -70, 13, -65, 54, -59, 88, 68, 108, 205, 190, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96)
+
+[node name="Terrain2" parent="TerrainContainer" instance=ExtResource("2_7lave")]
+position = Vector2(470, 614)
+
+[node name="Polygon2D" parent="TerrainContainer/Terrain2" index="1"]
+position = Vector2(22, 6)
+polygon = PackedVector2Array(-88, -65, 121, 182, 397, 246, 510, 224, 492, 159, 556, 126, 370, 64, 77, -59)
+
+[node name="HardTerrainContainer" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="HardTerrainContainer"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("3_2t78l")
+texture_scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(197, 424, 1, 432, 4, 1021, 1441, 1025, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 197, 424, 241, 371, 276, 356, 335, 351, 377, 366, 411, 403, 446, 448, 661, 553, 741, 535, 712, 459, 761, 378, 856, 378, 931, 442, 915, 513, 870, 563, 922, 652, 1028, 659, 1114, 683, 1182, 697, 1233, 729, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 999, 836, 872, 853, 725, 818, 545, 702, 406, 555, 366, 578, 325, 585, 279, 584, 244, 565, 212, 531, 195, 484)
+
+[node name="TileMap" type="TileMap" parent="HardTerrainContainer"]
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_tosla")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196616, 65537, 0, 196617, 65537, 0, 196618, 65537, 0, 196619, 65537, 0, 196620, 65537, 0, 196621, 65537, 0, 196622, 65537, 0, 196623, 65537, 0, 196624, 65537, 0, 196625, 65537, 0)
+
+[node name="Well" type="Sprite2D" parent="HardTerrainContainer"]
+position = Vector2(1120, 197)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_bxqtj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="HardTerrainContainer"]
+z_index = -1
+position = Vector2(1147, 946)
+scale = Vector2(0.5, 0.325401)
+texture = ExtResource("6_g4v7a")
+
+[node name="PointsContainer" type="Node2D" parent="."]
+
+[node name="Point" parent="PointsContainer" instance=ExtResource("7_davyq")]
+position = Vector2(822, 459)
+
+[node name="Shovel" parent="." instance=ExtResource("7_sfrg7")]
+position = Vector2(311, 462)
+scale = Vector2(1.5, 1.5)
+
+[node name="Duck" parent="." instance=ExtResource("8_c1atr")]
+position = Vector2(1131, 809)
+scale = Vector2(3, 3)
+
+[node name="Points" parent="." instance=ExtResource("9_uqjid")]
+offset_left = 1323.0
+offset_top = 180.0
+offset_right = 1323.0
+offset_bottom = 180.0
+
+[connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
+[connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]
+
+[editable path="TerrainContainer/Terrain"]
+[editable path="TerrainContainer/Terrain2"]

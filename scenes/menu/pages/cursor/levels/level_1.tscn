@@ -1,46 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://omguc2d7uttv"]
+[gd_scene load_steps=9 format=3 uid="uid://omguc2d7uttv"]
 
-[ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_16dhw"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_b8157"]
-[ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="1_c7tgo"]
-[ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="2_6fqg1"]
-[ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="3_bphly"]
+[ext_resource type="PackedScene" uid="uid://bhjupdts1dg3q" path="res://scenes/menu/pages/cursor/elements/level_container.tscn" id="2_6owtb"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="4_5eb84"]
-[ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="4_igknd"]
-[ext_resource type="Texture2D" uid="uid://5awuj8m5kixh" path="res://assets/cursor_game/tilemap/Grass.png" id="5_je2an"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="5_xnbdh"]
-[ext_resource type="Texture2D" uid="uid://comwkk8su7b1r" path="res://assets/cursor_game/tools/weel.png" id="6_bjaef"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_jr1yo"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="6_mm05p"]
-[ext_resource type="Texture2D" uid="uid://c18mqjmx2frjl" path="res://assets/cursor_game/textures/wall-1.jpg" id="7_5ymvs"]
 [ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="8_qebgv"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="9_032qq"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
-texture = ExtResource("5_je2an")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_tosla"]
-sources/1 = SubResource("TileSetAtlasSource_ilkx7")
 
 [node name="Level1" type="Node2D"]
 
@@ -55,51 +22,7 @@ position = Vector2(-30, -503)
 [node name="ParallaxLayer3" parent="ParallaxBackground" index="2"]
 position = Vector2(2, -615)
 
-[node name="level_container" type="Node2D" parent="."]
-script = ExtResource("1_16dhw")
-
-[node name="TerrainContainer" type="Node2D" parent="level_container"]
-
-[node name="Terrain" parent="level_container/TerrainContainer" instance=ExtResource("1_c7tgo")]
-position = Vector2(493, 497)
-
-[node name="Polygon2D" parent="level_container/TerrainContainer/Terrain" index="1"]
-polygon = PackedVector2Array(-50, -50, -41, 2, -70, 13, -65, 54, -92, 59, 138, 311, 527, 388, 505, 327, 529, 285, 501, 238, 537, 160, 495, 96)
-
-[node name="HardTerrainContainer" type="Node2D" parent="level_container"]
-
-[node name="Polygon2D" type="Polygon2D" parent="level_container/HardTerrainContainer"]
-texture_filter = 1
-texture_repeat = 2
-texture = ExtResource("3_bphly")
-texture_scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(197, 424, 1, 432, 4, 1021, 1441, 1025, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 197, 424, 241, 371, 276, 356, 335, 351, 377, 366, 411, 403, 446, 448, 661, 553, 864, 672, 1028, 659, 1114, 683, 1182, 697, 1233, 729, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 999, 836, 872, 853, 725, 818, 545, 702, 406, 555, 366, 578, 325, 585, 279, 584, 244, 565, 212, 531, 195, 484)
-
-[node name="TileMap" type="TileMap" parent="level_container/HardTerrainContainer"]
-texture_filter = 1
-scale = Vector2(5, 5)
-tile_set = SubResource("TileSet_tosla")
-format = 2
-layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196616, 65537, 0, 196617, 65537, 0, 196618, 65537, 0, 196619, 65537, 0, 196620, 65537, 0, 196621, 65537, 0, 196622, 65537, 0, 196623, 65537, 0, 196624, 65537, 0, 196625, 65537, 0)
-
-[node name="Well" type="Sprite2D" parent="level_container/HardTerrainContainer"]
-position = Vector2(1120, 197)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("6_bjaef")
-
-[node name="Sprite2D2" type="Sprite2D" parent="level_container/HardTerrainContainer"]
-z_index = -1
-position = Vector2(1147, 946)
-scale = Vector2(0.5, 0.325401)
-texture = ExtResource("7_5ymvs")
-
-[node name="Shovel" parent="level_container" instance=ExtResource("2_6fqg1")]
-position = Vector2(311, 462)
-scale = Vector2(1.5, 1.5)
-
-[node name="Duck" parent="level_container" instance=ExtResource("4_igknd")]
-position = Vector2(1131, 809)
-scale = Vector2(3, 3)
+[node name="level_container" parent="." instance=ExtResource("2_6owtb")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -144,7 +67,4 @@ offset_top = 705.0
 offset_right = 366.0
 offset_bottom = 1023.0
 
-[connection signal="touched" from="level_container/Shovel" to="level_container" method="_on_shovel_touched"]
-
 [editable path="ParallaxBackground"]
-[editable path="level_container/TerrainContainer/Terrain"]

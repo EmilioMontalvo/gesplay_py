@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://d04yhq1okfugp"]
+
+[ext_resource type="Texture2D" uid="uid://bn0kkmour86eh" path="res://assets/cursor_game/star.png" id="1_4qxid"]
+[ext_resource type="Script" path="res://scripts/cursor/point.gd" id="1_hx34s"]
+[ext_resource type="AudioStream" uid="uid://ee0mq6aehn2e" path="res://assets/cursor_game/audio/bonus-points.mp3" id="3_rgov6"]
+
+[sub_resource type="Animation" id="Animation_kyq08"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 6), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0flhh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6foys"]
+_data = {
+"RESET": SubResource("Animation_0flhh"),
+"idle": SubResource("Animation_kyq08")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ard2"]
+radius = 19.0
+height = 44.0
+
+[node name="Point" type="Node2D"]
+script = ExtResource("1_hx34s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_4qxid")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6foys")
+}
+autoplay = "idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["points"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_5ard2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rgov6")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

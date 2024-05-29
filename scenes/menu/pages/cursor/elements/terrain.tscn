@@ -8,6 +8,7 @@
 script = ExtResource("1_x8tg2")
 
 [node name="Background" type="Polygon2D" parent="."]
+z_index = -1
 texture_filter = 1
 texture_repeat = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)

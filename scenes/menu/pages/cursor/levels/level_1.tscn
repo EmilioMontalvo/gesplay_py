@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://omguc2d7uttv"]
+[gd_scene load_steps=10 format=3 uid="uid://omguc2d7uttv"]
 
+[ext_resource type="Script" path="res://scripts/cursor/cursor_level.gd" id="1_5cbu7"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_b8157"]
 [ext_resource type="PackedScene" uid="uid://bhjupdts1dg3q" path="res://scenes/menu/pages/cursor/elements/level_container.tscn" id="2_6owtb"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="4_5eb84"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="9_032qq"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_5cbu7")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_b8157")]
 
@@ -66,5 +68,7 @@ offset_left = 2.0
 offset_top = 705.0
 offset_right = 366.0
 offset_bottom = 1023.0
+
+[connection signal="won" from="level_container" to="." method="_on_level_container_won"]
 
 [editable path="ParallaxBackground"]

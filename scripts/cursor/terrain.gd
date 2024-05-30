@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var background=$Background
 @onready var poligonTerrain=$Polygon2D
 
 # Called when the node enters the scene tree for the first time.

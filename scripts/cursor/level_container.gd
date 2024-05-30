@@ -3,6 +3,8 @@ extends Node2D
 @onready var shovel=$Shovel
 @onready var destructionPoligon=$Shovel.get_destruction_polygon()
 @onready var points=$Points
+
+signal won
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,6 +24,7 @@ func _on_shovel_touched(body):
 		get_points_from(body)
 		shovel.drop_end()
 		$Time.stop()
+		emit_signal("won")
 
 
 func destroy_terrain(body):

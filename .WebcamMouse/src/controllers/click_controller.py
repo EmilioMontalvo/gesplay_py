@@ -50,7 +50,7 @@ class ClickController(metaclass=Singleton):
                         landmark_list = LandmarkProcessor().calc_landmark_list(image = debug_image, landmarks= hand_landmarks)
                         pre_process_landmark_list = LandmarkProcessor().pre_process_landmark(landmark_list)
                         gesture = KeyPointClassifier().predict_gesture(pre_process_landmark_list)
-                        print(gesture)
+                        logging.info(gesture)
                         if gesture == 1:
                             if not self.is_clicked:
                                 self.is_clicked = True

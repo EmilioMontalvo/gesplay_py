@@ -9,6 +9,7 @@ var actual_level: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("actual level: ",actual_level)
+	MenuManager.set_current_scene(get_node("."))
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')
 	success_to_win = get_tree().get_nodes_in_group('dropable').size()
 	for draggable in dragabbles_list:

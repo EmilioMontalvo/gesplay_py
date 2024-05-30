@@ -4,6 +4,8 @@ from src.singleton_meta import Singleton
 class ClickConfig(metaclass=Singleton):
     def __init__(self):
         self.camera_id = 0
+        #   0 -> catch
+        #   1 -> nip
         self.gesture_index = 0
     
     def start(self):

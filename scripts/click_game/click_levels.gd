@@ -2,7 +2,7 @@ extends Control
 
 @onready var box_container_top: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer
 @onready var box_container_bottom: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer2
-var max_level = 2
+var max_level = 3
 
 func _ready():
 	var level_selector = preload("res://scenes/menu/pages/click/level_selector.tscn")

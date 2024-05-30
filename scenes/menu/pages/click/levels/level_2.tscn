@@ -49,7 +49,10 @@ offset_bottom = 87.0
 visible = false
 
 [node name="Time" parent="CanvasLayer/WinScreen" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 87.0
+offset_bottom = 38.0
 
 [node name="Button" parent="CanvasLayer/WinScreen" index="6"]
 scene = 13

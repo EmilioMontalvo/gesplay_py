@@ -12,6 +12,12 @@ func _process(delta):
 
 func set_points(points):
 	$points.text=str(points)
+	if points >= 300:
+		$"3Stars".visible=true
+	elif points >= 200:
+		$"2Stars".visible=true
+	else:
+		$"1Star".visible=true
 
 func set_time(time):
 	$Time.text=str(time)

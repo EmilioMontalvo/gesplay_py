@@ -1,9 +1,11 @@
 extends Node
 
 @export var scene:int = 0
+@export var locked=false
 
 func _on_pressed():
-	MenuManager.load_menu(scene)
+	if not locked:
+		MenuManager.load_menu(scene)
 
 
 func _on_acept_pressed():

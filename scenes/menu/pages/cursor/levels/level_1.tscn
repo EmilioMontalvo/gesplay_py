@@ -66,8 +66,8 @@ offset_bottom = 112.0
 [node name="Camera2" parent="CanvasLayer" instance=ExtResource("6_jr1yo")]
 offset_left = 2.0
 offset_top = 705.0
-offset_right = 366.0
-offset_bottom = 1023.0
+offset_right = 434.0
+offset_bottom = 1029.0
 
 [connection signal="won" from="level_container" to="." method="_on_level_container_won"]
 

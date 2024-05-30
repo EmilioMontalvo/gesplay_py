@@ -1,0 +1,168 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1yvwiyjrha7b"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_dnlg5"]
+[ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_qd6ou"]
+[ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_x6i2t"]
+[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
+[ext_resource type="Texture2D" uid="uid://boddnffiaaf7t" path="res://assets/buttons/icons/FileUpload.png" id="5_d3uvr"]
+[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_jrv5l"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_7h5t8"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="8_lu1k0"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_yiyny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl8ok"]
+bg_color = Color(0.909804, 0.843137, 0.72549, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="NewProfile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dnlg5")
+
+[node name="ColorRect" parent="." instance=ExtResource("2_qd6ou")]
+layout_mode = 0
+
+[node name="TitleText" parent="." instance=ExtResource("3_x6i2t")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.0
+offset_top = 50.0
+offset_right = 322.0
+offset_bottom = 173.0
+grow_horizontal = 2
+text = "Nuevo Perfil"
+
+[node name="LblfirstName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 241.0
+offset_right = 461.0
+offset_bottom = 279.0
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Nombre"
+
+[node name="TxtFirstName" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 292.0
+offset_right = 748.0
+offset_bottom = 340.0
+placeholder_text = "
+"
+
+[node name="LblSecondName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 355.0
+offset_right = 463.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Apellido"
+
+[node name="TxtSecondName" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 406.0
+offset_right = 748.0
+offset_bottom = 454.0
+placeholder_text = "
+"
+
+[node name="LblBithday" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 469.0
+offset_right = 661.0
+offset_bottom = 507.0
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Fecha de nacimiento"
+
+[node name="TxtBirthday" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 520.0
+offset_right = 748.0
+offset_bottom = 568.0
+placeholder_text = "
+"
+
+[node name="LblDescription" type="Label" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 583.0
+offset_right = 518.0
+offset_bottom = 621.0
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Descripción"
+
+[node name="TxtDescription" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 634.0
+offset_right = 1107.0
+offset_bottom = 772.0
+placeholder_text = "
+"
+
+[node name="LblImage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 241.0
+offset_right = 944.0
+offset_bottom = 279.0
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Imagen"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 292.0
+offset_right = 1107.0
+offset_bottom = 568.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bl8ok")
+icon = ExtResource("5_d3uvr")
+icon_alignment = 1
+
+[node name="AceptCancel" parent="." instance=ExtResource("6_jrv5l")]
+layout_mode = 1
+offset_left = 334.0
+offset_top = 840.0
+offset_right = -328.0
+offset_bottom = -128.0
+
+[node name="HelpButton" parent="." instance=ExtResource("7_7h5t8")]
+layout_mode = 0
+offset_left = 1339.0
+offset_top = 71.0
+offset_right = 1389.0
+offset_bottom = 121.0
+
+[node name="Home" parent="." instance=ExtResource("8_lu1k0")]
+layout_mode = 0
+offset_left = 1222.0
+offset_top = 39.0
+offset_right = 1318.0
+offset_bottom = 135.0
+
+[node name="GoBack" parent="." instance=ExtResource("9_yiyny")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 46.0
+offset_right = 150.0
+offset_bottom = 146.0
+scene = 3

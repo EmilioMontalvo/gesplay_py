@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://crxlp4j1ka3r2"]
+[gd_scene load_steps=3 format=3 uid="uid://crxlp4j1ka3r2"]
 
+[ext_resource type="Texture2D" uid="uid://cshudthpsrfix" path="res://assets/placeholder.jpg" id="1_4f5ef"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_56jns"]
 
 [node name="Camera" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_4f5ef")
 expand_mode = 2
 script = ExtResource("1_56jns")

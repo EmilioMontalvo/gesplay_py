@@ -54,6 +54,7 @@ expand_mode = 3
 
 [node name="2Stars" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 570.0
 offset_top = 363.0
 offset_right = 875.011
@@ -63,6 +64,7 @@ expand_mode = 3
 
 [node name="1Star" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 570.0
 offset_top = 363.0
 offset_right = 875.011

@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=13 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
 [ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
-[ext_resource type="PackedScene" uid="uid://brrhiqo3x4rbb" path="res://scenes/menu/components/camera.tscn" id="6_nlow1"]
+[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="7_01jom"]
+[ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="7_qsrdo"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="8_smhg0"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="9_1gns7"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
@@ -110,12 +111,19 @@ offset_top = 218.0
 offset_right = 1380.0
 offset_bottom = 889.0
 
-[node name="Camera" parent="Panel" instance=ExtResource("6_nlow1")]
+[node name="Camera" parent="Panel" instance=ExtResource("6_t8p8r")]
+z_index = 1
 layout_mode = 0
-offset_left = 230.0
-offset_top = 286.0
-offset_right = 654.0
-offset_bottom = 605.0
+offset_left = 6.0
+offset_top = 380.0
+offset_right = 397.0
+offset_bottom = 664.0
+
+[node name="Node2D" type="Node2D" parent="Panel"]
+position = Vector2(-508, -218)
+
+[node name="Line2D" type="Line2D" parent="Panel/Node2D"]
+script = ExtResource("7_qsrdo")
 
 [node name="AceptCancel" parent="." instance=ExtResource("7_01jom")]
 layout_mode = 1
@@ -149,3 +157,6 @@ offset_bottom = 100.0
 [node name="Tempdesing" type="Sprite2D" parent="."]
 position = Vector2(254, 687)
 texture = ExtResource("11_f73g3")
+
+[connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

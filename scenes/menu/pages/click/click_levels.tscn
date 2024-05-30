@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3equh34obd6g"]
 
 [ext_resource type="PackedScene" uid="uid://cwskjf0b8gan4" path="res://scenes/menu/pages/click/backgrounds/background_ocean.tscn" id="1_qvfye"]
+[ext_resource type="Script" path="res://scripts/click_game/click_levels.gd" id="1_uaft4"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_7obw2"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_8jr0r"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_uil07"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="5_cfrxt"]
 [ext_resource type="Texture2D" uid="uid://uhrnuab3ww5e" path="res://assets/click_game/levels_container.png" id="6_sg7wb"]
-[ext_resource type="PackedScene" uid="uid://bdmfkqiubkrgr" path="res://scenes/menu/pages/click/level_selector.tscn" id="7_irpd4"]
 
 [node name="ClickLevels" type="Control"]
 layout_mode = 3
@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uaft4")
 
 [node name="BackgroundOcean" parent="." instance=ExtResource("1_qvfye")]
 
@@ -98,30 +99,6 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="LevelSelector" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "1"
-
-[node name="LevelSelector2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "2"
-
-[node name="LevelSelector3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "3"
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 80
-
-[node name="LevelSelector" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "4"
-
-[node name="LevelSelector2" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "5"
-
-[node name="LevelSelector3" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("7_irpd4")]
-layout_mode = 2
-level = "6"

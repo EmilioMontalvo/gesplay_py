@@ -35,6 +35,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ytgyk")
 theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_24ijo")
-text = "1"
 
 [connection signal="pressed" from="Button" to="." method="_on_press_change_to_level"]

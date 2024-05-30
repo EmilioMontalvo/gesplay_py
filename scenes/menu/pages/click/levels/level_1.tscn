@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="6_weye8"]
 [ext_resource type="Texture2D" uid="uid://btrm5wxin2w5u" path="res://assets/click_game/animals/horse.png" id="7_0tr8u"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_ah3kq"]
-[ext_resource type="Texture2D" uid="uid://4t8tq2x2255o" path="res://assets/click_game/animals/turtle.png" id="8_h2ars"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="9_xcc0w"]
+[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="12_dhx8j"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_88cwj")
@@ -31,7 +31,7 @@ offset_left = 21.0
 offset_top = 17.0
 offset_right = 121.0
 offset_bottom = 117.0
-scene = 6
+scene = 13
 
 [node name="Home" parent="CanvasLayer" instance=ExtResource("2_amvfh")]
 offset_left = 1253.0
@@ -48,7 +48,10 @@ offset_bottom = 87.0
 [node name="WinScreen" parent="CanvasLayer" instance=ExtResource("4_qixhn")]
 visible = false
 
-[node name="Button" parent="CanvasLayer/WinScreen" index="5"]
+[node name="Time" parent="CanvasLayer/WinScreen" index="5"]
+layout_mode = 0
+
+[node name="Button" parent="CanvasLayer/WinScreen" index="6"]
 scene = 13
 
 [node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("5_dgay5")]
@@ -57,26 +60,23 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
+[node name="Camera" parent="CanvasLayer" instance=ExtResource("12_dhx8j")]
+offset_left = 1010.0
+offset_top = 702.0
+offset_right = 1442.0
+offset_bottom = 1026.0
+size_flags_vertical = 8
+
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_ah3kq")]
 
 [node name="DropableArea" parent="." instance=ExtResource("6_weye8")]
-position = Vector2(606, 781)
+position = Vector2(702, 722)
 type = "horse"
 icon = ExtResource("7_0tr8u")
-
-[node name="DropableArea2" parent="." instance=ExtResource("6_weye8")]
-position = Vector2(936, 895)
-type = "turtle"
-icon = ExtResource("8_h2ars")
 
 [node name="DraggbleObject" parent="." instance=ExtResource("9_xcc0w")]
-position = Vector2(175, 596)
+position = Vector2(175, 326)
 icon = ExtResource("7_0tr8u")
 type = "horse"
-
-[node name="DraggbleObject2" parent="." instance=ExtResource("9_xcc0w")]
-position = Vector2(175, 370)
-icon = ExtResource("8_h2ars")
-type = "turtle"
 
 [editable path="CanvasLayer/WinScreen"]

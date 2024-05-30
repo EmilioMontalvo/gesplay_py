@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://mdf5sf8oq4ue"]
+[gd_scene load_steps=8 format=3 uid="uid://mdf5sf8oq4ue"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_8i40w"]
 [ext_resource type="Texture2D" uid="uid://cl7dmt75jd16e" path="res://assets/cursor_game/stars.png" id="2_0t7t8"]
+[ext_resource type="Script" path="res://scripts/cursor/win_screen.gd" id="2_03isi"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_l1t0l"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="4_0s2kd"]
 [ext_resource type="Texture2D" uid="uid://bn0kkmour86eh" path="res://assets/cursor_game/star.png" id="4_uynci"]
+[ext_resource type="Texture2D" uid="uid://culxmbem5mfk8" path="res://assets/cursor_game/tools/stopwatch_color.png" id="7_dyvsa"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -14,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8i40w")
+script = ExtResource("2_03isi")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -25,7 +28,7 @@ anchor_bottom = 0.5
 offset_left = -217.0
 offset_top = -195.0
 offset_right = 214.0
-offset_bottom = 269.0
+offset_bottom = 355.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -54,13 +57,20 @@ offset_right = 859.0
 offset_bottom = 396.0
 text = "Nivel Completado"
 
-[node name="Text2" parent="." instance=ExtResource("3_l1t0l")]
+[node name="points" parent="." instance=ExtResource("3_l1t0l")]
 layout_mode = 0
-offset_left = 714.0
-offset_top = 608.0
-offset_right = 793.0
-offset_bottom = 646.0
+offset_left = 721.0
+offset_top = 610.0
+offset_right = 800.0
+offset_bottom = 648.0
 text = "500"
+
+[node name="Time" parent="." instance=ExtResource("3_l1t0l")]
+offset_left = 722.0
+offset_top = 684.0
+offset_right = 809.0
+offset_bottom = 722.0
+text = "00:00"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -70,9 +80,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -93.0
-offset_top = 168.0
+offset_top = 244.0
 offset_right = 85.0
-offset_bottom = 242.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Continuar"
@@ -87,5 +97,15 @@ offset_right = 704.459
 offset_bottom = 651.0
 texture = ExtResource("4_uynci")
 expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 657.0
+offset_right = 729.0
+offset_bottom = 747.0
+texture = ExtResource("7_dyvsa")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

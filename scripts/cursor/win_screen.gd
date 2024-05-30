@@ -1,6 +1,5 @@
-extends Node
+extends Control
 
-@onready var win_screen=$CanvasLayer/WinScreen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +10,8 @@ func _ready():
 func _process(delta):
 	pass
 
+func set_points(points):
+	$points.text=str(points)
 
-func _on_level_container_won():
-	win_screen.visible=true
-	win_screen.set_points(0)
-	win_screen.set_time(0)
+func set_time(time):
+	$Time.text=str(time)

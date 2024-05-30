@@ -48,7 +48,10 @@ offset_bottom = 87.0
 [node name="WinScreen" parent="CanvasLayer" instance=ExtResource("5_5l8du")]
 visible = false
 
-[node name="Button" parent="CanvasLayer/WinScreen" index="5"]
+[node name="Time" parent="CanvasLayer/WinScreen" index="5"]
+layout_mode = 0
+
+[node name="Button" parent="CanvasLayer/WinScreen" index="6"]
 scene = 13
 
 [node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("6_shqn7")]

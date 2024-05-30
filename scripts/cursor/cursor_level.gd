@@ -14,5 +14,5 @@ func _process(delta):
 
 func _on_level_container_won():
 	win_screen.visible=true
-	win_screen.set_points(0)
-	win_screen.set_time(0)
+	win_screen.set_points($level_container.get_points())
+	win_screen.set_time($level_container.get_time())

@@ -56,3 +56,9 @@ func get_points_from(body):
 
 func _on_shovel_has_been_grabbed():
 	points.add_points(shovel.grab_points)
+
+func get_points():
+	return points.actualPoints
+
+func get_time():
+	return $Time.get_time()

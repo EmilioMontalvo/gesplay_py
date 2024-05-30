@@ -15,7 +15,7 @@ func _process(delta):
 	timeLabel.text = "%0.2f" % elapsed
 
 func get_time():
-	return elapsed
+	return "%0.2f" % elapsed
 
 func stop():
 	running=false

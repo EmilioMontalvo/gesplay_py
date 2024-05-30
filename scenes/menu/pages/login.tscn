@@ -83,12 +83,31 @@ offset_bottom = 711.0
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 578.0
-offset_top = 789.0
+offset_top = 748.0
 offset_right = 874.0
-offset_bottom = 859.0
+offset_bottom = 818.0
 text = "Iniciar Sesión"
 script = ExtResource("6_liukh")
 scene = 1
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 639.0
+offset_top = 811.0
+offset_right = 785.0
+offset_bottom = 851.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_font_sizes/font_size = 20
+text = "Registrate aquí"
+script = ExtResource("6_liukh")
+scene = 14
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 61.0
@@ -118,3 +137,4 @@ expand_mode = 3
 stretch_mode = 4
 
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/LinkButton" to="CanvasLayer/Control/LinkButton" method="_on_pressed"]

@@ -32,4 +32,3 @@ class CursorConfig(metaclass=Singleton):
         self.spd_right = data["spd_right"]
         self.pointer_smooth = data["pointer_smooth"]
         self.tick_interval_ms = data["tick_interval_ms"]
-        print(self.pointer_smooth)

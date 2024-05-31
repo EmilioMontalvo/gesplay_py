@@ -9,12 +9,13 @@ class CameraManager(metaclass=Singleton):
         self.is_started = False
         self.frame = None
         self.is_started = False
+        self.camera_id = 0
     
     def start(self):
         if not self.is_started:
             logging.info("CameraManager started")
             self.is_started = True
-            self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+            self.cap = cv2.VideoCapture(self.camera_id, cv2.CAP_DSHOW)
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
             self.cap.set(cv2.CAP_PROP_FPS, 30)

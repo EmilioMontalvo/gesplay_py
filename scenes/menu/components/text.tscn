@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ds5geqnu7s00i"]
 
-[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_4fdws"]
+[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_4fdws"]
 
 [node name="Text" type="Label"]
 offset_right = 79.0

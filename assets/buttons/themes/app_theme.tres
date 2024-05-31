@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://8783p7rjqna0"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://8783p7rjqna0"]
 
 [ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://8xec03d3y1yv" path="res://assets/buttons/icons/comboboxArrow.png" id="3_yyf8g"]
 [ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="4_7ji4q"]
 [ext_resource type="StyleBox" uid="uid://c5136rgck2sao" path="res://assets/buttons/resources/style_box_menu_button.tres" id="5_hv0ic"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpcf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kx80i"]
 bg_color = Color(0.964706, 0.933333, 0.870588, 1)
@@ -35,13 +37,18 @@ Button/styles/pressed = ExtResource("4_7ji4q")
 HSlider/icons/grabber = ExtResource("1_rh0dc")
 HSlider/icons/grabber_disabled = ExtResource("1_rh0dc")
 HSlider/icons/grabber_highlight = ExtResource("1_rh0dc")
+HSlider/icons/tick = null
 Label/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Label/font_sizes/font_size = 30
 Label/fonts/font = ExtResource("1_unok0")
 LineEdit/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+LineEdit/colors/font_outline_color = Color(1, 1, 1, 0)
 LineEdit/colors/font_placeholder_color = Color(0.145098, 0.0980392, 0.34902, 1)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 0)
+LineEdit/colors/selection_color = Color(0.501961, 0.501961, 0.501961, 0)
 LineEdit/font_sizes/font_size = 30
 LineEdit/fonts/font = ExtResource("1_unok0")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_hwpcf")
 LineEdit/styles/normal = ExtResource("2_fnnhp")
 LinkButton/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 LinkButton/colors/font_hover_color = Color(0.239404, 0.172234, 0.536684, 1)

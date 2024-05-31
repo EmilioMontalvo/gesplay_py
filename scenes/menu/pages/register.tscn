@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs3cj24dgjclq"]
+[gd_scene load_steps=11 format=3 uid="uid://bs3cj24dgjclq"]
 
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_f0sx1"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_5bgvs"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_oe1aj"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_qfho6"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_7iuf6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kre1g"]
+line_spacing = 5.0
+font_size = 20
+font_color = Color(0.172549, 0.129412, 0.368627, 1)
 
 [node name="Register" type="Control"]
 layout_mode = 3
@@ -32,67 +37,99 @@ theme = ExtResource("2_5bgvs")
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 462.0
-offset_top = 410.0
+offset_top = 400.0
 offset_right = 984.0
-offset_bottom = 899.0
+offset_bottom = 980.0
 theme = ExtResource("2_5bgvs")
 
 [node name="Text" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 32.0
-offset_right = 175.0
-offset_bottom = 70.0
+offset_top = 50.0
+offset_right = 336.0
+offset_bottom = 88.0
 text = "Correo electronico"
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 73.0
+offset_top = 91.0
 offset_right = 476.0
-offset_bottom = 130.0
+offset_bottom = 148.0
 
 [node name="Text2" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 151.0
+offset_top = 169.0
 offset_right = 231.0
-offset_bottom = 189.0
+offset_bottom = 207.0
 text = "Contraseña
 "
 
 [node name="LineEdit2" type="LineEdit" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 192.0
+offset_top = 210.0
 offset_right = 476.0
-offset_bottom = 249.0
+offset_bottom = 267.0
+secret = true
 
 [node name="Text3" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 270.0
-offset_right = 231.0
-offset_bottom = 308.0
-text = "Repite la contraseña
+offset_top = 288.0
+offset_right = 392.0
+offset_bottom = 326.0
+text = "Confirmar Contraseña
 "
 
 [node name="LineEdit3" type="LineEdit" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 311.0
+offset_top = 329.0
 offset_right = 476.0
-offset_bottom = 368.0
+offset_bottom = 386.0
+secret = true
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
-offset_left = 116.0
-offset_top = 392.0
-offset_right = 412.0
-offset_bottom = 462.0
+offset_left = 110.0
+offset_top = 468.0
+offset_right = 406.0
+offset_bottom = 538.0
 text = "Resgistrarse"
 script = ExtResource("4_pr16r")
 scene = 1
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.0
+offset_top = 121.5
+offset_right = 171.0
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_font_sizes/font_size = 20
+text = "Iniciar Sesión"
+script = ExtResource("4_pr16r")
+scene = 7
+
+[node name="Text4" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 415.0
+offset_right = 301.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 31
+text = "Ya tienes una cuenta?
+"
+label_settings = SubResource("LabelSettings_kre1g")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -142,3 +179,4 @@ expand_mode = 3
 stretch_mode = 4
 
 [connection signal="pressed" from="CanvasLayer/Control/Panel/Button" to="CanvasLayer/Control/Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/LinkButton" to="CanvasLayer/Control/Panel/LinkButton" method="_on_pressed"]

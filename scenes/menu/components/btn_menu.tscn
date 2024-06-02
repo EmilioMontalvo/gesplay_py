@@ -1,7 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkrpkt34vd8vj"]
+[gd_scene load_steps=7 format=3 uid="uid://dkrpkt34vd8vj"]
 
-[ext_resource type="Theme" uid="uid://dxiaadhqntj3d" path="res://assets/buttons/themes/menu_button.tres" id="1_amyfb"]
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_ia0lm"]
+[ext_resource type="StyleBox" uid="uid://c5136rgck2sao" path="res://assets/buttons/resources/style_box_menu_button.tres" id="2_688ny"]
 [ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="2_s301x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmcfp"]
+bg_color = Color(0.333333, 1, 0.611765, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fde3"]
+bg_color = Color(0.0392157, 0.682353, 0.376471, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0u0c"]
 atlas = ExtResource("2_s301x")
@@ -11,7 +36,10 @@ margin = Rect2(15, 0, 0, 0)
 [node name="BtnMenu" type="Button"]
 offset_right = 444.0
 offset_bottom = 91.0
-theme = ExtResource("1_amyfb")
+theme = ExtResource("1_ia0lm")
+theme_override_styles/normal = ExtResource("2_688ny")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tmcfp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7fde3")
 icon = SubResource("AtlasTexture_u0u0c")
 
 [node name="Text" type="Label" parent="."]

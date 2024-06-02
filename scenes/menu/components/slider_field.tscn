@@ -8,6 +8,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1027.0
+offset_bottom = -942.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_gj6im")
@@ -16,7 +18,7 @@ script = ExtResource("2_fqnhp")
 [node name="HSlider3" type="HSlider" parent="."]
 layout_mode = 0
 offset_top = 31.0
-offset_right = 342.0
+offset_right = 412.0
 offset_bottom = 102.0
 
 [node name="Label" type="Label" parent="."]
@@ -28,9 +30,10 @@ text = "FieldName
 
 [node name="SpinBox" type="SpinBox" parent="."]
 layout_mode = 0
-offset_left = 208.0
-offset_right = 342.0
-offset_bottom = 40.0
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 412.0
+offset_bottom = 41.0
 alignment = 1
 
 [connection signal="value_changed" from="HSlider3" to="." method="_on_h_slider_3_value_changed"]

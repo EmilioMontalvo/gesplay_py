@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
-[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="7_01jom"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="8_smhg0"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="9_1gns7"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
-[ext_resource type="Texture2D" uid="uid://buw77k3ho7fqc" path="res://assets/cursor_game/tempdesing.png" id="11_f73g3"]
+[ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 
 [node name="CursorConfiguration" type="Control"]
 layout_mode = 3
@@ -44,65 +44,13 @@ theme_override_font_sizes/font_size = 40
 text = "Cursor
 "
 
-[node name="OptionButton" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 352.0
-offset_right = 473.0
-offset_bottom = 432.0
-item_count = 3
-popup/item_0/text = "  Mano Derecha"
-popup/item_0/id = 0
-popup/item_1/text = "  Mano Izquierda"
-popup/item_1/id = 1
-popup/item_2/text = "  Cabeza"
-popup/item_2/id = 2
-
-[node name="HSlider" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 530.0
-offset_right = 467.0
-offset_bottom = 601.0
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 290.0
-offset_right = 305.0
-offset_bottom = 328.0
-text = "Reconocimiento"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 475.0
-offset_right = 233.0
-offset_bottom = 513.0
-text = "Sensibilidad"
-
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 605.0
-offset_right = 157.0
-offset_bottom = 643.0
+offset_left = 55.0
+offset_top = 787.0
+offset_right = 160.0
+offset_bottom = 825.0
 text = "Diseño"
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 749.0
-offset_right = 198.0
-offset_bottom = 787.0
-text = "Opacidad"
-
-[node name="HSlider2" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 804.0
-offset_right = 467.0
-offset_bottom = 875.0
 
 [node name="Panel" parent="." instance=ExtResource("5_q5ouv")]
 layout_mode = 0
@@ -154,9 +102,19 @@ offset_top = 50.0
 offset_right = 1417.0
 offset_bottom = 100.0
 
-[node name="Tempdesing" type="Sprite2D" parent="."]
-position = Vector2(254, 687)
-texture = ExtResource("11_f73g3")
+[node name="SliderField" parent="." instance=ExtResource("12_nggvr")]
+layout_mode = 1
+offset_left = 70.0
+offset_top = 286.0
+offset_right = -956.0
+offset_bottom = -656.0
+
+[node name="SliderField2" parent="." instance=ExtResource("12_nggvr")]
+layout_mode = 1
+offset_left = 70.0
+offset_top = 410.0
+offset_right = -956.0
+offset_bottom = -532.0
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

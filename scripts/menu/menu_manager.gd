@@ -7,7 +7,7 @@ enum MENU_LEVEL {
 		MAIN,
 		NEW_PROFILE,
 		PROFILES,
-		GENERAL_SETTINGS,
+		SETTINGS,
 		CURSOR_CONFIGURATION,
 		GAMES_MENU,
 		LOANDING,
@@ -17,13 +17,14 @@ enum MENU_LEVEL {
 		LOGIN,
 		CURSOR_LEVEL1,
 		CLICK_LEVELS,
-		REGISTER
+		REGISTER,
+		GENERAL_SETTINGS
 	}
 var menus = {
 	MENU_LEVEL.MAIN : preload("res://scenes/menu/pages/main_menu.tscn"), 
 	MENU_LEVEL.NEW_PROFILE : preload("res://scenes/menu/pages/new_profile.tscn"),
 	MENU_LEVEL.PROFILES : preload("res://scenes/menu/pages/profiles.tscn"),
-	MENU_LEVEL.GENERAL_SETTINGS : preload("res://scenes/menu/pages/settings_menu.tscn"),
+	MENU_LEVEL.SETTINGS : preload("res://scenes/menu/pages/settings_menu.tscn"),
 	MENU_LEVEL.CURSOR_CONFIGURATION : preload("res://scenes/menu/pages/cursor_configuration.tscn"),
 	MENU_LEVEL.GAMES_MENU : preload("res://scenes/menu/pages/games_menu.tscn"),
 	MENU_LEVEL.LOANDING : preload("res://scenes/menu/pages/loanding.tscn"),
@@ -33,7 +34,8 @@ var menus = {
 	MENU_LEVEL.LOGIN : preload("res://scenes/menu/pages/login.tscn"),
 	MENU_LEVEL.CURSOR_LEVEL1 : preload("res://scenes/menu/pages/cursor/levels/level_1.tscn"),
 	MENU_LEVEL.CLICK_LEVELS: preload("res://scenes/menu/pages/click/click_levels.tscn"),
-	MENU_LEVEL.REGISTER: preload("res://scenes/menu/pages/register.tscn")
+	MENU_LEVEL.REGISTER: preload("res://scenes/menu/pages/register.tscn"),
+	MENU_LEVEL.GENERAL_SETTINGS: preload("res://scenes/menu/pages/general_settings.tscn")
 }
 
 var current_scene:Node

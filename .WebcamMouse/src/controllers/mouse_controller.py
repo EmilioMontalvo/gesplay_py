@@ -35,7 +35,9 @@ class MouseController(metaclass=Singleton):
             #create a new thread
             self.pool = futures.ThreadPoolExecutor(max_workers=1)
             self.pool.submit(self.main_loop)
-            
+    
+    def pause(self):
+        self.is_active=False           
 
     
     def stop(self):

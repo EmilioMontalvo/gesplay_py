@@ -1,5 +1,6 @@
 import logging
 import src.utils as utils
+import time
 from src.camera_manager import CameraManager
 from src.detectors.hand_detector import HandDetector
 from src.udp.udp_client import UdpClient
@@ -10,6 +11,7 @@ from src.controllers.click_controller import ClickController
 class Pipeline:
     def __init__(self):
         logging.info("Init Pipeline")
+        self.last_clicked = False
 
     def pipeline_tick(self) -> None:
         frame_rgb = CameraManager().get_frame_rgb()
@@ -18,13 +20,13 @@ class Pipeline:
         frame_rgb.flags.writeable = False
         results_image = HandDetector().hands.process(frame_rgb)
         frame_rgb.flags.writeable = True
-        MouseController().act(track_loc=hand_position)
         ClickController().act(image_results=results_image, image=frame)
+        if ClickController().is_clicked and not self.last_clicked:
+            MouseController().pause()
+        self.last_clicked = ClickController().is_clicked
+        MouseController().act(track_loc=hand_position)
 
-        send_frame=CameraManager().frame
+        send_frame = CameraManager().frame
         utils.draw_circle(send_frame, hand_position)
-        send_frame=utils.invert_frame(send_frame)
+        send_frame = utils.invert_frame(send_frame)
         UdpClient().send_bytes(send_frame)
-    
-
-       

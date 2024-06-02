@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dd54atv3cfg7u"]
+[gd_scene load_steps=21 format=3 uid="uid://dd54atv3cfg7u"]
 
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_baw05"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="2_bg1pn"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_4rljh"]
 [ext_resource type="PackedScene" uid="uid://dkrpkt34vd8vj" path="res://scenes/menu/components/btn_menu.tscn" id="4_s0b3s"]
@@ -9,7 +10,6 @@
 [ext_resource type="Theme" uid="uid://dxiaadhqntj3d" path="res://assets/buttons/themes/menu_button.tres" id="7_jbsl3"]
 [ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="8_k2wsd"]
 [ext_resource type="Texture2D" uid="uid://cxs3leoxcqj6b" path="res://assets/buttons/icons/ControlComputerIcon.png" id="9_kacvu"]
-[ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="10_s23mt"]
 [ext_resource type="Texture2D" uid="uid://fsbkcjx4xrna" path="res://assets/buttons/icons/Games.png" id="11_difrc"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="12_r5y54"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="13_654sp"]
@@ -29,6 +29,30 @@ atlas = ExtResource("6_xou64")
 region = Rect2(186, 0, 62, 62)
 margin = Rect2(15, 0, 0, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6l1d"]
+bg_color = Color(0.858824, 0.588235, 0.933333, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jc0g"]
+bg_color = Color(0.74902, 0.333333, 0.858824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmmjv"]
 atlas = ExtResource("9_kacvu")
 region = Rect2(0, 0, 169, 93)
@@ -46,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_baw05")
 
 [node name="Background" parent="." instance=ExtResource("1_6ya5u")]
 layout_mode = 0
@@ -128,9 +153,9 @@ offset_top = 796.0
 offset_right = 1349.0
 offset_bottom = 934.0
 theme = ExtResource("7_jbsl3")
-theme_override_styles/normal = ExtResource("8_k2wsd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b6l1d")
 theme_override_styles/hover = ExtResource("8_k2wsd")
-theme_override_styles/pressed = ExtResource("8_k2wsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6jc0g")
 icon = SubResource("AtlasTexture_nmmjv")
 
 [node name="Text" type="Label" parent="ControlComputer"]
@@ -147,10 +172,6 @@ offset_left = 814.0
 offset_top = 357.0
 offset_right = 1287.0
 offset_bottom = 673.0
-theme = ExtResource("7_jbsl3")
-theme_override_styles/normal = ExtResource("10_s23mt")
-theme_override_styles/hover = ExtResource("10_s23mt")
-theme_override_styles/pressed = ExtResource("10_s23mt")
 icon = SubResource("AtlasTexture_mslbd")
 icon_alignment = 1
 vertical_icon_alignment = 0

@@ -114,10 +114,10 @@ offset_bottom = 889.0
 [node name="Camera" parent="Panel" instance=ExtResource("6_t8p8r")]
 z_index = 1
 layout_mode = 0
-offset_left = 6.0
-offset_top = 380.0
-offset_right = 397.0
-offset_bottom = 664.0
+offset_left = 5.0
+offset_top = 381.0
+offset_right = 396.0
+offset_bottom = 665.0
 
 [node name="Node2D" type="Node2D" parent="Panel"]
 position = Vector2(-508, -218)

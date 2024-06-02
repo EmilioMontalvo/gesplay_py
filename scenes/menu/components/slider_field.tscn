@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://s24jn5usad8q"]
+[gd_scene load_steps=3 format=3 uid="uid://s24jn5usad8q"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_gj6im"]
+[ext_resource type="Script" path="res://scripts/cursor/slider_field.gd" id="2_fqnhp"]
 
 [node name="SliderField" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_gj6im")
+script = ExtResource("2_fqnhp")
 
 [node name="HSlider3" type="HSlider" parent="."]
 layout_mode = 0
@@ -24,11 +26,12 @@ offset_bottom = 38.0
 text = "FieldName
 "
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="SpinBox" type="SpinBox" parent="."]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 1.0
-offset_right = 303.0
-offset_bottom = 41.0
-placeholder_text = "14"
+offset_left = 208.0
+offset_right = 342.0
+offset_bottom = 40.0
 alignment = 1
+
+[connection signal="value_changed" from="HSlider3" to="." method="_on_h_slider_3_value_changed"]
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]

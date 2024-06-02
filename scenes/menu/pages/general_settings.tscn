@@ -43,32 +43,10 @@ theme_override_fonts/font = ExtResource("2_1jd16")
 theme_override_font_sizes/font_size = 100
 text = "Configuración"
 
-[node name="GoBack" parent="." instance=ExtResource("11_ejfp2")]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 24.0
-offset_right = 126.0
-offset_bottom = 124.0
-scene = 1
-
-[node name="Home" parent="." instance=ExtResource("12_86b1d")]
-layout_mode = 0
-offset_left = 1248.0
-offset_top = 30.0
-offset_right = 1344.0
-offset_bottom = 126.0
-
-[node name="HelpButton" parent="." instance=ExtResource("13_ik6jx")]
-layout_mode = 0
-offset_left = 1365.0
-offset_top = 55.0
-offset_right = 1415.0
-offset_bottom = 105.0
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_right = 266.0
-offset_bottom = 206.0
+offset_right = 1102.0
+offset_bottom = 580.0
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_top = 250
 
@@ -153,6 +131,28 @@ bus_name = "Music"
 [node name="VolumeSFX" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" instance=ExtResource("8_iqox8")]
 layout_mode = 2
 bus_name = "SFX"
+
+[node name="GoBack" parent="." instance=ExtResource("11_ejfp2")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 124.0
+scene = 4
+
+[node name="Home" parent="." instance=ExtResource("12_86b1d")]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 30.0
+offset_right = 1344.0
+offset_bottom = 126.0
+
+[node name="HelpButton" parent="." instance=ExtResource("13_ik6jx")]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 55.0
+offset_right = 1415.0
+offset_bottom = 105.0
 
 [node name="AceptCancel" parent="." instance=ExtResource("8_8w3m3")]
 layout_mode = 1

@@ -23,6 +23,13 @@ func _on_value_changed(value: float):
 	volume_label.text = str(get_volume_string(value))
 	set_volume_icon()
 
+func _on_button_pressed():
+	if(get_current_volume_linear() > 0):
+		last_volume_linear = get_current_volume_linear()
+		set_volume_icon_slider(0)
+	else:
+		set_volume_icon_slider(last_volume_linear)
+
 func get_volume_string(value: float) -> String:
 	return str(int(value * 100))
 
@@ -35,14 +42,7 @@ func set_volume_icon():
 func get_current_volume_linear() -> float:
 	return db_to_linear(AudioServer.get_bus_volume_db(bus_index))
 
-func _on_button_pressed():
-	if(get_current_volume_linear() > 0):
-		last_volume_linear = get_current_volume_linear()
-		AudioServer.set_bus_volume_db(bus_index, 0)
-		set_volume_icon()
-		volume_slider.value = 0
-	else:
-		AudioServer.set_bus_volume_db(bus_index, linear_to_db(last_volume_linear))
-		set_volume_icon()
-		volume_slider.value = last_volume_linear
-	
+func set_volume_icon_slider(value: float):
+	AudioServer.set_bus_volume_db(bus_index, value)
+	set_volume_icon()
+	volume_slider.value = value

@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=14 format=3 uid="uid://8783p7rjqna0"]
 
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
-[ext_resource type="FontFile" uid="uid://dt21vy2j7shjg" path="res://assets/font/Montserrat-Regular.ttf" id="1_unok0"]
+[ext_resource type="FontFile" uid="uid://dluutf34frym6" path="res://assets/font/Montserrat-Regular.ttf" id="1_unok0"]
 [ext_resource type="StyleBox" uid="uid://bnh6qrhlmi4vg" path="res://assets/buttons/resources/style_box_input.tres" id="2_fnnhp"]
 [ext_resource type="Texture2D" uid="uid://8xec03d3y1yv" path="res://assets/buttons/icons/comboboxArrow.png" id="3_yyf8g"]
 [ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="4_7ji4q"]

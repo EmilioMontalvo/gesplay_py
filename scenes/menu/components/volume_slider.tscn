@@ -1,10 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyptrbjyf36xs"]
+[gd_scene load_steps=3 format=3 uid="uid://dyptrbjyf36xs"]
 
 [ext_resource type="Script" path="res://scripts/menu/volume_slider.gd" id="1_nhkk6"]
+[ext_resource type="Texture2D" uid="uid://ddjojpj47dlo1" path="res://assets/buttons/icons/volume_up_48.png" id="2_1y64n"]
 
-[node name="VolumeSlider" type="HSlider"]
-offset_right = 8.0
-offset_bottom = 16.0
+[node name="VolumeContainer" type="HBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.5
+offset_right = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("1_nhkk6")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("2_1y64n")
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_vertical = 4
 max_value = 1.0
 step = 0.001
-script = ExtResource("1_nhkk6")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(51, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

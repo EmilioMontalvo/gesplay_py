@@ -11,6 +11,7 @@ class MessageInterpreter:
             print("Invalid Message")
         elif message.instruction == "update_cursor_config":
             CursorConfig().load_from_dict(message.content)
+            print(message.content)
         elif message.instruction == "update_click_config":
             #TODO: Implement ClickConfig
             pass

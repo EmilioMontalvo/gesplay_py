@@ -12,7 +12,6 @@ grow_vertical = 2
 theme = ExtResource("1_p1mcc")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0460069

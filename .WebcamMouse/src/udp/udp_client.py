@@ -50,4 +50,4 @@ class UdpClient(metaclass=Singleton):
                 self.message_interpreter.interpret(message)
             except:
                 #TODO: Close the application is the server closes
-                print("Error")
+                print("Socket error Error")

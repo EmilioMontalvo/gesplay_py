@@ -18,10 +18,10 @@ script = ExtResource("2_fqnhp")
 
 [node name="HSlider3" type="HSlider" parent="."]
 layout_mode = 0
-offset_top = 31.0
-offset_right = 438.0
-offset_bottom = 102.0
-min_value = 5.0
+offset_top = 33.0
+offset_right = 293.0
+offset_bottom = 104.0
+min_value = 1.0
 value = 16.0
 
 [node name="Label" type="Label" parent="."]
@@ -33,11 +33,11 @@ text = "FieldName
 
 [node name="SpinBox" type="SpinBox" parent="."]
 layout_mode = 0
-offset_left = 286.0
-offset_top = 1.0
-offset_right = 440.0
-offset_bottom = 41.0
-min_value = 5.0
+offset_left = 299.0
+offset_top = 48.0
+offset_right = 453.0
+offset_bottom = 88.0
+min_value = 1.0
 value = 16.0
 alignment = 1
 
@@ -51,3 +51,4 @@ scale = Vector2(0.5, 0.5)
 
 [connection signal="value_changed" from="HSlider3" to="." method="_on_h_slider_3_value_changed"]
 [connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="help_request" from="HelpButton" to="." method="_on_help_button_help_request"]

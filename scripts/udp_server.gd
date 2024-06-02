@@ -45,4 +45,7 @@ func send_array(message):
 func send_string(message:String):
 	for i in range(0, peers.size()):
 		peers[i].put_packet(message.to_utf8_buffer())
+
+func send_message(message:Message):
+	send_string(message.to_string())
 	

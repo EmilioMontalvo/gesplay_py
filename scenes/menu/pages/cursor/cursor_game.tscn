@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcybi0df7qurw"]
+[gd_scene load_steps=4 format=3 uid="uid://bgwu3x5ry7y6"]
 
 [ext_resource type="PackedScene" uid="uid://brrhiqo3x4rbb" path="res://scenes/menu/components/camera.tscn" id="2_fiv1n"]
 [ext_resource type="Texture2D" uid="uid://cgdfq1ppo7aw5" path="res://assets/cursor_game/pista.jpg" id="2_l407e"]

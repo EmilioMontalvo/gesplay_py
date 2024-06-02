@@ -11,6 +11,11 @@ var spd_right=40
 var pointer_smooth=65
 var tick_interval_ms=16
 
+func new_speed(speed):
+	spd_up=speed
+	spd_down=speed
+	spd_left=speed
+	spd_right=speed
 
 func get_as_array():
 	return [camera_id, spd_up, spd_down, spd_left, spd_right, pointer_smooth,tick_interval_ms]
@@ -42,3 +47,4 @@ func set_from_json(config: Dictionary):
 
 func get_as_message(instruction:String):
 	return Message.new(instruction,get_as_json())
+

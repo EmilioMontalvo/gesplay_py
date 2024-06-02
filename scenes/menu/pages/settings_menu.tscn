@@ -1,18 +1,18 @@
 [gd_scene load_steps=14 format=3 uid="uid://dyh4poxlaa4ji"]
 
-[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_ri4pu"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="3_kmhl2"]
-[ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ilpxr"]
-[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_nw7jx"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
-[ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_sn6yy"]
-[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="8_8w3m3"]
-[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="9_dm4qa"]
-[ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_ov04w"]
-[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_ejfp2"]
-[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_86b1d"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_ik6jx"]
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="3_1513q"]
+[ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ipy7k"]
+[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_a6g5f"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
+[ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_uacma"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_fjkx8"]
+[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="9_xm8fl"]
+[ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_kamni"]
+[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_jy6ah"]
+[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_vg1ue"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_518jn"]
 
 [node name="GeneralSettings" type="Control"]
 layout_mode = 3
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ri4pu")
+theme = ExtResource("1_21nlb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,7 +42,7 @@ offset_top = 50.0
 offset_right = 370.0
 offset_bottom = 173.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_1jd16")
+theme_override_fonts/font = ExtResource("2_ymuiq")
 theme_override_font_sizes/font_size = 100
 text = "Configuración"
 
@@ -52,7 +52,7 @@ offset_left = 733.0
 offset_top = 243.0
 offset_right = 860.0
 offset_bottom = 281.0
-theme_override_fonts/font = ExtResource("3_kmhl2")
+theme_override_fonts/font = ExtResource("3_1513q")
 theme_override_font_sizes/font_size = 30
 text = "Nombre"
 
@@ -76,7 +76,7 @@ offset_right = -20.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("4_ilpxr")
+texture = ExtResource("4_ipy7k")
 
 [node name="BtnGeneralSettings" type="Button" parent="."]
 layout_mode = 0
@@ -84,7 +84,7 @@ offset_left = 733.0
 offset_top = 411.0
 offset_right = 1224.0
 offset_bottom = 495.0
-theme_override_styles/normal = ExtResource("5_nw7jx")
+theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 
 [node name="Label" type="Label" parent="BtnGeneralSettings"]
@@ -97,7 +97,7 @@ offset_top = -19.0
 offset_right = 357.0
 offset_bottom = 19.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
 text = "Configuración General"
 
@@ -114,7 +114,7 @@ offset_right = -20.0
 offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("7_sn6yy")
+texture = ExtResource("7_uacma")
 
 [node name="BtnCursorSettings" type="Button" parent="."]
 layout_mode = 0
@@ -122,9 +122,9 @@ offset_left = 733.0
 offset_top = 522.0
 offset_right = 1224.0
 offset_bottom = 606.0
-theme_override_styles/normal = ExtResource("5_nw7jx")
+theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
-script = ExtResource("9_dm4qa")
+script = ExtResource("8_fjkx8")
 scene = 5
 
 [node name="Label" type="Label" parent="BtnCursorSettings"]
@@ -137,7 +137,7 @@ offset_top = -19.0
 offset_right = 357.0
 offset_bottom = 19.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
 text = "Configuración del Cursor
 "
@@ -155,7 +155,7 @@ offset_right = -20.0
 offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("7_sn6yy")
+texture = ExtResource("7_uacma")
 
 [node name="BtnClicSettings3" type="Button" parent="."]
 layout_mode = 0
@@ -163,9 +163,9 @@ offset_left = 733.0
 offset_top = 629.0
 offset_right = 1224.0
 offset_bottom = 713.0
-theme_override_styles/normal = ExtResource("5_nw7jx")
+theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
-script = ExtResource("9_dm4qa")
+script = ExtResource("8_fjkx8")
 scene = 9
 
 [node name="Label" type="Label" parent="BtnClicSettings3"]
@@ -178,7 +178,7 @@ offset_top = -19.0
 offset_right = 357.0
 offset_bottom = 19.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
 text = "Configuración del Clic
 "
@@ -196,7 +196,7 @@ offset_right = -20.0
 offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("7_sn6yy")
+texture = ExtResource("7_uacma")
 
 [node name="BtnEditImage" type="Button" parent="."]
 layout_mode = 0
@@ -205,13 +205,13 @@ offset_top = 629.0
 offset_right = 649.0
 offset_bottom = 713.0
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
-theme_override_fonts/font = ExtResource("6_bvd12")
+theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("5_nw7jx")
+theme_override_styles/normal = ExtResource("5_a6g5f")
 text = "Editar"
 icon_alignment = 2
 
-[node name="AceptCancel" parent="." instance=ExtResource("8_8w3m3")]
+[node name="AceptCancel" parent="." instance=ExtResource("9_xm8fl")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -224,11 +224,11 @@ offset_bottom = -114.0
 grow_vertical = 0
 
 [node name="Acept" parent="AceptCancel" index="0"]
-script = ExtResource("9_dm4qa")
+script = ExtResource("8_fjkx8")
 scene = 1
 
 [node name="Cancel" parent="AceptCancel" index="1"]
-script = ExtResource("9_dm4qa")
+script = ExtResource("8_fjkx8")
 scene = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -237,9 +237,9 @@ offset_left = 329.0
 offset_top = 284.0
 offset_right = 642.0
 offset_bottom = 608.0
-texture = ExtResource("10_ov04w")
+texture = ExtResource("10_kamni")
 
-[node name="GoBack" parent="." instance=ExtResource("11_ejfp2")]
+[node name="GoBack" parent="." instance=ExtResource("11_jy6ah")]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 24.0
@@ -247,14 +247,14 @@ offset_right = 126.0
 offset_bottom = 124.0
 scene = 1
 
-[node name="Home" parent="." instance=ExtResource("12_86b1d")]
+[node name="Home" parent="." instance=ExtResource("12_vg1ue")]
 layout_mode = 0
 offset_left = 1248.0
 offset_top = 30.0
 offset_right = 1344.0
 offset_bottom = 126.0
 
-[node name="HelpButton" parent="." instance=ExtResource("13_ik6jx")]
+[node name="HelpButton" parent="." instance=ExtResource("13_518jn")]
 layout_mode = 0
 offset_left = 1365.0
 offset_top = 55.0

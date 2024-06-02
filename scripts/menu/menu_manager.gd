@@ -23,7 +23,7 @@ var menus = {
 	MENU_LEVEL.MAIN : preload("res://scenes/menu/pages/main_menu.tscn"), 
 	MENU_LEVEL.NEW_PROFILE : preload("res://scenes/menu/pages/new_profile.tscn"),
 	MENU_LEVEL.PROFILES : preload("res://scenes/menu/pages/profiles.tscn"),
-	MENU_LEVEL.GENERAL_SETTINGS : preload("res://scenes/menu/pages/general_settings.tscn"),
+	MENU_LEVEL.GENERAL_SETTINGS : preload("res://scenes/menu/pages/settings_menu.tscn"),
 	MENU_LEVEL.CURSOR_CONFIGURATION : preload("res://scenes/menu/pages/cursor_configuration.tscn"),
 	MENU_LEVEL.GAMES_MENU : preload("res://scenes/menu/pages/games_menu.tscn"),
 	MENU_LEVEL.LOANDING : preload("res://scenes/menu/pages/loanding.tscn"),

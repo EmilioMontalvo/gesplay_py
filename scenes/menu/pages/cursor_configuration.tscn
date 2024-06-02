@@ -109,6 +109,10 @@ offset_top = 286.0
 offset_right = -956.0
 offset_bottom = -656.0
 
+[node name="Label" parent="SliderField" index="1"]
+text = "Velocidad
+"
+
 [node name="SliderField2" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
 offset_left = 70.0
@@ -118,3 +122,5 @@ offset_bottom = -532.0
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
+
+[editable path="SliderField"]

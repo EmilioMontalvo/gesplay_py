@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqb2bcqpd5kki"]
+[gd_scene load_steps=12 format=3 uid="uid://bqb2bcqpd5kki"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_awgda"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_bx8yf"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://m8o081e6tutt" path="res://scenes/menu/components/profile_button.tscn" id="4_xn568"]
 [ext_resource type="Texture2D" uid="uid://dh2ilv0eibjfe" path="res://assets/buttons/icons/Search.png" id="5_cmqiq"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="6_6huvo"]
+[ext_resource type="Texture2D" uid="uid://bxvh3yomhsews" path="res://assets/buttons/icons/add.png" id="6_wg5pn"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="7_t62qf"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="7_ypxo0"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_cqyjp"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="9_lslf8"]
@@ -36,23 +38,29 @@ offset_top = 381.0
 offset_right = 211.0
 offset_bottom = 421.0
 
-[node name="SearchBar" type="LineEdit" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 239.0
-offset_right = 1194.0
-offset_bottom = 298.0
+offset_right = 1261.0
+offset_bottom = 291.0
+theme_override_constants/separation = 10
+
+[node name="SearchBar" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("1_awgda")
 placeholder_text = "Buscar"
 alignment = 1
+right_icon = ExtResource("5_cmqiq")
 
-[node name="TextureRect" type="TextureRect" parent="SearchBar"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 5.0
-offset_right = 67.0
-offset_bottom = 55.0
-texture = ExtResource("5_cmqiq")
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = " Nuevo Perfil"
+icon = ExtResource("6_wg5pn")
+icon_alignment = 2
+script = ExtResource("7_t62qf")
+scene = 2
 
 [node name="Home" parent="." instance=ExtResource("7_ypxo0")]
 layout_mode = 0
@@ -78,3 +86,5 @@ offset_left = 1318.0
 offset_top = 51.0
 offset_right = 1368.0
 offset_bottom = 101.0
+
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button" method="_on_pressed"]

@@ -1,13 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://cashahcwmo0ch"]
+[gd_scene load_steps=14 format=3 uid="uid://cashahcwmo0ch"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_6a0o4"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="1_cdmem"]
 [ext_resource type="Script" path="res://scripts/enhanced_camera.gd" id="2_7xg7t"]
+[ext_resource type="Texture2D" uid="uid://c1n3fuddegeup" path="res://assets/buttons/icons/drag.png" id="3_bk4mn"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="3_u8nmf"]
 [ext_resource type="Texture2D" uid="uid://bpo3u1pr67k1u" path="res://assets/buttons/icons/pause.png" id="4_7o05n"]
 [ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="4_ah08m"]
 [ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="4_hpnts"]
 [ext_resource type="Texture2D" uid="uid://dggvaf5bgco0s" path="res://assets/buttons/icons/continue.png" id="5_rhlkx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o83fs"]
+bg_color = Color(0.964706, 0.933333, 0.870588, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0x85"]
 bg_color = Color(0.964706, 0.933333, 0.870588, 1)
@@ -38,15 +49,31 @@ corner_radius_bottom_left = 50
 
 [node name="EnhancedCamera" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -799.0
-offset_bottom = -375.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 theme = ExtResource("1_6a0o4")
 script = ExtResource("2_7xg7t")
+
+[node name="DragPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = -175.0
+offset_right = 640.0
+offset_bottom = -29.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o83fs")
+
+[node name="TextureRect" type="TextureRect" parent="DragPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bk4mn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -144,6 +171,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_ah08m")
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(200, 104)
+
+[connection signal="gui_input" from="DragPanel" to="." method="_on_drag_panel_gui_input"]
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

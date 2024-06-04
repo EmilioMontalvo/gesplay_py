@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dd54atv3cfg7u"]
+[gd_scene load_steps=23 format=3 uid="uid://dd54atv3cfg7u"]
 
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_baw05"]
@@ -11,8 +11,10 @@
 [ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="8_k2wsd"]
 [ext_resource type="Texture2D" uid="uid://cxs3leoxcqj6b" path="res://assets/buttons/icons/ControlComputerIcon.png" id="9_kacvu"]
 [ext_resource type="Texture2D" uid="uid://fsbkcjx4xrna" path="res://assets/buttons/icons/Games.png" id="11_difrc"]
+[ext_resource type="Script" path="res://scripts/control_computer_btn.gd" id="11_iw5sp"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="12_r5y54"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="13_654sp"]
+[ext_resource type="PackedScene" uid="uid://6x4im8p0stpr" path="res://scenes/windows/window.tscn" id="15_vcymu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld27w"]
 atlas = ExtResource("6_xou64")
@@ -157,6 +159,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_b6l1d")
 theme_override_styles/hover = ExtResource("8_k2wsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6jc0g")
 icon = SubResource("AtlasTexture_nmmjv")
+script = ExtResource("11_iw5sp")
 
 [node name="Text" type="Label" parent="ControlComputer"]
 layout_mode = 0
@@ -201,6 +204,10 @@ offset_top = 148.0
 offset_right = 1268.0
 offset_bottom = 242.0
 
+[node name="Window" parent="." instance=ExtResource("15_vcymu")]
+visible = false
+
+[connection signal="pressed" from="ControlComputer" to="ControlComputer" method="_on_pressed"]
 [connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
 
 [editable path="MenuButtons/BtnSelectProfile"]

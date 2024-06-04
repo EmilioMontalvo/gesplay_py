@@ -1,5 +1,10 @@
 extends Control
 
+var paused=false
+var dragPoint = Vector2()
+var following=false
+signal go_back
+signal drag
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,16 +13,29 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	if following:
+		DisplayServer.window_set_position(Vector2(
+			DisplayServer.window_get_position(1)) + get_global_mouse_position() - dragPoint,
+			1)
+		print(DisplayServer.window_get_position(1))
 
 func _on_go_back_pressed():
-	pass # Replace with function body.
+	go_back.emit()
 
 
 func _on_pause_pressed():
-	pass # Replace with function body.
+	$Pause/TextureRect2.visible=not paused
+	$Pause/TextureRect.visible=paused
+	paused=not paused
 
 
 func _on_close_pressed():
-	pass # Replace with function body.
+	$ConfirmationDialog.visible=true
+
+
+func _on_drag_panel_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index==MOUSE_BUTTON_LEFT:
+			following=not following
+			dragPoint=get_local_mouse_position()
+			

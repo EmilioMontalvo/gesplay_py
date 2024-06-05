@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://slim1xm70p63"]
+[gd_scene load_steps=14 format=3 uid="uid://slim1xm70p63"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mo2un"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_3p8tm"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="3_yju7e"]
+[ext_resource type="Script" path="res://scripts/click_game/config/click_configuration_menu.gd" id="2_t8nng"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_yju7e"]
+[ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="4_cjl87"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="4_docx4"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_7osy7"]
-[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_bojm5"]
+[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="5_h8rtx"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_7osy7"]
+[ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="6_jduia"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_5lfnl"]
 [ext_resource type="ButtonGroup" uid="uid://bpf1mqyux4doj" path="res://scripts/click_game/utils/gesture_button_group.tres" id="9_3380y"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="10_jxrtb"]
@@ -34,9 +37,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mo2un")
+script = ExtResource("2_t8nng")
 
 [node name="ColorRect" parent="." instance=ExtResource("2_3p8tm")]
 layout_mode = 0
+
+[node name="Panel" parent="ColorRect" instance=ExtResource("4_cjl87")]
+offset_left = 508.0
+offset_top = 218.0
+offset_right = 1380.0
+offset_bottom = 889.0
+
+[node name="Camera" parent="ColorRect/Panel" instance=ExtResource("5_h8rtx")]
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 381.0
+offset_right = 396.0
+offset_bottom = 665.0
+
+[node name="Node2D" type="Node2D" parent="ColorRect/Panel"]
+position = Vector2(-508, -218)
+
+[node name="Line2D" type="Line2D" parent="ColorRect/Panel/Node2D"]
+script = ExtResource("6_jduia")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -54,10 +78,10 @@ text = "Configuración
 
 [node name="LblClick" type="Label" parent="."]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 239.0
-offset_right = 920.0
-offset_bottom = 289.0
+offset_left = 80.0
+offset_top = 153.0
+offset_right = 851.0
+offset_bottom = 203.0
 theme_override_fonts/font = ExtResource("6_7osy7")
 theme_override_font_sizes/font_size = 40
 text = "Selecciona el gesto para realizar el clic"
@@ -70,13 +94,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -378.0
-offset_top = 410.0
+offset_top = 424.0
 offset_right = -378.0
-offset_bottom = 410.0
-
-[node name="Cancel" parent="AceptCancel" index="1"]
-script = ExtResource("8_bojm5")
-scene = 4
+offset_bottom = 424.0
 
 [node name="GoBack" parent="." instance=ExtResource("9_5lfnl")]
 layout_mode = 0
@@ -95,11 +115,11 @@ offset_bottom = 123.0
 
 [node name="RadioButtons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 325.0
-offset_right = 301.0
-offset_bottom = 409.0
-theme_override_constants/separation = 20
+offset_left = 80.0
+offset_top = 236.0
+offset_right = 234.0
+offset_bottom = 360.0
+theme_override_constants/separation = 40
 
 [node name="CheckButton" type="CheckButton" parent="RadioButtons"]
 layout_mode = 2
@@ -120,6 +140,9 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_my38k")
 button_group = ExtResource("9_3380y")
 text = "Pinza"
 
-[connection signal="pressed" from="AceptCancel/Cancel" to="AceptCancel/Cancel" method="_on_pressed"]
+[connection signal="mouse_entered" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
+[connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
+[connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]
 
 [editable path="AceptCancel"]

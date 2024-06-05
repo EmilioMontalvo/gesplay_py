@@ -24,6 +24,7 @@ Pythonexecutor="*res://scripts/pythonexecutor.gd"
 MenuManager="*res://scripts/menu/menu_manager.gd"
 GlobalClick="*res://scripts/click_game/GlobalClick.gd"
 CurrentClickLevel="*res://scripts/click_game/utils/CurrentClickLevel.gd"
+ClickConf="*res://scripts/click_game/config/click_config.gd"
 
 [display]
 

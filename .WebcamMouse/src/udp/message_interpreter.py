@@ -1,5 +1,6 @@
 from src.udp.message import Message
 from src.cursor_config import CursorConfig
+from src.click_config import ClickConfig
 from src.task_manager import TaskManager
 
 class MessageInterpreter:
@@ -13,7 +14,7 @@ class MessageInterpreter:
             CursorConfig().load_from_dict(message.content)
             print(message.content)
         elif message.instruction == "update_click_config":
-            #TODO: Implement ClickConfig
+            ClickConfig().load_from_dict(message.content)
             pass
         elif message.instruction == "update_camera_config":
             #TODO: Implement CameraConfig

@@ -17,7 +17,6 @@ func _process(delta):
 func _on_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index==MOUSE_BUTTON_LEFT:
-			print(event)
 			following=not following
 			dragPoint=get_local_mouse_position()
 			dragged_panel.emit(following,dragPoint)

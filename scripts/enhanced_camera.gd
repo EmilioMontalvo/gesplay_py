@@ -20,9 +20,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if followingLocal and visible and window and DisplayServer.get_window_list().has(window_id):
-		print("window",DisplayServer.window_get_position(window_id))
-		print("mouse",get_global_mouse_position())
-		print("local mouse",dragPointLocal)
 		DisplayServer.window_set_position(Vector2(
 			DisplayServer.window_get_position(window_id)) + get_global_mouse_position() - dragPointLocal,
 			window_id)

@@ -6,8 +6,6 @@ func _ready():
 	# DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 1)
 	$Camera2D/EnhancedCamera.set_window_id(
 		DisplayServer.get_window_list()[DisplayServer.get_window_list().size()-1])
-	
-	print(DisplayServer.get_window_list()[DisplayServer.get_window_list().size()-1])
 	$Camera2D/EnhancedCamera.window=true
 	pass
 

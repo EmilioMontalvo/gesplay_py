@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cashahcwmo0ch"]
+[gd_scene load_steps=15 format=3 uid="uid://cashahcwmo0ch"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_6a0o4"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="1_cdmem"]
 [ext_resource type="Script" path="res://scripts/enhanced_camera.gd" id="2_7xg7t"]
 [ext_resource type="Texture2D" uid="uid://c1n3fuddegeup" path="res://assets/buttons/icons/drag.png" id="3_bk4mn"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="3_u8nmf"]
+[ext_resource type="Script" path="res://scripts/menu/drag_panel.gd" id="3_xqiad"]
 [ext_resource type="Texture2D" uid="uid://bpo3u1pr67k1u" path="res://assets/buttons/icons/pause.png" id="4_7o05n"]
 [ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="4_ah08m"]
 [ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="4_hpnts"]
@@ -59,6 +60,7 @@ offset_top = -175.0
 offset_right = 640.0
 offset_bottom = -29.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_o83fs")
+script = ExtResource("3_xqiad")
 
 [node name="TextureRect" type="TextureRect" parent="DragPanel"]
 layout_mode = 1
@@ -176,7 +178,8 @@ texture = ExtResource("4_ah08m")
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 size = Vector2i(200, 104)
 
-[connection signal="gui_input" from="DragPanel" to="." method="_on_drag_panel_gui_input"]
+[connection signal="dragged_panel" from="DragPanel" to="." method="_on_drag_panel_dragged_panel"]
+[connection signal="gui_input" from="DragPanel" to="DragPanel" method="_on_gui_input"]
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

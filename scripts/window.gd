@@ -12,3 +12,10 @@ func _process(delta):
 	pass
 
 
+
+
+func _on_enhanced_camera_go_back():
+	DisplayServer.window_set_mode(2,0)
+	DisplayServer.window_move_to_foreground(1)	
+	visible=false
+	

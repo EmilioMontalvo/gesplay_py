@@ -22,3 +22,5 @@ anchor_mode = 0
 offset_top = 100.0
 offset_bottom = 100.0
 scale = Vector2(0.565, 0.565)
+
+[connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]

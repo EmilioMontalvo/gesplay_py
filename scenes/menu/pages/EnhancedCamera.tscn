@@ -111,6 +111,7 @@ texture = ExtResource("3_u8nmf")
 flip_h = true
 
 [node name="Pause" type="Button" parent="."]
+layout_mode = 0
 offset_left = 224.0
 offset_top = 9.0
 offset_right = 414.0
@@ -148,6 +149,7 @@ grow_vertical = 2
 texture = ExtResource("5_rhlkx")
 
 [node name="Close" type="Button" parent="."]
+layout_mode = 0
 offset_left = 430.0
 offset_top = 10.0
 offset_right = 629.0

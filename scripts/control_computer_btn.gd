@@ -13,4 +13,5 @@ func _process(delta):
 
 func _on_pressed():
 	$"../Window".visible=true
+	$"../Window"._ready()
 	get_tree().root.mode = Window.MODE_MINIMIZED

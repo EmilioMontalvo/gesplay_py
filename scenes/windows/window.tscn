@@ -30,3 +30,4 @@ dialogText = "La aplicación se cerrará"
 
 [connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]
 [connection signal="acepted" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_acepted"]
+[connection signal="canceled" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_canceled"]

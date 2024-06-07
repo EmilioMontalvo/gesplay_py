@@ -27,4 +27,8 @@ func _on_enhanced_camera_go_back():
 
 
 func _on_confirm_dialog_window_acepted():
-	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+	get_tree().quit()
+
+
+func _on_confirm_dialog_window_canceled():
+	$ConfirmDialogWindow.visible=false

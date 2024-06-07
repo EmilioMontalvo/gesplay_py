@@ -38,7 +38,6 @@ func _on_pause_pressed():
 	else: 
 		UdPServer.send_message(Message.new("resume_mouse",{"info": "mouse resumed"}))
 	
-	
 	paused=not paused
 	
 	

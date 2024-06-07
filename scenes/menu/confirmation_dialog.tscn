@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvhctm1fexse1"]
+[gd_scene load_steps=7 format=3 uid="uid://btlunhy2vqjiy"]
 
 [ext_resource type="Script" path="res://scripts/menu/confirm_dialog.gd" id="2_6tfl1"]
-[ext_resource type="Theme" uid="uid://bmnvxmtpwrml2" path="res://assets/buttons/themes/confirm_dialog_theme.tres" id="2_ju7w2"]
-[ext_resource type="StyleBox" uid="uid://ddxbn3t6yk16b" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="3_37fw2"]
-[ext_resource type="StyleBox" uid="uid://bhduf2n1cbt6y" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="3_c2677"]
-[ext_resource type="StyleBox" uid="uid://c3kfuj1ynkp5m" path="res://assets/buttons/resources/style_box_flat_cancel_button.tres" id="4_m08wh"]
-[ext_resource type="StyleBox" uid="uid://dtpq86b2vr0f7" path="res://assets/buttons/resources/style_box_flat_cancel_button_hover.tres" id="5_qvteb"]
+[ext_resource type="Theme" uid="uid://cmpht74onoe3b" path="res://assets/buttons/themes/confirm_dialog_theme.tres" id="2_ju7w2"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="3_37fw2"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="3_c2677"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_cancel_button.tres" id="4_m08wh"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_cancel_button_hover.tres" id="5_qvteb"]
 
 [node name="ConfirmationDialog" type="Control"]
 layout_mode = 3

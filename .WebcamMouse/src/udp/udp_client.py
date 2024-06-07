@@ -5,6 +5,7 @@ import concurrent.futures as futures
 from src.udp.message import Message
 from src.udp.message_interpreter import MessageInterpreter
 from src.singleton_meta import Singleton
+from src.task_manager import TaskManager
 
 logger = logging.getLogger("TaskManager")
 
@@ -50,4 +51,5 @@ class UdpClient(metaclass=Singleton):
                 self.message_interpreter.interpret(message)
             except:
                 #TODO: Close the application is the server closes
+                #TaskManager().exit()
                 print("Socket error Error")

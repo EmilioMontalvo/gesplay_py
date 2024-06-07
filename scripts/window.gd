@@ -24,3 +24,7 @@ func _on_enhanced_camera_go_back():
 	$Camera2D/EnhancedCamera.window=false
 	visible=false
 
+
+
+func _on_confirm_dialog_window_acepted():
+	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)

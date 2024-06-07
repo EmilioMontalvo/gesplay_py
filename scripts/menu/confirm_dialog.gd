@@ -28,8 +28,12 @@ func on_show() -> bool:
 
 func _on_accept_button_pressed():
 	option = true
-	option_selected.emit()
+	option_selected.emit(option)
 
 func _on_cancel_button_pressed():
 	option = false
-	option_selected.emit()
+	option_selected.emit(option)
+
+func set_dialog_text(dialog_new_text):
+	dialog_text=dialog_new_text
+	dialog_label.text = dialog_new_text

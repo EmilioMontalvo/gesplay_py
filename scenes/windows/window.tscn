@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://6x4im8p0stpr"]
+[gd_scene load_steps=4 format=3 uid="uid://6x4im8p0stpr"]
 
 [ext_resource type="Script" path="res://scripts/window.gd" id="1_cnpfj"]
 [ext_resource type="PackedScene" uid="uid://cashahcwmo0ch" path="res://scenes/menu/pages/EnhancedCamera.tscn" id="1_cu25u"]
+[ext_resource type="PackedScene" uid="uid://4c8ywcidgjoy" path="res://scenes/windows/confirm_dialog_window.tscn" id="3_b3mgi"]
 
 [node name="Window" type="Window"]
 transparent_bg = true
@@ -23,4 +24,9 @@ offset_top = 100.0
 offset_bottom = 100.0
 scale = Vector2(0.565, 0.565)
 
+[node name="ConfirmDialogWindow" parent="." instance=ExtResource("3_b3mgi")]
+visible = false
+dialogText = "La aplicación se cerrará"
+
 [connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]
+[connection signal="acepted" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_acepted"]

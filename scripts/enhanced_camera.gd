@@ -44,7 +44,7 @@ func _on_pause_pressed():
 
 
 func _on_close_pressed():
-	$ConfirmationDialog.visible=true
+	$"../../ConfirmDialogWindow".visible=true
 
 func set_window_id(id):
 	window_id=id

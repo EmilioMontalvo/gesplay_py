@@ -2,6 +2,7 @@ from src.udp.message import Message
 from src.cursor_config import CursorConfig
 from src.click_config import ClickConfig
 from src.task_manager import TaskManager
+from src.general_config import GeneralConfig
 
 class MessageInterpreter:
     def __init__(self):
@@ -20,7 +21,10 @@ class MessageInterpreter:
             #TODO: Implement CameraConfig
             pass
         elif message.instruction == "pause_mouse":
-            #TODO: Implement CameraConfig
+            GeneralConfig().pause()
+            pass
+        elif message.instruction == "resume_mouse":
+            GeneralConfig().resume()
             pass
         elif message.instruction == "exit":
             print("Closing camera mouse")

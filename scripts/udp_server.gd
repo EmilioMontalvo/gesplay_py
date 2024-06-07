@@ -49,3 +49,5 @@ func send_string(message:String):
 func send_message(message:Message):
 	send_string(message.to_string())
 	
+
+	

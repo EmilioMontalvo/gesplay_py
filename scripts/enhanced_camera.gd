@@ -32,7 +32,16 @@ func _on_go_back_pressed():
 func _on_pause_pressed():
 	$Pause/TextureRect2.visible=not paused
 	$Pause/TextureRect.visible=paused
+	
+	if not paused:
+		UdPServer.send_message(Message.new("pause_mouse",{"info": "mouse paused"}))
+	else: 
+		UdPServer.send_message(Message.new("resume_mouse",{"info": "mouse resumed"}))
+	
+	
 	paused=not paused
+	
+	
 
 
 func _on_close_pressed():

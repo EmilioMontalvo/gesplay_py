@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cashahcwmo0ch"]
+[gd_scene load_steps=16 format=3 uid="uid://cashahcwmo0ch"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_6a0o4"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="1_cdmem"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="4_ah08m"]
 [ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="4_hpnts"]
 [ext_resource type="Texture2D" uid="uid://dggvaf5bgco0s" path="res://assets/buttons/icons/continue.png" id="5_rhlkx"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="11_3rvfg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o83fs"]
 bg_color = Color(0.964706, 0.933333, 0.870588, 1)
@@ -177,6 +178,13 @@ texture = ExtResource("4_ah08m")
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 size = Vector2i(200, 104)
+
+[node name="HelpButton" parent="." instance=ExtResource("11_3rvfg")]
+layout_mode = 0
+offset_left = 555.0
+offset_top = -131.0
+offset_right = 605.0
+offset_bottom = -81.0
 
 [connection signal="dragged_panel" from="DragPanel" to="." method="_on_drag_panel_dragged_panel"]
 [connection signal="gui_input" from="DragPanel" to="DragPanel" method="_on_gui_input"]

@@ -6,7 +6,7 @@ from src.detectors.hand_detector import HandDetector
 from src.udp.udp_client import UdpClient
 from src.controllers.mouse_controller import MouseController
 from src.controllers.click_controller import ClickController
-
+from src.general_config import GeneralConfig
 
 class Pipeline:
     def __init__(self):
@@ -15,6 +15,8 @@ class Pipeline:
 
     def pipeline_tick(self) -> None:
         frame_rgb = CameraManager().get_frame_rgb()
+        if GeneralConfig().paused_mouse_control:
+            return
         frame = CameraManager().get_fliped_frame()
         hand_position = HandDetector().get_hand_position(frame_rgb)
         frame_rgb.flags.writeable = False

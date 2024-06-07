@@ -19,6 +19,9 @@ class MessageInterpreter:
         elif message.instruction == "update_camera_config":
             #TODO: Implement CameraConfig
             pass
+        elif message.instruction == "pause_mouse":
+            #TODO: Implement CameraConfig
+            pass
         elif message.instruction == "exit":
             print("Closing camera mouse")
             TaskManager().exit()

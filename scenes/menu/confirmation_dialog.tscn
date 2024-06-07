@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvhctm1fexse1"]
+
+[ext_resource type="Script" path="res://scripts/menu/confirm_dialog.gd" id="2_6tfl1"]
+[ext_resource type="Theme" uid="uid://bmnvxmtpwrml2" path="res://assets/buttons/themes/confirm_dialog_theme.tres" id="2_ju7w2"]
+[ext_resource type="StyleBox" uid="uid://ddxbn3t6yk16b" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="3_37fw2"]
+[ext_resource type="StyleBox" uid="uid://bhduf2n1cbt6y" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="3_c2677"]
+[ext_resource type="StyleBox" uid="uid://c3kfuj1ynkp5m" path="res://assets/buttons/resources/style_box_flat_cancel_button.tres" id="4_m08wh"]
+[ext_resource type="StyleBox" uid="uid://dtpq86b2vr0f7" path="res://assets/buttons/resources/style_box_flat_cancel_button_hover.tres" id="5_qvteb"]
+
+[node name="ConfirmationDialog" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_6tfl1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ju7w2")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="AcceptButton" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_37fw2")
+theme_override_styles/hover = ExtResource("3_c2677")
+theme_override_styles/pressed = ExtResource("3_37fw2")
+text = "Aceptar"
+
+[node name="CancelButton" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_m08wh")
+theme_override_styles/hover = ExtResource("5_qvteb")
+theme_override_styles/pressed = ExtResource("4_m08wh")
+text = "Cancelar"
+
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]

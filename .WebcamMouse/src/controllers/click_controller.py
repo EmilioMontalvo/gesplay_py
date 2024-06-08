@@ -24,6 +24,8 @@ class ClickController(metaclass=Singleton):
             self.is_stoped = False
             self.pool = futures.ThreadPoolExecutor(max_workers=1)
             self.pool.submit(self.main_loop)
+        else:
+            pass
 
     def stop(self):
         self.is_stoped = True

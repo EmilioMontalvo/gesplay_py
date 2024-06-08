@@ -52,4 +52,5 @@ class UdpClient(metaclass=Singleton):
             except:
                 #TODO: Close the application is the server closes
                 #TaskManager().exit()
-                print("Socket error Error")
+                #print("Socket error Error")
+                pass

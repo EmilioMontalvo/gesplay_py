@@ -1,0 +1,189 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmnhl8u21jtq4"]
+
+[sub_resource type="GDScript" id="1"]
+script/source = "extends PopupPanel
+
+signal date_changed(date)
+
+var date = XDate.new(1990,1,1) : set=set_date
+
+var buttons = []
+
+var days_of_week = ['L','M','M','J','V','S','D']
+
+@onready
+var year_edit = $VBoxContainer/HBoxContainer/YearLineEdit
+@onready
+var month_edit = $VBoxContainer/HBoxContainer/MonthOptionButton
+
+
+func _ready():
+	for i in 12:
+		month_edit.add_item(str(i+1))
+	
+	var grid = $VBoxContainer/GridContainer
+	for day in days_of_week:
+		var label = Label.new()
+		label.text = day
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		grid.add_child(label)
+	
+	var button_group = ButtonGroup.new()
+	button_group.pressed.connect(_on_button_group_pressed)
+	for i in 42: # 42=7*6
+		var button = Button.new()
+		button.toggle_mode = true
+		button.button_group = button_group
+		buttons.append(button)
+		grid.add_child(button)
+	
+	date_changed.connect(_on_date_changed)
+	_on_date_changed(date)
+
+
+func _on_date_changed(val):
+	year_edit.text = str(val.year)
+	month_edit.selected = val.month-1
+	update_calendar()
+
+
+func _on_button_group_pressed(btn):
+	var dt = XDate.new(year_edit.text.to_int(),month_edit.selected+1,1)
+	dt = dt.add_months(btn.get_meta(\"offset\"))
+	date = XDate.new(dt.year,dt.month,btn.text.to_int())
+	hide()
+
+
+func set_date(val):
+	if XDate.compare(date,val)!=0:
+		date = val
+		date_changed.emit(date)
+
+
+func update_calendar():
+	var dt = XDate.new(year_edit.text.to_int(),month_edit.selected+1,1)
+	var prev_dt = dt.add_months(-1)
+	var next_dt = dt.add_months(1)
+	var day_of_week = dt.get_day_of_week()
+	
+	var prev_month_days = prev_dt.get_days_in_month(prev_dt.month)
+	var month_days = dt.get_days_in_month(dt.month)
+	
+	for i in day_of_week:
+		var btn = buttons[i]
+		btn.text = str(prev_month_days-(day_of_week-i-1)+1)
+		btn.modulate = Color.GRAY
+		btn.set_meta(\"offset\",-1)
+	
+	for i in month_days:
+		var btn = buttons[i+day_of_week]
+		btn.text = str(i+1)
+		btn.modulate = Color.WHITE
+		btn.set_meta(\"offset\",0)
+	
+	var start_idx = day_of_week+month_days
+	for i in range(start_idx,42):
+		var btn = buttons[i]
+		btn.text = str(i-start_idx+1)
+		btn.modulate = Color.GRAY
+		btn.set_meta(\"offset\",1)
+
+
+func _on_PrevYearButton_pressed():
+	year_edit.text = str(year_edit.text.to_int()-1)
+	update_calendar()
+
+
+
+func _on_NextYearButton_pressed():
+	year_edit.text = str(year_edit.text.to_int()+1)
+	update_calendar()
+
+
+func _on_PrevMonthButton_pressed():
+	month_edit.selected = (month_edit.selected+11)%12
+	if month_edit.selected==11:
+		_on_PrevYearButton_pressed()
+	update_calendar()
+
+
+func _on_NextMonthButton_pressed():
+	month_edit.selected = (month_edit.selected+1)%12
+	if month_edit.selected==0:
+		_on_NextYearButton_pressed()
+	update_calendar()
+
+
+func _on_YearLineEdit_text_changed(_new_text):
+	update_calendar()
+
+
+func _on_MonthOptionButton_item_selected(_index):
+	update_calendar()
+
+
+func _on_TodayButton_pressed():
+	date = XDate.current()
+	hide()
+"
+
+[node name="XCalendarPopup" type="PopupPanel"]
+title = "XCalendar"
+size = Vector2i(230, 100)
+visible = true
+script = SubResource("1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 226.0
+offset_bottom = 96.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PrevMonthButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="PrevYearButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "<<"
+
+[node name="YearLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2019"
+alignment = 1
+
+[node name="MonthOptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextYearButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = ">>"
+
+[node name="NextMonthButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = ">"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 7
+
+[node name="TodayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Today"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PrevMonthButton" to="." method="_on_PrevMonthButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PrevYearButton" to="." method="_on_PrevYearButton_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/YearLineEdit" to="." method="_on_YearLineEdit_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/MonthOptionButton" to="." method="_on_MonthOptionButton_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextYearButton" to="." method="_on_NextYearButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextMonthButton" to="." method="_on_NextMonthButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TodayButton" to="." method="_on_TodayButton_pressed"]

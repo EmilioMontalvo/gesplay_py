@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://mhr2va5krim6"]
+
+[ext_resource type="PackedScene" uid="uid://dmnhl8u21jtq4" path="res://addons/XDateTime/xd/XScripts/XCalendarPopup.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bq0gkondugh1y" path="res://assets/buttons/icons/calendar_48.png" id="1_yue7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayhwp"]
+bg_color = Color(0.941176, 0.890196, 0.788235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efrr4"]
+bg_color = Color(0.894118, 0.807843, 0.639216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtoh4"]
+bg_color = Color(0.9879, 0.977166, 0.955674, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6shg"]
+bg_color = Color(0.985483, 0.972597, 0.946803, 1)
+
+[sub_resource type="Theme" id="Theme_njs4k"]
+Button/styles/hover = SubResource("StyleBoxFlat_ayhwp")
+Button/styles/normal = SubResource("StyleBoxFlat_efrr4")
+Button/styles/pressed = SubResource("StyleBoxFlat_efrr4")
+Panel/styles/panel = SubResource("StyleBoxFlat_vtoh4")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_y6shg")
+
+[sub_resource type="GDScript" id="1"]
+script/source = "extends Control
+
+signal date_changed(date)
+
+@onready
+var line_edit = $HBoxContainer/LineEdit
+
+var date = XDate.current(): set=set_date
+
+func _ready():
+	date_changed.connect(_on_date_changed)
+	_on_date_changed(date)
+	line_edit.deselect()
+
+
+func set_date(val):
+	if XDate.compare(date,val)!=0:
+		date = val
+		date_changed.emit(date)
+
+
+func _on_date_changed(value):
+	line_edit.text = value.format()
+	
+
+
+func _on_LineEdit_text_changed(new_text:String):
+	var p = line_edit.caret_column
+	var ss = new_text.split(\"/\")
+	if ss.size()==3:
+		set_date(XDate.new(ss[0].to_int(),ss[1].to_int(),ss[2].to_int()))
+	if p==4 or p==7:
+		p+=1
+	line_edit.caret_column = p+1
+	line_edit.select(p,p+1)
+
+
+func _on_Button_pressed():
+	var pos = global_position + Vector2(0,global_position.y)
+	$XCalendarPopup.popup_on_parent(Rect2(pos,Vector2.ONE))
+	$XCalendarPopup.date = date
+
+
+func _on_XCalendarPopup_date_changed(val):
+	date = val
+"
+
+[node name="XDateEdit" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 126.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_njs4k")
+script = SubResource("1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2019/03/25"
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_yue7m")
+icon_alignment = 1
+
+[node name="XCalendarPopup" parent="." instance=ExtResource("1")]
+visible = false
+
+[connection signal="text_changed" from="HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="date_changed" from="XCalendarPopup" to="." method="_on_XCalendarPopup_date_changed"]

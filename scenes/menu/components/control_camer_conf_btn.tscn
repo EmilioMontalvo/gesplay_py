@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmxvd2fe2h8ni"]
+
+[ext_resource type="Texture2D" uid="uid://dbbpl2m05rqih" path="res://assets/buttons/icons/configuration_icon.png" id="1_kbf7w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryoox"]
+bg_color = Color(1, 0.85098, 0.231373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pkkp"]
+bg_color = Color(0.752941, 0.631373, 0.0117647, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="control_camer_conf_btn" type="Button"]
+offset_left = 517.0
+offset_top = 550.0
+offset_right = 624.0
+offset_bottom = 654.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryoox")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pkkp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -34.5
+offset_right = 32.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kbf7w")
+expand_mode = 1
+stretch_mode = 5

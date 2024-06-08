@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp8n785pt4p0l"]
+
+[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="1_4nsa1"]
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_7f57g"]
+[ext_resource type="PackedScene" uid="uid://b2c2deu52in5e" path="res://scenes/menu/components/pause_camera_button.tscn" id="2_boyj6"]
+[ext_resource type="PackedScene" uid="uid://cmxvd2fe2h8ni" path="res://scenes/menu/components/control_camer_conf_btn.tscn" id="4_s0pt5"]
+
+[node name="InGameCamera" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -669.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7f57g")
+
+[node name="Camera" parent="." instance=ExtResource("1_4nsa1")]
+layout_mode = 0
+offset_right = 432.0
+offset_bottom = 324.0
+
+[node name="PauseCameraButton" parent="." instance=ExtResource("2_boyj6")]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 238.0
+offset_right = 496.0
+offset_bottom = 388.0
+scale = Vector2(0.57, 0.57)
+
+[node name="control_camer_conf_btn" parent="." instance=ExtResource("4_s0pt5")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 238.0
+offset_right = 107.0
+offset_bottom = 342.0
+scale = Vector2(0.83, 0.83)

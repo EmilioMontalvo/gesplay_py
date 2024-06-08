@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bhjupdts1dg3q" path="res://scenes/menu/pages/cursor/elements/level_container.tscn" id="2_6owtb"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="4_5eb84"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="5_xnbdh"]
-[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_jr1yo"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="6_mm05p"]
 [ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="8_qebgv"]
+[ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="9_1xh55"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="9_032qq"]
 
 [node name="Level1" type="Node2D"]
@@ -63,11 +63,11 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
-[node name="Camera2" parent="CanvasLayer" instance=ExtResource("6_jr1yo")]
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_1xh55")]
 offset_left = 2.0
-offset_top = 705.0
-offset_right = 434.0
-offset_bottom = 1029.0
+offset_top = 701.0
+offset_right = -960.0
+offset_bottom = 32.0
 
 [connection signal="won" from="level_container" to="." method="_on_level_container_won"]
 

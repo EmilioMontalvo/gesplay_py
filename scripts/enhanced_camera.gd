@@ -1,10 +1,10 @@
 extends Control
 
-var paused=false
+var paused=GlobalConf.is_camera_mouse_paused
 var dragPointLocal = Vector2()
 var followingLocal=false
 var window=true
-
+var pauseTexture=load("res://assets/paused_camera.png")
 
 var window_id=1
 
@@ -30,8 +30,8 @@ func _on_go_back_pressed():
 
 
 func _on_pause_pressed():
-	$Pause/TextureRect2.visible=not paused
-	$Pause/TextureRect.visible=paused
+	$Pause/TextureRect2.visible=not GlobalConf.is_camera_mouse_paused
+	$Pause/TextureRect.visible=GlobalConf.is_camera_mouse_paused
 	
 	if not paused:
 		UdPServer.send_message(Message.new("pause_mouse",{"info": "mouse paused"}))
@@ -39,7 +39,7 @@ func _on_pause_pressed():
 		UdPServer.send_message(Message.new("resume_mouse",{"info": "mouse resumed"}))
 	
 	paused=not paused
-	
+	GlobalConf.is_camera_mouse_paused=paused
 	
 
 

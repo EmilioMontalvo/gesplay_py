@@ -9,9 +9,6 @@ func _ready():
 	$TicksSlider.set_value(temporalCursorConfig.tick_interval_ms)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_ticks_slider_value_changed(value):

@@ -8,7 +8,7 @@ func _ready():
 	if GlobalConf.is_camera_mouse_paused:
 		texture=pauseTexture
 
-func _process(delta):
+func _process(_delta):
 	if GlobalConf.is_camera_mouse_paused:
 		set_texture(pauseTexture)
 

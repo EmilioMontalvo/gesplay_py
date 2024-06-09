@@ -7,9 +7,6 @@ func _ready():
 	call_deferred("_deferred_change", container)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func _deferred_change(scene):
 	get_tree().change_scene_to_packed(scene)

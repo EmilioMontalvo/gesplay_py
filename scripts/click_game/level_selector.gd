@@ -13,9 +13,7 @@ func _ready():
 	else:
 		button.text = level
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 func _on_press_change_to_level():
 	if(!is_locked):

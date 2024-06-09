@@ -7,6 +7,4 @@ func _ready():
 	MenuManager.load_menu(MenuManager.MENU_LEVEL.LOGIN)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+

@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://bptw2nlfygtlb"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_lrka0"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="2_xqq7c"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="3_1wa53"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_cancel_button.tres" id="4_vmvcm"]
+[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_cancel_button_hover.tres" id="5_jt4nb"]
+
+[node name="ControlComputerConfiguration" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1093.0
+offset_bottom = -646.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lrka0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 406.0
+offset_bottom = 378.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 43.0
+offset_right = 162.0
+offset_bottom = 81.0
+text = "Tamaño"
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -109.0
+offset_right = 166.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Panel"]
+offset_left = 38.0
+offset_top = 123.0
+offset_right = 184.0
+offset_bottom = 161.0
+text = "Opacidad"
+
+[node name="HSlider2" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -25.0
+offset_right = 164.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="Panel"]
+offset_left = 36.0
+offset_top = 214.0
+offset_right = 278.0
+offset_bottom = 252.0
+text = "Mostrar Camara"
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 225.0
+offset_right = 317.0
+offset_bottom = 247.0
+alignment = 1
+icon_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.5
+offset_top = -120.0
+offset_right = 79.5
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mas configuraciones"
+
+[node name="AcceptButton" type="Button" parent="Panel"]
+offset_left = 58.0
+offset_top = 321.0
+offset_right = 179.0
+offset_bottom = 361.0
+theme_override_styles/normal = ExtResource("2_xqq7c")
+theme_override_styles/hover = ExtResource("3_1wa53")
+theme_override_styles/pressed = ExtResource("2_xqq7c")
+text = "Aceptar"
+
+[node name="CancelButton" type="Button" parent="Panel"]
+offset_left = 223.0
+offset_top = 319.0
+offset_right = 357.0
+offset_bottom = 359.0
+theme_override_styles/normal = ExtResource("4_vmvcm")
+theme_override_styles/hover = ExtResource("5_jt4nb")
+theme_override_styles/pressed = ExtResource("4_vmvcm")
+text = "Cancelar"

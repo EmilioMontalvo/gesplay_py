@@ -6,14 +6,14 @@ var path="res://.WebcamMouse/profiles"
 
 var data={}
 
-func add_profile(name:String):
+func add_profile(profile_name:String):
 	var dir=DirAccess.open(path)
-	dir.make_dir(name)
+	dir.make_dir(profile_name)
 
 func write_content(content,fileName,profileName):
 	var filepath=path+"/"+profileName+"/"+fileName
 	var file=FileAccess.open(filepath,FileAccess.WRITE)
-	file.store_string(json.stringify(content))
+	file.store_string(JSON.stringify(content))
 	file.close()
 	file=null
 	
@@ -30,7 +30,7 @@ func load_config(profileName):
 func load_cursor_config(profileName):
 	var filepath=path+"/"+profileName+"/"+"cursor.json"
 	var file=FileAccess.open(filepath,FileAccess.READ)
-	var content=json.parse_string(file.get_as_text())
+	var content=JSON.parse_string(file.get_as_text())
 	CursorConf.set_from_json(content)
 
 

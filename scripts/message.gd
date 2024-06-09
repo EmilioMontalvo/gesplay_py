@@ -19,5 +19,4 @@ func to_json():
 	return message_dict
 
 func _to_string():
-	var json=JSON.new()	
-	return json.stringify(to_json())
+	return JSON.stringify(to_json())

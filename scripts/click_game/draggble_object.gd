@@ -20,7 +20,7 @@ func _ready():
 	sprite.texture = icon
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if draggable and  !inside_correct_dropable:
 		if Input.is_action_just_pressed("click"):
 			initial_pos = global_position

@@ -17,10 +17,7 @@ func _ready():
 		draggable.mistake.connect(_on_draggable_object_mistake)
 	time_init = Time.get_unix_time_from_system()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func _on_draggable_object_success():
 	increase_success()
 	check_success()

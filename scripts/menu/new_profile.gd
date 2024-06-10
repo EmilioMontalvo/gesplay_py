@@ -57,7 +57,8 @@ func _on_acept_pressed():
 		custom_profile_image.save_png(new_image_path)
 		image_path = new_image_path
 	print(get_data_as_json())
-	
+	DataSaver.save_profile(get_data_as_json())
+
 func _on_change_image_default():
 	has_custom_image = false
 	image_path = button_group_images.get_pressed_button().icon.resource_path
@@ -67,4 +68,5 @@ func _on_file_dialog_file_selected(path):
 	var texture = ImageTexture.create_from_image(custom_profile_image)
 	texture.set_size_override(Vector2i(150,150))
 	file_upload_button.icon = texture
+	image_path = path
 	has_custom_image = true

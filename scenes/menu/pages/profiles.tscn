@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqb2bcqpd5kki"]
+[gd_scene load_steps=13 format=3 uid="uid://bqb2bcqpd5kki"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_awgda"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_bx8yf"]
+[ext_resource type="Script" path="res://scripts/menu/profiles_menu.gd" id="2_0g78i"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_0f7a8"]
 [ext_resource type="PackedScene" uid="uid://m8o081e6tutt" path="res://scenes/menu/components/profile_button.tscn" id="4_xn568"]
 [ext_resource type="Texture2D" uid="uid://dh2ilv0eibjfe" path="res://assets/buttons/icons/Search.png" id="5_cmqiq"]
@@ -20,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_awgda")
+script = ExtResource("2_0g78i")
 
 [node name="Background" parent="." instance=ExtResource("1_bx8yf")]
 layout_mode = 0
@@ -33,6 +35,7 @@ offset_right = 925.0
 offset_bottom = 189.0
 
 [node name="Profile" parent="." instance=ExtResource("4_xn568")]
+visible = false
 offset_left = 171.0
 offset_top = 381.0
 offset_right = 211.0
@@ -86,5 +89,17 @@ offset_left = 1318.0
 offset_top = 51.0
 offset_right = 1368.0
 offset_bottom = 101.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(1126, 450)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 381.0
+offset_right = 211.0
+offset_bottom = 421.0
+horizontal_scroll_mode = 0
+
+[node name="ProfilesContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button" method="_on_pressed"]

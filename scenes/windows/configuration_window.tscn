@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjdx4akt4mjyc"]
+[gd_scene load_steps=3 format=3 uid="uid://dwlvkyi230tig"]
 
 [ext_resource type="Script" path="res://scripts/configuration_window.gd" id="1_00qkc"]
-[ext_resource type="PackedScene" uid="uid://bptw2nlfygtlb" path="res://scenes/menu/pages/control_computer_configuration.tscn" id="2_341yf"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pages/control_computer_configuration.tscn" id="2_341yf"]
 
 [node name="ConfigurationWindow" type="Window"]
 transparent_bg = true

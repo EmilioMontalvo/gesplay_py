@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1yvwiyjrha7b"]
+[gd_scene load_steps=22 format=3 uid="uid://c1yvwiyjrha7b"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_dnlg5"]
 [ext_resource type="Script" path="res://scripts/menu/new_profile.gd" id="2_pjnet"]
@@ -6,11 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_x6i2t"]
 [ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
 [ext_resource type="Texture2D" uid="uid://boddnffiaaf7t" path="res://assets/buttons/icons/FileUpload.png" id="5_d3uvr"]
-[ext_resource type="PackedScene" uid="uid://mhr2va5krim6" path="res://addons/XDateTime/xd/XScripts/XDateEdit.tscn" id="5_l4osn"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_jrv5l"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_7h5t8"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="8_lu1k0"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_yiyny"]
+[ext_resource type="PackedScene" uid="uid://dtrjib6kfem1t" path="res://scenes/menu/components/profile/default_profile_image.tscn" id="10_petv3"]
+[ext_resource type="Texture2D" uid="uid://clji7qyq0vemt" path="res://assets/profile_images/default/default_profile2.png" id="11_deklt"]
+[ext_resource type="Texture2D" uid="uid://ccltjxgip7vpj" path="res://assets/profile_images/default/default_profile3.png" id="12_cfyit"]
+[ext_resource type="Texture2D" uid="uid://dtgkb5vl2f7mh" path="res://assets/profile_images/default/default_profile4.png" id="13_k4yx8"]
+[ext_resource type="Texture2D" uid="uid://qdn2sdbtbpqj" path="res://assets/profile_images/default/default_profile5.png" id="14_tae68"]
+[ext_resource type="Texture2D" uid="uid://ctcxy5qn3jv7d" path="res://assets/profile_images/default/default_profile6.png" id="15_o1y6f"]
+[ext_resource type="Texture2D" uid="uid://4k4uvr8nwfet" path="res://assets/profile_images/default/default_profile7.png" id="16_qdmec"]
+[ext_resource type="Texture2D" uid="uid://clxe22eftg3x8" path="res://assets/profile_images/default/default_profile8.png" id="17_36guu"]
+[ext_resource type="Texture2D" uid="uid://2a8j20nslolw" path="res://assets/profile_images/default/default_profile9.png" id="18_vlxt7"]
+
+[sub_resource type="Theme" id="Theme_a6bow"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl8ok"]
 bg_color = Color(0.909804, 0.843137, 0.72549, 1)
@@ -45,105 +55,15 @@ offset_bottom = 173.0
 grow_horizontal = 2
 text = "Nuevo Perfil"
 
-[node name="LblfirstName" type="Label" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 241.0
-offset_right = 461.0
-offset_bottom = 279.0
-theme_override_fonts/font = ExtResource("4_ft2fn")
-theme_override_font_sizes/font_size = 30
-text = "Nombre"
-
-[node name="TxtFirstName" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 292.0
-offset_right = 748.0
-offset_bottom = 340.0
-placeholder_text = "
-"
-
-[node name="LblSecondName" type="Label" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 355.0
-offset_right = 463.0
-offset_bottom = 393.0
-theme_override_fonts/font = ExtResource("4_ft2fn")
-theme_override_font_sizes/font_size = 30
-text = "Apellido"
-
-[node name="TxtSecondName" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 406.0
-offset_right = 748.0
-offset_bottom = 454.0
-placeholder_text = "
-"
-
-[node name="LblBithday" type="Label" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 469.0
-offset_right = 661.0
-offset_bottom = 507.0
-theme_override_fonts/font = ExtResource("4_ft2fn")
-theme_override_font_sizes/font_size = 30
-text = "Fecha de nacimiento"
-
-[node name="XDateEdit" parent="." instance=ExtResource("5_l4osn")]
-offset_left = 396.0
-offset_top = 515.0
-offset_right = 522.0
-offset_bottom = 564.0
-
-[node name="LblDescription" type="Label" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 583.0
-offset_right = 518.0
-offset_bottom = 621.0
-theme_override_fonts/font = ExtResource("4_ft2fn")
-theme_override_font_sizes/font_size = 30
-text = "Descripción"
-
-[node name="TxtDescription" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 634.0
-offset_right = 1107.0
-offset_bottom = 772.0
-placeholder_text = "
-"
-
-[node name="LblImage" type="Label" parent="."]
-layout_mode = 0
-offset_left = 817.0
-offset_top = 241.0
-offset_right = 944.0
-offset_bottom = 279.0
-theme_override_fonts/font = ExtResource("4_ft2fn")
-theme_override_font_sizes/font_size = 30
-text = "Imagen"
-
-[node name="FileUpload" type="Button" parent="."]
-layout_mode = 0
-offset_left = 817.0
-offset_top = 292.0
-offset_right = 1107.0
-offset_bottom = 568.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_bl8ok")
-icon = ExtResource("5_d3uvr")
-icon_alignment = 1
-
 [node name="AceptCancel" parent="." instance=ExtResource("6_jrv5l")]
 layout_mode = 1
 offset_left = 334.0
 offset_top = 840.0
 offset_right = -328.0
 offset_bottom = -128.0
+
+[node name="Acept" parent="AceptCancel" index="0"]
+scale = Vector2(1, 1.01264)
 
 [node name="HelpButton" parent="." instance=ExtResource("7_7h5t8")]
 layout_mode = 0
@@ -171,11 +91,152 @@ scene = 3
 title = "Open a File"
 initial_position = 4
 size = Vector2i(800, 700)
+theme = SubResource("Theme_a6bow")
 ok_button_text = "Open"
 file_mode = 0
 access = 2
+filters = PackedStringArray("*.png", "*.jpg")
+use_native_dialog = true
 
-[connection signal="pressed" from="FileUpload" to="." method="_on_file_upload_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 241.0
+offset_right = 334.0
+offset_bottom = 249.0
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="FirstName" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/FirstName"]
+layout_mode = 2
+
+[node name="LblfirstName" type="Label" parent="VBoxContainer/HBoxContainer/FirstName/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Nombre"
+
+[node name="TxtFirstName" type="TextEdit" parent="VBoxContainer/HBoxContainer/FirstName/VBoxContainer"]
+custom_minimum_size = Vector2(412, 45)
+layout_mode = 2
+placeholder_text = "
+"
+
+[node name="LastName" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LastName"]
+layout_mode = 2
+
+[node name="LblSecondName" type="Label" parent="VBoxContainer/HBoxContainer/LastName/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Apellido"
+
+[node name="TxtSecondName" type="TextEdit" parent="VBoxContainer/HBoxContainer/LastName/VBoxContainer"]
+custom_minimum_size = Vector2(412, 45)
+layout_mode = 2
+placeholder_text = "
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Selecciona una imagen o carga una desde tu ordenador"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ImagesList" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/ImagesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DefaultProfileImage" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer" instance=ExtResource("10_petv3")]
+layout_mode = 2
+
+[node name="DefaultProfileImage2" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("11_deklt")
+
+[node name="DefaultProfileImage3" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("12_cfyit")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DefaultProfileImage" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer2" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("13_k4yx8")
+
+[node name="DefaultProfileImage2" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer2" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("14_tae68")
+
+[node name="DefaultProfileImage3" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer2" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("15_o1y6f")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DefaultProfileImage" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("16_qdmec")
+
+[node name="DefaultProfileImage2" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("17_36guu")
+
+[node name="DefaultProfileImage3" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3" instance=ExtResource("10_petv3")]
+layout_mode = 2
+icon = ExtResource("18_vlxt7")
+
+[node name="ImageUpload" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/ImageUpload"]
+layout_mode = 2
+
+[node name="LblImage" type="Label" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ft2fn")
+theme_override_font_sizes/font_size = 30
+text = "Cargar"
+
+[node name="FileUpload" type="Button" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
+custom_minimum_size = Vector2(290, 276)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_bl8ok")
+icon = ExtResource("5_d3uvr")
+icon_alignment = 1
+
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
+[connection signal="confirmed" from="FileDialog" to="." method="_on_file_dialog_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/FileUpload" to="." method="_on_file_upload_pressed"]
 
 [editable path="AceptCancel"]

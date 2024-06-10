@@ -6,7 +6,7 @@
 
 [node name="Window" type="Window"]
 transparent_bg = true
-position = Vector2i(10, 36)
+position = Vector2i(462, 60)
 size = Vector2i(362, 475)
 unresizable = true
 borderless = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://mhr2va5krim6"]
+[gd_scene load_steps=12 format=3 uid="uid://mhr2va5krim6"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhl8u21jtq4" path="res://addons/XDateTime/xd/XScripts/XCalendarPopup.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bq0gkondugh1y" path="res://assets/buttons/icons/calendar_48.png" id="1_yue7m"]
@@ -70,6 +70,19 @@ func _on_XCalendarPopup_date_changed(val):
 	date = val
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bplmp"]
+bg_color = Color(0.964706, 0.933333, 0.870588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7otl4"]
+bg_color = Color(0.984314, 0.968627, 0.937255, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bjm3"]
+bg_color = Color(0.964706, 0.933333, 0.870588, 1)
+
 [node name="XDateEdit" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -96,6 +109,9 @@ alignment = 1
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bplmp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7otl4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2bjm3")
 icon = ExtResource("1_yue7m")
 icon_alignment = 1
 

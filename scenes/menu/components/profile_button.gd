@@ -12,6 +12,6 @@ func _ready():
 	$ProfileButton/TextureProfile.texture = texture_image
 
 func _on_delete_pressed():
-	var error = DataSaver.delete_profile(profile_id)
-	if error == OK:
+	var success = DataSaver.delete_profile(profile_id)
+	if success == OK:
 		queue_free()

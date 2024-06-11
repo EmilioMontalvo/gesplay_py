@@ -1,9 +1,10 @@
 extends Control
 
 @onready var file_dialog: FileDialog = $FileDialog
-@onready var file_upload_button: Button = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/FileUpload
+@onready var file_upload_button: Button = $VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3/FileUpload
 @onready var txt_firt_name: TextEdit = $VBoxContainer/HBoxContainer/FirstName/VBoxContainer/TxtFirstName
 @onready var txt_last_name: TextEdit = $VBoxContainer/HBoxContainer/LastName/VBoxContainer/TxtSecondName
+@onready var texture_image_profile: TextureRect = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/TextureRect
 
 var uuid: UUIDManager
 var button_group_images: ButtonGroup = ButtonGroup.new()
@@ -62,11 +63,17 @@ func _on_acept_pressed():
 func _on_change_image_default():
 	has_custom_image = false
 	image_path = button_group_images.get_pressed_button().icon.resource_path
+	set_profile_image_preview(image_path)
 
 func _on_file_dialog_file_selected(path):
-	custom_profile_image = Image.load_from_file(path)
-	var texture = ImageTexture.create_from_image(custom_profile_image)
-	texture.set_size_override(Vector2i(150,150))
-	file_upload_button.icon = texture
 	image_path = path
 	has_custom_image = true
+	set_profile_image_preview(image_path)
+	if button_group_images.get_pressed_button() != null:
+		button_group_images.get_pressed_button().button_pressed = false
+	
+func set_profile_image_preview(path: String):
+	var profile_image = Image.load_from_file(path)
+	var texture = ImageTexture.create_from_image(profile_image)
+	texture.set_size_override(Vector2i(150,150))
+	texture_image_profile.texture = texture

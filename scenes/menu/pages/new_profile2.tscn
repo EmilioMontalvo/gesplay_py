@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1yvwiyjrha7b"]
+[gd_scene load_steps=24 format=3 uid="uid://c1yvwiyjrha7b"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_dnlg5"]
 [ext_resource type="Script" path="res://scripts/menu/new_profile.gd" id="2_pjnet"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_qd6ou"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_x6i2t"]
 [ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
-[ext_resource type="Texture2D" uid="uid://boddnffiaaf7t" path="res://assets/buttons/icons/FileUpload.png" id="5_d3uvr"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_jrv5l"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_7h5t8"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="8_lu1k0"]
@@ -17,18 +16,74 @@
 [ext_resource type="Texture2D" uid="uid://qdn2sdbtbpqj" path="res://assets/profile_images/default/default_profile5.png" id="14_tae68"]
 [ext_resource type="Texture2D" uid="uid://ctcxy5qn3jv7d" path="res://assets/profile_images/default/default_profile6.png" id="15_o1y6f"]
 [ext_resource type="Texture2D" uid="uid://4k4uvr8nwfet" path="res://assets/profile_images/default/default_profile7.png" id="16_qdmec"]
-[ext_resource type="Texture2D" uid="uid://clxe22eftg3x8" path="res://assets/profile_images/default/default_profile8.png" id="17_36guu"]
+[ext_resource type="Texture2D" uid="uid://p0041fmx3vfy" path="res://assets/buttons/icons/add_photo_92.png" id="18_kj7i2"]
 [ext_resource type="Texture2D" uid="uid://2a8j20nslolw" path="res://assets/profile_images/default/default_profile9.png" id="18_vlxt7"]
 
 [sub_resource type="Theme" id="Theme_a6bow"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl8ok"]
-bg_color = Color(0.909804, 0.843137, 0.72549, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgisw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.964706, 0.933333, 0.870588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37op7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8, 0.694118, 0.478431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.309804, 0.231373, 0.670588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54m5t"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8, 0.694118, 0.478431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.309804, 0.231373, 0.670588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8irt"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8, 0.694118, 0.478431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.309804, 0.231373, 0.670588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="NewProfile" type="Control"]
 layout_mode = 3
@@ -155,7 +210,7 @@ text = "Selecciona una imagen o carga una desde tu ordenador"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 155
 alignment = 1
 
 [node name="ImagesList" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer3"]
@@ -205,38 +260,46 @@ theme_override_constants/separation = 20
 layout_mode = 2
 icon = ExtResource("16_qdmec")
 
-[node name="DefaultProfileImage2" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3" instance=ExtResource("10_petv3")]
-layout_mode = 2
-icon = ExtResource("17_36guu")
-
 [node name="DefaultProfileImage3" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3" instance=ExtResource("10_petv3")]
 layout_mode = 2
 icon = ExtResource("18_vlxt7")
 
+[node name="FileUpload" type="Button" parent="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_mgisw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_37op7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_54m5t")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c8irt")
+icon = ExtResource("18_kj7i2")
+icon_alignment = 1
+
 [node name="ImageUpload" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+alignment_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/ImageUpload"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="LblImage" type="Label" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ft2fn")
 theme_override_font_sizes/font_size = 30
-text = "Cargar"
+text = "Imagen de perfil"
 
-[node name="FileUpload" type="Button" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
-custom_minimum_size = Vector2(290, 276)
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
+texture_filter = 3
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_bl8ok")
-icon = ExtResource("5_d3uvr")
-icon_alignment = 1
+expand_mode = 1
+stretch_mode = 3
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="confirmed" from="FileDialog" to="." method="_on_file_dialog_confirmed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/FileUpload" to="." method="_on_file_upload_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3/FileUpload" to="." method="_on_file_upload_pressed"]
 
 [editable path="AceptCancel"]

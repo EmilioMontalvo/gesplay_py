@@ -87,7 +87,7 @@ offset_right = 146.0
 offset_bottom = 125.0
 texture = ExtResource("5_ey0g2")
 
-[node name="Report" type="Button" parent="."]
+[node name="Edit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 23.0
@@ -98,15 +98,15 @@ theme_override_styles/hover = ExtResource("6_2cbie")
 theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_4n673")
 
-[node name="Text" parent="Report" instance=ExtResource("3_fur3o")]
+[node name="Text" parent="Edit" instance=ExtResource("3_fur3o")]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 25.0
 offset_right = 210.0
 offset_bottom = 63.0
-text = "Reporte"
+text = "Editar"
 
-[node name="Configure" type="Button" parent="."]
+[node name="Delete" type="Button" parent="."]
 layout_mode = 0
 offset_left = 707.0
 offset_top = 25.0
@@ -117,10 +117,12 @@ theme_override_styles/hover = ExtResource("6_2cbie")
 theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_str8x")
 
-[node name="Text" parent="Configure" instance=ExtResource("3_fur3o")]
+[node name="Text" parent="Delete" instance=ExtResource("3_fur3o")]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 25.0
 offset_right = 210.0
 offset_bottom = 63.0
-text = "Configurar"
+text = "Eliminar"
+
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

@@ -68,6 +68,7 @@ func _on_change_image_default():
 func _on_file_dialog_file_selected(path):
 	image_path = path
 	has_custom_image = true
+	custom_profile_image = Image.load_from_file(path)
 	set_profile_image_preview(image_path)
 	if button_group_images.get_pressed_button() != null:
 		button_group_images.get_pressed_button().button_pressed = false

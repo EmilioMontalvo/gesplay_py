@@ -37,12 +37,12 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4n673"]
 atlas = ExtResource("7_7cu2v")
-region = Rect2(62, 0, 62, 62)
+region = Rect2(248, 0, 62, 62)
 margin = Rect2(13.055, 0, 0, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_str8x"]
 atlas = ExtResource("7_7cu2v")
-region = Rect2(124, 0, 62, 62)
+region = Rect2(310, 0, 62, 62)
 margin = Rect2(13.055, 0, 0, 0)
 
 [node name="Profile" type="Control"]

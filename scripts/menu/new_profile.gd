@@ -14,11 +14,18 @@ var custom_profile_image: Image
 var has_custom_image: bool = false
 var first_attempt_name: bool = true
 var first_attempt_image: bool = true
+var is_editing: bool = false
+var profile_data: Dictionary
 
 func _ready():
 	for button_image in get_tree().get_nodes_in_group('default_images'):
 		button_image.button_group = button_group_images
-		button_image.pressed.connect(_on_change_image_default)                                                                                       
+		button_image.pressed.connect(_on_change_image_default)
+	if is_editing:
+		txt_firt_name.text = profile_data["first_name"]
+		txt_last_name.text = profile_data["last_name"]
+		image_path = profile_data["image_path"]
+		set_profile_image_preview(image_path)                                                                                   
  
 func _on_file_upload_pressed():
 	file_dialog.visible = true
@@ -58,7 +65,12 @@ func _on_acept_pressed():
 		custom_profile_image.save_png(new_image_path)
 		image_path = new_image_path
 	print(get_data_as_json())
-	DataSaver.save_profile(get_data_as_json())
+	if is_editing:
+		var profile_edited = get_data_as_json()
+		profile_edited["id"] = profile_data["id"]
+		DataSaver.save_profile(profile_edited)
+	else:
+		DataSaver.save_profile(get_data_as_json())
 
 func _on_change_image_default():
 	has_custom_image = false

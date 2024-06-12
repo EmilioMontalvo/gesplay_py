@@ -23,4 +23,5 @@ func _on_edit_pressed():
 	root_scene.add_child(new_profile_instance)
 
 func _on_profile_button_pressed():
-	CurrentProfile.set_data_from_dic(profile_data)
+	#CurrentProfile.set_data_from_dic(profile_data)
+	pass

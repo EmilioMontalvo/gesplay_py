@@ -46,3 +46,8 @@ func _on_confirm_dialog_window_canceled():
 
 func save_position():
 	GlobalConf.control_computer_window_position=position
+
+
+func _on_enhanced_camera_config(windowId):
+	$ConfigurationWindow.visible=true
+	$ConfigurationWindow.update_son()

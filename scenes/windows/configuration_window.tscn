@@ -7,14 +7,12 @@
 transparent_bg = true
 title = "Configuración"
 initial_position = 4
-size = Vector2i(413, 420)
-transient = true
-unresizable = true
+size = Vector2i(770, 876)
 borderless = true
 transparent = true
 popup_window = true
 extend_to_title = true
-content_scale_mode = 1
+content_scale_mode = 2
 content_scale_aspect = 1
 script = ExtResource("1_00qkc")
 
@@ -22,10 +20,7 @@ script = ExtResource("1_00qkc")
 anchor_mode = 0
 
 [node name="ControlComputerConfiguration" parent="Camera2D" instance=ExtResource("2_341yf")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+
+[connection signal="cancel" from="Camera2D/ControlComputerConfiguration" to="." method="_on_control_computer_configuration_cancel"]

@@ -59,9 +59,8 @@ script = ExtResource("2_7xg7t")
 
 [node name="DragPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = -175.0
 offset_right = 640.0
-offset_bottom = -29.0
+offset_bottom = 146.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_o83fs")
 script = ExtResource("3_xqiad")
 
@@ -80,26 +79,34 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bk4mn")
 
+[node name="HelpButton" parent="DragPanel" instance=ExtResource("11_3rvfg")]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 44.0
+offset_right = 605.0
+offset_bottom = 94.0
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
+offset_top = 170.0
 offset_right = 640.0
-offset_bottom = 661.0
+offset_bottom = 831.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_n0x85")
 
-[node name="Camera" parent="." instance=ExtResource("1_cdmem")]
+[node name="Camera" parent="Panel" instance=ExtResource("1_cdmem")]
 layout_mode = 0
 offset_top = 182.0
 offset_right = 640.0
 offset_bottom = 662.0
 
-[node name="GoBack" type="Button" parent="."]
+[node name="GoBack" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 9.0
 offset_right = 207.0
 offset_bottom = 175.0
 
-[node name="TextureRect" type="TextureRect" parent="GoBack"]
+[node name="TextureRect" type="TextureRect" parent="Panel/GoBack"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,14 +122,14 @@ grow_vertical = 2
 texture = ExtResource("3_u8nmf")
 flip_h = true
 
-[node name="Pause" type="Button" parent="."]
+[node name="Pause" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 9.0
 offset_right = 414.0
 offset_bottom = 175.0
 
-[node name="TextureRect" type="TextureRect" parent="Pause"]
+[node name="TextureRect" type="TextureRect" parent="Panel/Pause"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,7 +144,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_7o05n")
 
-[node name="TextureRect2" type="TextureRect" parent="Pause"]
+[node name="TextureRect2" type="TextureRect" parent="Panel/Pause"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -153,7 +160,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_rhlkx")
 
-[node name="Close" type="Button" parent="."]
+[node name="Close" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 10.0
@@ -163,7 +170,7 @@ theme_override_styles/normal = ExtResource("4_hpnts")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4oky7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3sskv")
 
-[node name="TextureRect" type="TextureRect" parent="Close"]
+[node name="TextureRect" type="TextureRect" parent="Panel/Close"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -178,14 +185,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_ah08m")
 
-[node name="HelpButton" parent="." instance=ExtResource("11_3rvfg")]
-layout_mode = 0
-offset_left = 555.0
-offset_top = -131.0
-offset_right = 605.0
-offset_bottom = -81.0
-
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="Panel"]
 visible = false
 layout_mode = 0
 offset_left = 560.0
@@ -195,7 +195,7 @@ offset_bottom = 656.0
 texture_normal = ExtResource("12_kwtxd")
 stretch_mode = 3
 
-[node name="control_camer_conf_btn" parent="." instance=ExtResource("13_pvcjh")]
+[node name="control_camer_conf_btn" parent="Panel" instance=ExtResource("13_pvcjh")]
 layout_mode = 0
 offset_left = 529.0
 offset_top = 551.0
@@ -204,6 +204,7 @@ offset_bottom = 655.0
 
 [connection signal="dragged_panel" from="DragPanel" to="." method="_on_drag_panel_dragged_panel"]
 [connection signal="gui_input" from="DragPanel" to="DragPanel" method="_on_gui_input"]
-[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/GoBack" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Panel/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/control_camer_conf_btn" to="." method="_on_control_camer_conf_btn_pressed"]

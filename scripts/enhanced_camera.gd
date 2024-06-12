@@ -10,6 +10,7 @@ var window_id=1
 
 signal go_back
 signal drag
+signal config
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,3 +55,7 @@ func set_window_id(id):
 func _on_drag_panel_dragged_panel(following,dragPoint):
 	followingLocal=following
 	dragPointLocal=dragPoint * scale
+
+
+func _on_control_camer_conf_btn_pressed():
+	config.emit()

@@ -20,8 +20,6 @@ script = ExtResource("1_cnpfj")
 anchor_mode = 0
 
 [node name="EnhancedCamera" parent="Camera2D" instance=ExtResource("1_cu25u")]
-offset_top = 100.0
-offset_bottom = 100.0
 scale = Vector2(0.565, 0.565)
 
 [node name="ConfirmDialogWindow" parent="." instance=ExtResource("3_b3mgi")]

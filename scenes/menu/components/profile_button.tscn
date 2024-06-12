@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://m8o081e6tutt"]
+[gd_scene load_steps=15 format=3 uid="uid://m8o081e6tutt"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_kmpcl"]
 [ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_qf7h1"]
 [ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="2_jndbv"]
+[ext_resource type="Script" path="res://scenes/menu/components/profile_button.gd" id="2_xlm61"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_fur3o"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="4_x8ul1"]
 [ext_resource type="Texture2D" uid="uid://bqbe7hrebg37w" path="res://assets/buttons/user_images/Placeholder.png" id="5_ey0g2"]
@@ -45,11 +46,13 @@ region = Rect2(124, 0, 62, 62)
 margin = Rect2(13.055, 0, 0, 0)
 
 [node name="Profile" type="Control"]
+custom_minimum_size = Vector2(1126, 137)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1126.0
+offset_bottom = 137.0
 theme = ExtResource("1_kmpcl")
+script = ExtResource("2_xlm61")
 
 [node name="ProfileButton" type="Button" parent="."]
 layout_mode = 0
@@ -60,7 +63,7 @@ theme_override_styles/normal = ExtResource("2_jndbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g0aa4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8mexx")
 
-[node name="Text" parent="ProfileButton" instance=ExtResource("3_fur3o")]
+[node name="ProfileName" parent="ProfileButton" instance=ExtResource("3_fur3o")]
 layout_mode = 0
 offset_left = 167.0
 offset_top = 48.0
@@ -76,7 +79,7 @@ offset_right = 1085.0
 offset_bottom = 95.0
 texture = ExtResource("4_x8ul1")
 
-[node name="TextureRect" type="TextureRect" parent="ProfileButton"]
+[node name="TextureProfile" type="TextureRect" parent="ProfileButton"]
 layout_mode = 2
 offset_left = 38.0
 offset_top = 17.0
@@ -84,7 +87,7 @@ offset_right = 146.0
 offset_bottom = 125.0
 texture = ExtResource("5_ey0g2")
 
-[node name="Report" type="Button" parent="."]
+[node name="Edit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 23.0
@@ -95,15 +98,15 @@ theme_override_styles/hover = ExtResource("6_2cbie")
 theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_4n673")
 
-[node name="Text" parent="Report" instance=ExtResource("3_fur3o")]
+[node name="Text" parent="Edit" instance=ExtResource("3_fur3o")]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 25.0
 offset_right = 210.0
 offset_bottom = 63.0
-text = "Reporte"
+text = "Editar"
 
-[node name="Configure" type="Button" parent="."]
+[node name="Delete" type="Button" parent="."]
 layout_mode = 0
 offset_left = 707.0
 offset_top = 25.0
@@ -114,10 +117,12 @@ theme_override_styles/hover = ExtResource("6_2cbie")
 theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_str8x")
 
-[node name="Text" parent="Configure" instance=ExtResource("3_fur3o")]
+[node name="Text" parent="Delete" instance=ExtResource("3_fur3o")]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 25.0
 offset_right = 210.0
 offset_bottom = 63.0
-text = "Configurar"
+text = "Eliminar"
+
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

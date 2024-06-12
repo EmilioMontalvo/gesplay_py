@@ -43,6 +43,7 @@ script = ExtResource("2_t8nng")
 layout_mode = 0
 
 [node name="Panel" parent="ColorRect" instance=ExtResource("4_cjl87")]
+layout_mode = 0
 offset_left = 508.0
 offset_top = 218.0
 offset_right = 1380.0

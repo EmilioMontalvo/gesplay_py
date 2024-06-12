@@ -7,6 +7,14 @@ func _ready():
 	var window_id=DisplayServer.get_window_list()[DisplayServer.get_window_list().size()-1]
 	$Camera2D/EnhancedCamera.set_window_id(window_id)
 	$Camera2D/EnhancedCamera.window=true
+	
+	if not GlobalConf.control_computer_window_position:
+		var primary_screen_index = DisplayServer.window_get_current_screen()
+		# Get the size of the primary screen
+		var screen_size = DisplayServer.screen_get_size(primary_screen_index)
+		GlobalConf.control_computer_window_position=screen_size-DisplayServer.window_get_size(window_id)
+		print("Screen size: ", screen_size)
+	
 	if window_id!=0:
 		DisplayServer.window_set_position(GlobalConf.control_computer_window_position,window_id)
 	pass

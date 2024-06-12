@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bptw2nlfygtlb"]
+[gd_scene load_steps=7 format=3 uid="uid://bptw2nlfygtlb"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_lrka0"]
+[ext_resource type="Script" path="res://scripts/menu/control_computer_configuration.gd" id="2_58hum"]
 [ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="2_xqq7c"]
 [ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="3_1wa53"]
 [ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_cancel_button.tres" id="4_vmvcm"]
@@ -16,6 +17,7 @@ offset_bottom = -625.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lrka0")
+script = ExtResource("2_58hum")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -45,6 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 123.0
 offset_right = 184.0
@@ -65,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 36.0
 offset_top = 214.0
 offset_right = 278.0
@@ -96,6 +100,7 @@ grow_vertical = 0
 text = "Mas configuraciones"
 
 [node name="AcceptButton" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 58.0
 offset_top = 321.0
 offset_right = 179.0
@@ -107,6 +112,7 @@ theme_override_styles/pressed = ExtResource("2_xqq7c")
 text = "Aceptar"
 
 [node name="CancelButton" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 319.0
 offset_right = 357.0
@@ -115,3 +121,6 @@ theme_override_styles/normal = ExtResource("4_vmvcm")
 theme_override_styles/hover = ExtResource("5_jt4nb")
 theme_override_styles/pressed = ExtResource("4_vmvcm")
 text = "Cancelar"
+
+[connection signal="pressed" from="Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="Panel/CancelButton" to="." method="_on_cancel_button_pressed"]

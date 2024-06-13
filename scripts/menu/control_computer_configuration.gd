@@ -19,11 +19,11 @@ func _on_cancel_button_pressed():
 
 
 func _on_size_slider_value_changed(value):
-	pass # Replace with function body.
+	pass
 
 
 func _on_opacity_slider_value_changed(value):
-	pass # Replace with function body.
+	pass
 
 
 

@@ -15,8 +15,6 @@ signal config
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().get_root().set_transparent_background(true)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -58,4 +56,4 @@ func _on_drag_panel_dragged_panel(following,dragPoint):
 
 
 func _on_control_camer_conf_btn_pressed():
-	config.emit()
+	config.emit(window_id)

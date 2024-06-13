@@ -1,7 +1,6 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
+signal cancel
 func _ready():
 	pass # Replace with function body.
 
@@ -16,4 +15,15 @@ func _on_accept_button_pressed():
 
 
 func _on_cancel_button_pressed():
-	pass # Replace with function body.
+	cancel.emit()
+
+
+func _on_size_slider_value_changed(value):
+	pass
+
+
+func _on_opacity_slider_value_changed(value):
+	pass
+
+
+

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6x4im8p0stpr"]
+[gd_scene load_steps=5 format=3 uid="uid://6x4im8p0stpr"]
 
 [ext_resource type="Script" path="res://scripts/window.gd" id="1_cnpfj"]
 [ext_resource type="PackedScene" uid="uid://cashahcwmo0ch" path="res://scenes/menu/pages/EnhancedCamera.tscn" id="1_cu25u"]
 [ext_resource type="PackedScene" uid="uid://4c8ywcidgjoy" path="res://scenes/windows/confirm_dialog_window.tscn" id="3_b3mgi"]
+[ext_resource type="PackedScene" uid="uid://dwlvkyi230tig" path="res://scenes/windows/configuration_window.tscn" id="4_6ut38"]
 
 [node name="Window" type="Window"]
 transparent_bg = true
@@ -26,6 +27,13 @@ scale = Vector2(0.565, 0.565)
 visible = false
 dialogText = "La aplicación se cerrará"
 
+[node name="ConfigurationWindow" parent="." instance=ExtResource("4_6ut38")]
+visible = false
+always_on_top = true
+
+[connection signal="config" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_config"]
 [connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]
 [connection signal="acepted" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_acepted"]
 [connection signal="canceled" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_canceled"]
+
+[editable path="ConfigurationWindow"]

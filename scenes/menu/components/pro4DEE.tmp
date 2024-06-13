@@ -1,0 +1,151 @@
+[gd_scene load_steps=16 format=3 uid="uid://m8o081e6tutt"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_kmpcl"]
+[ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_qf7h1"]
+[ext_resource type="StyleBox" uid="uid://dfwaiis78f2i5" path="res://assets/buttons/resources/style_box_control_computer_button.tres" id="2_jndbv"]
+[ext_resource type="Script" path="res://scenes/menu/components/profile_button.gd" id="2_xlm61"]
+[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_fur3o"]
+[ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="4_x8ul1"]
+[ext_resource type="Texture2D" uid="uid://bqbe7hrebg37w" path="res://assets/buttons/user_images/Placeholder.png" id="5_ey0g2"]
+[ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="7_7cu2v"]
+[ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="11_d4jol"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0aa4"]
+bg_color = Color(0.72549, 0.415686, 0.807843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mexx"]
+bg_color = Color(0.666667, 0.231373, 0.776471, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n673"]
+atlas = ExtResource("7_7cu2v")
+region = Rect2(248, 0, 62, 62)
+margin = Rect2(13.055, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcdh0"]
+bg_color = Color(0.780392, 0.262745, 0.141176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36brt"]
+bg_color = Color(0.972549, 0.517647, 0.415686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_str8x"]
+atlas = ExtResource("7_7cu2v")
+region = Rect2(310, 0, 62, 62)
+margin = Rect2(13.055, 0, 0, 0)
+
+[node name="Profile" type="Control"]
+custom_minimum_size = Vector2(1126, 137)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1126.0
+offset_bottom = 137.0
+theme = ExtResource("1_kmpcl")
+script = ExtResource("2_xlm61")
+
+[node name="ProfileButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1126.0
+offset_bottom = 137.0
+theme = ExtResource("1_qf7h1")
+theme_override_styles/normal = ExtResource("2_jndbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g0aa4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mexx")
+
+[node name="ProfileName" parent="ProfileButton" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 48.0
+offset_right = 379.0
+offset_bottom = 86.0
+text = "Nombre Perfil"
+
+[node name="TextureRect2" type="TextureRect" parent="ProfileButton"]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 45.0
+offset_right = 1085.0
+offset_bottom = 95.0
+texture = ExtResource("4_x8ul1")
+
+[node name="TextureProfile" type="TextureRect" parent="ProfileButton"]
+layout_mode = 2
+offset_left = 38.0
+offset_top = 17.0
+offset_right = 146.0
+offset_bottom = 125.0
+texture = ExtResource("5_ey0g2")
+
+[node name="Edit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 23.0
+offset_right = 679.0
+offset_bottom = 112.0
+theme = ExtResource("1_kmpcl")
+icon = SubResource("AtlasTexture_4n673")
+
+[node name="Text" parent="Edit" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 25.0
+offset_right = 210.0
+offset_bottom = 63.0
+text = "Editar"
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 25.0
+offset_right = 995.0
+offset_bottom = 114.0
+theme_override_styles/normal = ExtResource("11_d4jol")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcdh0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_36brt")
+icon = SubResource("AtlasTexture_str8x")
+
+[node name="Text" parent="Delete" instance=ExtResource("3_fur3o")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 25.0
+offset_right = 210.0
+offset_bottom = 63.0
+text = "Eliminar"
+
+[connection signal="pressed" from="ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="pressed" from="Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

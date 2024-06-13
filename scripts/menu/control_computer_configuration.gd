@@ -45,7 +45,6 @@ func _on_size_slider_value_changed(value):
 	config_size=Vector2i(new_width, new_height)
 	# Set the new window size
 	size_value=value
-	print(value)
 	DisplayServer.window_set_size(config_size, GlobalConf.config_window_id)
 
 func _on_opacity_slider_value_changed(value):

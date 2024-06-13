@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg5k1xyefco84"]
+
+[ext_resource type="Texture2D" uid="uid://cwx4y63y7hf3o" path="res://assets/cursor_game/pellet.png" id="1_5b0sf"]
+
+[node name="Pellet" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5b0sf")

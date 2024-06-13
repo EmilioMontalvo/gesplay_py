@@ -209,7 +209,7 @@ polygon = PackedVector2Array(2, 257, -2, 1031, 1452, 1030, 1446.75, 580.482, 144
 position = Vector2(493, 497)
 
 [node name="Polygon2D" parent="TerrainContainer/Terrain" index="0"]
-polygon = PackedVector2Array(-39, -82, -15, -18, -58, 14, -57, 79, 68, 108, 205, 190, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
+polygon = PackedVector2Array(-39, -82, -15, -18, -84, 58, 93, 69, 196, 114, 284, 158, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
 
 [node name="Terrain2" parent="TerrainContainer" instance=ExtResource("2_7lave")]
 position = Vector2(470, 614)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4ekcuuhhm7mu"]
+
+[ext_resource type="Script" path="res://scripts/cursor/point_line.gd" id="1_svto8"]
+
+[node name="PointsLine" type="Line2D"]
+points = PackedVector2Array(59, 32, 312.153, 222.744, 446.638, 122.073, 661.321, 265.549)
+default_color = Color(1, 1, 1, 0)
+script = ExtResource("1_svto8")

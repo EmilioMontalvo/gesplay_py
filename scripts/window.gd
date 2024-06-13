@@ -8,7 +8,7 @@ func _ready():
 	$Camera2D/EnhancedCamera.set_window_id(window_id)
 	$Camera2D/EnhancedCamera.window=true
 	GlobalConf.config_window_id=window_id
-	
+	set_content_scale_size(Vector2i(362,475))
 	size=GlobalConf.contrl_window_size
 	
 	if not GlobalConf.control_computer_window_position:

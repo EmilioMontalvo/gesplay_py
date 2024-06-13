@@ -50,7 +50,7 @@ offset_right = 178.5
 offset_bottom = -82.5
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -21.0
+min_value = -6.0
 max_value = 21.0
 
 [node name="Label2" type="Label" parent="Panel"]

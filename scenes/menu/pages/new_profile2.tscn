@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1yvwiyjrha7b"]
+[gd_scene load_steps=27 format=3 uid="uid://c1yvwiyjrha7b"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_dnlg5"]
 [ext_resource type="Script" path="res://scripts/menu/new_profile.gd" id="2_pjnet"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://4k4uvr8nwfet" path="res://assets/profile_images/default/default_profile7.png" id="16_qdmec"]
 [ext_resource type="Texture2D" uid="uid://p0041fmx3vfy" path="res://assets/buttons/icons/add_photo_92.png" id="18_kj7i2"]
 [ext_resource type="Texture2D" uid="uid://2a8j20nslolw" path="res://assets/profile_images/default/default_profile9.png" id="18_vlxt7"]
+[ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="19_b0hjc"]
 
 [sub_resource type="Theme" id="Theme_a6bow"]
 
@@ -85,6 +86,22 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd7ys"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqm1i"]
+shader = ExtResource("19_b0hjc")
+shader_parameter/corner_radius = 50.0
+
 [node name="NewProfile" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -133,7 +150,6 @@ offset_left = 1222.0
 offset_top = 39.0
 offset_right = 1318.0
 offset_bottom = 135.0
-scene = 0
 
 [node name="GoBack" parent="." instance=ExtResource("9_yiyny")]
 layout_mode = 0
@@ -290,10 +306,30 @@ theme_override_fonts/font = ExtResource("4_ft2fn")
 theme_override_font_sizes/font_size = 30
 text = "Imagen de perfil"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
-texture_filter = 3
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer"]
+visible = false
+clip_contents = true
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_jd7ys")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_tqm1i")
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.5
+offset_top = -75.0
+offset_right = 129.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 3
 

@@ -4,7 +4,8 @@ extends Control
 @onready var file_upload_button: Button = $VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3/FileUpload
 @onready var txt_firt_name: TextEdit = $VBoxContainer/HBoxContainer/FirstName/VBoxContainer/TxtFirstName
 @onready var txt_last_name: TextEdit = $VBoxContainer/HBoxContainer/LastName/VBoxContainer/TxtSecondName
-@onready var texture_image_profile: TextureRect = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/TextureRect
+@onready var texture_image_profile: TextureRect = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel/TextureRect
+@onready var panel_image: Panel = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel
 
 var uuid: UUIDManager
 var button_group_images: ButtonGroup = ButtonGroup.new()
@@ -74,6 +75,7 @@ func _on_acept_pressed():
 	MenuManager.load_menu(3)
 
 func _on_change_image_default():
+	panel_image.visible = true
 	has_custom_image = false
 	image_path = button_group_images.get_pressed_button().icon.resource_path
 	set_profile_image_preview(image_path)
@@ -87,6 +89,7 @@ func _on_file_dialog_file_selected(path):
 		button_group_images.get_pressed_button().button_pressed = false
 	
 func set_profile_image_preview(path: String):
+	panel_image.visible = true
 	var profile_image = Image.load_from_file(path)
 	var texture = ImageTexture.create_from_image(profile_image)
 	texture.set_size_override(Vector2i(150,150))

@@ -1,18 +1,27 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyh4poxlaa4ji"]
+[gd_scene load_steps=15 format=3 uid="uid://dyh4poxlaa4ji"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
+[ext_resource type="Script" path="res://scripts/menu/settings_menu.gd" id="2_pkge3"]
 [ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
-[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="3_1513q"]
 [ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ipy7k"]
 [ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_a6g5f"]
 [ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_uacma"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_fjkx8"]
-[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="9_xm8fl"]
 [ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_kamni"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_jy6ah"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_vg1ue"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_518jn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_htof6"]
+font = ExtResource("2_ymuiq")
+font_size = 40
+font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_esjl5"]
+font = ExtResource("6_pc5c2")
+font_size = 30
+font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_21nlb")
+script = ExtResource("2_pkge3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -46,50 +56,56 @@ theme_override_fonts/font = ExtResource("2_ymuiq")
 theme_override_font_sizes/font_size = 100
 text = "Configuración"
 
-[node name="LblName" type="Label" parent="."]
+[node name="GoBack" parent="." instance=ExtResource("11_jy6ah")]
 layout_mode = 0
-offset_left = 733.0
-offset_top = 243.0
-offset_right = 860.0
-offset_bottom = 281.0
-theme_override_fonts/font = ExtResource("3_1513q")
-theme_override_font_sizes/font_size = 30
-text = "Nombre"
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 124.0
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="Home" parent="." instance=ExtResource("12_vg1ue")]
 layout_mode = 0
-offset_left = 733.0
-offset_top = 300.0
-offset_right = 1224.0
-offset_bottom = 382.0
+offset_left = 1248.0
+offset_top = 30.0
+offset_right = 1344.0
+offset_bottom = 126.0
+scene = 0
 
-[node name="TextureRect" type="TextureRect" parent="TextEdit"]
+[node name="HelpButton" parent="." instance=ExtResource("13_518jn")]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 55.0
+offset_right = 1415.0
+offset_bottom = 105.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -20.0
-offset_right = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
+offset_left = -437.0
+offset_top = -252.5
+offset_right = 437.0
+offset_bottom = 252.5
+grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_ipy7k")
+theme_override_constants/separation = 150
 
-[node name="BtnGeneralSettings" type="Button" parent="."]
-layout_mode = 0
-offset_left = 733.0
-offset_top = 411.0
-offset_right = 1224.0
-offset_bottom = 495.0
+[node name="Configs" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="BtnGeneralSettings" type="Button" parent="HBoxContainer/Configs"]
+custom_minimum_size = Vector2(491, 84)
+layout_mode = 2
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")
-scene = 15
 
-[node name="Label" type="Label" parent="BtnGeneralSettings"]
+[node name="Label" type="Label" parent="HBoxContainer/Configs/BtnGeneralSettings"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -103,7 +119,7 @@ theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
 text = "Configuración General"
 
-[node name="TextureRect" type="TextureRect" parent="BtnGeneralSettings"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Configs/BtnGeneralSettings"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -118,18 +134,14 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("7_uacma")
 
-[node name="BtnCursorSettings" type="Button" parent="."]
-layout_mode = 0
-offset_left = 733.0
-offset_top = 522.0
-offset_right = 1224.0
-offset_bottom = 606.0
+[node name="BtnCursorSettings" type="Button" parent="HBoxContainer/Configs"]
+custom_minimum_size = Vector2(491, 84)
+layout_mode = 2
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")
-scene = 5
 
-[node name="Label" type="Label" parent="BtnCursorSettings"]
+[node name="Label" type="Label" parent="HBoxContainer/Configs/BtnCursorSettings"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -144,7 +156,7 @@ theme_override_font_sizes/font_size = 30
 text = "Configuración del Cursor
 "
 
-[node name="TextureRect" type="TextureRect" parent="BtnCursorSettings"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Configs/BtnCursorSettings"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -159,18 +171,14 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("7_uacma")
 
-[node name="BtnClicSettings3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 733.0
-offset_top = 629.0
-offset_right = 1224.0
-offset_bottom = 713.0
+[node name="BtnClicSettings3" type="Button" parent="HBoxContainer/Configs"]
+custom_minimum_size = Vector2(491, 84)
+layout_mode = 2
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")
-scene = 9
 
-[node name="Label" type="Label" parent="BtnClicSettings3"]
+[node name="Label" type="Label" parent="HBoxContainer/Configs/BtnClicSettings3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -185,7 +193,7 @@ theme_override_font_sizes/font_size = 30
 text = "Configuración del Clic
 "
 
-[node name="TextureRect" type="TextureRect" parent="BtnClicSettings3"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Configs/BtnClicSettings3"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -200,73 +208,38 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("7_uacma")
 
-[node name="BtnEditImage" type="Button" parent="."]
-layout_mode = 0
-offset_left = 323.0
-offset_top = 629.0
-offset_right = 649.0
-offset_bottom = 713.0
+[node name="CurrentProfile" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="HBoxContainer/CurrentProfile"]
+layout_mode = 2
+text = "Perfil"
+label_settings = SubResource("LabelSettings_htof6")
+horizontal_alignment = 1
+
+[node name="ProfileImage" type="TextureRect" parent="HBoxContainer/CurrentProfile"]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("10_kamni")
+
+[node name="ProfileName" type="Label" parent="HBoxContainer/CurrentProfile"]
+layout_mode = 2
+text = "Perfil1"
+label_settings = SubResource("LabelSettings_esjl5")
+horizontal_alignment = 1
+
+[node name="BtnEditProfile" type="Button" parent="HBoxContainer/CurrentProfile"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 theme_override_fonts/font = ExtResource("6_pc5c2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("5_a6g5f")
 text = "Editar"
+icon = ExtResource("4_ipy7k")
 icon_alignment = 2
 
-[node name="AceptCancel" parent="." instance=ExtResource("9_xm8fl")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -396.0
-offset_top = -114.0
-offset_right = -396.0
-offset_bottom = -114.0
-grow_vertical = 0
-
-[node name="Acept" parent="AceptCancel" index="0"]
-script = ExtResource("8_fjkx8")
-scene = 1
-
-[node name="Cancel" parent="AceptCancel" index="1"]
-script = ExtResource("8_fjkx8")
-scene = 1
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 329.0
-offset_top = 284.0
-offset_right = 642.0
-offset_bottom = 608.0
-texture = ExtResource("10_kamni")
-
-[node name="GoBack" parent="." instance=ExtResource("11_jy6ah")]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 24.0
-offset_right = 126.0
-offset_bottom = 124.0
-scene = 1
-
-[node name="Home" parent="." instance=ExtResource("12_vg1ue")]
-layout_mode = 0
-offset_left = 1248.0
-offset_top = 30.0
-offset_right = 1344.0
-offset_bottom = 126.0
-
-[node name="HelpButton" parent="." instance=ExtResource("13_518jn")]
-layout_mode = 0
-offset_left = 1365.0
-offset_top = 55.0
-offset_right = 1415.0
-offset_bottom = 105.0
-
-[connection signal="pressed" from="BtnGeneralSettings" to="BtnGeneralSettings" method="_on_pressed"]
-[connection signal="pressed" from="BtnCursorSettings" to="BtnCursorSettings" method="_on_pressed"]
-[connection signal="pressed" from="BtnClicSettings3" to="BtnClicSettings3" method="_on_pressed"]
-[connection signal="pressed" from="AceptCancel/Acept" to="BtnCursorSettings" method="_on_acept_pressed"]
-[connection signal="pressed" from="AceptCancel/Cancel" to="AceptCancel/Cancel" method="_on_pressed"]
-
-[editable path="AceptCancel"]
+[connection signal="pressed" from="HBoxContainer/Configs/BtnGeneralSettings" to="HBoxContainer/Configs/BtnGeneralSettings" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/Configs/BtnCursorSettings" to="HBoxContainer/Configs/BtnCursorSettings" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/Configs/BtnClicSettings3" to="HBoxContainer/Configs/BtnClicSettings3" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/CurrentProfile/BtnEditProfile" to="." method="_on_btn_edit_profile_pressed"]

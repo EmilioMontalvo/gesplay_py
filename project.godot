@@ -26,6 +26,7 @@ GlobalClick="*res://scripts/click_game/GlobalClick.gd"
 CurrentClickLevel="*res://scripts/click_game/utils/CurrentClickLevel.gd"
 ClickConf="*res://scripts/click_game/config/click_config.gd"
 GlobalConf="*res://scripts/global_config.gd"
+CurrentProfile="*res://scripts/current_profile.gd"
 
 [display]
 

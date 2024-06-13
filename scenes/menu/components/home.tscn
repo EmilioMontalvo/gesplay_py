@@ -8,6 +8,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_0vq8w")
 script = ExtResource("2_8sme3")
-scene = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

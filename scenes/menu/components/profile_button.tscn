@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://m8o081e6tutt"]
+[gd_scene load_steps=15 format=3 uid="uid://m8o081e6tutt"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_kmpcl"]
 [ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_qf7h1"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_fur3o"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="4_x8ul1"]
 [ext_resource type="Texture2D" uid="uid://bqbe7hrebg37w" path="res://assets/buttons/user_images/Placeholder.png" id="5_ey0g2"]
+[ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="6_2cbie"]
 [ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="7_7cu2v"]
-[ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="11_d4jol"]
+[ext_resource type="StyleBox" uid="uid://70u03etbidld" path="res://assets/buttons/themes/yellow_pressed.tres" id="7_200in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0aa4"]
 bg_color = Color(0.72549, 0.415686, 0.807843, 1)
@@ -36,36 +37,12 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4n673"]
 atlas = ExtResource("7_7cu2v")
-region = Rect2(248, 0, 62, 62)
+region = Rect2(62, 0, 62, 62)
 margin = Rect2(13.055, 0, 0, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcdh0"]
-bg_color = Color(0.780392, 0.262745, 0.141176, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.145098, 0.0980392, 0.34902, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36brt"]
-bg_color = Color(0.972549, 0.517647, 0.415686, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.145098, 0.0980392, 0.34902, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_str8x"]
 atlas = ExtResource("7_7cu2v")
-region = Rect2(310, 0, 62, 62)
+region = Rect2(124, 0, 62, 62)
 margin = Rect2(13.055, 0, 0, 0)
 
 [node name="Profile" type="Control"]
@@ -116,7 +93,9 @@ offset_left = 445.0
 offset_top = 23.0
 offset_right = 679.0
 offset_bottom = 112.0
-theme = ExtResource("1_kmpcl")
+theme_override_styles/normal = ExtResource("6_2cbie")
+theme_override_styles/hover = ExtResource("6_2cbie")
+theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_4n673")
 
 [node name="Text" parent="Edit" instance=ExtResource("3_fur3o")]
@@ -133,9 +112,9 @@ offset_left = 707.0
 offset_top = 25.0
 offset_right = 995.0
 offset_bottom = 114.0
-theme_override_styles/normal = ExtResource("11_d4jol")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hcdh0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_36brt")
+theme_override_styles/normal = ExtResource("6_2cbie")
+theme_override_styles/hover = ExtResource("6_2cbie")
+theme_override_styles/pressed = ExtResource("7_200in")
 icon = SubResource("AtlasTexture_str8x")
 
 [node name="Text" parent="Delete" instance=ExtResource("3_fur3o")]

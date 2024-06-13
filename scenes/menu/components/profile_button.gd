@@ -24,3 +24,5 @@ func _on_edit_pressed():
 
 func _on_profile_button_pressed():
 	CurrentProfile.set_data_from_dic(profile_data)
+	CurrentProfile.is_profile_selected = true
+	MenuManager.load_menu(1)

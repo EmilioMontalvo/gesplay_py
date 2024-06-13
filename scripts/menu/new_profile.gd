@@ -71,6 +71,7 @@ func _on_acept_pressed():
 		DataSaver.save_profile(profile_edited)
 	else:
 		DataSaver.save_profile(get_data_as_json())
+	MenuManager.load_menu(3)
 
 func _on_change_image_default():
 	has_custom_image = false

@@ -36,7 +36,9 @@ material = SubResource("ShaderMaterial_2013e")
 layout_mode = 2
 
 [node name="ProfileName" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Selecciona un perfil"
+text = "Selecciona un perfilas"
+clip_text = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

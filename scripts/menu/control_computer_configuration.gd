@@ -11,6 +11,7 @@ var config_size
 var size_value
 
 signal cancel
+signal acept
 signal opacity_changed
 
 func _ready():
@@ -29,7 +30,7 @@ func _on_accept_button_pressed():
 	user_size=config_size
 	GlobalConf.contrl_window_size=user_size
 	GlobalConf.window_size_value=size_value
-	cancel.emit()
+	acept.emit()
 
 
 func _on_cancel_button_pressed():

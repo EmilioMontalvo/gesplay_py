@@ -36,6 +36,7 @@ always_on_top = true
 [connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]
 [connection signal="acepted" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_acepted"]
 [connection signal="canceled" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_canceled"]
+[connection signal="acept" from="ConfigurationWindow/Camera2D/ControlComputerConfiguration" to="ConfigurationWindow" method="_on_control_computer_configuration_acept"]
 [connection signal="cancel" from="ConfigurationWindow/Camera2D/ControlComputerConfiguration" to="." method="_on_control_computer_configuration_cancel"]
 [connection signal="opacity_changed" from="ConfigurationWindow/Camera2D/ControlComputerConfiguration" to="." method="_on_control_computer_configuration_opacity_changed"]
 

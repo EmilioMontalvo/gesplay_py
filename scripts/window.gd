@@ -10,7 +10,9 @@ func _ready():
 	$Camera2D/EnhancedCamera.window=true
 	GlobalConf.config_window_id=window_id
 	set_content_scale_size(Vector2i(362,475))
-	size=GlobalConf.contrl_window_size
+	
+	if GlobalConf.contrl_window_size:
+		size=GlobalConf.contrl_window_size
 	
 	save_opacity=GlobalConf.alpha_opacity
 	$Camera2D/CanvasModulate.color.a=GlobalConf.alpha_opacity/255

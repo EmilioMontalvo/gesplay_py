@@ -17,3 +17,7 @@ func _on_control_computer_configuration_cancel():
 
 func update_son():
 	$Camera2D/ControlComputerConfiguration/PopUpDragPanel.update_window_id()
+
+
+func _on_control_computer_configuration_acept():
+	visible=false

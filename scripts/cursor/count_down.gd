@@ -9,6 +9,7 @@ signal time_up
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.text = str(time)
+	add_child(timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -17,8 +18,7 @@ func _process(delta):
 # Function to start the countdown
 func _start_countdown():
 	timer.wait_time = 1.0  # 1 second intervals
-	timer.connect("timeout", _on_timer_timeout)
-	add_child(timer)
+	timer.connect("timeout", _on_timer_timeout)	
 	timer.start()
 
 # Function to handle the timer timeout signal

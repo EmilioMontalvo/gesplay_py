@@ -21,6 +21,7 @@ func _on_shovel_touched(body):
 		shovel_point=body.global_position
 	elif body.is_in_group("HardTerrain"):
 		shovel.out_of_terrain(shovel_point)
+		points.sub_points(50)
 	elif body.is_in_group("objective"):
 		get_points_from(body)
 		shovel.drop_end()

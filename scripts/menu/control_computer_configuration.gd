@@ -11,11 +11,14 @@ var config_size
 var size_value
 
 signal cancel
+signal opacity_changed
 
 func _ready():
 	user_size=GlobalConf.contrl_window_size
 	$Panel/SizeSlider.value=GlobalConf.window_size_value
 	size_value=GlobalConf.window_size_value
+	
+	$Panel/OpacitySlider.value=GlobalConf.alpha_opacity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -48,7 +51,7 @@ func _on_size_slider_value_changed(value):
 	DisplayServer.window_set_size(config_size, GlobalConf.config_window_id)
 
 func _on_opacity_slider_value_changed(value):
-	pass
+	opacity_changed.emit(value)
 
 
 	

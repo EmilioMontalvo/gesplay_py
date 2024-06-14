@@ -74,6 +74,9 @@ offset_right = 176.5
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
+min_value = 100.0
+max_value = 255.0
+value = 255.0
 
 [node name="Label3" type="Label" parent="Panel"]
 layout_mode = 0

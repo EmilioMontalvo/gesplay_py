@@ -31,7 +31,7 @@ func _process(_delta):
 
 
 func _on_collision_detection_area_entered(area:Area2D):
-	print(area)
+	pass
 
 
 func _on_area_2d_mouse_entered():
@@ -58,5 +58,5 @@ func out_of_terrain(point):
 	#$Sprite2D.modulate = Color(50,50,50) # shade
 	grabbed=false
 	global_position=point
-	
+	$HardKick.play()
 

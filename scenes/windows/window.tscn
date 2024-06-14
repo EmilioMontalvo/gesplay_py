@@ -22,6 +22,8 @@ anchor_mode = 0
 [node name="EnhancedCamera" parent="Camera2D" instance=ExtResource("1_cu25u")]
 scale = Vector2(0.565, 0.565)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D"]
+
 [node name="ConfirmDialogWindow" parent="." instance=ExtResource("3_b3mgi")]
 visible = false
 dialogText = "La aplicación se cerrará"
@@ -34,5 +36,7 @@ always_on_top = true
 [connection signal="go_back" from="Camera2D/EnhancedCamera" to="." method="_on_enhanced_camera_go_back"]
 [connection signal="acepted" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_acepted"]
 [connection signal="canceled" from="ConfirmDialogWindow" to="." method="_on_confirm_dialog_window_canceled"]
+[connection signal="cancel" from="ConfigurationWindow/Camera2D/ControlComputerConfiguration" to="." method="_on_control_computer_configuration_cancel"]
+[connection signal="opacity_changed" from="ConfigurationWindow/Camera2D/ControlComputerConfiguration" to="." method="_on_control_computer_configuration_opacity_changed"]
 
 [editable path="ConfigurationWindow"]

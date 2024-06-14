@@ -1,6 +1,7 @@
 extends Window
 
-
+var save_opacity
+var temp_opacity
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 1)
@@ -10,6 +11,10 @@ func _ready():
 	GlobalConf.config_window_id=window_id
 	set_content_scale_size(Vector2i(362,475))
 	size=GlobalConf.contrl_window_size
+	
+	save_opacity=GlobalConf.alpha_opacity
+	$Camera2D/CanvasModulate.color.a=GlobalConf.alpha_opacity/255
+	print($Camera2D/CanvasModulate.color)
 	
 	if not GlobalConf.control_computer_window_position:
 		var primary_screen_index = DisplayServer.window_get_current_screen()
@@ -54,3 +59,15 @@ func save_position():
 func _on_enhanced_camera_config(windowId):
 	$ConfigurationWindow.visible=true
 	$ConfigurationWindow.update_son()
+
+
+func _on_control_computer_configuration_opacity_changed(value):
+	temp_opacity=value
+	$Camera2D/CanvasModulate.color.a=value/255
+	print($Camera2D/CanvasModulate.color)
+	GlobalConf.alpha_opacity=value
+	
+
+func _on_control_computer_configuration_cancel():
+	GlobalConf.alpha_opacity=save_opacity
+	$Camera2D/CanvasModulate.color.a=save_opacity/255

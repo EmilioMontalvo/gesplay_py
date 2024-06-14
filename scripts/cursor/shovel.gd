@@ -53,7 +53,10 @@ func drop_end():
 	grabbed=false
 	$GrabeDetection.queue_free()
 
-func out_of_terrain():
+func out_of_terrain(point):
 	can_destroy=false
-	$Sprite2D.modulate = Color(0, 0, 1) # blue shade
+	#$Sprite2D.modulate = Color(50,50,50) # shade
+	grabbed=false
+	global_position=point
+	
 

@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://mdf5sf8oq4ue"]
+[gd_scene load_steps=12 format=3 uid="uid://mdf5sf8oq4ue"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_8i40w"]
 [ext_resource type="Texture2D" uid="uid://cl7dmt75jd16e" path="res://assets/cursor_game/stars.png" id="2_0t7t8"]
 [ext_resource type="Script" path="res://scripts/cursor/win_screen.gd" id="2_03isi"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_l1t0l"]
-[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="4_0s2kd"]
 [ext_resource type="Texture2D" uid="uid://cmuabgj1cjywa" path="res://assets/cursor_game/2_stars.png" id="4_amave"]
 [ext_resource type="Texture2D" uid="uid://bn0kkmour86eh" path="res://assets/cursor_game/star.png" id="4_uynci"]
 [ext_resource type="Texture2D" uid="uid://c8e26v7ldgp4q" path="res://assets/cursor_game/1_star.png" id="5_ua725"]
 [ext_resource type="Texture2D" uid="uid://culxmbem5mfk8" path="res://assets/cursor_game/tools/stopwatch_color.png" id="7_dyvsa"]
+[ext_resource type="Texture2D" uid="uid://detwhko83a5on" path="res://assets/buttons/icons/repeat_arrow.png" id="9_n8qx4"]
+[ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="10_y3gp4"]
+[ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="11_uy2y7"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -82,54 +84,59 @@ text = "Nivel Completado"
 
 [node name="points" parent="." instance=ExtResource("3_l1t0l")]
 layout_mode = 0
-offset_left = 721.0
-offset_top = 610.0
-offset_right = 800.0
-offset_bottom = 648.0
+offset_left = 627.0
+offset_top = 602.0
+offset_right = 706.0
+offset_bottom = 640.0
 text = "500"
 
 [node name="Time" parent="." instance=ExtResource("3_l1t0l")]
 layout_mode = 0
-offset_left = 722.0
-offset_top = 684.0
-offset_right = 809.0
-offset_bottom = 722.0
+offset_left = 795.0
+offset_top = 601.0
+offset_right = 882.0
+offset_bottom = 639.0
 text = "00:00"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = 244.0
-offset_right = 85.0
-offset_bottom = 318.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Continuar"
-script = ExtResource("4_0s2kd")
-scene = 10
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 652.0
-offset_top = 601.0
-offset_right = 704.459
-offset_bottom = 651.0
+offset_left = 562.0
+offset_top = 593.0
+offset_right = 614.459
+offset_bottom = 643.0
 texture = ExtResource("4_uynci")
 expand_mode = 3
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 635.0
-offset_top = 657.0
-offset_right = 729.0
-offset_bottom = 747.0
+offset_left = 716.0
+offset_top = 573.0
+offset_right = 810.0
+offset_bottom = 663.0
 texture = ExtResource("7_dyvsa")
 expand_mode = 1
 stretch_mode = 4
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="RepeatButton" type="Button" parent="."]
+offset_left = 799.0
+offset_top = 746.0
+offset_right = 897.0
+offset_bottom = 844.0
+scale = Vector2(0.82, 0.82)
+icon = ExtResource("9_n8qx4")
+
+[node name="ForwardButton" type="Button" parent="."]
+offset_left = 677.0
+offset_top = 744.0
+offset_right = 775.0
+offset_bottom = 842.0
+scale = Vector2(0.82, 0.82)
+icon = ExtResource("10_y3gp4")
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 559.0
+offset_top = 744.0
+offset_right = 657.0
+offset_bottom = 842.0
+scale = Vector2(0.82, 0.82)
+icon = ExtResource("11_uy2y7")

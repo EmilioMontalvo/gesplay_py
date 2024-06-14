@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb66wvo2q3mqa"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mlvsp"]
+[ext_resource type="Script" path="res://scripts/cursor/count_down.gd" id="2_1dvdu"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_v2xhj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjop7"]
+font = ExtResource("2_v2xhj")
+font_size = 40
+outline_size = 11
+outline_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="CountDown" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1376.0
+offset_bottom = -964.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mlvsp")
+script = ExtResource("2_1dvdu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 58.0
+text = "10"
+label_settings = SubResource("LabelSettings_cjop7")
+horizontal_alignment = 1
+vertical_alignment = 1

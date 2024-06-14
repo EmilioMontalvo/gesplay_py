@@ -1,6 +1,8 @@
 extends Node
 
 var is_profile_selected: bool = false
+var is_first_profile: bool = false
+
 var id: String
 var first_name: String
 var last_name: String
@@ -17,7 +19,7 @@ func set_data_from_dic(profile_data: Dictionary):
 	max_cursor_level = profile_data.get("max_cursor_level")
 	
 func get_profile_data() -> Dictionary:
-	var profile_data: Dictionary
+	var profile_data: Dictionary = {}
 	profile_data["id"] = id
 	profile_data["first_name"] = first_name
 	profile_data["last_name"] = last_name

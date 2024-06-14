@@ -16,14 +16,12 @@ func _ready():
 	
 	save_opacity=GlobalConf.alpha_opacity
 	$Camera2D/CanvasModulate.color.a=GlobalConf.alpha_opacity/255
-	print($Camera2D/CanvasModulate.color)
 	
 	if not GlobalConf.control_computer_window_position:
 		var primary_screen_index = DisplayServer.window_get_current_screen()
 		# Get the size of the primary screen
 		var screen_size = DisplayServer.screen_get_size(primary_screen_index)
 		GlobalConf.control_computer_window_position=screen_size-DisplayServer.window_get_size(window_id)
-		print("Screen size: ", screen_size)
 	
 	if window_id!=0:
 		DisplayServer.window_set_position(GlobalConf.control_computer_window_position,window_id)
@@ -66,7 +64,6 @@ func _on_enhanced_camera_config(windowId):
 func _on_control_computer_configuration_opacity_changed(value):
 	temp_opacity=value
 	$Camera2D/CanvasModulate.color.a=value/255
-	print($Camera2D/CanvasModulate.color)
 	GlobalConf.alpha_opacity=value
 	
 

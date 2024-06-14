@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://pxnpwvmykvjd"]
+[gd_scene load_steps=11 format=3 uid="uid://pxnpwvmykvjd"]
 
+[ext_resource type="Script" path="res://scripts/menu/login.gd" id="1_cllod"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_fiuw7"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_1h0r3"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_aas83"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_l25yf"]
 
 [node name="Login" type="Node2D"]
+script = ExtResource("1_cllod")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_fiuw7")]
 
@@ -87,8 +89,6 @@ offset_top = 748.0
 offset_right = 874.0
 offset_bottom = 818.0
 text = "Iniciar Sesión"
-script = ExtResource("6_liukh")
-scene = 1
 
 [node name="LinkButton" type="LinkButton" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -136,5 +136,5 @@ texture = ExtResource("9_l25yf")
 expand_mode = 3
 stretch_mode = 4
 
-[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LinkButton" to="CanvasLayer/Control/LinkButton" method="_on_pressed"]

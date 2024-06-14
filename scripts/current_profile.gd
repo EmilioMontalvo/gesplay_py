@@ -17,6 +17,7 @@ func set_data_from_dic(profile_data: Dictionary):
 	image_path = profile_data.get("image_path")
 	max_click_level = profile_data.get("max_click_level")
 	max_cursor_level = profile_data.get("max_cursor_level")
+	save_actual_profile()
 	
 func get_profile_data() -> Dictionary:
 	var profile_data: Dictionary = {}
@@ -27,3 +28,6 @@ func get_profile_data() -> Dictionary:
 	profile_data["max_click_level"] = max_click_level
 	profile_data["max_cursor_level"] = max_cursor_level
 	return profile_data
+
+func save_actual_profile():
+	DataSaver.save_last_profile_id(id)

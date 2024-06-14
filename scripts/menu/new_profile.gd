@@ -35,7 +35,9 @@ func get_data_as_json() -> Dictionary:
 	var new_profile_data: Dictionary = {
 		"first_name": txt_firt_name.text.strip_edges(),
 		"last_name": txt_last_name.text.strip_edges(),
-		"image_path": image_path
+		"image_path": image_path,
+		"max_click_level": 1,
+		"max_cursor_level": 1
 	}
 	return new_profile_data 
 

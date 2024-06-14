@@ -19,3 +19,7 @@ func set_points(points):
 
 func set_time(time):
 	$Time.text=str(time)
+
+
+func _on_visibility_changed():
+	$CountDown._start_countdown()

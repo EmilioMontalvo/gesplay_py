@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=18 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
 [ext_resource type="Texture2D" uid="uid://c0s7dag1nf71t" path="res://assets/cursor_game/tilemap/Terrain (16x16).png" id="11_8y8st"]
+[ext_resource type="PackedScene" uid="uid://b4ekcuuhhm7mu" path="res://scenes/menu/pages/cursor/elements/points_line.tscn" id="13_g4mcg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
 texture = ExtResource("4_a1ok2")
@@ -209,7 +210,7 @@ polygon = PackedVector2Array(2, 257, -2, 1031, 1452, 1030, 1446.75, 580.482, 144
 position = Vector2(493, 497)
 
 [node name="Polygon2D" parent="TerrainContainer/Terrain" index="0"]
-polygon = PackedVector2Array(-39, -82, -15, -18, -84, 58, 93, 69, 196, 114, 284, 158, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
+polygon = PackedVector2Array(-39, -82, -15, -18, -84, 58, 76, 64, 196, 114, 284, 158, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
 
 [node name="Terrain2" parent="TerrainContainer" instance=ExtResource("2_7lave")]
 position = Vector2(470, 614)
@@ -300,6 +301,16 @@ texture = ExtResource("3_2t78l")
 texture_mode = 2
 begin_cap_mode = 1
 end_cap_mode = 1
+
+[node name="PointLinesContainer" type="Node2D" parent="."]
+
+[node name="PointsLine" parent="PointLinesContainer" instance=ExtResource("13_g4mcg")]
+position = Vector2(451, 497)
+points = PackedVector2Array(38, 38, 117, 102, 195, 135, 283, 161, 392, 196, 487, 237, 563, 266)
+
+[node name="PointsLine2" parent="PointLinesContainer" instance=ExtResource("13_g4mcg")]
+position = Vector2(929, 459)
+points = PackedVector2Array(-153, 131)
 
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
 [connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]

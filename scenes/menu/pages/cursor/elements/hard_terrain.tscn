@@ -13,7 +13,7 @@ texture = ExtResource("1_ina3t")
 texture_scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["HardTerrain"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-10, -10, -10, 10, 10, 10, 10, -10)

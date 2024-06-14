@@ -16,6 +16,7 @@ func get_value():
 
 func explode():
 	audioPlayer.play()	
+	$Sprite2D.visible=false
 	$StaticBody2D.queue_free()
 
 

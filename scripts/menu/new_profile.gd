@@ -19,6 +19,10 @@ var is_editing: bool = false
 var profile_data: Dictionary
 
 func _ready():
+	if CurrentProfile.is_first_profile:
+		$VBoxContainer/FirstProfileAlert.visible = true
+		$Home.visible = false
+		$GoBack.visible = false
 	for button_image in get_tree().get_nodes_in_group('default_images'):
 		button_image.button_group = button_group_images
 		button_image.pressed.connect(_on_change_image_default)
@@ -35,7 +39,9 @@ func get_data_as_json() -> Dictionary:
 	var new_profile_data: Dictionary = {
 		"first_name": txt_firt_name.text.strip_edges(),
 		"last_name": txt_last_name.text.strip_edges(),
-		"image_path": image_path
+		"image_path": image_path,
+		"max_click_level": 1,
+		"max_cursor_level": 1
 	}
 	return new_profile_data 
 
@@ -72,6 +78,8 @@ func _on_acept_pressed():
 		DataSaver.save_profile(profile_edited)
 	else:
 		DataSaver.save_profile(get_data_as_json())
+	if CurrentProfile.is_first_profile:
+		CurrentProfile.is_first_profile = false
 	MenuManager.load_menu(3)
 
 func _on_change_image_default():

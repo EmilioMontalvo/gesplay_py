@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqb2bcqpd5kki"]
+[gd_scene load_steps=11 format=3 uid="uid://bqb2bcqpd5kki"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_awgda"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_bx8yf"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="7_t62qf"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="7_ypxo0"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_cqyjp"]
-[ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="9_lslf8"]
 
 [node name="Profiles" type="Control"]
 layout_mode = 3
@@ -68,13 +67,6 @@ offset_bottom = 124.0
 layout_mode = 0
 scene = 1
 
-[node name="AceptCancel" parent="." instance=ExtResource("9_lslf8")]
-layout_mode = 1
-offset_left = 334.0
-offset_top = 903.0
-offset_right = -328.0
-offset_bottom = -65.0
-
 [node name="HelpButton" parent="." instance=ExtResource("9_cqyjp")]
 layout_mode = 0
 offset_left = 1318.0
@@ -86,13 +78,22 @@ offset_bottom = 101.0
 custom_minimum_size = Vector2(1126, 540)
 layout_mode = 0
 offset_left = 171.0
-offset_top = 330.0
+offset_top = 350.0
 offset_right = 1297.0
-offset_bottom = 870.0
+offset_bottom = 890.0
 horizontal_scroll_mode = 0
 
 [node name="ProfilesContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
+
+[node name="SelectProfileAlert" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 171.0
+offset_top = 305.0
+offset_right = 791.0
+offset_bottom = 343.0
+text = "Debe seleccionar un perfil para continuar"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button" method="_on_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dd54atv3cfg7u"]
+[gd_scene load_steps=24 format=3 uid="uid://dd54atv3cfg7u"]
 
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_baw05"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="2_bg1pn"]
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="2_eh8of"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_4rljh"]
 [ext_resource type="PackedScene" uid="uid://dkrpkt34vd8vj" path="res://scenes/menu/components/btn_menu.tscn" id="4_s0b3s"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="5_sfo2u"]
@@ -73,6 +74,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_baw05")
+script = ExtResource("2_eh8of")
 
 [node name="Background" parent="." instance=ExtResource("1_6ya5u")]
 layout_mode = 0

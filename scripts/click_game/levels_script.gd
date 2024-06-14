@@ -1,5 +1,6 @@
 extends Node2D
 
+var max_level = 6
 var success_count = 0
 var success_to_win = 0
 var mistakes_count = 0
@@ -31,6 +32,9 @@ func increase_success():
 
 func check_success():
 	if success_count >= success_to_win:
+		if CurrentProfile.max_click_level < max_level:
+			CurrentProfile.max_click_level += 1
+		save_progress()	
 		show_win_screen()
 		print('win')
 		print('Time to complete level: ',get_time_to_complete_level())
@@ -46,3 +50,6 @@ func show_win_screen():
 	var win_screen = preload("res://scenes/menu/pages/click/win_screen_click_game.tscn").instantiate()
 	win_screen.set_global_position(get_viewport_rect().size / 2)
 	add_child(win_screen)
+	
+func save_progress():
+	CurrentProfile.save_profile_progress()

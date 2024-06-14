@@ -31,3 +31,6 @@ func get_profile_data() -> Dictionary:
 
 func save_actual_profile():
 	DataSaver.save_last_profile_id(id)
+	
+func save_profile_progress():
+	DataSaver.save_profile(get_profile_data())

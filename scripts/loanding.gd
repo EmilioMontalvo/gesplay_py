@@ -7,6 +7,5 @@ func _ready():
 	call_deferred("_deferred_change", container)
 
 
-	
 func _deferred_change(scene):
 	get_tree().change_scene_to_packed(scene)

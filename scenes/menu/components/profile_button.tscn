@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://m8o081e6tutt"]
+[gd_scene load_steps=19 format=3 uid="uid://m8o081e6tutt"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_kmpcl"]
 [ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_qf7h1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://crm0uqx04d4v8" path="res://assets/buttons/icons/ButtonIcons.png" id="7_7cu2v"]
 [ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="7_k2dei"]
 [ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="10_ncdrk"]
+[ext_resource type="StyleBox" uid="uid://bt6rmj5d3ji72" path="res://assets/buttons/resources/style_box_yellow_borderless_disable.tres" id="11_xg7k3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0aa4"]
 bg_color = Color(0.72549, 0.415686, 0.807843, 1)
@@ -143,6 +144,7 @@ offset_bottom = 114.0
 theme_override_styles/normal = ExtResource("10_ncdrk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jw18k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3nu45")
+theme_override_styles/disabled = ExtResource("11_xg7k3")
 icon = SubResource("AtlasTexture_str8x")
 
 [node name="Text" parent="Delete" instance=ExtResource("3_fur3o")]

@@ -6,9 +6,10 @@ var temp_opacity
 func _ready():
 	# DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 1)
 	var window_id=DisplayServer.get_window_list()[DisplayServer.get_window_list().size()-1]
-	$Camera2D/EnhancedCamera.set_window_id(window_id)
-	$Camera2D/EnhancedCamera.window=true
-	GlobalConf.config_window_id=window_id
+	if window_id!=0:
+		$Camera2D/EnhancedCamera.set_window_id(window_id)
+		$Camera2D/EnhancedCamera.window=true
+		GlobalConf.config_window_id=window_id
 	set_content_scale_size(Vector2i(362,475))
 	
 	if GlobalConf.contrl_window_size:
@@ -70,3 +71,8 @@ func _on_control_computer_configuration_opacity_changed(value):
 func _on_control_computer_configuration_cancel():
 	GlobalConf.alpha_opacity=save_opacity
 	$Camera2D/CanvasModulate.color.a=save_opacity/255
+
+
+func _on_visibility_changed():
+	if visible:
+		_ready()

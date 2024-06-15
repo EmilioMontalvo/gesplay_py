@@ -211,6 +211,7 @@ visible = false
 
 [connection signal="pressed" from="ControlComputer" to="ControlComputer" method="_on_pressed"]
 [connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
+[connection signal="visibility_changed" from="Window" to="Window" method="_on_visibility_changed"]
 
 [editable path="MenuButtons/BtnSelectProfile"]
 [editable path="MenuButtons/BtnReport"]

@@ -9,13 +9,13 @@ shader = ExtResource("3_pbalc")
 shader_parameter/corner_radius = 25.0
 
 [node name="ButtonProfile" type="Button"]
+clip_contents = true
 offset_right = 400.0
 offset_bottom = 94.0
 theme = ExtResource("1_18wvq")
 script = ExtResource("2_p23ak")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-clip_contents = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -38,7 +38,7 @@ layout_mode = 2
 [node name="ProfileName" type="Label" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Selecciona un perfilas"
+text = "Selecciona un perfil"
 clip_text = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -93,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Mas configuraciones"
 script = ExtResource("3_bxj10")
-scene = 15
+scene = 4
 
 [node name="AcceptButton" type="Button" parent="Panel"]
 layout_mode = 1
@@ -150,6 +150,7 @@ stretch_mode = 5
 
 [connection signal="value_changed" from="Panel/SizeSlider" to="." method="_on_size_slider_value_changed"]
 [connection signal="value_changed" from="Panel/OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
+[connection signal="pressed" from="Panel/LinkButton" to="." method="_on_link_button_pressed"]
 [connection signal="pressed" from="Panel/LinkButton" to="Panel/LinkButton" method="_on_pressed"]
 [connection signal="pressed" from="Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="Panel/CancelButton" to="." method="_on_cancel_button_pressed"]

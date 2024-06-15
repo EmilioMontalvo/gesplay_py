@@ -57,6 +57,7 @@ func _deferred_load_menu(menulevel):
 		base_instance=null
 	get_tree().change_scene_to_packed(menus[menulevel])
 
+
 func load_instace_menu(instance:Node):
 	var root_scene = get_tree().root
 	var last_child_index=root_scene.get_child_count()
@@ -64,11 +65,13 @@ func load_instace_menu(instance:Node):
 	root_scene.add_child(instance)
 	base_instance=instance
 
+
 func load_packed_scene(scene:PackedScene):
 	if base_instance:
 		get_tree().root.remove_child(base_instance)
 		base_instance=null
 	get_tree().change_scene_to_packed(scene)
+	
 	
 func set_current_scene(node):
 	current_scene=node

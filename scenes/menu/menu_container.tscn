@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://h3j0q8t0e44p"]
+
+[node name="SceneContainer" type="Node" groups=["Menu_container"]]

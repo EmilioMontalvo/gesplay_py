@@ -21,7 +21,6 @@ func _on_btn_edit_profile_pressed():
 	var new_profile_instance = preload("res://scenes/menu/pages/new_profile2.tscn").instantiate()
 	new_profile_instance.profile_data = current_profile_data
 	new_profile_instance.is_editing = true
-	var root_scene = get_tree().root.get_node("/root/SceneContainer")
-	for children in root_scene.get_children():
-		root_scene.remove_child(children)
-	root_scene.add_child(new_profile_instance)
+	
+	MenuManager.load_instace_menu(new_profile_instance)
+	

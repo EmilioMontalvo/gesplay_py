@@ -1,6 +1,6 @@
 extends Node
 
-
+var base_instance=null
 
 enum MENU_LEVEL {
 		NONE,
@@ -41,7 +41,7 @@ var menus = {
 var current_scene:Node
 var current_menu:Node
 
-
+var menu_container=preload("res://scenes/menu/menu_container.tscn")
 
 func _ready():
 	pass
@@ -51,16 +51,22 @@ func load_menu(menulevel):
 	
 
 func _deferred_load_menu(menulevel):
-	#replace the current menus instance with the new ones
-	current_menu = menus[menulevel].instantiate()
+	
+	if base_instance:
+		get_tree().root.remove_child(base_instance)
+		base_instance=null
+	get_tree().change_scene_to_packed(menus[menulevel])
 
-	var container = current_scene
-	#clear the current menu item/s
-	for location in container.get_children():
-		container.remove_child(location)
-	#add our selected menu
-	container.add_child(current_menu)
+func load_instace_menu(instance:Node):
+	var root_scene = get_tree().root
+	var last_child_index=root_scene.get_child_count()
+	root_scene.remove_child(root_scene.get_children()[last_child_index-1])
+	root_scene.add_child(instance)
+	base_instance=instance
+	
 
+	
+	
 func set_current_scene(node):
 	current_scene=node
 

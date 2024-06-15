@@ -65,7 +65,6 @@ offset_bottom = 124.0
 
 [node name="GoBack" parent="." instance=ExtResource("6_6huvo")]
 layout_mode = 0
-scene = 1
 
 [node name="HelpButton" parent="." instance=ExtResource("9_cqyjp")]
 layout_mode = 0

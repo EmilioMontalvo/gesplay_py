@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scripts/menu/scene_container.gd" id="1_vlhns"]
 
-[node name="SceneContainer" type="Node"]
+[node name="SceneContainer" type="Node" groups=["Container"]]
 script = ExtResource("1_vlhns")

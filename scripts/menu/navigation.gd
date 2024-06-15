@@ -1,6 +1,6 @@
 extends Node
 
-@export var scene:int = 0
+@export var scene:int = 1
 @export var locked=false
 
 func _on_pressed():

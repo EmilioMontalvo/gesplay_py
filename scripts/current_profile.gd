@@ -34,3 +34,6 @@ func save_actual_profile():
 	
 func save_profile_progress():
 	DataSaver.save_profile(get_profile_data())
+
+func delete_last_profile():
+	DataSaver.delete_last_profile_file()

@@ -21,6 +21,7 @@ func _on_delete_pressed():
 	if success == OK:
 		if profile_id == CurrentProfile.id:
 			CurrentProfile.is_profile_selected = false
+			CurrentProfile.delete_last_profile()
 		profile_deleted.emit()
 		queue_free()
 

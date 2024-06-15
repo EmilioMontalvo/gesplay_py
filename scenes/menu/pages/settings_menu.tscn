@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyh4poxlaa4ji"]
+[gd_scene load_steps=17 format=3 uid="uid://dyh4poxlaa4ji"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
 [ext_resource type="Script" path="res://scripts/menu/settings_menu.gd" id="2_pkge3"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
 [ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ipy7k"]
 [ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_a6g5f"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_uacma"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_fjkx8"]
 [ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_kamni"]
+[ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="11_dirq8"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_jy6ah"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_vg1ue"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_518jn"]
@@ -17,6 +18,10 @@
 font = ExtResource("2_ymuiq")
 font_size = 40
 font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsf1k"]
+shader = ExtResource("11_dirq8")
+shader_parameter/corner_radius = 60.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_esjl5"]
 font = ExtResource("6_pc5c2")
@@ -220,6 +225,7 @@ horizontal_alignment = 1
 
 [node name="ProfileImage" type="TextureRect" parent="HBoxContainer/CurrentProfile"]
 texture_filter = 3
+material = SubResource("ShaderMaterial_jsf1k")
 layout_mode = 2
 texture = ExtResource("10_kamni")
 

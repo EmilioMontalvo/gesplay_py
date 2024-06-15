@@ -2698,7 +2698,7 @@ position = Vector2(286, 16)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_bebnd")
 autoplay = "default"
-frame_progress = 0.808613
+frame_progress = 0.641396
 
 [connection signal="mouse_entered" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

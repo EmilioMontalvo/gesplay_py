@@ -70,6 +70,7 @@ func _on_acept_pressed():
 		return
 	if has_custom_image:
 		custom_profile_image.resize(72,72)
+		DirAccess.make_dir_absolute(CUSTOM_IMAGES_PATH)
 		var new_image_path = CUSTOM_IMAGES_PATH + MinosUUIDGenerator.generate_new_UUID() + ".png"
 		custom_profile_image.save_png(new_image_path)
 		image_path = new_image_path

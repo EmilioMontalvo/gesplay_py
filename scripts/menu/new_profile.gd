@@ -80,6 +80,7 @@ func _on_acept_pressed():
 		var profile_edited = get_data_as_json()
 		profile_edited["id"] = profile_data["id"]
 		DataSaver.save_profile(profile_edited)
+		CurrentProfile.reload_data()
 	else:
 		DataSaver.save_profile(get_data_as_json())
 	if CurrentProfile.is_first_profile:

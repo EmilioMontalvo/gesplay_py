@@ -19,7 +19,7 @@ func _process(delta):
 func _start_countdown():
 	timer.wait_time = 1.0  # 1 second intervals
 	timer.connect("timeout", _on_timer_timeout)	
-	timer.start()
+	timer.autostart = true
 
 # Function to handle the timer timeout signal
 func _on_timer_timeout():

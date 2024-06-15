@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/menu/new_profile.gd" id="2_pjnet"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_qd6ou"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_x6i2t"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_jrv5l"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_7h5t8"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="8_lu1k0"]
@@ -163,7 +163,7 @@ title = "Open a File"
 initial_position = 4
 size = Vector2i(800, 700)
 theme = SubResource("Theme_a6bow")
-ok_button_text = "Abrir"
+ok_button_text = "Open"
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.png", "*.jpg")

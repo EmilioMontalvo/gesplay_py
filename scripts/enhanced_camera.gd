@@ -29,8 +29,8 @@ func _on_go_back_pressed():
 
 
 func _on_pause_pressed():
-	$Pause/TextureRect2.visible=not GlobalConf.is_camera_mouse_paused
-	$Pause/TextureRect.visible=GlobalConf.is_camera_mouse_paused
+	$Panel/Pause/TextureRect2.visible=not GlobalConf.is_camera_mouse_paused
+	$Panel/Pause/TextureRect.visible=GlobalConf.is_camera_mouse_paused
 	
 	if not paused:
 		UdPServer.send_message(Message.new("pause_mouse",{"info": "mouse paused"}))

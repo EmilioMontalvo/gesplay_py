@@ -18,6 +18,8 @@ var first_attempt_image: bool = true
 var is_editing: bool = false
 var profile_data: Dictionary
 
+var CUSTOM_IMAGES_PATH = "user://custom_images/"
+
 func _ready():
 	if CurrentProfile.is_first_profile:
 		$VBoxContainer/FirstProfileAlert.visible = true
@@ -68,7 +70,7 @@ func _on_acept_pressed():
 		return
 	if has_custom_image:
 		custom_profile_image.resize(72,72)
-		var new_image_path = "res://assets/profile_images/custom_upload/"+MinosUUIDGenerator.generate_new_UUID()+".png"
+		var new_image_path = CUSTOM_IMAGES_PATH + MinosUUIDGenerator.generate_new_UUID() + ".png"
 		custom_profile_image.save_png(new_image_path)
 		image_path = new_image_path
 	print(get_data_as_json())

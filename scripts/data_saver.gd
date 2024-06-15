@@ -7,12 +7,7 @@ const PATH_LAST_PROFILE_FILE: String = "user://last_profile/last_profile_id.save
 static func save_profile(profile_data: Dictionary):
 	DirAccess.make_dir_absolute(PATH_PROFILE)
 	var save_profile: FileAccess
-	if profile_data.has("id"):
-		save_profile = FileAccess.open(PATH_PROFILE + profile_data.get("id") + ".save", FileAccess.WRITE)
-	else:
-		var new_profile_id = MinosUUIDGenerator.generate_new_UUID()
-		save_profile = FileAccess.open(PATH_PROFILE + new_profile_id + ".save", FileAccess.WRITE)
-		profile_data["id"] = new_profile_id
+	save_profile = FileAccess.open(PATH_PROFILE + profile_data.get("id") + ".save", FileAccess.WRITE)
 	var json_string = JSON.stringify(profile_data)
 	save_profile.store_line(json_string)
 

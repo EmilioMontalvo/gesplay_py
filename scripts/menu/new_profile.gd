@@ -7,16 +7,16 @@ extends Control
 @onready var texture_image_profile: TextureRect = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel/TextureRect
 @onready var panel_image: Panel = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel
 
-var uuid: UUIDManager
 var button_group_images: ButtonGroup = ButtonGroup.new()
 var image_path: String
+var profile_id: String
 var dir_access: DirAccess
 var custom_profile_image: Image
+var profile_data: Dictionary
 var has_custom_image: bool = false
 var first_attempt_name: bool = true
 var first_attempt_image: bool = true
 var is_editing: bool = false
-var profile_data: Dictionary
 
 var CUSTOM_IMAGES_PATH = "user://custom_images/"
 
@@ -39,6 +39,7 @@ func _on_file_upload_pressed():
 
 func get_data_as_json() -> Dictionary:
 	var new_profile_data: Dictionary = {
+		"id": profile_id,
 		"first_name": txt_firt_name.text.strip_edges(),
 		"last_name": txt_last_name.text.strip_edges(),
 		"image_path": image_path,
@@ -68,13 +69,13 @@ func _on_acept_pressed():
 			image_parent.add_child(new_label)
 			first_attempt_image = false
 		return
+	profile_id = MinosUUIDGenerator.generate_new_UUID()
 	if has_custom_image:
 		custom_profile_image.resize(72,72)
 		DirAccess.make_dir_absolute(CUSTOM_IMAGES_PATH)
-		var new_image_path = CUSTOM_IMAGES_PATH + MinosUUIDGenerator.generate_new_UUID() + ".png"
+		var new_image_path = CUSTOM_IMAGES_PATH + (profile_data.get("id") if is_editing else profile_id) + ".png"
 		custom_profile_image.save_png(new_image_path)
 		image_path = new_image_path
-	print(get_data_as_json())
 	if is_editing:
 		var profile_edited = get_data_as_json()
 		profile_edited["id"] = profile_data["id"]

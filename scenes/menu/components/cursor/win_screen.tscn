@@ -163,4 +163,5 @@ time = 7
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="RepeatButton" to="RepeatButton" method="_on_pressed"]
+[connection signal="pressed" from="ForwardButton" to="." method="_on_forward_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]

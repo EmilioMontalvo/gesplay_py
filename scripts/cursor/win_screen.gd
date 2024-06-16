@@ -23,3 +23,7 @@ func set_time(time):
 
 func _on_visibility_changed():
 	$CountDown._start_countdown()
+
+
+func _on_forward_button_pressed():
+	pass # Replace with function body.

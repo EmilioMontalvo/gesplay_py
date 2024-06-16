@@ -4,6 +4,8 @@ extends Node2D
 @onready var destructionPoligon=$Shovel.get_destruction_polygon()
 @onready var points=$Points
 
+@export var keys=1
+
 var shovel_point
 
 signal won
@@ -27,6 +29,8 @@ func _on_shovel_touched(body):
 		shovel.drop_end()
 		$Time.stop()
 		emit_signal("won")
+	elif body.is_in_group("key"):
+		grab_key(body)
 
 
 func destroy_terrain(body):
@@ -64,3 +68,10 @@ func get_points():
 
 func get_time():
 	return $Time.get_time()
+
+func grab_key(body):
+	body.get_parent().explode()
+	shovel_point=body.global_position
+	keys=keys-1
+	if keys<=0:
+		$Jail.open()

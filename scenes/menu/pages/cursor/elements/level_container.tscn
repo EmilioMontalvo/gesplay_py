@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=20 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://katlaj0knpel" path="res://scenes/menu/pages/cursor/elements/shovel.tscn" id="7_sfrg7"]
 [ext_resource type="PackedScene" uid="uid://okkc7bx1vat6" path="res://scenes/menu/pages/cursor/elements/duck.tscn" id="8_c1atr"]
 [ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
+[ext_resource type="PackedScene" uid="uid://bp3whw5htnppi" path="res://scenes/menu/pages/cursor/elements/jail.tscn" id="10_gvm5p"]
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
 [ext_resource type="Texture2D" uid="uid://c0s7dag1nf71t" path="res://assets/cursor_game/tilemap/Terrain (16x16).png" id="11_8y8st"]
 [ext_resource type="PackedScene" uid="uid://b4ekcuuhhm7mu" path="res://scenes/menu/pages/cursor/elements/points_line.tscn" id="13_g4mcg"]
+[ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="14_1pata"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
 texture = ExtResource("4_a1ok2")
@@ -210,14 +212,14 @@ polygon = PackedVector2Array(2, 257, -2, 1031, 1452, 1030, 1446.75, 580.482, 144
 position = Vector2(493, 497)
 
 [node name="Polygon2D" parent="TerrainContainer/Terrain" index="0"]
-polygon = PackedVector2Array(-39, -82, -15, -18, -84, 58, 76, 64, 196, 114, 284, 158, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
+polygon = PackedVector2Array(-39, -82, -15, -18, -99, 60, 76, 64, 195, 118, 284, 158, 365, 187, 556, 250, 552, 205, 621, 168, 495, 96, 363, 57, 328, 73, 309, 42, 275, 59, 258, 31)
 
 [node name="Terrain2" parent="TerrainContainer" instance=ExtResource("2_7lave")]
 position = Vector2(470, 614)
 
 [node name="Polygon2D" parent="TerrainContainer/Terrain2" index="0"]
 position = Vector2(22, 6)
-polygon = PackedVector2Array(-88, -65, 121, 182, 397, 246, 510, 224, 492, 159, 556, 126, 370, 64, 77, -59)
+polygon = PackedVector2Array(-94, -63, 27, 61, 72, 45, 90, 81, 134, 61, 146, 99, 177, 89, 372, 206, 508, 200, 492, 159, 556, 126, 370, 64, 77, -59)
 
 [node name="HardTerrainContainer" type="Node2D" parent="."]
 
@@ -226,7 +228,7 @@ position = Vector2(-1, 268)
 
 [node name="Polygon2D" parent="HardTerrainContainer/HardTerrain" index="0"]
 position = Vector2(-1, -272)
-polygon = PackedVector2Array(215, 423, 1, 432, 4, 1034, 1439, 1035, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 215, 423, 247, 378, 296, 361, 344, 356, 397, 375, 430, 422, 507, 452, 661, 553, 741, 535, 720, 496, 711, 448, 730, 407, 761, 378, 829, 369, 891, 378, 915, 404, 931, 442, 932, 484, 921, 519, 898, 545, 870, 563, 922, 652, 1028, 659, 1065, 691, 1134, 684, 1182, 697, 1235, 713, 1244.32, 735.974, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 993, 810, 876, 824, 743, 735, 545, 702, 401, 561, 350, 585, 258, 573, 208, 502)
+polygon = PackedVector2Array(215, 423, 1, 432, 4, 1034, 1439, 1035, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 215, 423, 247, 378, 296, 361, 344, 356, 397, 375, 430, 422, 507, 452, 661, 553, 741, 535, 720, 496, 711, 448, 730, 407, 761, 378, 829, 369, 891, 378, 915, 404, 931, 442, 932, 484, 921, 519, 898, 545, 870, 563, 922, 652, 1028, 659, 1065, 691, 1134, 684, 1182, 697, 1235, 713, 1244.32, 735.974, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 993, 810, 876, 824, 743, 735, 675, 715, 681, 769, 673, 853, 603, 900, 508, 886, 456, 831, 455, 741, 514, 676, 401, 561, 350, 585, 258, 573, 208, 502)
 
 [node name="TileMap" type="TileMap" parent="HardTerrainContainer"]
 texture_filter = 1
@@ -246,6 +248,8 @@ texture = ExtResource("5_bxqtj")
 [node name="Point" parent="PointsContainer" instance=ExtResource("7_davyq")]
 position = Vector2(822, 459)
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [node name="Shovel" parent="." instance=ExtResource("7_sfrg7")]
 position = Vector2(333, 462)
 scale = Vector2(1.5, 1.5)
@@ -253,6 +257,10 @@ scale = Vector2(1.5, 1.5)
 [node name="Duck" parent="." instance=ExtResource("8_c1atr")]
 position = Vector2(1131, 832)
 scale = Vector2(3, 3)
+
+[node name="Jail" parent="." instance=ExtResource("10_gvm5p")]
+position = Vector2(1141, 826)
+scale = Vector2(0.3, 0.3)
 
 [node name="Points" parent="." instance=ExtResource("9_uqjid")]
 offset_left = 1323.0
@@ -302,15 +310,30 @@ texture_mode = 2
 begin_cap_mode = 1
 end_cap_mode = 1
 
+[node name="Line2D4" type="Line2D" parent="LinesContainer"]
+position = Vector2(894, 1235)
+rotation = -3.14159
+points = PackedVector2Array(217.002, 517.999, 213, 471, 225, 396, 301.002, 345.999, 385, 363, 434, 416, 436, 498, 378.003, 556.998)
+width = 20.0
+texture = ExtResource("3_2t78l")
+texture_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1
+
 [node name="PointLinesContainer" type="Node2D" parent="."]
 
 [node name="PointsLine" parent="PointLinesContainer" instance=ExtResource("13_g4mcg")]
 position = Vector2(451, 497)
-points = PackedVector2Array(38, 38, 117, 102, 195, 135, 283, 161, 392, 196, 487, 237, 563, 266)
+points = PackedVector2Array(38, 38, 117, 102, 195, 135, 283, 161, 392, 196, 487, 237)
 
 [node name="PointsLine2" parent="PointLinesContainer" instance=ExtResource("13_g4mcg")]
 position = Vector2(929, 459)
 points = PackedVector2Array(-153, 131)
+
+[node name="KeyContainer" type="Node2D" parent="."]
+
+[node name="Key" parent="KeyContainer" instance=ExtResource("14_1pata")]
+position = Vector2(573, 784)
 
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
 [connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]

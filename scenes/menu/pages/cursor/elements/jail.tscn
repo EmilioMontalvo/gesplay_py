@@ -1,10 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp3whw5htnppi"]
+[gd_scene load_steps=7 format=3 uid="uid://bp3whw5htnppi"]
 
 [ext_resource type="Script" path="res://scripts/cursor/jail.gd" id="1_kcbvg"]
 [ext_resource type="Texture2D" uid="uid://365n1n2bn0hn" path="res://assets/cursor_game/tools/jail.png" id="1_odprm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm7hp"]
-size = Vector2(682, 462)
+size = Vector2(798, 508)
+
+[sub_resource type="Animation" id="Animation_iwljg"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5hadf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aexag"]
+_data = {
+"RESET": SubResource("Animation_5hadf"),
+"open": SubResource("Animation_iwljg")
+}
 
 [node name="Jail" type="Node2D"]
 script = ExtResource("1_kcbvg")
@@ -12,8 +48,13 @@ script = ExtResource("1_kcbvg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_odprm")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["HardTerrain"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-10, -4)
+position = Vector2(7, -15)
 shape = SubResource("RectangleShape2D_cm7hp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aexag")
+}

@@ -1,24 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbflgesw28ogu"]
+[gd_scene load_steps=10 format=3 uid="uid://dbflgesw28ogu"]
 
 [ext_resource type="PackedScene" uid="uid://bpygnehhw7vhm" path="res://scenes/menu/components/cursor_level_button.tscn" id="1_hrasb"]
 [ext_resource type="Script" path="res://scripts/cursor/level_button.gd" id="1_nislf"]
 [ext_resource type="Texture2D" uid="uid://des1tkpyo511i" path="res://assets/cursor_game/levels/duck_icon_level.png" id="2_5x8ih"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="4_mxa12"]
 [ext_resource type="Texture2D" uid="uid://c3esi0ps412v" path="res://assets/cursor_game/levels/locked_level.png" id="6_1kfh3"]
+[ext_resource type="Texture2D" uid="uid://c8e26v7ldgp4q" path="res://assets/cursor_game/1_star.png" id="6_p0qrq"]
+[ext_resource type="Script" path="res://scripts/cursor/level_stars.gd" id="6_pqg28"]
+[ext_resource type="Texture2D" uid="uid://cmuabgj1cjywa" path="res://assets/cursor_game/2_stars.png" id="7_c0gxf"]
+[ext_resource type="Texture2D" uid="uid://cl7dmt75jd16e" path="res://assets/cursor_game/stars.png" id="8_wgfso"]
 
 [node name="LevelButton" type="Control"]
+custom_minimum_size = Vector2(187, 214)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 187.0
+offset_bottom = 214.0
 script = ExtResource("1_nislf")
 
 [node name="button" parent="." instance=ExtResource("1_hrasb")]
-layout_mode = 0
-offset_left = 294.0
-offset_top = 336.0
-offset_right = 424.0
-offset_bottom = 466.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_5x8ih")
 ignore_texture_size = true
 stretch_mode = 4
@@ -32,12 +44,89 @@ offset_bottom = 168.0
 text = "Nivel 1"
 
 [node name="locked" parent="." instance=ExtResource("1_hrasb")]
-offset_left = 294.0
-offset_top = 336.0
-offset_right = 425.0
-offset_bottom = 468.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -66.0
+offset_right = 65.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("6_1kfh3")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="stars" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -92.5
+offset_right = 64.5
+offset_bottom = -65.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_pqg28")
+
+[node name="star" type="TextureRect" parent="stars"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -40.0
+offset_right = 55.5
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_p0qrq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="star2" type="TextureRect" parent="stars"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -40.0
+offset_right = 55.5
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_c0gxf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="star3" type="TextureRect" parent="stars"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -40.0
+offset_right = 55.5
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_wgfso")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]

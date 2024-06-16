@@ -3,6 +3,7 @@ from src.cursor_config import CursorConfig
 from src.click_config import ClickConfig
 from src.task_manager import TaskManager
 from src.general_config import GeneralConfig
+from src.camera_manager import CameraManager
 
 class MessageInterpreter:
     def __init__(self):
@@ -18,7 +19,8 @@ class MessageInterpreter:
             ClickConfig().load_from_dict(message.content)
             pass
         elif message.instruction == "update_camera_config":
-            #TODO: Implement CameraConfig
+            print(message.content)
+            CameraManager().change_camera(message.content["camera_id"])
             pass
         elif message.instruction == "pause_mouse":
             GeneralConfig().pause()

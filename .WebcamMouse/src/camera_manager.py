@@ -48,3 +48,8 @@ class CameraManager(metaclass=Singleton):
     def destroy(self):
         self.release()
         self.is_started = False
+    
+    def change_camera(self, camera_id):
+        self.camera_id = camera_id
+        self.destroy()
+        self.start()

@@ -1,8 +1,11 @@
 extends Control
 
+class_name LevelButton
+
 @export var locked=true
 @export var level_name="Nivel 1"
 @export var level=1
+@export var stars=0
 
 @onready var label:Label=$button/Text
 var levels=[
@@ -15,6 +18,7 @@ var levels=[
 func _ready():
 	$locked.visible=locked
 	label.text=level_name
+	$stars.set_stars(stars)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bss2cehllsr3l"]
+
+[ext_resource type="PackedScene" uid="uid://bgwu3x5ry7y6" path="res://scenes/menu/pages/cursor/cursor_game.tscn" id="1_1gh7c"]
+[ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="2_df0yk"]
+
+[node name="CursorGameConfigurations" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CursorGame" parent="." instance=ExtResource("1_1gh7c")]
+
+[node name="Panel" parent="." instance=ExtResource("2_df0yk")]
+layout_mode = 0

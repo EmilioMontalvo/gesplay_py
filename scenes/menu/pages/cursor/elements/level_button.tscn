@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbflgesw28ogu"]
+
+[ext_resource type="PackedScene" uid="uid://bpygnehhw7vhm" path="res://scenes/menu/components/cursor_level_button.tscn" id="1_hrasb"]
+[ext_resource type="Script" path="res://scripts/cursor/level_button.gd" id="1_nislf"]
+[ext_resource type="Texture2D" uid="uid://des1tkpyo511i" path="res://assets/cursor_game/levels/duck_icon_level.png" id="2_5x8ih"]
+[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="4_mxa12"]
+[ext_resource type="Texture2D" uid="uid://c3esi0ps412v" path="res://assets/cursor_game/levels/locked_level.png" id="6_1kfh3"]
+
+[node name="LevelButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nislf")
+
+[node name="button" parent="." instance=ExtResource("1_hrasb")]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 336.0
+offset_right = 424.0
+offset_bottom = 466.0
+texture_normal = ExtResource("2_5x8ih")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Text" parent="button" instance=ExtResource("4_mxa12")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 130.0
+offset_right = 110.0
+offset_bottom = 168.0
+text = "Nivel 1"
+
+[node name="locked" parent="." instance=ExtResource("1_hrasb")]
+offset_left = 294.0
+offset_top = 336.0
+offset_right = 425.0
+offset_bottom = 468.0
+texture_normal = ExtResource("6_1kfh3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

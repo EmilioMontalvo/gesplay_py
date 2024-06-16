@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv8eq0tigyo03"]
+[gd_scene load_steps=12 format=3 uid="uid://bv8eq0tigyo03"]
 
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
+[ext_resource type="PackedScene" uid="uid://dbflgesw28ogu" path="res://scenes/menu/pages/cursor/elements/level_button.tscn" id="6_5gj27"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
-[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="7_8rila"]
-[ext_resource type="Texture2D" uid="uid://des1tkpyo511i" path="res://assets/cursor_game/levels/duck_icon_level.png" id="7_b12i0"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="9_xqx4l"]
 [ext_resource type="PackedScene" uid="uid://bpygnehhw7vhm" path="res://scenes/menu/components/cursor_level_button.tscn" id="10_8iayx"]
@@ -61,25 +60,8 @@ offset_top = 4.0
 offset_right = 104.0
 offset_bottom = 44.0
 
-[node name="level_1" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 294.0
-offset_top = 336.0
-offset_right = 424.0
-offset_bottom = 466.0
-texture_normal = ExtResource("7_b12i0")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("7_8rila")
-scene = 12
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_1" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 130.0
-offset_right = 110.0
-offset_bottom = 168.0
-text = "Nivel 1"
+[node name="LevelButton" parent="CanvasLayer/Level_Button_container" instance=ExtResource("6_5gj27")]
+locked = false
 
 [node name="level_2" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
 layout_mode = 0
@@ -214,5 +196,3 @@ offset_left = 1339.0
 offset_top = 55.0
 offset_right = 1389.0
 offset_bottom = 105.0
-
-[connection signal="pressed" from="CanvasLayer/Level_Button_container/level_1" to="CanvasLayer/Level_Button_container/level_1" method="_on_pressed"]

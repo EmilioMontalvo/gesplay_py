@@ -15,6 +15,7 @@ var inside_correct_dropable = false
 
 signal success
 signal mistake
+signal food_point
 
 func _ready():
 	sprite.texture = icon
@@ -54,6 +55,9 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 		body.modulate = Color('#F6EEDE',1)
 		body_ref = body
 		body_ref_temp = body
+	if body.is_in_group('food'):
+		food_point.emit()
+		body.queue_free()
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group('dropable'):

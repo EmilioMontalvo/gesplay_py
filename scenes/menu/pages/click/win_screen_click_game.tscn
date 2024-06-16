@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx6boqrt30qo0"]
+[gd_scene load_steps=10 format=3 uid="uid://b73rkuo5uajib"]
 
 [ext_resource type="Script" path="res://scripts/click_game/win_screen_click_game.gd" id="1_ddhlr"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_jh03j"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_d8ocu"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_d8ocu"]
 [ext_resource type="Texture2D" uid="uid://detwhko83a5on" path="res://assets/buttons/icons/repeat_arrow.png" id="3_dvds7"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="4_g0mu2"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="4_gmluo"]
 [ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="5_rm616"]
+[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="8_43cj7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asiq8"]
 bg_color = Color(0.964706, 0.933333, 0.870588, 1)
@@ -49,8 +51,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -183.0
-offset_bottom = -121.0
+offset_top = -216.0
+offset_bottom = -154.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_d8ocu")
@@ -58,14 +60,43 @@ theme_override_font_sizes/font_size = 50
 text = "Nivel Completado"
 horizontal_alignment = 1
 
+[node name="StarPoints" parent="Panel" instance=ExtResource("4_g0mu2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -168.0
+offset_right = 185.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1)
+
+[node name="TimeContainer" parent="Panel" instance=ExtResource("8_43cj7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -3.0
+offset_right = 29.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -49.0
-offset_bottom = 49.0
+offset_top = 115.0
+offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40

@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfehibfgkw5he"]
+
+[ext_resource type="Texture2D" uid="uid://jv4uspfuvtj2" path="res://assets/click_game/backgrounds/background_underwater/1.png" id="1_0plf6"]
+[ext_resource type="Script" path="res://scripts/click_game/scenes_background/clouds.gd" id="2_w3jhq"]
+[ext_resource type="Texture2D" uid="uid://bn85upc2blv3v" path="res://assets/click_game/backgrounds/background_underwater/2.png" id="3_arj32"]
+[ext_resource type="Texture2D" uid="uid://64uwav2fyjvx" path="res://assets/click_game/backgrounds/background_underwater/3.png" id="4_tu1aw"]
+[ext_resource type="Texture2D" uid="uid://djxq6t6l4w3nn" path="res://assets/click_game/backgrounds/background_underwater/4.png" id="5_88uqr"]
+[ext_resource type="Texture2D" uid="uid://bnc0keladje5c" path="res://assets/click_game/backgrounds/background_underwater/5.png" id="6_4eadw"]
+[ext_resource type="Texture2D" uid="uid://bbni0dlyl3700" path="res://assets/click_game/backgrounds/background_underwater/6.png" id="7_u2b7p"]
+
+[node name="BackgroundUnderwater" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+script = ExtResource("2_w3jhq")
+speed = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_0plf6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-1895.29, 0)
+texture = ExtResource("1_0plf6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-3796.47, 0)
+texture = ExtResource("1_0plf6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+script = ExtResource("2_w3jhq")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_arj32")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(-1905.88, 0)
+texture = ExtResource("3_arj32")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2/Sprite2D2"]
+position = Vector2(-1905.88, 0)
+texture = ExtResource("3_arj32")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("4_tu1aw")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture = ExtResource("5_88uqr")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
+texture = ExtResource("6_4eadw")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+position = Vector2(739, 561)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer6"]
+texture = ExtResource("7_u2b7p")

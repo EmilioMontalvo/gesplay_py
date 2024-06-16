@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq0au1aggntqm"]
+
+[ext_resource type="Script" path="res://scripts/click_game/time_container.gd" id="1_avjc7"]
+[ext_resource type="Texture2D" uid="uid://nihawm72s6hr" path="res://assets/click_game/clock_48.png" id="2_evyg6"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_vs13w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykchh"]
+line_spacing = 5.0
+font = ExtResource("3_vs13w")
+font_size = 25
+outline_size = 10
+outline_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="TimeContainer" type="AspectRatioContainer"]
+offset_right = 138.0
+offset_bottom = 54.0
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+script = ExtResource("1_avjc7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ClockImage" type="TextureRect" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("2_evyg6")
+
+[node name="Time" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_ykchh")

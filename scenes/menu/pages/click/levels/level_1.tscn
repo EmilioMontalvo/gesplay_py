@@ -1,17 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://da1ikiog064lk"]
+[gd_scene load_steps=16 format=3 uid="uid://da1ikiog064lk"]
 
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_88cwj"]
 [ext_resource type="PackedScene" uid="uid://cssvy00q3ty0b" path="res://scenes/menu/pages/click/backgrounds/background_summer.tscn" id="1_m3avc"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="1_tkvlx"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="2_amvfh"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="3_svxma"]
-[ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="4_qixhn"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="5_dgay5"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="6_weye8"]
 [ext_resource type="Texture2D" uid="uid://btrm5wxin2w5u" path="res://assets/click_game/animals/horse.png" id="7_0tr8u"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_ah3kq"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="9_ead7u"]
+[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="9_s3utf"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="9_xcc0w"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="12_dhx8j"]
+[ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="14_bgvr6"]
+[ext_resource type="Texture2D" uid="uid://dc8n3hcq31b80" path="res://assets/click_game/foods/88_salmon.png" id="15_w1w8e"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_88cwj")
@@ -46,15 +49,6 @@ offset_top = 37.0
 offset_right = 1406.0
 offset_bottom = 87.0
 
-[node name="WinScreen" parent="CanvasLayer" instance=ExtResource("4_qixhn")]
-visible = false
-
-[node name="Time" parent="CanvasLayer/WinScreen" index="7"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 87.0
-offset_bottom = 38.0
-
 [node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("5_dgay5")]
 offset_left = 570.0
 offset_top = 18.0
@@ -68,6 +62,18 @@ offset_right = 1442.0
 offset_bottom = 1026.0
 size_flags_vertical = 8
 
+[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("9_ead7u")]
+offset_left = 1137.0
+offset_top = 129.0
+offset_right = 1507.0
+offset_bottom = 289.0
+
+[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("9_s3utf")]
+offset_left = 1211.0
+offset_top = 248.0
+offset_right = 1304.0
+offset_bottom = 302.0
+
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_ah3kq")]
 
 [node name="DropableArea" parent="." instance=ExtResource("6_weye8")]
@@ -80,6 +86,8 @@ position = Vector2(175, 326)
 icon = ExtResource("7_0tr8u")
 type = "horse"
 
-[connection signal="pressed" from="CanvasLayer/Home" to="." method="_on_home_pressed"]
+[node name="FoodArea" parent="." instance=ExtResource("14_bgvr6")]
+position = Vector2(719, 412)
+icon = ExtResource("15_w1w8e")
 
-[editable path="CanvasLayer/WinScreen"]
+[connection signal="pressed" from="CanvasLayer/Home" to="." method="_on_home_pressed"]

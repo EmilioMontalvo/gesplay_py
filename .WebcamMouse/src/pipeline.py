@@ -7,6 +7,12 @@ from src.udp.udp_client import UdpClient
 from src.controllers.mouse_controller import MouseController
 from src.controllers.click_controller import ClickController
 from src.general_config import GeneralConfig
+import os
+import cv2
+
+base_dir = os.path.dirname(__file__)
+image_path = os.path.join(base_dir, "images\placeholder.jpg")
+placeholder = cv2.imread(image_path)
 
 class Pipeline:
     def __init__(self):
@@ -17,6 +23,11 @@ class Pipeline:
         frame_rgb = CameraManager().get_frame_rgb()
         if GeneralConfig().paused_mouse_control:
             return
+        
+        if frame_rgb is None:            
+            UdpClient().send_bytes(placeholder)
+            return
+
         frame = CameraManager().get_fliped_frame()
         hand_position = HandDetector().get_hand_position(frame_rgb)
         frame_rgb.flags.writeable = False

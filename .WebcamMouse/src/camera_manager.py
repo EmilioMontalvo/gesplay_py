@@ -24,6 +24,9 @@ class CameraManager(metaclass=Singleton):
         if self.is_started:
             self.is_started = True
             ret,self.frame = self.cap.read()
+
+            if self.frame is None:
+                return None
             frame_rgb = cv2.cvtColor(self.frame, cv2.COLOR_BGR2RGB)
 
             return frame_rgb

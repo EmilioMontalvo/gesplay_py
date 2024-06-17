@@ -5,3 +5,46 @@
 [node name="Level2" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_f3ac8")]
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
+position = Vector2(-134, 56)
+polygon = PackedVector2Array(-65, -57, -29, -22, -65, 2, -20, 30, 615, 52, 701, 166, 728, 116, 769, 155, 850, 89, 798, -50, 664, -68, 567, -78, 518, -30, 461, -52, 406, -31, 346, -60, 338, -47, 223, -75, 67, -88, -41, -83)
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain2" index="0"]
+position = Vector2(-114, 1)
+polygon = PackedVector2Array(-58, -26, -66, -2, -92, 16, -34, 17, 236, 53, 331, 183, 489, 207, 506, 91, 575, 38, 621, 91, 654, 68, 675, 43, 656, -10, 505, -23, 81, -32, -14, -36)
+
+[node name="Polygon2D" parent="Level1/level_container/HardTerrainContainer/HardTerrain" index="0"]
+polygon = PackedVector2Array(107, 444, 1, 432, 4, 1034, 1439, 1035, 1441, 677.222, 1441, 273, 723.763, 273, 4, 273, 1, 433, 109, 442, 184, 413, 247, 425, 295, 456, 308, 483, 398, 478, 533, 481, 662, 500, 725, 531, 711, 448, 730, 407, 761, 378, 829, 369, 891, 378, 915, 404, 931, 442, 932, 484, 1039, 500, 1140, 511, 1184, 585, 1194, 646, 1244.32, 735.974, 1263, 782, 1262, 838, 1221, 911, 1142, 932, 1064, 915, 1014, 873, 965, 652, 906, 657, 859, 712, 834, 832, 834, 958, 765, 1015, 678, 1000, 624, 946, 619, 861, 688, 798, 675, 715, 552, 641, 291, 633, 227, 651, 148, 640, 77, 545)
+
+[node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
+position = Vector2(723, 905)
+
+[node name="Shovel" parent="Level1/level_container" index="5"]
+position = Vector2(207, 525)
+
+[node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]
+points = PackedVector2Array(212, 456, 225, 396, 291, 348, 385, 363, 434, 416, 435, 470)
+
+[node name="Line2D" parent="Level1/level_container/LinesContainer" index="1"]
+position = Vector2(-123, 66)
+points = PackedVector2Array(403, 561, 346, 582, 254, 565, 220.997, 517.761, 203, 492, 212, 406, 255, 365, 328, 348, 393, 364, 431, 405)
+
+[node name="Line2D3" parent="Level1/level_container/LinesContainer" index="2"]
+points = PackedVector2Array(183, 486, 220, 555, 272, 585, 348, 595, 427, 571, 460, 511, 460, 445, 417, 376)
+
+[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
+position = Vector2(1057, 1356)
+
+[node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
+points = PackedVector2Array(-118, 66, 44, 83, 164, 107, 303, 155, 417, 195, 487, 237)
+
+[node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
+position = Vector2(822, 448)
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

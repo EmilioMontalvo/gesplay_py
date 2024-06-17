@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=17 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ube6qkknkmer" path="res://scenes/menu/pages/cursor/elements/points.tscn" id="9_uqjid"]
 [ext_resource type="PackedScene" uid="uid://bp3whw5htnppi" path="res://scenes/menu/pages/cursor/elements/jail.tscn" id="10_gvm5p"]
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
-[ext_resource type="Texture2D" uid="uid://c0s7dag1nf71t" path="res://assets/cursor_game/tilemap/Terrain (16x16).png" id="11_8y8st"]
 [ext_resource type="PackedScene" uid="uid://b4ekcuuhhm7mu" path="res://scenes/menu/pages/cursor/elements/points_line.tscn" id="13_g4mcg"]
 [ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="14_1pata"]
 
@@ -41,156 +40,6 @@ texture = ExtResource("4_a1ok2")
 
 [sub_resource type="TileSet" id="TileSet_tosla"]
 sources/1 = SubResource("TileSetAtlasSource_ilkx7")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxnti"]
-texture = ExtResource("11_8y8st")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-17:0/0 = 0
-18:0/0 = 0
-19:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-17:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-17:2/0 = 0
-18:2/0 = 0
-19:2/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-17:4/0 = 0
-18:4/0 = 0
-19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-17:6/0 = 0
-18:6/0 = 0
-19:6/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-17:8/0 = 0
-18:8/0 = 0
-19:8/0 = 0
-20:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-18:10/0 = 0
-19:10/0 = 0
-20:10/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_hdpn8"]
-sources/0 = SubResource("TileSetAtlasSource_hxnti")
 
 [node name="level_container" type="Node2D"]
 script = ExtResource("1_t7ag8")
@@ -273,14 +122,6 @@ offset_left = 1.0
 offset_top = 177.0
 offset_right = 1.0
 offset_bottom = 177.0
-
-[node name="TileMap" type="TileMap" parent="."]
-z_index = -2
-position = Vector2(0.675, 13.51)
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_hdpn8")
-format = 2
-layer_0/tile_data = PackedInt32Array(1245205, 458752, 1, 1245206, 458752, 5, 1245207, 458752, 5, 1245208, 458752, 5, 1245209, 458752, 5, 917530, 458752, 5, 589827, 458752, 5, 655363, 458752, 5, 1179669, 458752, 4, 1179670, 458752, 4, 1179671, 458752, 4, 1179672, 458752, 4, 1179673, 458752, 4, 720900, 458752, 8)
 
 [node name="LinesContainer" type="Node2D" parent="."]
 

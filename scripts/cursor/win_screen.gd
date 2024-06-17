@@ -26,5 +26,5 @@ func _on_visibility_changed():
 
 
 func _on_forward_button_pressed():
-	var next_level_path="res://scenes/menu/pages/cursor/levels/level_"+nex_level+".tscn"
+	var next_level_path="res://scenes/menu/pages/cursor/levels/level_"+str(nex_level)+".tscn"
 	MenuManager.change_to_file(next_level_path)

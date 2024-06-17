@@ -71,6 +71,12 @@ func load_packed_scene(scene:PackedScene):
 		get_tree().root.remove_child(base_instance)
 		base_instance=null
 	get_tree().change_scene_to_packed(scene)
+
+func change_to_file(path:String):
+	if base_instance:
+		get_tree().root.remove_child(base_instance)
+		base_instance=null
+	get_tree().change_scene_to_file(path)
 	
 	
 func set_current_scene(node):

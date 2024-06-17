@@ -1,14 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv8eq0tigyo03"]
+[gd_scene load_steps=9 format=3 uid="uid://bv8eq0tigyo03"]
 
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
-[ext_resource type="PackedScene" uid="uid://dbflgesw28ogu" path="res://scenes/menu/pages/cursor/elements/level_button.tscn" id="6_5gj27"]
+[ext_resource type="PackedScene" uid="uid://d2oymkkl6p63p" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]
-[ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="9_xqx4l"]
-[ext_resource type="PackedScene" uid="uid://bpygnehhw7vhm" path="res://scenes/menu/components/cursor_level_button.tscn" id="10_8iayx"]
-[ext_resource type="Texture2D" uid="uid://c3esi0ps412v" path="res://assets/cursor_game/levels/locked_level.png" id="10_glj3c"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="10_mmg1k"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="11_62lih"]
 
@@ -52,142 +49,18 @@ offset_top = 30.0
 offset_right = 1334.0
 offset_bottom = 126.0
 
-[node name="Level_Button_container" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 64.0
-offset_top = 4.0
-offset_right = 104.0
-offset_bottom = 44.0
-
-[node name="LevelButton" parent="CanvasLayer/Level_Button_container" instance=ExtResource("6_5gj27")]
-locked = false
-
-[node name="level_2" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 336.0
-offset_right = 616.0
-offset_bottom = 468.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_2" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 131.0
-offset_right = 114.0
-offset_bottom = 169.0
-text = "Nivel 2"
-
-[node name="level_3" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 677.0
-offset_top = 336.0
-offset_right = 808.0
-offset_bottom = 468.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_3" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 131.0
-offset_right = 112.0
-offset_bottom = 169.0
-text = "Nivel 2"
-
-[node name="level_4" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 866.0
-offset_top = 338.0
-offset_right = 997.0
-offset_bottom = 470.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_4" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 131.0
-offset_right = 113.0
-offset_bottom = 169.0
-text = "Nivel 2"
-
-[node name="level_5" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 293.0
-offset_top = 534.0
-offset_right = 424.0
-offset_bottom = 666.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_5" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 131.0
-offset_right = 117.0
-offset_bottom = 169.0
-text = "Nivel 2"
-
-[node name="level_6" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 531.0
-offset_right = 616.0
-offset_bottom = 663.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_6" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 131.0
-offset_right = 113.0
-offset_bottom = 169.0
-text = "Nivel 6"
-
-[node name="level_7" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 677.0
-offset_top = 535.0
-offset_right = 808.0
-offset_bottom = 667.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_7" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 131.0
-offset_right = 112.0
-offset_bottom = 169.0
-text = "Nivel 7"
-
-[node name="level_8" parent="CanvasLayer/Level_Button_container" instance=ExtResource("10_8iayx")]
-layout_mode = 0
-offset_left = 865.0
-offset_top = 537.0
-offset_right = 996.0
-offset_bottom = 669.0
-texture_normal = ExtResource("10_glj3c")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Text" parent="CanvasLayer/Level_Button_container/level_8" instance=ExtResource("9_xqx4l")]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 131.0
-offset_right = 113.0
-offset_bottom = 169.0
-text = "Nivel 8"
+[node name="GridContainer" parent="CanvasLayer" instance=ExtResource("6_6vwgj")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -226.0
+offset_right = 380.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TileMap" parent="." instance=ExtResource("7_8kckn")]
 

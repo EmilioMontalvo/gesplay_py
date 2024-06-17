@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2oymkkl6p63p"]
+
+[ext_resource type="Script" path="res://scripts/cursor/grid_container.gd" id="1_ua8qi"]
+
+[node name="GridContainer" type="GridContainer"]
+custom_minimum_size = Vector2(750, 482)
+offset_right = 760.0
+offset_bottom = 482.0
+columns = 4
+script = ExtResource("1_ua8qi")

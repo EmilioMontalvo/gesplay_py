@@ -7,7 +7,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
 func _on_level_container_won():
 	win_screen.visible=true
 	win_screen.set_points($level_container.get_points())

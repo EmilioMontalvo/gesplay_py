@@ -1,5 +1,7 @@
 extends Node
 
+class_name CursorLevel
+
 @onready var win_screen=$CanvasLayer/WinScreen
 
 # Called when the node enters the scene tree for the first time.

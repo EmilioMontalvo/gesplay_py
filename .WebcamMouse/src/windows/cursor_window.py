@@ -46,7 +46,7 @@ class CursorWindow(metaclass=Singleton):
         # Obtener el handle de la ventana
         self.root.mainloop()
     
-    def destory(self):
+    def destroy(self):
         self.root.quit()  # Salir del bucle principal de tkinter
         self.root.destroy()
 

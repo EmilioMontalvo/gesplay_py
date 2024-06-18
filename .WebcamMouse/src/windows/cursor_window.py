@@ -3,6 +3,8 @@ from ctypes import windll
 from PIL import Image, ImageTk
 import pyautogui
 from src.singleton_meta import Singleton
+from src.windows.custom_cursor import CustomCursor
+
 
 class CursorWindow(metaclass=Singleton):
 
@@ -20,16 +22,13 @@ class CursorWindow(metaclass=Singleton):
         self.root.attributes("-topmost", True)  
         self.root.attributes("-transparentcolor", self.root['bg'])
         #self.root.config(cursor="star")
-        
-        # Obtener el tamaño de la pantalla con PyAutoGUI
-        ancho_pantalla, alto_pantalla = pyautogui.size()
 
         # Establecer el tamaño de la ventana
         self.root.after(0, self.root.geometry, f"{self.ancho_pantalla}x{self.alto_pantalla}")
         self.root.geometry(f"{self.ancho_pantalla}x{self.alto_pantalla}")
 
         # Cargar la imagen sin aplicar transparencia
-        img_pil = Image.open('cursor_1.png')
+        img_pil = CustomCursor().icon.get_image()
         img_tk = ImageTk.PhotoImage(img_pil)
 
         canvas = tk.Canvas(self.root)

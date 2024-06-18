@@ -52,8 +52,11 @@ class TaskManager(metaclass=Singleton):
             from src.controllers.click_controller import ClickController
             ClickController().start()
 
+            from src.windows.custom_cursor import CustomCursor
+            CustomCursor().start()
+
             from src.windows.cursor_window import CursorWindow
-            CursorWindow().start()
+            CursorWindow().start()            
 
             self.is_started = True
 

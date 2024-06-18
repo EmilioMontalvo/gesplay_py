@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=18 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
 [ext_resource type="PackedScene" uid="uid://b4ekcuuhhm7mu" path="res://scenes/menu/pages/cursor/elements/points_line.tscn" id="13_g4mcg"]
 [ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="14_1pata"]
+
+[sub_resource type="TileSet" id="TileSet_2xdvn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilkx7"]
 texture = ExtResource("4_a1ok2")
@@ -54,6 +56,10 @@ color = Color(0.329412, 0.329412, 0.329412, 1)
 texture = ExtResource("3_2t78l")
 texture_scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(2, 257, -2, 1031, 1452, 1030, 1446.75, 580.482, 1443, 260)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2xdvn")
+format = 2
 
 [node name="TerrainContainer" type="Node2D" parent="."]
 

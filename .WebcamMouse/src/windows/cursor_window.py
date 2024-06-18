@@ -12,15 +12,14 @@ class CursorWindow(metaclass=Singleton):
 
     def start(self):
         def update_mouse_position():
-            x, y = pyautogui.position()
-            
+            x, y = pyautogui.position()            
             pointxy = (x+50, y+50)
             canvas.coords(cimg, pointxy)
             self.root.after(10, update_mouse_position)
 
         self.root.attributes("-topmost", True)  
         self.root.attributes("-transparentcolor", self.root['bg'])
-        #root.config(cursor="none")
+        #self.root.config(cursor="star")
         
         # Obtener el tamaño de la pantalla con PyAutoGUI
         ancho_pantalla, alto_pantalla = pyautogui.size()
@@ -50,5 +49,3 @@ class CursorWindow(metaclass=Singleton):
         self.root.quit()  # Salir del bucle principal de tkinter
         self.root.destroy()
 
-if __name__ == '__main__':
-    CursorWindow().run()

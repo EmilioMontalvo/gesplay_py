@@ -4,10 +4,10 @@ from enum import Enum
 import json
 
 class CursorType(Enum):
-    DEFAULT = 1
-    NORMAL_BIG = 2
-    TARGET = 3
-    TARGET_2 = 4
+    DEFAULT = 0
+    NORMAL_BIG = 1
+    TARGET = 2
+    TARGET_2 = 3
     
 
 Cursors = {

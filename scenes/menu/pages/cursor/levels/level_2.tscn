@@ -20,7 +20,7 @@ polygon = PackedVector2Array(107, 444, 1, 432, 4, 1034, 1439, 1035, 1441, 677.22
 [node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
 position = Vector2(723, 905)
 
-[node name="Shovel" parent="Level1/level_container" index="5"]
+[node name="Shovel" parent="Level1/level_container" index="6"]
 position = Vector2(207, 525)
 
 [node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]

@@ -24,6 +24,7 @@ class CursorWindow(metaclass=Singleton):
             canvas.coords(cimg, pointxy)
             self.root.after(10, update_mouse_position)
 
+        self.root.attributes('-alpha', CustomCursor().opacity) 
         self.root.attributes("-topmost", True)  
         self.root.attributes("-transparentcolor", self.root['bg'])
         #self.root.config(cursor="heart")

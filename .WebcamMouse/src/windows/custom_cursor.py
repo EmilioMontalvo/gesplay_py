@@ -25,7 +25,7 @@ class CustomCursor(metaclass=Singleton):
         self.icon:CursorImage = None
         self.offset= None
         self.size=1
-        self.opacity=1
+        self.opacity=0.5
         self.color=(79,163,221,255)
         self.cursor_id = CursorType.TARGET_2
     
@@ -54,7 +54,7 @@ class CustomCursor(metaclass=Singleton):
         tempicon = CursorImage(image_path)
         tempicon.resize_with_aspect_ratio(self.size)
         tempicon.change_color(self.color)
-        tempicon.change_opacity(self.opacity)
+        #tempicon.change_opacity(self.opacity)        
         self.icon = tempicon
         self.offset = offset
 

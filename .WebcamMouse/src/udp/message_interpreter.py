@@ -4,6 +4,7 @@ from src.click_config import ClickConfig
 from src.task_manager import TaskManager
 from src.general_config import GeneralConfig
 from src.camera_manager import CameraManager
+from src.windows.custom_cursor import CustomCursor
 
 class MessageInterpreter:
     def __init__(self):
@@ -28,6 +29,10 @@ class MessageInterpreter:
         elif message.instruction == "resume_mouse":
             GeneralConfig().resume()
             pass
+        elif message.instruction == "update_cursor_icon_config":
+            CustomCursor().load_from_dict(message.content)
+            pass
+
         elif message.instruction == "exit":
             print("Closing camera mouse")
             TaskManager().exit()

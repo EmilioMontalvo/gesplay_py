@@ -14,14 +14,19 @@ class CursorWindow(metaclass=Singleton):
 
     def start(self):
         def update_mouse_position():
-            x, y = pyautogui.position()            
-            pointxy = (x+50, y+50)
+            x, y = pyautogui.position()
+            image_size = CustomCursor().icon.get_size()
+
+            if CustomCursor().offset == "top_left":
+                pointxy = (x+image_size[0]/2, y+image_size[1]/2)
+            else:
+                pointxy = (x, y)            
             canvas.coords(cimg, pointxy)
             self.root.after(10, update_mouse_position)
 
         self.root.attributes("-topmost", True)  
         self.root.attributes("-transparentcolor", self.root['bg'])
-        #self.root.config(cursor="star")
+        #self.root.config(cursor="heart")
 
         # Establecer el tamaño de la ventana
         self.root.after(0, self.root.geometry, f"{self.ancho_pantalla}x{self.alto_pantalla}")

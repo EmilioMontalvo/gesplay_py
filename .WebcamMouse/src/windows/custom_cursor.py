@@ -1,31 +1,22 @@
-import os
-import cv2
 from src.windows.cursor_image import CursorImage
 from src.singleton_meta import Singleton
 from enum import Enum
+import json
 
 class CursorType(Enum):
     DEFAULT = 1
-    CROSSHAIR = 2
-    HAND = 3
-    IBEAM = 4
-    NO = 5
-    SIZE_ALL = 6
-    SIZE_NESW = 7
-    SIZE_NS = 8
-    SIZE_NWSE = 9
-    SIZE_WE = 10
-    UP_ARROW = 11
-    WAIT = 12
+    NORMAL_BIG = 2
+    TARGET = 3
+    TARGET_2 = 4
+    
 
 Cursors = {
     #image_path, offset
-    CursorType.DEFAULT: ["cursor_1.png", (50, 50)],
-    CursorType.CROSSHAIR: ["cursor_2.png", (50, 50)],
-    CursorType.HAND: ["cursor_3.png", (50, 50)],
-    CursorType.IBEAM: ["cursor_4.png", (50, 50)],
-    CursorType.NO: ["cursor_5.png", (50, 50)],
-    CursorType.SIZE_ALL: ["cursor_6.png", (50, 50)],
+    CursorType.DEFAULT: ["cursor_1.png", "top_left"], #offset can be ["top_left", "top_right", "bottom_left", "bottom_right", "center"]
+    CursorType.NORMAL_BIG: ["cursor_2.png", "top_left"],
+    CursorType.TARGET: ["cursor_3.png", "center"],
+    CursorType.TARGET_2: ["cursor_4.png", "center"],
+
 }
 
 
@@ -35,9 +26,23 @@ class CustomCursor(metaclass=Singleton):
         self.offset= None
         self.size=1
         self.opacity=1
-        self.color=None
-        self.cursor_id = CursorType.DEFAULT
-        
+        self.color=(79,163,221,255)
+        self.cursor_id = CursorType.TARGET_2
+    
+    def load_from_json(self, json_string):
+        data = json.loads(json_string)
+        self.cursor_id = data["cursor_id"]
+        self.size = data["size"]
+        self.opacity = data["opacity"]
+        self.color = tuple(data["color"])
+        self.set_cursor(self.cursor_id)       
+    
+    def load_from_dict(self, data):
+        self.cursor_id = data["cursor_id"]
+        self.size = data["size"]
+        self.opacity = data["opacity"]
+        self.color = tuple(data["color"])
+        self.set_cursor(self.cursor_id)
     
     def start(self):
         self.set_cursor(self.cursor_id)

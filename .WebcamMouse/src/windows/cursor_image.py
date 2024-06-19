@@ -54,5 +54,8 @@ class CursorImage:
 
     def get_image(self):
         return self.image
+    
+    def get_size(self):
+        return self.image.size
 
 

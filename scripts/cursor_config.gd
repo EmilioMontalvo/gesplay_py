@@ -48,3 +48,6 @@ func set_from_json(config: Dictionary):
 func get_as_message(instruction:String):
 	return Message.new(instruction,get_as_json())
 
+func send_update_to_upd():
+	UdPServer.send_message(get_as_message("update_cursor_config"))
+

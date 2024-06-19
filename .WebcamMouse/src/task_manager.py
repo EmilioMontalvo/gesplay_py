@@ -56,7 +56,7 @@ class TaskManager(metaclass=Singleton):
             CustomCursor().start()
 
             from src.windows.cursor_window import CursorWindow
-            CursorWindow().start()            
+            #CursorWindow().start()            
 
             self.is_started = True
 

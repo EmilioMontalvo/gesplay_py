@@ -30,7 +30,8 @@ class MessageInterpreter:
             GeneralConfig().resume()
             pass
         elif message.instruction == "update_cursor_icon_config":
-            CustomCursor().load_from_dict(message.content)
+            print(message.content)
+            #CustomCursor().load_from_dict(message.content)
             pass
 
         elif message.instruction == "exit":

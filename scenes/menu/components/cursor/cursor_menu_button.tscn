@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://benuurw2x2axq"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mp2yo"]
+[ext_resource type="Texture2D" uid="uid://fs0n425pvd81" path="res://assets/icons/cursors/cursor_4.png" id="2_8wbtq"]
+[ext_resource type="Texture2D" uid="uid://ep23bkktw8mr" path="res://assets/icons/cursors/cursor_1.png" id="2_50ujf"]
+[ext_resource type="Texture2D" uid="uid://defnma3wmb8j0" path="res://assets/icons/cursors/cursor_2.png" id="4_kyw1d"]
+[ext_resource type="Texture2D" uid="uid://by1nfgqlfby6b" path="res://assets/icons/cursors/cursor_3.png" id="5_u71od"]
+[ext_resource type="Script" path="res://scripts/menu/cursor_menu_button.gd" id="6_inj77"]
+
+[node name="MenuButton" type="MenuButton"]
+offset_right = 98.0
+offset_bottom = 101.0
+theme = ExtResource("1_mp2yo")
+icon = ExtResource("2_8wbtq")
+icon_alignment = 1
+switch_on_hover = true
+item_count = 4
+popup/item_0/text = ""
+popup/item_0/icon = ExtResource("2_50ujf")
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/icon = ExtResource("4_kyw1d")
+popup/item_1/id = 1
+popup/item_2/text = ""
+popup/item_2/icon = ExtResource("5_u71od")
+popup/item_2/id = 2
+popup/item_3/text = ""
+popup/item_3/icon = ExtResource("2_8wbtq")
+popup/item_3/id = 3
+script = ExtResource("6_inj77")

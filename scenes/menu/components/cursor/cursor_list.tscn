@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gkshepmp7fuu"]
+
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mru6q"]
+
+[node name="ItemList" type="ItemList"]
+offset_right = 436.0
+offset_bottom = 217.0
+theme = ExtResource("1_mru6q")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=15 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="9_1gns7"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
+[ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
 
 [node name="CursorConfiguration" type="Control"]
 layout_mode = 3
@@ -49,9 +50,9 @@ text = "Cursor
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 662.0
+offset_top = 707.0
 offset_right = 161.0
-offset_bottom = 700.0
+offset_bottom = 745.0
 text = "Diseño"
 
 [node name="Panel" parent="." instance=ExtResource("5_q5ouv")]
@@ -155,6 +156,13 @@ offset_left = 263.0
 offset_top = -2.0
 offset_right = 313.0
 offset_bottom = 48.0
+
+[node name="MenuButton" parent="." instance=ExtResource("14_mnw1j")]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 682.0
+offset_right = 310.0
+offset_bottom = 783.0
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

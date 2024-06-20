@@ -3,6 +3,7 @@ import sys
 
 from src.pipeline import Pipeline
 from src.task_manager import TaskManager
+import concurrent.futures as futures
 
 FORMAT = "%(asctime)s %(levelname)s %(name)s: %(funcName)s: %(message)s"
 logging.basicConfig(format=FORMAT,
@@ -21,4 +22,8 @@ if __name__ == "__main__":
     
     logging.info("Starting main app")
     TaskManager().start()
-    main_loop()
+    pool = futures.ThreadPoolExecutor(max_workers=1)
+    pool.submit(main_loop)
+    
+    from src.windows.cursor_window import CursorWindow
+    CursorWindow().start()

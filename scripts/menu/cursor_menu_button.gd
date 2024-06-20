@@ -12,4 +12,5 @@ func change_icon(id):
 	var popupIcon=popup.get_item_icon(id)
 	icon=popupIcon
 	CursorIconConf.cursor_id=id
+	print(id)
 	CursorIconConf.send_update_to_upd()

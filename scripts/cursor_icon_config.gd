@@ -3,7 +3,7 @@ extends Node
 class_name CustomCursor
 
 var cursor_id = 0
-var size = Vector2(32, 32)
+var size = 1
 var opacity = 1.0
 var color = Color(1, 1, 1, 1)
 

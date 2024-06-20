@@ -10,14 +10,14 @@ class CursorType(Enum):
     TARGET_2 = 3
     
 
-Cursors = {
+Cursors = [
     #image_path, offset
-    CursorType.DEFAULT: ["cursor_1.png", "top_left"], #offset can be ["top_left", "top_right", "bottom_left", "bottom_right", "center"]
-    CursorType.NORMAL_BIG: ["cursor_2.png", "top_left"],
-    CursorType.TARGET: ["cursor_3.png", "center"],
-    CursorType.TARGET_2: ["cursor_4.png", "center"],
+    ["cursor_1.png", "top_left"], #offset can be ["top_left", "top_right", "bottom_left", "bottom_right", "center"]
+    ["cursor_2.png", "top_left"],
+    ["cursor_3.png", "center"],
+    ["cursor_4.png", "center"],
 
-}
+]
 
 
 class CustomCursor(metaclass=Singleton):
@@ -27,7 +27,8 @@ class CustomCursor(metaclass=Singleton):
         self.size=1
         self.opacity=0.5
         self.color=(79,163,221,255)
-        self.cursor_id = CursorType.TARGET_2
+        self.cursor_id = 2
+        self.set_cursor(self.cursor_id)
     
     def load_from_json(self, json_string):
         data = json.loads(json_string)
@@ -41,14 +42,14 @@ class CustomCursor(metaclass=Singleton):
         self.cursor_id = data["cursor_id"]
         self.size = data["size"]
         self.opacity = data["opacity"]
-        self.color = tuple(data["color"])
+        self.color = tuple(eval(data["color"]))
         self.set_cursor(self.cursor_id)
     
     def start(self):
         self.set_cursor(self.cursor_id)
 
     def set_cursor(self, cursor_id):
-        if cursor_id not in Cursors:
+        if cursor_id >= len(Cursors) or cursor_id < 0:
             raise ValueError(f"Invalid cursor ID: {cursor_id}")
         image_path, offset = Cursors[cursor_id]
         tempicon = CursorImage(image_path)

@@ -1,22 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5cxedt52pyqe"]
+[gd_scene load_steps=20 format=3 uid="uid://b5cxedt52pyqe"]
 
-[ext_resource type="PackedScene" uid="uid://cwfgb1hlu7dei" path="res://scenes/menu/pages/click/backgrounds/background_summer_2.tscn" id="1_dplrj"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_mjyec"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_1yvfh"]
+[ext_resource type="PackedScene" uid="uid://bfehibfgkw5he" path="res://scenes/menu/pages/click/backgrounds/background_underwater.tscn" id="2_psw4x"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_e8tdb"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_6qugt"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_shqn7"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="7_aytkt"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_txuhf"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="8_82kuq"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="8_rt11t"]
+[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="9_f8jue"]
 [ext_resource type="Texture2D" uid="uid://bixltixvuqo7o" path="res://assets/click_game/animals/rabbit.png" id="9_kyrvk"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="10_p0p40"]
 [ext_resource type="Texture2D" uid="uid://bc5on6xfb7cfb" path="res://assets/click_game/animals/bird.png" id="11_hd04w"]
+[ext_resource type="Texture2D" uid="uid://dlr4u6yr47s3v" path="res://assets/click_game/animals/underwater/octupus.png" id="12_qhfyr"]
+[ext_resource type="Texture2D" uid="uid://7lb8qraugujr" path="res://assets/click_game/animals/underwater/shark.png" id="16_o1gbx"]
+[ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="17_l57dq"]
+[ext_resource type="Texture2D" uid="uid://dgtf340y3qs27" path="res://assets/click_game/foods/underwater/Fish.png" id="18_0sqdk"]
+[ext_resource type="Texture2D" uid="uid://deq4g0n5ia48p" path="res://assets/click_game/foods/underwater/shrimp.png" id="19_a7nel"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_mjyec")
 
-[node name="BackgroundSummer2" parent="." instance=ExtResource("1_dplrj")]
+[node name="BackgroundUnderwater" parent="." instance=ExtResource("2_psw4x")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -58,24 +65,53 @@ offset_right = 1442.0
 offset_bottom = 1026.0
 size_flags_vertical = 8
 
+[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("8_rt11t")]
+offset_left = 1137.0
+offset_top = 129.0
+offset_right = 1507.0
+offset_bottom = 289.0
+
+[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("9_f8jue")]
+offset_left = 1211.0
+offset_top = 248.0
+offset_right = 1304.0
+offset_bottom = 302.0
+
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_txuhf")]
 
 [node name="DropableArea" parent="." instance=ExtResource("10_p0p40")]
-position = Vector2(597, 823)
-type = "rabit"
-icon = ExtResource("9_kyrvk")
+position = Vector2(544, 674)
+type = "octupus"
+icon = ExtResource("12_qhfyr")
+h_frames = 6
 
 [node name="DropableArea2" parent="." instance=ExtResource("10_p0p40")]
-position = Vector2(971, 466)
+position = Vector2(1205, 491)
 type = "bird"
-icon = ExtResource("11_hd04w")
+icon = ExtResource("16_o1gbx")
+h_frames = 4
 
 [node name="DraggbleObject" parent="." instance=ExtResource("8_82kuq")]
 position = Vector2(174, 326)
 icon = ExtResource("9_kyrvk")
-type = "rabit"
+type = "octupus"
 
 [node name="DraggbleObject2" parent="." instance=ExtResource("8_82kuq")]
 position = Vector2(174, 533)
 icon = ExtResource("11_hd04w")
 type = "bird"
+
+[node name="Sprite2D" parent="DraggbleObject2" index="0"]
+texture = ExtResource("16_o1gbx")
+hframes = 4
+
+[node name="FoodArea" parent="." instance=ExtResource("17_l57dq")]
+position = Vector2(797, 678)
+icon = ExtResource("18_0sqdk")
+
+[node name="FoodArea2" parent="." instance=ExtResource("17_l57dq")]
+position = Vector2(649, 242)
+icon = ExtResource("19_a7nel")
+
+[editable path="DraggbleObject"]
+[editable path="DraggbleObject2"]

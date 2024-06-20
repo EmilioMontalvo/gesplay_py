@@ -18,4 +18,4 @@ func _ready():
 func _on_press_change_to_level():
 	if(!is_locked):
 		CurrentClickLevel.level = int(level)
-		get_tree().change_scene_to_file("res://scenes/menu/pages/click/levels/level_"+level+".tscn")
+		MenuManager.change_to_file("res://scenes/menu/pages/click/levels/level_"+level+".tscn")

@@ -4,6 +4,7 @@ extends Node2D
 @export var type: String
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var draggable = false
 var is_inside_dropable = false
@@ -18,7 +19,9 @@ signal mistake
 signal food_point
 
 func _ready():
-	sprite.texture = icon
+	#sprite.texture = icon
+	pass
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -44,6 +47,8 @@ func check_types():
 		if body_ref_temp.get_type() == type:
 			inside_correct_dropable = true
 			success.emit()
+			play_animation()
+			body_ref_temp.queue_free()
 		else:
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"global_position",initial_pos,1.0).set_ease(Tween.EASE_OUT)
@@ -75,3 +80,7 @@ func _on_area_2d_mouse_exited():
 	if not GlobalClick.is_dragging:
 		draggable = false
 		scale = Vector2(1.25,1.25)
+
+func play_animation():
+	animation_player.play("idle")
+	animation_player.get_animation("idle").length = sprite.hframes * 0.2

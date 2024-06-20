@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=19 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_configuration_menu.gd" id="2_mmugt"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
+[ext_resource type="Texture2D" uid="uid://bi4fewspqgsk8" path="res://assets/icons/plus.png" id="4_fwt03"]
 [ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
@@ -14,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 [ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
+[ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
+[ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
+[ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
 
 [node name="CursorConfiguration" type="Control"]
 layout_mode = 3
@@ -28,6 +32,26 @@ script = ExtResource("2_mmugt")
 [node name="ColorRect" parent="." instance=ExtResource("2_5db0t")]
 layout_mode = 0
 
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 815.0
+offset_right = 460.0
+offset_bottom = 863.0
+texture = ExtResource("4_fwt03")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/TextureRect2"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 724.0
+offset_right = 461.0
+offset_bottom = 772.0
+texture = ExtResource("4_fwt03")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="TitleText" parent="." instance=ExtResource("3_8oraa")]
 layout_mode = 0
 offset_left = 394.0
@@ -36,28 +60,64 @@ offset_right = 1134.0
 offset_bottom = 182.0
 text = "Configuración"
 
-[node name="Subtitle" type="Label" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.85, 0.85)
+
+[node name="Subtitle" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 210.0
-offset_right = 339.0
-offset_bottom = 260.0
+offset_left = 229.412
+offset_top = 191.765
+offset_right = 366.412
+offset_bottom = 241.765
 theme_override_fonts/font = ExtResource("4_jlobb")
 theme_override_font_sizes/font_size = 40
 text = "Cursor
 "
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label5" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 683.0
-offset_right = 161.0
-offset_bottom = 721.0
+offset_left = 74.1176
+offset_top = 809.412
+offset_right = 197.118
+offset_bottom = 847.412
+text = "Tamaño
+"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 359.471
+offset_top = 637.177
+offset_right = 447.471
+offset_bottom = 675.177
+text = "Color
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 161.941
+offset_top = 639.0
+offset_right = 266.941
+offset_bottom = 677.0
 text = "Diseño"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 76.4706
+offset_top = 917.647
+offset_right = 280.471
+offset_bottom = 959.647
+text = "Opacidad"
 
 [node name="Panel" parent="." instance=ExtResource("5_q5ouv")]
 layout_mode = 0
-offset_left = 508.0
+offset_left = 528.0
 offset_top = 218.0
 offset_right = 1380.0
 offset_bottom = 889.0
@@ -107,10 +167,11 @@ offset_bottom = 100.0
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
-offset_left = 48.0
-offset_top = 280.0
-offset_right = -957.0
-offset_bottom = -662.0
+offset_left = 81.0
+offset_top = 227.0
+offset_right = -896.0
+offset_bottom = -698.0
+scale = Vector2(0.85, 0.85)
 
 [node name="Label" parent="VelocitySlider" index="1"]
 text = "Velocidad
@@ -125,14 +186,31 @@ offset_bottom = 41.0
 
 [node name="PointerSmootSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
-offset_left = 48.0
-offset_top = 403.0
-offset_right = -957.0
-offset_bottom = -539.0
+offset_left = 69.0
+offset_top = 330.0
+offset_right = -908.0
+offset_bottom = -595.0
+scale = Vector2(0.85, 0.85)
+
+[node name="HSlider3" parent="PointerSmootSlider" index="0"]
+offset_left = 14.0
+offset_top = 28.5
+offset_right = 307.0
+offset_bottom = 99.5
 
 [node name="Label" parent="PointerSmootSlider" index="1"]
-text = "Suavisado del Cursor
+offset_left = 14.0
+offset_top = -4.5
+offset_right = 267.0
+offset_bottom = 33.5
+text = "Suavisado
 "
+
+[node name="SpinBox" parent="PointerSmootSlider" index="2"]
+offset_left = 313.0
+offset_top = 43.5
+offset_right = 467.0
+offset_bottom = 83.5
 
 [node name="HelpButton" parent="PointerSmootSlider" index="3"]
 offset_left = 326.0
@@ -142,10 +220,11 @@ offset_bottom = 48.0
 
 [node name="TicksSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
-offset_left = 48.0
-offset_top = 525.0
-offset_right = -957.0
-offset_bottom = -417.0
+offset_left = 81.0
+offset_top = 430.0
+offset_right = -896.0
+offset_bottom = -495.0
+scale = Vector2(0.85, 0.85)
 
 [node name="Label" parent="TicksSlider" index="1"]
 text = "Tics por Segundo
@@ -159,10 +238,75 @@ offset_bottom = 48.0
 
 [node name="MenuButton" parent="." instance=ExtResource("14_mnw1j")]
 layout_mode = 0
-offset_left = 212.0
-offset_top = 655.0
-offset_right = 310.0
-offset_bottom = 756.0
+offset_left = 140.0
+offset_top = 576.0
+offset_right = 238.0
+offset_bottom = 677.0
+scale = Vector2(0.85, 0.85)
+
+[node name="SizeSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 735.0
+offset_right = 450.0
+offset_bottom = 765.0
+scale = Vector2(0.85, 0.85)
+min_value = 50.0
+max_value = 160.0
+value = 50.0
+script = ExtResource("16_vq7ki")
+
+[node name="OpacitySlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 827.0
+offset_right = 453.0
+offset_bottom = 857.0
+scale = Vector2(0.85, 0.85)
+min_value = 0.2
+max_value = 1.0
+step = 0.1
+value = 0.2
+script = ExtResource("16_vq7ki")
+
+[node name="ColorPickerButton" parent="." instance=ExtResource("15_d11qb")]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 575.0
+offset_right = 409.0
+offset_bottom = 680.0
+scale = Vector2(0.85, 0.85)
+color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 724.0
+offset_right = 461.0
+offset_bottom = 772.0
+texture = ExtResource("4_fwt03")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 815.0
+offset_right = 111.0
+offset_bottom = 863.0
+texture = ExtResource("17_oyyvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 723.0
+offset_right = 111.0
+offset_bottom = 771.0
+texture = ExtResource("17_oyyvg")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
@@ -171,6 +315,8 @@ offset_bottom = 756.0
 [connection signal="value_changed" from="VelocitySlider" to="." method="_on_velocity_slider_value_changed"]
 [connection signal="value_changed" from="PointerSmootSlider" to="." method="_on_pointer_smoot_slider_value_changed"]
 [connection signal="value_changed" from="TicksSlider" to="." method="_on_ticks_slider_value_changed"]
+[connection signal="value_changed" from="SizeSlider" to="." method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
 
 [editable path="AceptCancel"]
 [editable path="VelocitySlider"]

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=26 format=3 uid="uid://8783p7rjqna0"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://8783p7rjqna0"]
 
 [ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
@@ -114,6 +114,8 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk686"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpcf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2r0o"]
@@ -207,6 +209,7 @@ CheckBox/styles/hover = SubResource("StyleBoxFlat_d1027")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_l4gp5")
 CheckBox/styles/normal = SubResource("StyleBoxFlat_4phlx")
 CheckBox/styles/pressed = SubResource("StyleBoxFlat_8c27e")
+ColorPickerButton/styles/focus = SubResource("StyleBoxFlat_nk686")
 HSlider/icons/grabber = ExtResource("1_rh0dc")
 HSlider/icons/grabber_disabled = ExtResource("1_rh0dc")
 HSlider/icons/grabber_highlight = ExtResource("1_rh0dc")

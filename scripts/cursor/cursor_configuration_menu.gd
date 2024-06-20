@@ -34,3 +34,13 @@ func _on_acept_button_down():
 
 func _on_cancel_button_down():
 	send_new_config(CursorConf)
+
+
+func _on_size_slider_value_changed(value):
+	CursorIconConf.size=value
+	CursorIconConf.send_update_to_upd()
+
+
+func _on_opacity_slider_value_changed(value):
+	CursorIconConf.opacity=value
+	CursorIconConf.send_update_to_upd()

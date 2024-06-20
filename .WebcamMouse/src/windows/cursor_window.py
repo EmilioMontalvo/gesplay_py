@@ -17,7 +17,7 @@ class CursorWindow(metaclass=Singleton):
 
     def update_cursor_image(self):
         new_img_pil = CustomCursor().icon.get_image()
-        
+        self.root.attributes('-alpha', CustomCursor().opacity) 
         # Verificar si la imagen ha cambiado
         if new_img_pil != self.current_image:
             self.current_image = new_img_pil
@@ -38,7 +38,7 @@ class CursorWindow(metaclass=Singleton):
         image_size = CustomCursor().icon.get_size()
 
         if CustomCursor().offset == "top_left":
-            pointxy = (x + image_size[0]/2, y + image_size[1]/2)
+            pointxy = (x + image_size[0]/2+5, y + image_size[1]/2+5)
         else:
             pointxy = (x, y)
 

@@ -50,9 +50,9 @@ text = "Cursor
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 707.0
+offset_top = 683.0
 offset_right = 161.0
-offset_bottom = 745.0
+offset_bottom = 721.0
 text = "Diseño"
 
 [node name="Panel" parent="." instance=ExtResource("5_q5ouv")]
@@ -160,9 +160,9 @@ offset_bottom = 48.0
 [node name="MenuButton" parent="." instance=ExtResource("14_mnw1j")]
 layout_mode = 0
 offset_left = 212.0
-offset_top = 682.0
+offset_top = 655.0
 offset_right = 310.0
-offset_bottom = 783.0
+offset_bottom = 756.0
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

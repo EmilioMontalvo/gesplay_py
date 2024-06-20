@@ -69,7 +69,7 @@ func _on_area_2d_body_exited(body):
 		is_inside_dropable = false
 		body_ref_temp = null
 		#body.modulate = Color('#F6EEDE',0.7)
-		body.modulate = Color('#000000',1.0)
+		body.modulate = Color('#' + body.color_hex,1.0)
 
 func _on_area_2d_mouse_entered():
 	if not GlobalClick.is_dragging:
@@ -83,4 +83,4 @@ func _on_area_2d_mouse_exited():
 
 func play_animation():
 	animation_player.play("idle")
-	animation_player.get_animation("idle").length = sprite.hframes * 0.2
+	animation_player.get_animation("idle").length = sprite.hframes * 0.2 + 0.2

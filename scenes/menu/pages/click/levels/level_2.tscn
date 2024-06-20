@@ -96,6 +96,10 @@ position = Vector2(174, 326)
 icon = ExtResource("9_kyrvk")
 type = "octupus"
 
+[node name="Sprite2D" parent="DraggbleObject" index="0"]
+texture = ExtResource("12_qhfyr")
+hframes = 6
+
 [node name="DraggbleObject2" parent="." instance=ExtResource("8_82kuq")]
 position = Vector2(174, 533)
 icon = ExtResource("11_hd04w")

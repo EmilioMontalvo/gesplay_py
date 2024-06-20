@@ -6,18 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://cekm30e3wmp02" path="res://assets/click_game/backgrounds/background_farm/background_farm.png" id="4_80fto"]
 
 [node name="BackgroundFarm" type="ParallaxBackground"]
-scale = Vector2(1.45, 1.45)
-transform = Transform2D(1.45, 0, 0, 1.45, 0, 0)
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-position = Vector2(500, 403.448)
+position = Vector2(502.667, 388.85)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
 scale = Vector2(2, 2)
 texture = ExtResource("1_xeg3k")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(500, 403.448)
+position = Vector2(502.667, 388.85)
 script = ExtResource("2_5x076")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
@@ -41,7 +41,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_kyrrt")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-position = Vector2(500, 403.448)
+position = Vector2(502.667, 382)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
 texture = ExtResource("4_80fto")

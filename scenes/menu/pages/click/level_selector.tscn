@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdmfkqiubkrgr"]
 
 [ext_resource type="Script" path="res://scripts/click_game/level_selector.gd" id="1_14cs1"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="1_ytgyk"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="1_ytgyk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24ijo"]
 bg_color = Color(0.909804, 0.843137, 0.72549, 1)

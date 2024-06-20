@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://yir01k2perou"]
+
+[ext_resource type="Texture2D" uid="uid://bby5qaj4gurj" path="res://assets/click_game/backgrounds/background_forest/Sky.png" id="1_cvrin"]
+[ext_resource type="Texture2D" uid="uid://cjsrpmo5mi82i" path="res://assets/click_game/backgrounds/background_forest/BG_Decor.png" id="2_ss8cc"]
+[ext_resource type="Texture2D" uid="uid://b3ka21fp8ciun" path="res://assets/click_game/backgrounds/background_forest/Middle_Decor.png" id="3_fuai0"]
+[ext_resource type="Texture2D" uid="uid://dtnnvcvlxl6p0" path="res://assets/click_game/backgrounds/background_forest/Foreground.png" id="4_rxtpe"]
+[ext_resource type="Texture2D" uid="uid://bl5ty4lqxshg7" path="res://assets/click_game/backgrounds/background_forest/Ground.png" id="5_7dwee"]
+
+[node name="BackgroundForest" type="ParallaxBackground"]
+scale = Vector2(0.83, 0.83)
+transform = Transform2D(0.83, 0, 0, 0.83, 0, 0)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(850.602, 698.795)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
+texture = ExtResource("1_cvrin")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(850.602, 698.795)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_ss8cc")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(850.602, 698.795)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture = ExtResource("3_fuai0")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(850.602, 698.795)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("4_rxtpe")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+visible = false
+position = Vector2(850.602, 698.795)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("5_7dwee")

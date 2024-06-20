@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://kncjoqc8w2na"]
+[gd_scene load_steps=9 format=3 uid="uid://kncjoqc8w2na"]
 
 [ext_resource type="Script" path="res://scripts/click_game/draggble_object.gd" id="1_853hc"]
-[ext_resource type="Texture2D" uid="uid://4eg1wx5xanr7" path="res://assets/click_game/animals/dog.png" id="2_p41g4"]
 [ext_resource type="Shader" path="res://shadres/click/draggble_object.gdshader" id="2_yqtpt"]
+[ext_resource type="Texture2D" uid="uid://bv76sn473v7g0" path="res://assets/click_game/animals/forest/MajesticMooseIdleSide.png" id="3_rw7xg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oga4v"]
 shader = ExtResource("2_yqtpt")
@@ -12,6 +12,44 @@ shader_parameter/line_thickness = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx8vw"]
 size = Vector2(128, 128)
 
+[sub_resource type="Animation" id="Animation_iihw0"]
+resource_name = "idle"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_wu0hj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyqco"]
+_data = {
+"RESET": SubResource("Animation_wu0hj"),
+"idle": SubResource("Animation_iihw0")
+}
+
 [node name="DraggbleObject" type="Node2D" groups=["draggable"]]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_853hc")
@@ -20,12 +58,18 @@ script = ExtResource("1_853hc")
 texture_filter = 5
 material = SubResource("ShaderMaterial_oga4v")
 scale = Vector2(2.6, 2.6)
-texture = ExtResource("2_p41g4")
+texture = ExtResource("3_rw7xg")
+hframes = 8
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wx8vw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qyqco")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

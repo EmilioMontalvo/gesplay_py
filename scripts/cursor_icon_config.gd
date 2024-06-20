@@ -5,7 +5,7 @@ class_name CustomCursor
 var cursor_id = 0
 var size = 1
 var opacity = 1.0
-var color = Color(1, 1, 1, 1)
+var color = Color(79,163,221,255)
 
 func new_size(new_size: Vector2):
 	size = new_size

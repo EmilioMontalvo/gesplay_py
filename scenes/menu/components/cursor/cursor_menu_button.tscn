@@ -8,10 +8,11 @@
 [ext_resource type="Script" path="res://scripts/menu/cursor_menu_button.gd" id="6_inj77"]
 
 [node name="MenuButton" type="MenuButton"]
-offset_right = 98.0
-offset_bottom = 101.0
+offset_right = 113.0
+offset_bottom = 109.0
 theme = ExtResource("1_mp2yo")
 icon = ExtResource("2_8wbtq")
+flat = false
 icon_alignment = 1
 switch_on_hover = true
 item_count = 4

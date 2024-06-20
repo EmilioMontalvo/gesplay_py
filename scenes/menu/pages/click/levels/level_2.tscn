@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_e8tdb"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_6qugt"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_shqn7"]
-[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="7_aytkt"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_txuhf"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="8_82kuq"]
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="8_rt11t"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="9_f8jue"]
 [ext_resource type="Texture2D" uid="uid://bixltixvuqo7o" path="res://assets/click_game/animals/rabbit.png" id="9_kyrvk"]
+[ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="9_rcrme"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="10_p0p40"]
 [ext_resource type="Texture2D" uid="uid://bc5on6xfb7cfb" path="res://assets/click_game/animals/bird.png" id="11_hd04w"]
 [ext_resource type="Texture2D" uid="uid://dlr4u6yr47s3v" path="res://assets/click_game/animals/underwater/octupus.png" id="12_qhfyr"]
@@ -58,13 +58,6 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
-[node name="Camera" parent="CanvasLayer" instance=ExtResource("7_aytkt")]
-offset_left = 1010.0
-offset_top = 702.0
-offset_right = 1442.0
-offset_bottom = 1026.0
-size_flags_vertical = 8
-
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("8_rt11t")]
 offset_left = 1137.0
 offset_top = 129.0
@@ -76,6 +69,12 @@ offset_left = 1211.0
 offset_top = 248.0
 offset_right = 1304.0
 offset_bottom = 302.0
+
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_rcrme")]
+offset_left = 1009.0
+offset_top = 701.0
+offset_right = 47.0
+offset_bottom = 32.0
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_txuhf")]
 

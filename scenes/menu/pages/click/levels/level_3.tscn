@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_e0klg"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_2oj7n"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_466uw"]
-[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_5hqvb"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_e0ri0"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_jckip"]
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="7_ygsh1"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="8_3idpr"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="8_7x5ip"]
 [ext_resource type="Texture2D" uid="uid://cecoa4refrmti" path="res://assets/click_game/animals/raton2.png" id="9_d7ijp"]
+[ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="9_xi8h4"]
 [ext_resource type="Texture2D" uid="uid://tfa8svjmkh0" path="res://assets/click_game/animals/tiger2.png" id="10_nilgq"]
 [ext_resource type="Texture2D" uid="uid://dv5n28sl1j7bt" path="res://assets/click_game/animals/bird2.png" id="11_4w7me"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="12_8cwfb"]
@@ -61,13 +61,6 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
-[node name="Camera" parent="CanvasLayer" instance=ExtResource("6_5hqvb")]
-offset_left = 1010.0
-offset_top = 702.0
-offset_right = 1442.0
-offset_bottom = 1026.0
-size_flags_vertical = 8
-
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("7_ygsh1")]
 offset_left = 1137.0
 offset_top = 129.0
@@ -79,6 +72,12 @@ offset_left = 1211.0
 offset_top = 248.0
 offset_right = 1304.0
 offset_bottom = 302.0
+
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_xi8h4")]
+offset_left = 1009.0
+offset_top = 701.0
+offset_right = 47.0
+offset_bottom = 32.0
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_jckip")]
 

@@ -2,10 +2,10 @@ extends Node
 
 class_name CustomCursor
 
-var cursor_id = 0
-var size = 1
+var cursor_id = 3
+var size = 100
 var opacity = 1.0
-var color = Color(79,163,221,255)
+var color = Color(79/255,163/255,221/255,1)
 
 func new_size(new_size: Vector2):
 	size = new_size
@@ -19,8 +19,6 @@ func set_color(new_color: Color):
 func get_as_array():
 	return [cursor_id, size, opacity, color]
 
-func send_to_cursor():
-	pass
 
 func get_as_json():
 	var config = {

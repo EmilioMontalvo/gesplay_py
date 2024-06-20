@@ -39,6 +39,12 @@ class CursorImage:
         # Separate the alpha channel
         r, g, b, a = self.image.split()
         # Create a color image and combine it with the alpha channel as a mask
+        # Multiply each member of color by 255 and convert to int
+        color = tuple(int(c * 255) for c in color)
+        
+        # Create a color image and combine it with the alpha channel as a mask
+        color_image = Image.new("RGBA", self.image.size, color)
+        self.image = Image.composite(color_image, self.image, a)
         color_image = Image.new("RGBA", self.image.size, color)
         self.image = Image.composite(color_image, self.image, a)
         return self.image

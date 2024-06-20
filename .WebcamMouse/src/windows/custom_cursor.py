@@ -26,8 +26,8 @@ class CustomCursor(metaclass=Singleton):
         self.offset= None
         self.size=1
         self.opacity=0.5
-        self.color=(79,163,221,255)
-        self.cursor_id = 2
+        self.color=(79/255,163/255,221/255,1)
+        self.cursor_id = 3
         self.set_cursor(self.cursor_id)
     
     def load_from_json(self, json_string):

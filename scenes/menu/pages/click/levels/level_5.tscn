@@ -1,15 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm6mxbbmxfwem"]
+[gd_scene load_steps=20 format=3 uid="uid://dm6mxbbmxfwem"]
 
-[ext_resource type="PackedScene" uid="uid://bq3rqtcy1kqy1" path="res://scenes/menu/pages/click/backgrounds/background_nature.tscn" id="1_mfd4o"]
+[ext_resource type="PackedScene" uid="uid://cpt228d03e4fk" path="res://scenes/menu/pages/click/backgrounds/brackground_jungle.tscn" id="1_c27lr"]
+[ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_u5icr"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_ffh5g"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_mq8ty"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_hlbm1"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="6_an6k7"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_qjkmx"]
+[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="7_6txi4"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_nopua"]
+[ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="8_ncgya"]
+[ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="10_ghg74"]
+[ext_resource type="Texture2D" uid="uid://dbnjoby4bldde" path="res://assets/click_game/animals/jungle/CuriousMonkeyIdleSide.png" id="11_eee7c"]
+[ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="12_7u7ma"]
+[ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="13_giohv"]
+[ext_resource type="Texture2D" uid="uid://b2pjpafpushoe" path="res://assets/click_game/animals/jungle/LeapingFrogIdleSide.png" id="14_3cgb0"]
+[ext_resource type="Texture2D" uid="uid://cljhja38xumek" path="res://assets/click_game/foods/jungle/Ant.png" id="14_x2kq1"]
+[ext_resource type="Texture2D" uid="uid://v53h21f7hn5t" path="res://assets/click_game/animals/jungle/snake.png" id="15_f6ott"]
+[ext_resource type="Texture2D" uid="uid://ctpubyh8a028q" path="res://assets/click_game/foods/jungle/Banana.png" id="16_k1knc"]
+[ext_resource type="Texture2D" uid="uid://ds6wb2vfjohhj" path="res://assets/click_game/foods/jungle/ic_egg.png" id="18_fjjaq"]
 
 [node name="Level5" type="Node2D"]
+script = ExtResource("1_u5icr")
 
-[node name="BackgroundNature" parent="." instance=ExtResource("1_mfd4o")]
+[node name="BrackgroundJungle" parent="." instance=ExtResource("1_c27lr")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -44,4 +58,94 @@ offset_top = 18.0
 offset_right = 895.0
 offset_bottom = 112.0
 
+[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_an6k7")]
+offset_left = 1137.0
+offset_top = 129.0
+offset_right = 1507.0
+offset_bottom = 289.0
+
+[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("7_6txi4")]
+offset_left = 1211.0
+offset_top = 248.0
+offset_right = 1304.0
+offset_bottom = 302.0
+
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("8_ncgya")]
+offset_left = 1009.0
+offset_top = 701.0
+offset_right = 47.0
+offset_bottom = 32.0
+
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_nopua")]
+
+[node name="DraggbleObject" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 321)
+type = "monkey"
+
+[node name="Sprite2D" parent="DraggbleObject" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("11_eee7c")
+hframes = 4
+
+[node name="DropableArea" parent="." instance=ExtResource("12_7u7ma")]
+position = Vector2(1129, 529)
+type = "monkey"
+icon = ExtResource("11_eee7c")
+h_frames = 4
+
+[node name="Sprite2D" parent="DropableArea" index="2"]
+scale = Vector2(5, 5)
+
+[node name="FoodArea" parent="." instance=ExtResource("13_giohv")]
+position = Vector2(494, 963)
+icon = ExtResource("14_x2kq1")
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 573)
+type = "frog"
+
+[node name="Sprite2D" parent="DraggbleObject2" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("14_3cgb0")
+hframes = 4
+
+[node name="DropableArea2" parent="." instance=ExtResource("12_7u7ma")]
+position = Vector2(524, 785)
+type = "frog"
+icon = ExtResource("14_3cgb0")
+h_frames = 4
+
+[node name="Sprite2D" parent="DropableArea2" index="2"]
+scale = Vector2(5, 5)
+
+[node name="FoodArea2" parent="." instance=ExtResource("13_giohv")]
+position = Vector2(1362, 472)
+icon = ExtResource("16_k1knc")
+
+[node name="DraggbleObject3" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 815)
+type = "snake"
+
+[node name="Sprite2D" parent="DraggbleObject3" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("15_f6ott")
+
+[node name="DropableArea3" parent="." instance=ExtResource("12_7u7ma")]
+position = Vector2(779, 854)
+type = "snake"
+icon = ExtResource("15_f6ott")
+h_frames = 8
+
+[node name="Sprite2D" parent="DropableArea3" index="2"]
+scale = Vector2(5, 5)
+
+[node name="FoodArea3" parent="." instance=ExtResource("13_giohv")]
+position = Vector2(938, 964)
+icon = ExtResource("18_fjjaq")
+
+[editable path="DraggbleObject"]
+[editable path="DropableArea"]
+[editable path="DraggbleObject2"]
+[editable path="DropableArea2"]
+[editable path="DraggbleObject3"]
+[editable path="DropableArea3"]

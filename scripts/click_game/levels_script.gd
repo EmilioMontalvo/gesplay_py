@@ -61,7 +61,7 @@ func increase_success():
 func check_success():
 	if success_count >= success_to_win:
 		if CurrentProfile.max_click_level < max_level:
-			CurrentProfile.max_click_level += 1
+			CurrentProfile.max_click_level = CurrentClickLevel.level + 1
 		stop_timer()
 		save_progress()
 		show_win_screen()

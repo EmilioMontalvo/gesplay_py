@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bv76sn473v7g0" path="res://assets/click_game/animals/forest/MajesticMooseIdleSide.png" id="12_aek8n"]
 [ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="14_bgvr6"]
 [ext_resource type="PackedScene" uid="uid://yir01k2perou" path="res://scenes/menu/pages/click/backgrounds/background_forest.tscn" id="15_2ssjy"]
-[ext_resource type="Texture2D" path="res://assets/click_game/foods/forest/Strawberry.png" id="16_yinpf"]
+[ext_resource type="Texture2D" uid="uid://bd53eole1f57l" path="res://assets/click_game/foods/forest/Strawberry.png" id="16_yinpf"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_88cwj")

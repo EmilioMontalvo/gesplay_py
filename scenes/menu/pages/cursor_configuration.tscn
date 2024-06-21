@@ -120,6 +120,9 @@ offset_bottom = -698.0
 scale = Vector2(0.85, 0.85)
 
 [node name="Label" parent="VelocitySlider" index="1"]
+offset_left = -1.17647
+offset_right = 251.824
+offset_bottom = 79.0
 text = "Velocidad
 
 "
@@ -139,15 +142,15 @@ offset_bottom = -595.0
 scale = Vector2(0.85, 0.85)
 
 [node name="HSlider3" parent="PointerSmootSlider" index="0"]
-offset_left = 14.0
+offset_left = 12.8235
 offset_top = 28.5
-offset_right = 307.0
+offset_right = 305.824
 offset_bottom = 99.5
 
 [node name="Label" parent="PointerSmootSlider" index="1"]
-offset_left = 14.0
+offset_left = 12.8235
 offset_top = -4.5
-offset_right = 267.0
+offset_right = 265.824
 offset_bottom = 33.5
 text = "Suavisado
 "
@@ -172,7 +175,13 @@ offset_right = -896.0
 offset_bottom = -495.0
 scale = Vector2(0.85, 0.85)
 
+[node name="HSlider3" parent="TicksSlider" index="0"]
+offset_left = -1.17647
+offset_right = 291.824
+
 [node name="Label" parent="TicksSlider" index="1"]
+offset_left = -1.17647
+offset_right = 258.824
 text = "Tics por Segundo
 "
 
@@ -189,10 +198,10 @@ offset_bottom = 40.0
 
 [node name="Label4" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 328.55
-offset_top = 593.601
-offset_right = 416.55
-offset_bottom = 631.601
+offset_left = 309.55
+offset_top = 581.601
+offset_right = 397.55
+offset_bottom = 619.601
 scale = Vector2(0.85, 0.85)
 text = "Color
 "
@@ -201,10 +210,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 161.65
-offset_top = 591.15
-offset_right = 266.65
-offset_bottom = 629.15
+offset_left = 142.65
+offset_top = 579.15
+offset_right = 247.65
+offset_bottom = 617.15
 scale = Vector2(0.85, 0.85)
 text = "Diseño"
 horizontal_alignment = 1
@@ -212,9 +221,9 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 86.0
+offset_left = 79.0
 offset_top = 714.0
-offset_right = 209.0
+offset_right = 202.0
 offset_bottom = 752.0
 scale = Vector2(0.85, 0.85)
 text = "Tamaño
@@ -222,28 +231,28 @@ text = "Tamaño
 
 [node name="Label" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 88.0
+offset_left = 81.0
 offset_top = 806.0
-offset_right = 292.0
+offset_right = 285.0
 offset_bottom = 848.0
 scale = Vector2(0.85, 0.85)
 text = "Opacidad"
 
 [node name="TextureRect2" type="TextureRect" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 750.0
-offset_right = 484.0
-offset_bottom = 798.0
+offset_left = 408.0
+offset_top = 749.0
+offset_right = 456.0
+offset_bottom = 797.0
 texture = ExtResource("4_fwt03")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 86.0
+offset_left = 79.0
 offset_top = 841.0
-offset_right = 134.0
+offset_right = 127.0
 offset_bottom = 889.0
 texture = ExtResource("17_oyyvg")
 expand_mode = 1
@@ -251,9 +260,9 @@ stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 86.0
+offset_left = 79.0
 offset_top = 749.0
-offset_right = 134.0
+offset_right = 127.0
 offset_bottom = 797.0
 texture = ExtResource("17_oyyvg")
 expand_mode = 1
@@ -261,17 +270,17 @@ stretch_mode = 5
 
 [node name="MenuButton" parent="VisualHelp" instance=ExtResource("14_mnw1j")]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 624.0
-offset_right = 262.0
-offset_bottom = 725.0
+offset_left = 145.0
+offset_top = 612.0
+offset_right = 243.0
+offset_bottom = 713.0
 scale = Vector2(0.85, 0.85)
 
 [node name="SizeSlider" type="HSlider" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 144.0
+offset_left = 137.0
 offset_top = 761.0
-offset_right = 473.0
+offset_right = 455.0
 offset_bottom = 791.0
 scale = Vector2(0.85, 0.85)
 min_value = 50.0
@@ -281,9 +290,9 @@ script = ExtResource("16_vq7ki")
 
 [node name="OpacitySlider" type="HSlider" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 135.0
 offset_top = 853.0
-offset_right = 476.0
+offset_right = 456.0
 offset_bottom = 883.0
 scale = Vector2(0.85, 0.85)
 min_value = 0.2
@@ -294,39 +303,39 @@ script = ExtResource("16_vq7ki")
 
 [node name="ColorPickerButton" parent="VisualHelp" instance=ExtResource("15_d11qb")]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 623.0
-offset_right = 433.0
-offset_bottom = 728.0
+offset_left = 300.0
+offset_top = 611.0
+offset_right = 414.0
+offset_bottom = 716.0
 scale = Vector2(0.85, 0.85)
 theme_override_styles/normal = SubResource("StyleBoxFlat_7n0sr")
 color = Color(0.145098, 0.0980392, 0.34902, 1)
 
 [node name="TextureRect4" type="TextureRect" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 844.0
-offset_right = 483.0
-offset_bottom = 892.0
+offset_left = 409.0
+offset_top = 843.0
+offset_right = 457.0
+offset_bottom = 891.0
 texture = ExtResource("4_fwt03")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 539.0
-offset_right = 273.0
-offset_bottom = 577.0
+offset_left = 80.0
+offset_top = 533.0
+offset_right = 272.0
+offset_bottom = 571.0
 scale = Vector2(0.85, 0.85)
 text = "Ayuda Visual"
 
 [node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 0
-offset_left = 261.0
-offset_top = 542.0
-offset_right = 290.0
-offset_bottom = 571.0
+offset_left = 260.0
+offset_top = 536.0
+offset_right = 289.0
+offset_bottom = 565.0
 button_pressed = true
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]

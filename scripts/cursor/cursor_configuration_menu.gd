@@ -66,7 +66,6 @@ func _on_color_picker_button_color_changed(color):
 
 
 func _on_check_box_toggled(toggled_on):
-	print(toggled_on)
 	set_visual_aid_avalible(toggled_on)
 	CursorIconConf.active=toggled_on
 	CursorIconConf.send_update_to_upd()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=20 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
 [ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0sr"]
+
 [node name="CursorConfiguration" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -31,26 +33,8 @@ script = ExtResource("2_mmugt")
 
 [node name="ColorRect" parent="." instance=ExtResource("2_5db0t")]
 layout_mode = 0
-
-[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 412.0
-offset_top = 815.0
-offset_right = 460.0
-offset_bottom = 863.0
-texture = ExtResource("4_fwt03")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="TextureRect2" type="TextureRect" parent="ColorRect/TextureRect2"]
-layout_mode = 0
-offset_left = 413.0
-offset_top = 724.0
-offset_right = 461.0
-offset_bottom = 772.0
-texture = ExtResource("4_fwt03")
-expand_mode = 1
-stretch_mode = 5
+offset_top = 3.0
+offset_bottom = 1027.0
 
 [node name="TitleText" parent="." instance=ExtResource("3_8oraa")]
 layout_mode = 0
@@ -76,44 +60,6 @@ theme_override_fonts/font = ExtResource("4_jlobb")
 theme_override_font_sizes/font_size = 40
 text = "Cursor
 "
-
-[node name="Label5" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 74.1176
-offset_top = 809.412
-offset_right = 197.118
-offset_bottom = 847.412
-text = "Tamaño
-"
-
-[node name="Label4" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 359.471
-offset_top = 637.177
-offset_right = 447.471
-offset_bottom = 675.177
-text = "Color
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 161.941
-offset_top = 639.0
-offset_right = 266.941
-offset_bottom = 677.0
-text = "Diseño"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 76.4706
-offset_top = 917.647
-offset_right = 280.471
-offset_bottom = 959.647
-text = "Opacidad"
 
 [node name="Panel" parent="." instance=ExtResource("5_q5ouv")]
 layout_mode = 0
@@ -236,32 +182,109 @@ offset_top = -2.0
 offset_right = 313.0
 offset_bottom = 48.0
 
-[node name="MenuButton" parent="." instance=ExtResource("14_mnw1j")]
+[node name="VisualHelp" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label4" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 576.0
-offset_right = 238.0
-offset_bottom = 677.0
+offset_left = 328.55
+offset_top = 593.601
+offset_right = 416.55
+offset_bottom = 631.601
+scale = Vector2(0.85, 0.85)
+text = "Color
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 161.65
+offset_top = 591.15
+offset_right = 266.65
+offset_bottom = 629.15
+scale = Vector2(0.85, 0.85)
+text = "Diseño"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 714.0
+offset_right = 209.0
+offset_bottom = 752.0
+scale = Vector2(0.85, 0.85)
+text = "Tamaño
+"
+
+[node name="Label" type="Label" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 806.0
+offset_right = 292.0
+offset_bottom = 848.0
+scale = Vector2(0.85, 0.85)
+text = "Opacidad"
+
+[node name="TextureRect2" type="TextureRect" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 750.0
+offset_right = 484.0
+offset_bottom = 798.0
+texture = ExtResource("4_fwt03")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 841.0
+offset_right = 134.0
+offset_bottom = 889.0
+texture = ExtResource("17_oyyvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="VisualHelp"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 749.0
+offset_right = 134.0
+offset_bottom = 797.0
+texture = ExtResource("17_oyyvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MenuButton" parent="VisualHelp" instance=ExtResource("14_mnw1j")]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 624.0
+offset_right = 262.0
+offset_bottom = 725.0
 scale = Vector2(0.85, 0.85)
 
-[node name="SizeSlider" type="HSlider" parent="."]
+[node name="SizeSlider" type="HSlider" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 735.0
-offset_right = 450.0
-offset_bottom = 765.0
+offset_left = 144.0
+offset_top = 761.0
+offset_right = 473.0
+offset_bottom = 791.0
 scale = Vector2(0.85, 0.85)
 min_value = 50.0
 max_value = 200.0
 value = 100.0
 script = ExtResource("16_vq7ki")
 
-[node name="OpacitySlider" type="HSlider" parent="."]
+[node name="OpacitySlider" type="HSlider" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 827.0
-offset_right = 453.0
-offset_bottom = 857.0
+offset_left = 142.0
+offset_top = 853.0
+offset_right = 476.0
+offset_bottom = 883.0
 scale = Vector2(0.85, 0.85)
 min_value = 0.2
 max_value = 1.0
@@ -269,44 +292,42 @@ step = 0.1
 value = 0.5
 script = ExtResource("16_vq7ki")
 
-[node name="ColorPickerButton" parent="." instance=ExtResource("15_d11qb")]
+[node name="ColorPickerButton" parent="VisualHelp" instance=ExtResource("15_d11qb")]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 575.0
-offset_right = 409.0
-offset_bottom = 680.0
+offset_left = 319.0
+offset_top = 623.0
+offset_right = 433.0
+offset_bottom = 728.0
 scale = Vector2(0.85, 0.85)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7n0sr")
 color = Color(0.145098, 0.0980392, 0.34902, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect4" type="TextureRect" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 413.0
-offset_top = 724.0
-offset_right = 461.0
-offset_bottom = 772.0
+offset_left = 435.0
+offset_top = 844.0
+offset_right = 483.0
+offset_bottom = 892.0
 texture = ExtResource("4_fwt03")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 815.0
-offset_right = 111.0
-offset_bottom = 863.0
-texture = ExtResource("17_oyyvg")
-expand_mode = 1
-stretch_mode = 5
+offset_left = 81.0
+offset_top = 539.0
+offset_right = 273.0
+offset_bottom = 577.0
+scale = Vector2(0.85, 0.85)
+text = "Ayuda Visual"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 723.0
-offset_right = 111.0
-offset_bottom = 771.0
-texture = ExtResource("17_oyyvg")
-expand_mode = 1
-stretch_mode = 5
+offset_left = 261.0
+offset_top = 542.0
+offset_right = 290.0
+offset_bottom = 571.0
+button_pressed = true
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
@@ -315,9 +336,10 @@ stretch_mode = 5
 [connection signal="value_changed" from="VelocitySlider" to="." method="_on_velocity_slider_value_changed"]
 [connection signal="value_changed" from="PointerSmootSlider" to="." method="_on_pointer_smoot_slider_value_changed"]
 [connection signal="value_changed" from="TicksSlider" to="." method="_on_ticks_slider_value_changed"]
-[connection signal="value_changed" from="SizeSlider" to="." method="_on_size_slider_value_changed"]
-[connection signal="value_changed" from="OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
-[connection signal="color_changed" from="ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
+[connection signal="value_changed" from="VisualHelp/SizeSlider" to="." method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="VisualHelp/OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
+[connection signal="color_changed" from="VisualHelp/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 
 [editable path="AceptCancel"]
 [editable path="VelocitySlider"]

@@ -28,6 +28,7 @@ class CustomCursor(metaclass=Singleton):
         self.opacity=0.5
         self.color=(79/255,163/255,221/255,1)
         self.cursor_id = 3
+        self.active = True
         self.set_cursor(self.cursor_id)
     
     def load_from_json(self, json_string):
@@ -36,6 +37,7 @@ class CustomCursor(metaclass=Singleton):
         self.size = data["size"]
         self.opacity = data["opacity"]
         self.color = tuple(data["color"])
+        self.active = data["active"]
         self.set_cursor(self.cursor_id)       
     
     def load_from_dict(self, data):
@@ -43,6 +45,7 @@ class CustomCursor(metaclass=Singleton):
         self.size = data["size"]
         self.opacity = data["opacity"]
         self.color = tuple(eval(data["color"]))
+        self.active = data["active"]
         self.set_cursor(self.cursor_id)
     
     def start(self):

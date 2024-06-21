@@ -16,19 +16,26 @@ class CursorWindow(metaclass=Singleton):
         self.update_cursor_image()  # Actualizar la imagen inicial
 
     def update_cursor_image(self):
-        new_img_pil = CustomCursor().icon.get_image()
-        self.root.attributes('-alpha', CustomCursor().opacity) 
-        # Verificar si la imagen ha cambiado
-        if new_img_pil != self.current_image:
-            self.current_image = new_img_pil
-            self.img_tk = ImageTk.PhotoImage(self.current_image)
-            
-            # Si es la primera vez, crear la imagen en el canvas
-            if self.canvas_image is None:
-                self.canvas_image = self.canvas.create_image(200, 100, image=self.img_tk)
-            else:
-                # Actualizar la imagen en el canvas
-                self.canvas.itemconfig(self.canvas_image, image=self.img_tk)
+        if CustomCursor().active:
+            new_img_pil = CustomCursor().icon.get_image()
+            self.root.attributes('-alpha', CustomCursor().opacity)
+            # Verificar si la imagen ha cambiado
+            if new_img_pil != self.current_image:
+                self.current_image = new_img_pil
+                self.img_tk = ImageTk.PhotoImage(self.current_image)
+
+                # Si es la primera vez, crear la imagen en el canvas
+                if self.canvas_image is None:
+                    self.canvas_image = self.canvas.create_image(200, 100, image=self.img_tk)
+                else:
+                    # Actualizar la imagen en el canvas
+                    self.canvas.itemconfig(self.canvas_image, image=self.img_tk)
+        else:
+            if self.canvas_image is not None:
+                # Borrar la imagen del canvas
+                self.canvas.delete(self.canvas_image)
+                self.canvas_image = None
+                self.current_image = None
 
         # Programar la siguiente actualización
         self.root.after(100, self.update_cursor_image)

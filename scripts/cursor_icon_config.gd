@@ -4,8 +4,9 @@ class_name CustomCursor
 
 var cursor_id = 3
 var size = 100
-var opacity = 1.0
-var color = Color(79/255,163/255,221/255,1)
+var opacity = 0.5
+var color = Color(0.3098,0.639,0.866,1)
+var active = true
 
 func new_size(new_size: Vector2):
 	size = new_size
@@ -25,7 +26,8 @@ func get_as_json():
 		"cursor_id": cursor_id,
 		"size": size,
 		"opacity": opacity,
-		"color": color
+		"color": color,
+		"active":active
 	}
 	return config
 
@@ -34,6 +36,7 @@ func set_from_json(config: Dictionary):
 	size = config["size"]
 	opacity = config["opacity"]
 	color = config["color"]
+	active=config["active"]
 
 func get_as_message(instruction: String):
 	return Message.new(instruction, get_as_json())

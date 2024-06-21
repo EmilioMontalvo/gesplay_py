@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://8783p7rjqna0"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://8783p7rjqna0"]
 
 [ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
@@ -190,6 +190,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j32ua"]
+bg_color = Color(0.964706, 0.933333, 0.870588, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
 [resource]
 Button/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_focus_color = Color(0.145098, 0.0980392, 0.34902, 1)
@@ -245,6 +253,7 @@ OptionButton/styles/pressed_mirrored = ExtResource("7_jc4so")
 Panel/styles/panel = SubResource("StyleBoxFlat_rjkwi")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_v1ujk")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_sa5ws")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_j32ua")
 SpinBox/icons/updown = ExtResource("8_5jyra")
 TextEdit/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 TextEdit/font_sizes/font_size = 30

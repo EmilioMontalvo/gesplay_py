@@ -9,9 +9,16 @@ func _ready():
 	$VelocitySlider.set_value(temporalCursorConfig.spd_down)
 	$PointerSmootSlider.set_value(temporalCursorConfig.pointer_smooth)
 	$TicksSlider.set_value(temporalCursorConfig.tick_interval_ms)
-	$SizeSlider.set_value(temporalCursorIconConfig.size)
-	$OpacitySlider.set_value(temporalCursorIconConfig.opacity)
-
+	$VisualHelp/SizeSlider.set_value(temporalCursorIconConfig.size)
+	$VisualHelp/OpacitySlider.set_value(temporalCursorIconConfig.opacity)
+	$VisualHelp/ColorPickerButton.set_pick_color(temporalCursorIconConfig.color)
+	var picker:ColorPicker=$VisualHelp/ColorPickerButton.get_picker()
+	picker.sampler_visible=false
+	picker.color_modes_visible=false
+	picker.sliders_visible=false
+	picker.presets_visible=false
+	
+	$CheckBox.button_pressed=temporalCursorIconConfig.active
 
 func _on_ticks_slider_value_changed(value):
 	temporalCursorConfig.tick_interval_ms=value
@@ -56,3 +63,13 @@ func _on_opacity_slider_value_changed(value):
 func _on_color_picker_button_color_changed(color):
 	CursorIconConf.color=color
 	CursorIconConf.send_update_to_upd()
+
+
+func _on_check_box_toggled(toggled_on):
+	print(toggled_on)
+	set_visual_aid_avalible(toggled_on)
+	CursorIconConf.active=toggled_on
+	CursorIconConf.send_update_to_upd()
+
+func set_visual_aid_avalible(toggle):
+	$VisualHelp.visible=toggle

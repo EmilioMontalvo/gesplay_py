@@ -45,8 +45,6 @@ class CursorImage:
         # Create a color image and combine it with the alpha channel as a mask
         color_image = Image.new("RGBA", self.image.size, color)
         self.image = Image.composite(color_image, self.image, a)
-        color_image = Image.new("RGBA", self.image.size, color)
-        self.image = Image.composite(color_image, self.image, a)
         return self.image
 
     def change_opacity(self, opacity):

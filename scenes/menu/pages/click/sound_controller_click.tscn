@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://1rpen7c5xfsk"]
+
+[ext_resource type="Script" path="res://scripts/click_game/sound_controller_click.gd" id="1_dth0q"]
+
+[node name="SoundControllerClick" type="Node"]
+script = ExtResource("1_dth0q")
+
+[node name="FX" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+bus = &"Music"

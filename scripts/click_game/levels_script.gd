@@ -3,6 +3,7 @@ extends Node2D
 @onready var star_points = $CanvasLayer/StarPoints
 @onready var time_container = $CanvasLayer/TimeContainer
 @onready var level_header = $CanvasLayer/LevelHeader
+@onready var sound_controller = $SoundControllerClick
 
 var max_level = 6
 var success_count = 0
@@ -22,6 +23,7 @@ func _ready():
 	set_points()
 	time_init = Time.get_unix_time_from_system()
 	level_header.set_current_level(CurrentClickLevel.level)
+	sound_controller.play_music(CurrentClickLevel.level)
 
 func init_dragabble_objects():
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')
@@ -39,6 +41,7 @@ func set_points():
 
 func _on_draggable_object_food():
 	increase_food_point()
+	sound_controller.play_fx(SoundClickSources.sounds_fx.POINT)
 
 func _on_draggable_object_success():
 	increase_success()
@@ -47,6 +50,7 @@ func _on_draggable_object_success():
 	
 func _on_draggable_object_mistake():
 	increase_mistakes()
+	sound_controller.play_fx(SoundClickSources.sounds_fx.MISTAKE)
 	
 func increase_food_point():
 	final_points += points_by_food
@@ -65,10 +69,11 @@ func check_success():
 		if CurrentProfile.max_click_level < max_level:
 			CurrentProfile.max_click_level = CurrentClickLevel.level + 1
 		stop_timer()
+		sound_controller.play_fx(SoundClickSources.sounds_fx.LEVEL_COMPLETE)
 		save_progress()
 		show_win_screen()
-		print('win')
-		print('Time to complete level: ',get_time_to_complete_level())
+	else:
+		sound_controller.play_fx(SoundClickSources.sounds_fx.SUCESS)
 		
 func increase_mistakes():
 	mistakes_count += 1

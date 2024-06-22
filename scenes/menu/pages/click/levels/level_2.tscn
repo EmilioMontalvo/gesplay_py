@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5cxedt52pyqe"]
+[gd_scene load_steps=18 format=3 uid="uid://b5cxedt52pyqe"]
 
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_mjyec"]
 [ext_resource type="PackedScene" uid="uid://bfehibfgkw5he" path="res://scenes/menu/pages/click/backgrounds/background_underwater.tscn" id="2_psw4x"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dlr4u6yr47s3v" path="res://assets/click_game/animals/underwater/octupus.png" id="12_qhfyr"]
 [ext_resource type="Texture2D" uid="uid://7lb8qraugujr" path="res://assets/click_game/animals/underwater/shark.png" id="16_o1gbx"]
 [ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="17_l57dq"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_n6s6v"]
 [ext_resource type="Texture2D" uid="uid://dgtf340y3qs27" path="res://assets/click_game/foods/underwater/Fish.png" id="18_0sqdk"]
 [ext_resource type="Texture2D" uid="uid://deq4g0n5ia48p" path="res://assets/click_game/foods/underwater/shrimp.png" id="19_a7nel"]
 
@@ -85,6 +86,8 @@ icon = ExtResource("18_0sqdk")
 [node name="FoodArea2" parent="." instance=ExtResource("17_l57dq")]
 position = Vector2(649, 242)
 icon = ExtResource("19_a7nel")
+
+[node name="SoundControllerClick" parent="." instance=ExtResource("17_n6s6v")]
 
 [editable path="DraggbleObject"]
 [editable path="DraggbleObject2"]

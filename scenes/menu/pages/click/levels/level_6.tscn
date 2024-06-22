@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1gds3k5pvky6"]
+[gd_scene load_steps=18 format=3 uid="uid://b1gds3k5pvky6"]
 
 [ext_resource type="PackedScene" uid="uid://wtabsm7ma7mu" path="res://scenes/menu/pages/click/backgrounds/background_beach.tscn" id="1_84ab4"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_pegg3"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://gghkeful1hpg" path="res://assets/click_game/foods/beach/props.png" id="14_nk4o7"]
 [ext_resource type="Texture2D" uid="uid://dnb80ut3uqp8f" path="res://assets/click_game/animals/beach/gull.png" id="15_i76o6"]
 [ext_resource type="Texture2D" uid="uid://3ffwpb0vm4td" path="res://assets/click_game/foods/beach/Ant.png" id="16_b0da6"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_6bd01"]
 [ext_resource type="Texture2D" uid="uid://cas33tpc11obf" path="res://assets/click_game/animals/beach/SlowTurtleIdleSide.png" id="17_w3pta"]
 [ext_resource type="Texture2D" uid="uid://d06ajau7emjyp" path="res://assets/click_game/foods/beach/Apple Red.png" id="18_utlxr"]
 
@@ -116,6 +117,8 @@ scale = Vector2(5, 5)
 [node name="FoodArea3" parent="." instance=ExtResource("13_cjiam")]
 position = Vector2(1115, 648)
 icon = ExtResource("18_utlxr")
+
+[node name="SoundControllerClick" parent="." instance=ExtResource("17_6bd01")]
 
 [editable path="DraggbleObject"]
 [editable path="DropableArea"]

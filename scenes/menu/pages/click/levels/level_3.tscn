@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6bbabjihidho"]
+[gd_scene load_steps=21 format=3 uid="uid://6bbabjihidho"]
 
 [ext_resource type="PackedScene" uid="uid://gadmbbqlob6m" path="res://scenes/menu/pages/click/backgrounds/background_desert.tscn" id="1_1wx0q"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_ci6ch"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3grk4ep77sgc" path="res://assets/click_game/animals/desert/rat.png" id="17_pkbya"]
 [ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="19_uu6sd"]
 [ext_resource type="Texture2D" uid="uid://dcdn3lb707t6q" path="res://assets/click_game/foods/desert/brocoli.png" id="20_2gruc"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="20_d6sah"]
 [ext_resource type="Texture2D" uid="uid://i4itqpmxe0ec" path="res://assets/click_game/foods/desert/corn.png" id="21_w6yj0"]
 [ext_resource type="Texture2D" uid="uid://cfn24xvywy3ws" path="res://assets/click_game/foods/desert/noc.png" id="22_qbt5o"]
 
@@ -118,6 +119,8 @@ icon = ExtResource("21_w6yj0")
 [node name="FoodArea3" parent="." instance=ExtResource("19_uu6sd")]
 position = Vector2(768, 564)
 icon = ExtResource("22_qbt5o")
+
+[node name="SoundControllerClick" parent="." instance=ExtResource("20_d6sah")]
 
 [editable path="DropableArea"]
 [editable path="DropableArea2"]

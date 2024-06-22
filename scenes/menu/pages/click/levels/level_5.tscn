@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm6mxbbmxfwem"]
+[gd_scene load_steps=18 format=3 uid="uid://dm6mxbbmxfwem"]
 
 [ext_resource type="PackedScene" uid="uid://cpt228d03e4fk" path="res://scenes/menu/pages/click/backgrounds/brackground_jungle.tscn" id="1_c27lr"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_u5icr"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cljhja38xumek" path="res://assets/click_game/foods/jungle/Ant.png" id="14_x2kq1"]
 [ext_resource type="Texture2D" uid="uid://v53h21f7hn5t" path="res://assets/click_game/animals/jungle/snake.png" id="15_f6ott"]
 [ext_resource type="Texture2D" uid="uid://ctpubyh8a028q" path="res://assets/click_game/foods/jungle/Banana.png" id="16_k1knc"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_ilcc0"]
 [ext_resource type="Texture2D" uid="uid://ds6wb2vfjohhj" path="res://assets/click_game/foods/jungle/ic_egg.png" id="18_fjjaq"]
 
 [node name="Level5" type="Node2D"]
@@ -112,6 +113,8 @@ scale = Vector2(5, 5)
 [node name="FoodArea3" parent="." instance=ExtResource("13_giohv")]
 position = Vector2(938, 964)
 icon = ExtResource("18_fjjaq")
+
+[node name="SoundControllerClick" parent="." instance=ExtResource("17_ilcc0")]
 
 [editable path="DraggbleObject"]
 [editable path="DropableArea"]

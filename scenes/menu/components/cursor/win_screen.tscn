@@ -165,3 +165,4 @@ time = 7
 [connection signal="pressed" from="RepeatButton" to="RepeatButton" method="_on_pressed"]
 [connection signal="pressed" from="ForwardButton" to="." method="_on_forward_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
+[connection signal="time_up" from="CountDown" to="." method="_on_forward_button_pressed"]

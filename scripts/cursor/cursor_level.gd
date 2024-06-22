@@ -3,10 +3,13 @@ extends Node
 class_name CursorLevel
 
 @onready var win_screen=$CanvasLayer/WinScreen
+@export var next_level=2
+@export var last=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	win_screen.next_level=next_level
+	win_screen.last=last
 
 
 func _on_level_container_won():

@@ -5,6 +5,7 @@
 [node name="Level2" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_f3ac8")]
+next_level = 3
 
 [node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
 position = Vector2(-134, 56)

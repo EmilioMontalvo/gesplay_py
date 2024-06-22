@@ -1,12 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dm6mxbbmxfwem"]
+[gd_scene load_steps=17 format=3 uid="uid://dm6mxbbmxfwem"]
 
 [ext_resource type="PackedScene" uid="uid://cpt228d03e4fk" path="res://scenes/menu/pages/click/backgrounds/brackground_jungle.tscn" id="1_c27lr"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_u5icr"]
-[ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="2_ffh5g"]
-[ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_mq8ty"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_hlbm1"]
+[ext_resource type="PackedScene" uid="uid://ljf6h2krs2bt" path="res://scenes/menu/level_header.tscn" id="3_cq4am"]
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="6_an6k7"]
-[ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="6_qjkmx"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="7_6txi4"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_nopua"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="8_ncgya"]
@@ -27,36 +24,9 @@ script = ExtResource("1_u5icr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_top = -2.0
-offset_right = 1436.0
-offset_bottom = 128.0
-color = Color(0.909804, 0.843137, 0.72549, 1)
-
-[node name="GoBack" parent="CanvasLayer" instance=ExtResource("2_ffh5g")]
-offset_left = 21.0
-offset_top = 17.0
-offset_right = 121.0
-offset_bottom = 117.0
-scene = 13
-
-[node name="Home" parent="CanvasLayer" instance=ExtResource("3_mq8ty")]
-offset_left = 1253.0
-offset_top = 12.0
-offset_right = 1349.0
-offset_bottom = 108.0
-
-[node name="HelpButton" parent="CanvasLayer" instance=ExtResource("4_hlbm1")]
-offset_left = 1356.0
-offset_top = 37.0
-offset_right = 1406.0
-offset_bottom = 87.0
-
-[node name="ButtonProfile" parent="CanvasLayer" instance=ExtResource("6_qjkmx")]
-offset_left = 570.0
-offset_top = 18.0
-offset_right = 895.0
-offset_bottom = 112.0
+[node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_cq4am")]
+scene_go_back = 13
+scene_home = 1
 
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_an6k7")]
 offset_left = 1137.0

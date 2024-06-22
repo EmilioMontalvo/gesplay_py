@@ -10,7 +10,7 @@ class_name CursorLevel
 func _ready():
 	win_screen.next_level=next_level
 	win_screen.last=last
-
+	$CanvasLayer/LevelHeader.scene_home
 
 func _on_level_container_won():
 	win_screen.visible=true

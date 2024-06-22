@@ -22,8 +22,10 @@ func _ready():
 
 func on_show() -> bool:
 	visible = true
+	get_tree().paused = true
 	await option_selected
 	visible = false
+	get_tree().paused = false
 	return option
 
 func _on_accept_button_pressed():

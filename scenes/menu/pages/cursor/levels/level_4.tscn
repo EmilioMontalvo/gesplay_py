@@ -1,7 +1,131 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2e7ouo7j55hw"]
+[gd_scene load_steps=9 format=3 uid="uid://c2e7ouo7j55hw"]
 
 [ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_hw6e4"]
+[ext_resource type="Texture2D" uid="uid://cgbxa5y3jnvg2" path="res://assets/cursor_game/decorations/lava_sprite_sheet.png" id="1_rtdo2"]
+[ext_resource type="Texture2D" uid="uid://cfanuiqtn1wrj" path="res://assets/cursor_game/decorations/center.png" id="2_m6755"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dktnc"]
+atlas = ExtResource("1_rtdo2")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b6dr"]
+atlas = ExtResource("1_rtdo2")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8isuy"]
+atlas = ExtResource("1_rtdo2")
+region = Rect2(800, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxhxb"]
+atlas = ExtResource("1_rtdo2")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4osc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dktnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b6dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8isuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxhxb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Level4" type="Node2D"]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(713, 689.625)
+scale = Vector2(3.6875, 3.63083)
+sprite_frames = SubResource("SpriteFrames_4osc3")
+autoplay = "default"
+frame_progress = 0.0552183
+
 [node name="Level1" parent="." instance=ExtResource("1_hw6e4")]
+next_level = 5
+
+[node name="ParallaxBackground" parent="Level1" index="0"]
+visible = false
+
+[node name="Polygon2D" parent="Level1/level_container" index="0"]
+visible = false
+polygon = PackedVector2Array(0.0180429, 102, -2, 1031, 1452, 1030, 1446.75, 580.482, 1443.93, 112)
+
+[node name="StepOn" parent="Level1/level_container" index="2"]
+position = Vector2(-404, 38)
+layer_0/tile_data = PackedInt32Array(917519, 393216, 4, 917520, 458752, 4, 917521, 458752, 4, 917522, 458752, 4, 917523, 458752, 4, 917524, 524288, 4, 983061, 524288, 4, 983060, 458752, 5, 983059, 458752, 5, 983058, 458752, 5, 983057, 458752, 5, 983056, 458752, 5, 983055, 458752, 5, 983054, 393216, 4, 983052, 458752, 5)
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
+position = Vector2(-2, 21)
+polygon = PackedVector2Array(-130, -69, -76.9108, -45.4561, -127, -22, -80, 17, -136, 58, -57, 88, -68, 37, -46, 14, -10, 7, 23, 35, 6, 85, 137, 57, 148, 141, 163, 119, 198, 104, 237, 111, 256, 142, 250, 191, 222, 210, 191, 212, 158, 209, 171, 258, 221, 233, 241, 262, 274, 232, 312, 261, 249, 66, 240, -25, 267, -158, 223, -138, 222, -175, 176, -157, 165, -189, -137, -106)
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain2" index="0"]
+position = Vector2(342, -184)
+polygon = PackedVector2Array(-54, -70, -90, 75, -70, 197, -14, 347, 6, 324, 33, 342, 54, 321, 79, 349, 100, 280, 109, 187, 49, 133, 8, 155, -26, 150, -45, 122, -32, 87, -4, 71, 28, 81, 16, 57, 132, 141, 209, 194, 311, 159, 278, 133, 317, 111, 284, 90, 319, 63, 294, 27, 205, -9, 151, 3, 27, -60, 8, -30, -16, -67, -42, -26)
+
+[node name="Polygon2D" parent="Level1/level_container/HardTerrainContainer/HardTerrain" index="0"]
+polygon = PackedVector2Array(1355, 556, 1330, 619, 1263, 657, 1179, 651, 1097, 599, 1035, 619, 937, 565, 829, 488, 840, 531, 812, 550, 851, 558, 910, 630, 903, 704, 886, 769, 974, 823, 1074, 870, 1173, 942, 1237, 1019, 1173, 1031, 968, 1038, 704, 1035, 469, 1036, 444, 1013, 456, 917, 520, 871, 629, 817, 676, 770, 653, 707, 694, 680, 645, 671, 656, 600, 681, 490, 515, 588, 491, 593, 469, 546, 439, 595, 367, 583, 295, 627, 207, 627, 143, 587, 132, 513, 144, 446, 174, 421, 205, 396, 306, 403, 338, 437, 425, 419, 410, 376, 1, 357, 4, 1034, 1000, 1058, 1446, 1033, 1441, 677.222, 1438, 86, 704, 122, 1, 111, 3, 357, 410, 376, 425, 419, 517, 396, 585, 361, 661, 336, 627, 258, 656, 187, 749, 157, 844, 170, 911, 247, 899, 317, 841, 374, 967, 440, 1018, 429, 1105, 465, 1177, 404, 1261, 410, 1337, 467)
+
+[node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
+position = Vector2(-17, -752)
+
+[node name="Well" parent="Level1/level_container/HardTerrainContainer" index="2"]
+visible = false
+modulate = Color(0.811765, 0.0627451, 0.12549, 1)
+position = Vector2(1386, 1069)
+scale = Vector2(3.18552, 3.01794)
+texture = ExtResource("2_m6755")
+
+[node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
+position = Vector2(259, 507)
+scale = Vector2(1.395, 1.395)
+
+[node name="Shovel" parent="Level1/level_container" index="7"]
+position = Vector2(769, 254)
+
+[node name="Duck" parent="Level1/level_container" index="8"]
+position = Vector2(766, 882)
+
+[node name="Jail" parent="Level1/level_container" index="9"]
+position = Vector2(769, 874)
+
+[node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]
+position = Vector2(401, -196)
+points = PackedVector2Array(252, 522, 223, 458, 243, 394, 319, 348, 441, 356, 514, 432, 507, 500, 451, 564)
+
+[node name="Line2D" parent="Level1/level_container/LinesContainer" index="1"]
+position = Vector2(-100, 65)
+points = PackedVector2Array(460, 519, 394, 561, 288, 552, 244, 509, 232, 443, 254, 367, 322, 324, 409, 338)
+
+[node name="Line2D3" parent="Level1/level_container/LinesContainer" index="2"]
+position = Vector2(891, 61)
+points = PackedVector2Array(206, 538, 272, 585, 348, 595, 418, 568, 460, 511, 460, 445, 417, 376, 362, 346, 271, 343, 217, 398)
+
+[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
+position = Vector2(2432, 1357)
+points = PackedVector2Array(139.001, 557, 98.0013, 504, 98.0012, 432, 146.001, 351, 228.001, 343.999, 306.001, 340.999, 394.001, 383.999, 417.001, 453.999, 408.001, 514.999, 354.001, 564.999)
+
+[node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
+position = Vector2(829, 321)
+points = PackedVector2Array(-440, 183, -337, 150, -202, 151, 36, 153, 145, 182, 271, 202)
+
+[node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
+points = PackedVector2Array(-167, 299, -104, 220, -209, 91, -178, -58)
+
+[node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
+position = Vector2(1222, 530)
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

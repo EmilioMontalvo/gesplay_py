@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cursor/key.gd" id="1_alyfp"]
 [ext_resource type="Texture2D" uid="uid://c0et0vp0xxlp5" path="res://assets/cursor_game/tools/key.png" id="1_ir604"]
-[ext_resource type="AudioStream" uid="uid://ee0mq6aehn2e" path="res://assets/cursor_game/audio/bonus-points.mp3" id="2_a0iq0"]
+[ext_resource type="AudioStream" uid="uid://cgv7vs77q53ds" path="res://assets/cursor_game/audio/door-unlocked.mp3" id="3_xeyur"]
 
 [sub_resource type="Animation" id="Animation_0flhh"]
 length = 0.001
@@ -67,6 +67,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4w32k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_a0iq0")
+stream = ExtResource("3_xeyur")
+volume_db = 5.266
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://ljf6h2krs2bt"]
+
+[ext_resource type="Script" path="res://scripts/menu/level_header.gd" id="1_0sg0q"]
+[ext_resource type="Texture2D" uid="uid://g1wx40t35i52" path="res://assets/buttons/icons/GoBack.png" id="2_lh4cl"]
+[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="3_0uxoj"]
+[ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="3_fjcen"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_rjlat"]
+[ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="4_myfvp"]
+[ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="6_h0dm8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sj31r"]
+line_spacing = 5.0
+font = ExtResource("3_rjlat")
+font_size = 30
+outline_size = 10
+outline_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="LevelHeader" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0sg0q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 1436.0
+offset_bottom = 128.0
+color = Color(0.909804, 0.843137, 0.72549, 1)
+
+[node name="GoBack" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_vertical = 2
+texture_normal = ExtResource("2_lh4cl")
+
+[node name="CurrentLevel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = -11.5
+offset_right = 143.0
+offset_bottom = 11.5
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_sj31r")
+
+[node name="Home" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -48.0
+offset_right = -86.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_fjcen")
+
+[node name="HelpButton" parent="ColorRect" instance=ExtResource("3_0uxoj")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -25.0
+offset_right = -19.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ButtonProfile" parent="ColorRect" instance=ExtResource("4_myfvp")]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 20.0
+offset_right = 895.0
+offset_bottom = 114.0
+
+[node name="ConfirmationGoBack" parent="." instance=ExtResource("6_h0dm8")]
+
+[node name="ConfirmationHome" parent="." instance=ExtResource("6_h0dm8")]
+
+[connection signal="pressed" from="ColorRect/GoBack" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="ColorRect/Home" to="." method="_on_home_pressed"]

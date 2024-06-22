@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b73rkuo5uajib"]
+[gd_scene load_steps=11 format=3 uid="uid://b73rkuo5uajib"]
 
 [ext_resource type="Script" path="res://scripts/click_game/win_screen_click_game.gd" id="1_ddhlr"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_jh03j"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="4_g0mu2"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="4_gmluo"]
 [ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="5_rm616"]
+[ext_resource type="PackedScene" uid="uid://c3ha3edud3yod" path="res://scenes/menu/pages/click/countdown_container.tscn" id="6_uh6yv"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="8_43cj7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asiq8"]
@@ -51,8 +52,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -216.0
-offset_bottom = -154.0
+offset_top = -250.0
+offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_d8ocu")
@@ -68,9 +69,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -185.0
-offset_top = -168.0
+offset_top = -204.0
 offset_right = 185.0
-offset_bottom = -8.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1)
@@ -83,11 +84,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.0
-offset_top = -3.0
+offset_top = -45.0
 offset_right = 29.0
-offset_bottom = 51.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CountdownContainer" parent="Panel" instance=ExtResource("6_uh6yv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -237.0
+offset_right = 20.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -95,8 +111,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 115.0
-offset_bottom = 213.0
+offset_top = 141.0
+offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40

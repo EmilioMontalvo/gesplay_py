@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3ha3edud3yod"]
+
+[ext_resource type="Script" path="res://scripts/click_game/countdown_container.gd" id="1_kdgjt"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="1_t3dq7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbeot"]
+line_spacing = 5.0
+font = ExtResource("1_t3dq7")
+font_size = 25
+outline_size = 10
+outline_color = Color(0.145098, 0.0980392, 0.34902, 1)
+
+[node name="CountdownContainer" type="AspectRatioContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kdgjt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TimeLeft" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_gbeot")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

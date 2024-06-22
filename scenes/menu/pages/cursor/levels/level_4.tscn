@@ -118,7 +118,7 @@ position = Vector2(829, 321)
 points = PackedVector2Array(-440, 183, -337, 150, -202, 151, 36, 153, 145, 182, 271, 202)
 
 [node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
-points = PackedVector2Array(-167, 299, -104, 220, -209, 91, -178, -58)
+points = PackedVector2Array(-154, 261, -118, 188, -209, 91, -178, -58)
 
 [node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
 position = Vector2(1222, 530)

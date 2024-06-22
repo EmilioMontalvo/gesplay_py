@@ -20,15 +20,15 @@ speed = 3.5
 texture = ExtResource("1_7r21p")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-1920.48, 0)
+position = Vector2(-1915.66, 0)
 texture = ExtResource("1_7r21p")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-3840.96, 0)
+position = Vector2(-3832.53, 0)
 texture = ExtResource("1_7r21p")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-5751.81, 0)
+position = Vector2(-5746.99, 0)
 texture = ExtResource("1_7r21p")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]

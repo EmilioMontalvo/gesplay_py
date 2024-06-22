@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://cegbc71iuxw5g"]
+
+[ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_0owqu"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_0owqu")]
+
+[node name="ParallaxBackground" parent="Level1" index="0"]
+offset = Vector2(0, 270)
+transform = Transform2D(1, 0, 0, 1, 0, 270)
+
+[node name="Polygon2D" parent="Level1/level_container" index="0"]
+polygon = PackedVector2Array(-7.04511, 566, -2, 1031, 1452, 1030, 1446.75, 580.482, 1455.03, 113, 1042.34, 128, 916.21, 349, 762.838, 576)
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
+position = Vector2(256, 243)
+polygon = PackedVector2Array(-29, -61, 1, -10, -38, 17, -7, 54, -51, 82, -23, 120, -65, 155, 66, 170, 114, 149, 135, 116, 180, 136, 229, 28, 298, -143, 323, -205, 329, -266, 330, -307, 300, -291, 301, -332, 209, -343, 193, -200, 137, -146, 57, -64)
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain2" index="0"]
+position = Vector2(394, 188)
+polygon = PackedVector2Array(213, -372, 208, -268, 72, 45, 90, 81, 134, 61, 146, 99, 177, 89, 239, 109, 312, 80, 261, 59, 301, 35, 258, 3, 285, -27, 257, -61, 285, -98, 321, -282, 400, -355, 358, -345, 341, -369, 304, -333, 285, -371, 245, -343)
+
+[node name="Polygon2D" parent="Level1/level_container/HardTerrainContainer/HardTerrain" index="0"]
+polygon = PackedVector2Array(4, 653, 4, 1034, 1439, 1035, 1441, 677.222, 1451, 282, 1450, 103, 1243, 130, 1026, 124, 994, 205, 904, 251, 892, 347, 856, 434, 790, 468, 783, 564, 3, 573, 3, 655, 478, 703, 532, 631, 662, 630, 729, 699, 810, 700, 911.613, 611.268, 970, 618, 952, 576, 956.852, 446.826, 1042, 418, 960, 363, 1043, 266, 1128, 281, 1102, 213, 1163, 246, 1201, 172, 1215, 248, 1331, 188, 1267, 267, 1368, 261, 1264, 300, 1345, 339, 1290, 434, 1234, 455, 1151, 542, 1174, 605, 1093, 706, 1199, 719, 1258, 656, 1345, 662, 1417, 718, 1420, 807, 1398, 888, 1330, 913, 1238, 908, 1179, 886, 1091, 914, 1084, 966, 996, 1005, 866, 1004, 794, 953, 817.929, 913.179, 703, 897, 606, 902, 509, 884, 457, 795, 473, 701)
+
+[node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
+position = Vector2(-6, 296)
+layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196617, 65537, 0, 196616, 65537, 0)
+
+[node name="Well" parent="Level1/level_container/HardTerrainContainer" index="2"]
+position = Vector2(320, 465)
+
+[node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
+position = Vector2(931, 965)
+
+[node name="Shovel" parent="Level1/level_container" index="6"]
+position = Vector2(582, 766)
+
+[node name="Duck" parent="Level1/level_container" index="7"]
+position = Vector2(1289, 791)
+
+[node name="Jail" parent="Level1/level_container" index="8"]
+position = Vector2(1294, 800)
+
+[node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]
+position = Vector2(978, 297)
+points = PackedVector2Array(205, 417, 255, 355, 343, 353, 435, 395, 445, 501, 413, 603, 301, 619, 201, 587)
+
+[node name="Line2D" parent="Level1/level_container/LinesContainer" index="1"]
+position = Vector2(252, 293)
+points = PackedVector2Array(449, 595, 347, 611, 253, 587, 203, 492, 212, 406, 255, 365, 295, 323, 407, 325, 469, 391)
+
+[node name="Line2D3" parent="Level1/level_container/LinesContainer" index="2"]
+position = Vector2(1250, 979)
+
+[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
+position = Vector2(1620, 1699)
+
+[node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
+points = PackedVector2Array(254, 301, 396, 296, 548, 297, 669, 301)
+
+[node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
+position = Vector2(1230.55, 138.35)
+points = PackedVector2Array(-146.55, 363.65, -196.55, 480.65, -287.55, 598.65, -292.55, 742.65)
+
+[node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
+position = Vector2(1131, 383)
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

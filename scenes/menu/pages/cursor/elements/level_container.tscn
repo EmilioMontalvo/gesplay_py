@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=19 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dtpp5cjgeq75u" path="res://scenes/menu/pages/cursor/elements/time.tscn" id="11_5i0cn"]
 [ext_resource type="PackedScene" uid="uid://b4ekcuuhhm7mu" path="res://scenes/menu/pages/cursor/elements/points_line.tscn" id="13_g4mcg"]
 [ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="14_1pata"]
+[ext_resource type="Texture2D" uid="uid://ll65ui8ncfkg" path="res://assets/cursor_game/tools/sign.png" id="15_8cbsf"]
 
 [sub_resource type="TileSet" id="TileSet_2xdvn"]
 
@@ -123,18 +124,6 @@ scale = Vector2(3, 3)
 position = Vector2(1141, 826)
 scale = Vector2(0.3, 0.3)
 
-[node name="Points" parent="." instance=ExtResource("9_uqjid")]
-offset_left = 1323.0
-offset_top = 190.0
-offset_right = 1323.0
-offset_bottom = 190.0
-
-[node name="Time" parent="." instance=ExtResource("11_5i0cn")]
-offset_left = 1.0
-offset_top = 177.0
-offset_right = 1.0
-offset_bottom = 177.0
-
 [node name="LinesContainer" type="Node2D" parent="."]
 
 [node name="Line2D2" type="Line2D" parent="LinesContainer"]
@@ -187,6 +176,29 @@ points = PackedVector2Array(-153, 131)
 
 [node name="Key" parent="KeyContainer" instance=ExtResource("14_1pata")]
 position = Vector2(573, 784)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 341.0
+offset_bottom = 351.0
+texture = ExtResource("15_8cbsf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Time" parent="CanvasLayer" instance=ExtResource("11_5i0cn")]
+offset_left = 47.0
+offset_top = 164.0
+offset_right = -1253.0
+offset_bottom = -789.0
+
+[node name="Points" parent="CanvasLayer" instance=ExtResource("9_uqjid")]
+offset_left = 55.0
+offset_top = 233.0
+offset_right = -1239.0
+offset_bottom = -749.0
 
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]
 [connection signal="touched" from="Shovel" to="." method="_on_shovel_touched"]

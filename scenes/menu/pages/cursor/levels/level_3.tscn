@@ -26,7 +26,7 @@ polygon = PackedVector2Array(4, 653, 4, 1034, 1439, 1035, 1441, 677.222, 1451, 2
 
 [node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
 position = Vector2(-6, 296)
-layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196617, 65537, 0, 196616, 65537, 0)
+layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196615, 65537, 0, 196616, 65537, 0, 196617, 65537, 0)
 
 [node name="Well" parent="Level1/level_container/HardTerrainContainer" index="2"]
 position = Vector2(320, 465)

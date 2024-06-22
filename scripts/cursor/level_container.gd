@@ -2,7 +2,9 @@ extends Node2D
 
 @onready var shovel=$Shovel
 @onready var destructionPoligon=$Shovel.get_destruction_polygon()
-@onready var points=$Points
+@onready var points=$CanvasLayer/Points
+@onready var timer=$CanvasLayer/Time
+
 
 @export var keys=1
 
@@ -27,7 +29,7 @@ func _on_shovel_touched(body):
 	elif body.is_in_group("objective"):
 		get_points_from(body)
 		shovel.drop_end()
-		$Time.stop()
+		timer.stop()
 		emit_signal("won")
 	elif body.is_in_group("key"):
 		grab_key(body)
@@ -67,7 +69,7 @@ func get_points():
 	return points.actualPoints
 
 func get_time():
-	return $Time.get_time()
+	return timer.get_time()
 
 func grab_key(body):
 	body.get_parent().explode()

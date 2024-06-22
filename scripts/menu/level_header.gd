@@ -8,6 +8,7 @@ extends Control
 @onready var home_button: TextureButton = $ColorRect/Home
 @onready var confirm_dialog_back: ConfirmDialog = $ConfirmationGoBack
 @onready var confirm_dialog_home: ConfirmDialog = $ConfirmationHome
+@onready var current_level_label: Label = $ColorRect/CurrentLevel
 
 func _ready():
 	confirm_dialog_back.set_dialog_text(dialog_text)
@@ -20,3 +21,6 @@ func _on_go_back_pressed():
 func _on_home_pressed():
 	if await confirm_dialog_home.on_show():
 		MenuManager.load_menu(scene_home)
+		
+func set_current_level(level: int):
+	current_level_label.text = "Nivel: " + str(level)

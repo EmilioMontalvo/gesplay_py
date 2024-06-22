@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var star_points = $CanvasLayer/StarPoints
 @onready var time_container = $CanvasLayer/TimeContainer
+@onready var level_header = $CanvasLayer/LevelHeader
 
 var max_level = 6
 var success_count = 0
@@ -20,6 +21,7 @@ func _ready():
 	init_dragabble_objects()
 	set_points()
 	time_init = Time.get_unix_time_from_system()
+	level_header.set_current_level(CurrentClickLevel.level)
 
 func init_dragabble_objects():
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')

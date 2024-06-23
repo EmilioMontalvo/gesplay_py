@@ -10,10 +10,20 @@ extends Node2D
 
 var shovel_point
 
+@export var terrain_type="dirt"
+
 signal won
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	shovel_point=shovel.global_position
+	if terrain_type=="snow":
+		var texture_snow=load("res://assets/cursor_game/textures/snow_texture.png")
+		$Polygon2D.texture=texture_snow
+		$HardTerrainContainer/HardTerrain/Polygon2D.texture=texture_snow
+		var lines=$LinesContainer.get_children()
+		
+		for x in lines:
+			x.texture=texture_snow
 
 
 

@@ -32,7 +32,4 @@ func _on_button_pressed():
 	MenuManager.load_packed_scene(levels[level])
 
 func change_texture(res):
-	var image = Image.new()
-	image.load_from_file(res)
-	var imageTexture = ImageTexture.create_from_image(image)
 	button.texture_normal=load(res)

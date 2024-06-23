@@ -43,7 +43,8 @@ animations = [{
 [node name="Level4" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(713, 689.625)
+z_index = -2
+position = Vector2(726, 728)
 scale = Vector2(3.6875, 3.63083)
 sprite_frames = SubResource("SpriteFrames_4osc3")
 autoplay = "default"
@@ -56,8 +57,7 @@ next_level = 5
 visible = false
 
 [node name="Polygon2D" parent="Level1/level_container" index="0"]
-visible = false
-polygon = PackedVector2Array(0.0180429, 102, -2, 1031, 1452, 1030, 1446.75, 580.482, 1443.93, 112)
+polygon = PackedVector2Array(0.0180429, 102, 24.2346, 592, 194.759, 629, 347.121, 615, 703.306, 586, 760.82, 549, 806.226, 597, 868.786, 579, 1011.06, 588, 1177.55, 672, 1340, 620, 1445.95, 611, 1446.75, 580.482, 1443.93, 112)
 
 [node name="StepOn" parent="Level1/level_container" index="2"]
 position = Vector2(-404, 38)

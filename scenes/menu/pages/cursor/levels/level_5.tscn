@@ -6,7 +6,23 @@
 
 [node name="Level1" parent="." instance=ExtResource("1_y54ej")]
 
+[node name="level_container" parent="Level1" index="1"]
+terrain_type = "snow"
+
+[node name="StepOn" parent="Level1/level_container" index="2"]
+modulate = Color(4.142, 2.959, 6.509, 1)
+
+[node name="Terrain" parent="Level1/level_container/TerrainContainer" index="0"]
+type = "snow"
+
+[node name="Terrain2" parent="Level1/level_container/TerrainContainer" index="1"]
+type = "snow"
+
+[node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
+modulate = Color(1, 1, 2.958, 1)
+
 [node name="Duck" parent="Level1/level_container" index="8"]
+position = Vector2(1131, 836)
 animated_sprite = "penguin"
 
 [editable path="Level1"]

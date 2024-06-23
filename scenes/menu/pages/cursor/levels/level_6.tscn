@@ -1,0 +1,213 @@
+[gd_scene load_steps=14 format=3 uid="uid://bq5omlmkdkmvh"]
+
+[ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_txesd"]
+[ext_resource type="Texture2D" uid="uid://bld5jjvl2fblo" path="res://assets/cursor_game/background/background_02.png" id="2_bkxcf"]
+[ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="3_l64u4"]
+[ext_resource type="Texture2D" uid="uid://bqff2dt6t0hsj" path="res://assets/cursor_game/decorations/igloo.png" id="4_wtqau"]
+[ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="5_1xcwd"]
+[ext_resource type="Texture2D" uid="uid://dasaflxx1djl7" path="res://assets/cursor_game/decorations/WaterFall(Water).png" id="5_5156y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4is4"]
+atlas = ExtResource("5_5156y")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si1c5"]
+atlas = ExtResource("5_5156y")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri45f"]
+atlas = ExtResource("5_5156y")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utn6g"]
+atlas = ExtResource("5_5156y")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny85y"]
+atlas = ExtResource("5_5156y")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogmru"]
+atlas = ExtResource("5_5156y")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjptp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4is4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si1c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri45f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utn6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny85y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogmru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level6" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_txesd")]
+next_level = 6
+
+[node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2(721, 783.5)
+scale = Vector2(0.285937, 0.160156)
+texture = ExtResource("2_bkxcf")
+
+[node name="level_container" parent="Level1" index="1"]
+position = Vector2(0, 200)
+scale = Vector2(0.8, 0.8)
+keys = 2
+terrain_type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container" index="0"]
+position = Vector2(6.25, 60)
+rotation = 0.0156956
+polygon = PackedVector2Array(2, 257, 1.62769, 978.845, 1822.87, 961.765, 1820.04, 258.75, 1311.47, 212.127, 1221.48, 106.013, 1178.2, -78.3361, 641.826, -94.9951, 571.187, 223.643)
+
+[node name="StepOn" parent="Level1/level_container" index="2"]
+modulate = Color(4.142, 2.959, 6.509, 1)
+position = Vector2(-256.25, -52.5)
+
+[node name="Terrain" parent="Level1/level_container/TerrainContainer" index="0"]
+position = Vector2(1102.5, 322.5)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
+position = Vector2(37.5, 170)
+polygon = PackedVector2Array(68.75, 18.75, 178.75, 22.5, 308.75, 30, 380, 131.25, 377.5, 71.25, 363.75, 37.5, 382.5, -5, 358.75, -48.75, 375, -110, 278.75, -23.75, 118.75, -86.25, 0, -83.75, -8.75, -40, 8.75, -11.25, -31.25, 40)
+
+[node name="Terrain2" parent="Level1/level_container/TerrainContainer" index="1"]
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain2" index="0"]
+position = Vector2(35, -61.5)
+polygon = PackedVector2Array(871.25, 82.4999, 897.5, 168.75, 898.75, 248.75, 966.25, 261.25, 1007.5, 270, 986.25, 216.25, 995, 188.75, 1017.5, 67.5, 945, -32.5, 813.75, -38.75)
+
+[node name="Terrain3" parent="Level1/level_container/TerrainContainer" index="2" instance=ExtResource("3_l64u4")]
+position = Vector2(470, 614)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="0"]
+position = Vector2(335, 126)
+polygon = PackedVector2Array(516.25, 58.75, 553.75, 60, 598.75, 61.25, 597.5, -22.5, 576.25, -91.2499, 541.25, -171.25, 515, -226.25, 403.75, -230, 300, -210, 278.75, -170, 412.5, -173.75, 413.75, -117.5, 413.75, -51.2499, 440, -26.25)
+
+[node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="1"]
+visible = true
+
+[node name="Terrain4" parent="Level1/level_container/TerrainContainer" index="3" instance=ExtResource("3_l64u4")]
+position = Vector2(470, 614)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain4" index="0"]
+position = Vector2(128.75, -121.5)
+polygon = PackedVector2Array(-133.75, -57.5, -130, -13.75, -88.75, 16.25, -23.75, -7.5, 32.5, -16.25, 100, 13.75, 161.25, -15, 170, -76.25, 165, -141.25, 163.75, -221.25, 60, -138.75, -15, -63.75)
+
+[node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain4" index="1"]
+visible = true
+
+[node name="Terrain5" parent="Level1/level_container/TerrainContainer" index="4" instance=ExtResource("3_l64u4")]
+position = Vector2(470, 614)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain5" index="0"]
+position = Vector2(128.75, -121.5)
+polygon = PackedVector2Array(-86.25, 91.25, -22.5, 61.25, 60, 77.5, 113.75, 85, 196.25, 85, 162.5, -16.25, 98.75, 12.5, 31.25, -20, -32.5, -7.5, -91.25, 16.25, -120, 47.5)
+
+[node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain5" index="1"]
+visible = true
+
+[node name="Polygon2D" parent="Level1/level_container/HardTerrainContainer/HardTerrain" index="0"]
+polygon = PackedVector2Array(212, 551.5, 202, 420.25, 3.25, 427.75, 3.25, 1054, 1797, 1056.5, 1799.5, 280.25, 1294.5, 280.25, 1292, 212.75, 1239.5, 165.25, 1232, 62.75, 1194.5, -38.5, 1047, -34.75, 800.75, -36, 644.5, -24.75, 600.75, 51.5, 594.5, 135.25, 562, 189, 553.25, 285.25, 5.75, 285.25, 3.25, 425.25, 202, 420.25, 284.5, 367.75, 403.25, 367.75, 467, 439, 587, 435.25, 669.5, 356.5, 764.5, 279, 768.25, 227.75, 909.5, 344, 768.25, 147.75, 809.5, 56.5, 914.5, 30.25, 1055.75, 52.75, 1099.5, 144, 1107, 280.25, 1149.5, 339, 1140.75, 416.5, 1258.25, 412.75, 1422, 475.25, 1514.5, 414, 1615.75, 390.25, 1708.25, 442.75, 1715.75, 551.5, 1673.25, 614, 1594.5, 627.75, 1518.25, 594, 1512, 680.25, 1490.75, 770.25, 1542, 890.25, 1510.75, 990.25, 1359.5, 1001.5, 1292, 912.75, 1334.5, 796.5, 1240.75, 701.5, 1223.25, 570.25, 1152, 572.75, 1085.75, 574, 1124.5, 666.5, 982, 639, 1130.75, 704, 1144.5, 750.25, 1072, 871.5, 930.75, 907.75, 804.5, 889, 728.25, 765.25, 794.5, 577.75, 714.5, 582.75, 574.5, 551.5, 433.25, 604, 313.25, 610.25)
+
+[node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
+modulate = Color(1, 1, 2.958, 1)
+position = Vector2(-3.75, 35)
+layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196624, 65537, 0, 196625, 65537, 0, 196626, 65537, 0, 196627, 65537, 0, 196628, 65537, 0, 196629, 65537, 0, 196630, 65537, 0, -65522, 65537, 0, -65523, 65537, 0, -65527, 65537, 0, -65528, 65537, 0, -65526, 65537, 0, -65525, 65537, 0, -65524, 65537, 0)
+
+[node name="Well" parent="Level1/level_container/HardTerrainContainer" index="2"]
+position = Vector2(1962.5, 615)
+scale = Vector2(0.941, 0.844)
+texture = ExtResource("4_wtqau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level1/level_container/HardTerrainContainer" index="3"]
+modulate = Color(1, 1, 1, 0.556863)
+z_index = -1
+texture_filter = 1
+position = Vector2(955, 406.187)
+scale = Vector2(5.60352, 6.99316)
+sprite_frames = SubResource("SpriteFrames_xjptp")
+autoplay = "default"
+frame_progress = 0.411517
+
+[node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
+position = Vector2(936.25, 202.5)
+
+[node name="Shovel" parent="Level1/level_container" index="7"]
+position = Vector2(1412.5, 893.75)
+
+[node name="Duck" parent="Level1/level_container" index="8"]
+position = Vector2(918.75, 803.75)
+animated_sprite = "penguin"
+
+[node name="Jail" parent="Level1/level_container" index="9"]
+position = Vector2(927.5, 783.75)
+
+[node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]
+position = Vector2(1270, 7.50001)
+points = PackedVector2Array(211.25, 430, 247.5, 397.5, 315, 378.75, 387.5, 397.5, 438.75, 431.25, 447.5, 538.75, 406.25, 600, 326.25, 625, 248.75, 583.75)
+
+[node name="Line2D" parent="Level1/level_container/LinesContainer" index="1"]
+position = Vector2(-4.99988, -37.5)
+points = PackedVector2Array(512.5, 601.25, 476.25, 633.75, 410, 652.5, 321.25, 646.25, 242.5, 610, 203.75, 553.75, 203, 492, 220, 445, 263.75, 416.25, 325, 392.5, 410, 397.5, 470, 470)
+
+[node name="Line2D3" parent="Level1/level_container/LinesContainer" index="2"]
+position = Vector2(1027.5, 473.75)
+points = PackedVector2Array(298.75, 332.5, 266.25, 438.75, 331.25, 527.5, 455, 522.5, 497.5, 483.75, 512.5, 415, 486.25, 355)
+
+[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
+position = Vector2(1026.25, 505)
+points = PackedVector2Array(265.001, 362.499, 245.001, 418.749, 217.501, 454.999, 170.001, 468.75, 115.001, 471.25, 28.7513, 466.25, -29.9987, 451.25, -63.7488, 413.75, -69.9989, 372.5)
+
+[node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
+position = Vector2(1001.25, 426.25)
+points = PackedVector2Array(-445, 84.9999, -317.5, 54.9999, -61.2501, 193.75, -158.75, 46.2499, -0.000183105, -123.75, -3.75018, 46.2499, 133.75, 54.9999, 280, 84.9999, 452.5, 92.4999, 355, 182.5, 392.5, 320)
+type = "snow"
+
+[node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
+points = PackedVector2Array(1053.5, 429.75)
+type = "snow"
+
+[node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
+position = Vector2(1605, 507.5)
+
+[node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("5_1xcwd")]
+position = Vector2(336.25, 488.75)
+
+[node name="TextureRect" parent="Level1/level_container" index="13"]
+offset_top = -265.0
+offset_bottom = 106.0
+scale = Vector2(1.2, 1.2)
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/TerrainContainer/Terrain3"]
+[editable path="Level1/level_container/TerrainContainer/Terrain4"]
+[editable path="Level1/level_container/TerrainContainer/Terrain5"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

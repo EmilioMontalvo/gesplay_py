@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://0irsknkb64xv"]
+
+[ext_resource type="Texture2D" uid="uid://bv24pknwm06s0" path="res://assets/cursor_game/decorations/ice_braker.png" id="1_lqu7h"]
+[ext_resource type="Texture2D" uid="uid://dasaflxx1djl7" path="res://assets/cursor_game/decorations/WaterFall(Water).png" id="2_i1p54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70u7y"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8t0w"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiho4"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvncm"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0rwe"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1k68"]
+atlas = ExtResource("2_i1p54")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbj58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70u7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8t0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiho4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvncm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0rwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1k68")
+}],
+"loop": true,
+"name": &"default",
+"speed": 19.0
+}]
+
+[node name="Boat" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lqu7h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-267, 118)
+sprite_frames = SubResource("SpriteFrames_dbj58")
+autoplay = "default"
+frame_progress = 0.13398

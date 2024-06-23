@@ -9,6 +9,7 @@
 [node name="Level5" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_y54ej")]
+next_level = 6
 
 [node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer3" index="0"]
 position = Vector2(721, 641.5)

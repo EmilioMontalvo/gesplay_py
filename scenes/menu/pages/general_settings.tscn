@@ -167,5 +167,6 @@ offset_bottom = -162.0
 grow_vertical = 0
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
+[connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]
 
 [editable path="AceptCancel"]

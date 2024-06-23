@@ -25,6 +25,7 @@ func send_new_config(config:ClickConfig):
 
 func _on_acept_pressed():
 	ClickConf.set_from_json(temporal_click_config.get_as_json())
+	ClickConf.save_config()
 	send_new_config(ClickConf)
 
 func _on_cancel_pressed():

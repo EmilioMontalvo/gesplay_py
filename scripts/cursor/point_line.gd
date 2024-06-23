@@ -1,5 +1,6 @@
 extends Line2D
 
+@export var type="dirt"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +9,7 @@ func _ready():
 	for x in points:
 		var instance=pellet_scene.instantiate()
 		instance.global_position=x
+		instance.type=type
 		add_child(instance)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,13 +1,15 @@
 extends Node2D
 
 @onready var audioPlayer=$AudioStreamPlayer2D
+@onready var pellet_texture:Sprite2D=$Sprite2D
 
 @export var value=50
-
+@export var type="dirt"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if type=="snow":
+		modulate=Color(0.9,0.5,0)
 
 
 

@@ -7,8 +7,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
-
 func set_points(points):
 	$points.text=str(points)
 	if points >= 300:
@@ -30,3 +28,4 @@ func _on_forward_button_pressed():
 	if not last:
 		var next_level_path="res://scenes/menu/pages/cursor/levels/level_"+str(next_level)+".tscn"
 		MenuManager.change_to_file(next_level_path)
+		print("what")

@@ -8,7 +8,7 @@ radius = 17.0
 height = 34.0
 
 [node name="Pellet" type="Node2D"]
-scale = Vector2(0.685, 0.685)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_hwj8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

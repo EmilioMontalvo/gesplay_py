@@ -37,3 +37,10 @@ func save_configs():
 		"sfx":sfx
 	}
 	DataSaver.save_settings(config, CurrentProfile.id)
+
+func set_from_json(json):
+	camera_id = json.get("camera_id")
+	window_mode = json.get("window_mode")
+	general_sound = json.get("general_sound")
+	music = json.get("music")
+	sfx = json.get("sfx")

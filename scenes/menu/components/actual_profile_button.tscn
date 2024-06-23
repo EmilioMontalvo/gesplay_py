@@ -1,18 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlnu3ca4sqm1x"]
+[gd_scene load_steps=10 format=3 uid="uid://dlnu3ca4sqm1x"]
 
-[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_18wvq"]
+[ext_resource type="Theme" uid="uid://br03ql4wqlxa1" path="res://assets/buttons/themes/profile_button_theme.tres" id="1_127x3"]
 [ext_resource type="Script" path="res://scripts/menu/actual_profile_button.gd" id="2_p23ak"]
+[ext_resource type="Texture2D" uid="uid://drgsiamuwoi7o" path="res://assets/buttons/icons/configuration_icon_32.png" id="2_x5m48"]
 [ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="3_pbalc"]
+[ext_resource type="Texture2D" uid="uid://cegleek85wi54" path="res://assets/buttons/icons/profile_32.png" id="3_x3kdt"]
 [ext_resource type="Texture2D" uid="uid://clji7qyq0vemt" path="res://assets/profile_images/default/default_profile2.png" id="4_6o3qw"]
+[ext_resource type="Texture2D" uid="uid://dybkf0ew62lpe" path="res://assets/buttons/icons/logout_32.png" id="4_j1ury"]
+[ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="8_p60v1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2013e"]
 shader = ExtResource("3_pbalc")
 shader_parameter/corner_radius = 25.0
 
-[node name="ButtonProfile" type="Button"]
+[node name="ButtonProfile" type="MenuButton"]
 offset_right = 400.0
 offset_bottom = 94.0
-theme = ExtResource("1_18wvq")
+theme = ExtResource("1_127x3")
+theme_type_variation = &"FlatMenuButton"
+flat = false
+item_count = 3
+popup/item_0/text = "   Configuración"
+popup/item_0/icon = ExtResource("2_x5m48")
+popup/item_0/id = 0
+popup/item_1/text = "   Cambiar de perfil"
+popup/item_1/icon = ExtResource("3_x3kdt")
+popup/item_1/id = 1
+popup/item_2/text = "   Cerrar sesión"
+popup/item_2/icon = ExtResource("4_j1ury")
+popup/item_2/id = 2
 script = ExtResource("2_p23ak")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -45,5 +61,7 @@ clip_text = true
 max_lines_visible = 1
 visible_characters = 15
 visible_ratio = 0.9375
+
+[node name="ConfirmationDialog" parent="." instance=ExtResource("8_p60v1")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

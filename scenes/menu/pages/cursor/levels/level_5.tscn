@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0d51ij2iu4u2"]
+
+[ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_y54ej"]
+
+[node name="Level5" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_y54ej")]
+
+[node name="Duck" parent="Level1/level_container" index="8"]
+animated_sprite = "penguin"
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

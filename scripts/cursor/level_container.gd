@@ -5,7 +5,7 @@ extends Node2D
 @onready var points=$CanvasLayer/Points
 @onready var timer=$CanvasLayer/Time
 
-
+@onready var character_sprite=preload("res://assets/cursor_game/ducky_3_spritesheet.png")
 @export var keys=1
 
 var shovel_point

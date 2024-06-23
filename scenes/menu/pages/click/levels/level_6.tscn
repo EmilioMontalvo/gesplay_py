@@ -25,41 +25,32 @@ script = ExtResource("1_pegg3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_vnbdp")]
+offset_left = 1137.0
+offset_top = 446.0
+offset_right = 1507.0
+offset_bottom = 606.0
+
+[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("7_64w8i")]
+offset_left = 1211.0
+offset_top = 565.0
+offset_right = 1349.0
+offset_bottom = 619.0
+
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("8_hsn2u")]
+offset_left = 1009.0
+offset_top = 128.0
+offset_right = 47.0
+offset_bottom = -541.0
+
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_76oyr")]
 scene_go_back = 13
 scene_home = 1
 
-[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_vnbdp")]
-offset_left = 1137.0
-offset_top = 129.0
-offset_right = 1507.0
-offset_bottom = 289.0
-
-[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("7_64w8i")]
-offset_left = 1211.0
-offset_top = 248.0
-offset_right = 1304.0
-offset_bottom = 302.0
-
-[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("8_hsn2u")]
-offset_left = 1009.0
-offset_top = 701.0
-offset_right = 47.0
-offset_bottom = 32.0
-
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_uvch6")]
 
-[node name="DraggbleObject" parent="." instance=ExtResource("10_rkxrj")]
-position = Vector2(178, 316)
-type = "crab"
-
-[node name="Sprite2D" parent="DraggbleObject" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("11_bqjw2")
-hframes = 4
-
 [node name="DropableArea" parent="." instance=ExtResource("12_lu24v")]
-position = Vector2(685, 934)
+position = Vector2(577, 934)
 type = "crab"
 icon = ExtResource("11_bqjw2")
 h_frames = 4
@@ -74,17 +65,8 @@ icon = ExtResource("14_nk4o7")
 [node name="Sprite2D" parent="FoodArea" index="1"]
 scale = Vector2(0.3, 0.3)
 
-[node name="DraggbleObject2" parent="." instance=ExtResource("10_rkxrj")]
-position = Vector2(178, 574)
-type = "gull"
-
-[node name="Sprite2D" parent="DraggbleObject2" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("15_i76o6")
-hframes = 4
-
 [node name="DropableArea2" parent="." instance=ExtResource("12_lu24v")]
-position = Vector2(1344, 565)
+position = Vector2(1328, 749)
 type = "gull"
 icon = ExtResource("15_i76o6")
 h_frames = 4
@@ -96,17 +78,8 @@ scale = Vector2(5, 5)
 position = Vector2(940, 970)
 icon = ExtResource("16_b0da6")
 
-[node name="DraggbleObject3" parent="." instance=ExtResource("10_rkxrj")]
-position = Vector2(178, 831)
-type = "turtle"
-
-[node name="Sprite2D" parent="DraggbleObject3" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("17_w3pta")
-hframes = 4
-
 [node name="DropableArea3" parent="." instance=ExtResource("12_lu24v")]
-position = Vector2(860, 720)
+position = Vector2(830, 750)
 type = "turtle"
 icon = ExtResource("17_w3pta")
 h_frames = 4
@@ -118,12 +91,39 @@ scale = Vector2(5, 5)
 position = Vector2(1115, 648)
 icon = ExtResource("18_utlxr")
 
+[node name="DraggbleObject" parent="." instance=ExtResource("10_rkxrj")]
+position = Vector2(178, 316)
+type = "crab"
+
+[node name="Sprite2D" parent="DraggbleObject" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("11_bqjw2")
+hframes = 4
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("10_rkxrj")]
+position = Vector2(178, 574)
+type = "gull"
+
+[node name="Sprite2D" parent="DraggbleObject2" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("15_i76o6")
+hframes = 4
+
+[node name="DraggbleObject3" parent="." instance=ExtResource("10_rkxrj")]
+position = Vector2(178, 831)
+type = "turtle"
+
+[node name="Sprite2D" parent="DraggbleObject3" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("17_w3pta")
+hframes = 4
+
 [node name="SoundControllerClick" parent="." instance=ExtResource("17_6bd01")]
 
-[editable path="DraggbleObject"]
 [editable path="DropableArea"]
 [editable path="FoodArea"]
-[editable path="DraggbleObject2"]
 [editable path="DropableArea2"]
-[editable path="DraggbleObject3"]
 [editable path="DropableArea3"]
+[editable path="DraggbleObject"]
+[editable path="DraggbleObject2"]
+[editable path="DraggbleObject3"]

@@ -47,6 +47,7 @@ func _process(_delta):
 
 func check_types():
 	if body_ref_temp != null:
+		print(body_ref_temp.get_type())
 		if body_ref_temp.get_type() == type:
 			inside_correct_dropable = true
 			success.emit()
@@ -55,6 +56,7 @@ func check_types():
 		else:
 			var tween = get_tree().create_tween()
 			tween.tween_property(self,"global_position",initial_pos,1.0).set_ease(Tween.EASE_OUT)
+			body_ref_temp = null
 			mistake.emit()
 
 func _on_area_2d_body_entered(body: StaticBody2D):
@@ -73,11 +75,12 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group('dropable'):
-		is_inside_dropable = false
-		body_ref_temp = null
+		if body_ref_temp == body:
+			is_inside_dropable = false
+			body_ref_temp = null
+			sprite.material = null
 		#body.modulate = Color('#F6EEDE',0.7)
 		body.modulate = Color('#' + body.color_hex,1.0)
-		sprite.material = null
 
 func _on_area_2d_mouse_entered():
 	if not GlobalClick.is_dragging:

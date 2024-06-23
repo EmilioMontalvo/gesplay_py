@@ -25,27 +25,27 @@ script = ExtResource("1_mjyec")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_627ek")]
-scene_go_back = 13
-scene_home = 1
-
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("8_rt11t")]
 offset_left = 1137.0
-offset_top = 129.0
+offset_top = 446.0
 offset_right = 1507.0
-offset_bottom = 289.0
+offset_bottom = 606.0
 
 [node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("9_f8jue")]
 offset_left = 1211.0
-offset_top = 248.0
-offset_right = 1304.0
-offset_bottom = 302.0
+offset_top = 565.0
+offset_right = 1349.0
+offset_bottom = 619.0
 
 [node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_rcrme")]
 offset_left = 1009.0
-offset_top = 701.0
+offset_top = 128.0
 offset_right = 47.0
-offset_bottom = 32.0
+offset_bottom = -541.0
+
+[node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_627ek")]
+scene_go_back = 13
+scene_home = 1
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_txuhf")]
 
@@ -56,10 +56,18 @@ icon = ExtResource("12_qhfyr")
 h_frames = 6
 
 [node name="DropableArea2" parent="." instance=ExtResource("10_p0p40")]
-position = Vector2(1205, 491)
+position = Vector2(1218, 804)
 type = "bird"
 icon = ExtResource("16_o1gbx")
 h_frames = 4
+
+[node name="FoodArea" parent="." instance=ExtResource("17_l57dq")]
+position = Vector2(797, 678)
+icon = ExtResource("18_0sqdk")
+
+[node name="FoodArea2" parent="." instance=ExtResource("17_l57dq")]
+position = Vector2(649, 242)
+icon = ExtResource("19_a7nel")
 
 [node name="DraggbleObject" parent="." instance=ExtResource("8_82kuq")]
 position = Vector2(174, 326)
@@ -78,14 +86,6 @@ type = "bird"
 [node name="Sprite2D" parent="DraggbleObject2" index="0"]
 texture = ExtResource("16_o1gbx")
 hframes = 4
-
-[node name="FoodArea" parent="." instance=ExtResource("17_l57dq")]
-position = Vector2(797, 678)
-icon = ExtResource("18_0sqdk")
-
-[node name="FoodArea2" parent="." instance=ExtResource("17_l57dq")]
-position = Vector2(649, 242)
-icon = ExtResource("19_a7nel")
 
 [node name="SoundControllerClick" parent="." instance=ExtResource("17_n6s6v")]
 

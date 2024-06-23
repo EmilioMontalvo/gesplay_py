@@ -24,21 +24,21 @@ script = ExtResource("1_88cwj")
 
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("9_ead7u")]
 offset_left = 1137.0
-offset_top = 129.0
+offset_top = 446.0
 offset_right = 1507.0
-offset_bottom = 289.0
+offset_bottom = 606.0
 
 [node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("9_s3utf")]
 offset_left = 1211.0
-offset_top = 248.0
-offset_right = 1304.0
-offset_bottom = 302.0
+offset_top = 565.0
+offset_right = 1349.0
+offset_bottom = 619.0
 
 [node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_27ab8")]
 offset_left = 1009.0
-offset_top = 701.0
+offset_top = 128.0
 offset_right = 47.0
-offset_bottom = 32.0
+offset_bottom = -541.0
 
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("6_sa5fc")]
 scene_go_back = 13
@@ -47,7 +47,7 @@ scene_home = 1
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_ah3kq")]
 
 [node name="DropableArea" parent="." instance=ExtResource("6_weye8")]
-position = Vector2(702, 722)
+position = Vector2(919, 900)
 type = "horse"
 icon = ExtResource("12_aek8n")
 h_frames = 8

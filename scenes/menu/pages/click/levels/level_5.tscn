@@ -49,15 +49,6 @@ offset_bottom = 32.0
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_nopua")]
 
-[node name="DraggbleObject" parent="." instance=ExtResource("10_ghg74")]
-position = Vector2(174, 321)
-type = "monkey"
-
-[node name="Sprite2D" parent="DraggbleObject" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("11_eee7c")
-hframes = 4
-
 [node name="DropableArea" parent="." instance=ExtResource("12_7u7ma")]
 position = Vector2(1129, 529)
 type = "monkey"
@@ -70,15 +61,6 @@ scale = Vector2(5, 5)
 [node name="FoodArea" parent="." instance=ExtResource("13_giohv")]
 position = Vector2(494, 963)
 icon = ExtResource("14_x2kq1")
-
-[node name="DraggbleObject2" parent="." instance=ExtResource("10_ghg74")]
-position = Vector2(174, 573)
-type = "frog"
-
-[node name="Sprite2D" parent="DraggbleObject2" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("14_3cgb0")
-hframes = 4
 
 [node name="DropableArea2" parent="." instance=ExtResource("12_7u7ma")]
 position = Vector2(524, 785)
@@ -93,14 +75,6 @@ scale = Vector2(5, 5)
 position = Vector2(1362, 472)
 icon = ExtResource("16_k1knc")
 
-[node name="DraggbleObject3" parent="." instance=ExtResource("10_ghg74")]
-position = Vector2(174, 815)
-type = "snake"
-
-[node name="Sprite2D" parent="DraggbleObject3" index="0"]
-scale = Vector2(5, 5)
-texture = ExtResource("15_f6ott")
-
 [node name="DropableArea3" parent="." instance=ExtResource("12_7u7ma")]
 position = Vector2(779, 854)
 type = "snake"
@@ -114,11 +88,37 @@ scale = Vector2(5, 5)
 position = Vector2(938, 964)
 icon = ExtResource("18_fjjaq")
 
+[node name="DraggbleObject" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 321)
+type = "monkey"
+
+[node name="Sprite2D" parent="DraggbleObject" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("11_eee7c")
+hframes = 4
+
+[node name="DraggbleObject2" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 573)
+type = "frog"
+
+[node name="Sprite2D" parent="DraggbleObject2" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("14_3cgb0")
+hframes = 4
+
+[node name="DraggbleObject3" parent="." instance=ExtResource("10_ghg74")]
+position = Vector2(174, 815)
+type = "snake"
+
+[node name="Sprite2D" parent="DraggbleObject3" index="0"]
+scale = Vector2(5, 5)
+texture = ExtResource("15_f6ott")
+
 [node name="SoundControllerClick" parent="." instance=ExtResource("17_ilcc0")]
 
-[editable path="DraggbleObject"]
 [editable path="DropableArea"]
-[editable path="DraggbleObject2"]
 [editable path="DropableArea2"]
-[editable path="DraggbleObject3"]
 [editable path="DropableArea3"]
+[editable path="DraggbleObject"]
+[editable path="DraggbleObject2"]
+[editable path="DraggbleObject3"]

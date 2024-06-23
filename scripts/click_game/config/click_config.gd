@@ -26,3 +26,12 @@ func set_from_json(config: Dictionary):
 
 func get_as_message(instruction: String) -> Message:
 	return Message.new(instruction,get_as_json())
+
+func load_saved_config():
+	var config = DataSaver.load_settings_by_id(CurrentProfile.id)
+	if config != null:
+		set_from_json(config)
+		return true
+
+func save_config():
+	DataSaver.save_settings(get_as_json(),CurrentProfile.id)

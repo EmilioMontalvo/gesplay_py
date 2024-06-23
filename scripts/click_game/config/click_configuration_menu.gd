@@ -25,7 +25,10 @@ func send_new_config(config:ClickConfig):
 
 func _on_acept_pressed():
 	ClickConf.set_from_json(temporal_click_config.get_as_json())
+	ClickConf.save_config()
 	send_new_config(ClickConf)
+	MenuManager.load_menu(MenuManager.MENU_LEVEL.SETTINGS)
 
 func _on_cancel_pressed():
 	send_new_config(ClickConf)
+	MenuManager.load_menu(MenuManager.MENU_LEVEL.SETTINGS)

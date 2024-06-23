@@ -53,9 +53,15 @@ static func delete_last_profile_file():
 
 static func save_settings(settings: Dictionary,id: String):
 	DirAccess.make_dir_absolute(PATH_SETTINGS)
+	var settings_saved: Dictionary = {}
 	var settings_saver: FileAccess
+	var exists_settings = FileAccess.file_exists(PATH_SETTINGS + id +".save")
+	if exists_settings:
+		settings_saved = load_settings_by_id(id)
+		for key in settings.keys():
+			settings_saved[key] = settings[key]
 	settings_saver = FileAccess.open(PATH_SETTINGS + id +".save", FileAccess.WRITE)
-	var json_string = JSON.stringify(settings)
+	var json_string = JSON.stringify(settings_saved if exists_settings else settings)
 	settings_saver.store_line(json_string)
 
 static func load_settings_by_id(id: String) -> Dictionary:

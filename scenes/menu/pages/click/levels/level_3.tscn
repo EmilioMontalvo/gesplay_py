@@ -83,13 +83,22 @@ scale = Vector2(5, 5)
 position = Vector2(1370, 794)
 icon = ExtResource("20_2gruc")
 
+[node name="Sprite2D" parent="FoodArea" index="1"]
+scale = Vector2(1.5, 1.5)
+
 [node name="FoodArea2" parent="." instance=ExtResource("19_uu6sd")]
 position = Vector2(804, 928)
 icon = ExtResource("21_w6yj0")
 
+[node name="Sprite2D" parent="FoodArea2" index="1"]
+scale = Vector2(1.5, 1.5)
+
 [node name="FoodArea3" parent="." instance=ExtResource("19_uu6sd")]
 position = Vector2(785, 405)
 icon = ExtResource("22_qbt5o")
+
+[node name="Sprite2D" parent="FoodArea3" index="1"]
+scale = Vector2(1.5, 1.5)
 
 [node name="DraggbleObject" parent="." instance=ExtResource("12_8cwfb")]
 position = Vector2(172, 309)
@@ -125,6 +134,9 @@ hframes = 4
 [editable path="DropableArea"]
 [editable path="DropableArea2"]
 [editable path="DropableArea3"]
+[editable path="FoodArea"]
+[editable path="FoodArea2"]
+[editable path="FoodArea3"]
 [editable path="DraggbleObject"]
 [editable path="DraggbleObject2"]
 [editable path="DraggbleObject3"]

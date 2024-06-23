@@ -9,10 +9,12 @@ extends Control
 @onready var confirm_dialog_back: ConfirmDialog = $ConfirmationGoBack
 @onready var confirm_dialog_home: ConfirmDialog = $ConfirmationHome
 @onready var current_level_label: Label = $ColorRect/CurrentLevel
+@onready var button_profile = $ColorRect/ButtonProfile
 
 func _ready():
 	confirm_dialog_back.set_dialog_text(dialog_text)
 	confirm_dialog_home.set_dialog_text(dialog_text)
+	button_profile.dialog_message = true
 
 func _on_go_back_pressed():
 	if await confirm_dialog_back.on_show():

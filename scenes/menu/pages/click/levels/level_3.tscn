@@ -28,27 +28,27 @@ script = ExtResource("1_ci6ch")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_7bew4")]
-scene_go_back = 13
-scene_home = 1
-
 [node name="StarPoints" parent="CanvasLayer" instance=ExtResource("7_ygsh1")]
 offset_left = 1137.0
-offset_top = 129.0
+offset_top = 446.0
 offset_right = 1507.0
-offset_bottom = 289.0
+offset_bottom = 606.0
 
 [node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("8_3idpr")]
 offset_left = 1211.0
-offset_top = 248.0
-offset_right = 1304.0
-offset_bottom = 302.0
+offset_top = 565.0
+offset_right = 1349.0
+offset_bottom = 619.0
 
 [node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_xi8h4")]
 offset_left = 1009.0
-offset_top = 701.0
+offset_top = 128.0
 offset_right = 47.0
-offset_bottom = 32.0
+offset_bottom = -541.0
+
+[node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_7bew4")]
+scene_go_back = 13
+scene_home = 1
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_jckip")]
 
@@ -62,7 +62,7 @@ h_frames = 4
 scale = Vector2(5, 5)
 
 [node name="DropableArea2" parent="." instance=ExtResource("8_7x5ip")]
-position = Vector2(843, 773)
+position = Vector2(884, 617)
 type = "snake"
 icon = ExtResource("16_lgch1")
 h_frames = 8
@@ -71,7 +71,7 @@ h_frames = 8
 scale = Vector2(5, 5)
 
 [node name="DropableArea3" parent="." instance=ExtResource("8_7x5ip")]
-position = Vector2(1092, 616)
+position = Vector2(1117, 934)
 type = "rat"
 icon = ExtResource("17_pkbya")
 h_frames = 4
@@ -80,7 +80,7 @@ h_frames = 4
 scale = Vector2(5, 5)
 
 [node name="FoodArea" parent="." instance=ExtResource("19_uu6sd")]
-position = Vector2(1412, 648)
+position = Vector2(1370, 794)
 icon = ExtResource("20_2gruc")
 
 [node name="FoodArea2" parent="." instance=ExtResource("19_uu6sd")]
@@ -88,7 +88,7 @@ position = Vector2(804, 928)
 icon = ExtResource("21_w6yj0")
 
 [node name="FoodArea3" parent="." instance=ExtResource("19_uu6sd")]
-position = Vector2(768, 564)
+position = Vector2(785, 405)
 icon = ExtResource("22_qbt5o")
 
 [node name="DraggbleObject" parent="." instance=ExtResource("12_8cwfb")]

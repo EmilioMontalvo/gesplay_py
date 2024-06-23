@@ -25,32 +25,32 @@ script = ExtResource("1_an2l2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_0h8lk")]
+offset_left = 1137.0
+offset_top = 446.0
+offset_right = 1507.0
+offset_bottom = 606.0
+
+[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("7_47nm2")]
+offset_left = 1211.0
+offset_top = 565.0
+offset_right = 1349.0
+offset_bottom = 619.0
+
+[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_ej3hr")]
+offset_left = 1009.0
+offset_top = 128.0
+offset_right = 47.0
+offset_bottom = -541.0
+
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_r12sv")]
 scene_go_back = 13
 scene_home = 1
 
-[node name="StarPoints" parent="CanvasLayer" instance=ExtResource("6_0h8lk")]
-offset_left = 1137.0
-offset_top = 129.0
-offset_right = 1507.0
-offset_bottom = 289.0
-
-[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("7_47nm2")]
-offset_left = 1211.0
-offset_top = 248.0
-offset_right = 1304.0
-offset_bottom = 302.0
-
-[node name="InGameCamera" parent="CanvasLayer" instance=ExtResource("9_ej3hr")]
-offset_left = 1009.0
-offset_top = 701.0
-offset_right = 47.0
-offset_bottom = 32.0
-
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_nl00e")]
 
 [node name="DropableArea" parent="." instance=ExtResource("10_g8l27")]
-position = Vector2(930, 711)
+position = Vector2(1164, 747)
 type = "chicken"
 icon = ExtResource("10_w71bb")
 h_frames = 4
@@ -64,7 +64,7 @@ position = Vector2(479, 963)
 icon = ExtResource("14_b0h7x")
 
 [node name="DropableArea2" parent="." instance=ExtResource("10_g8l27")]
-position = Vector2(711, 738)
+position = Vector2(792, 837)
 type = "pig"
 icon = ExtResource("13_x4x41")
 h_frames = 4
@@ -73,7 +73,7 @@ h_frames = 4
 scale = Vector2(5, 5)
 
 [node name="FoodArea2" parent="." instance=ExtResource("11_ned4a")]
-position = Vector2(625, 534)
+position = Vector2(1379, 783)
 icon = ExtResource("16_xtaot")
 
 [node name="DropableArea3" parent="." instance=ExtResource("10_g8l27")]
@@ -86,7 +86,7 @@ h_frames = 4
 scale = Vector2(5, 5)
 
 [node name="FoodArea3" parent="." instance=ExtResource("11_ned4a")]
-position = Vector2(870, 960)
+position = Vector2(1011, 970)
 icon = ExtResource("17_hom5s")
 
 [node name="DraggbleObject" parent="." instance=ExtResource("9_jn8ei")]

@@ -2,8 +2,8 @@ extends Control
 
 @onready var file_dialog: FileDialog = $FileDialog
 @onready var file_upload_button: Button = $VBoxContainer/HBoxContainer3/ImagesList/VBoxContainer/HBoxContainer3/FileUpload
-@onready var txt_firt_name: TextEdit = $VBoxContainer/HBoxContainer/FirstName/VBoxContainer/TxtFirstName
-@onready var txt_last_name: TextEdit = $VBoxContainer/HBoxContainer/LastName/VBoxContainer/TxtSecondName
+@onready var txt_firt_name: LineEdit = $VBoxContainer/HBoxContainer/FirstName/VBoxContainer/TxtFirstName
+@onready var txt_last_name: LineEdit = $VBoxContainer/HBoxContainer/LastName/VBoxContainer/TxtSecondName
 @onready var texture_image_profile: TextureRect = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel/TextureRect
 @onready var panel_image: Panel = $VBoxContainer/HBoxContainer3/ImageUpload/VBoxContainer/Panel
 

@@ -198,11 +198,10 @@ theme_override_fonts/font = ExtResource("4_ft2fn")
 theme_override_font_sizes/font_size = 30
 text = "Nombre"
 
-[node name="TxtFirstName" type="TextEdit" parent="VBoxContainer/HBoxContainer/FirstName/VBoxContainer"]
+[node name="TxtFirstName" type="LineEdit" parent="VBoxContainer/HBoxContainer/FirstName/VBoxContainer"]
 custom_minimum_size = Vector2(412, 45)
 layout_mode = 2
-placeholder_text = "
-"
+max_length = 10
 
 [node name="LastName" type="AspectRatioContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -216,11 +215,10 @@ theme_override_fonts/font = ExtResource("4_ft2fn")
 theme_override_font_sizes/font_size = 30
 text = "Apellido"
 
-[node name="TxtSecondName" type="TextEdit" parent="VBoxContainer/HBoxContainer/LastName/VBoxContainer"]
+[node name="TxtSecondName" type="LineEdit" parent="VBoxContainer/HBoxContainer/LastName/VBoxContainer"]
 custom_minimum_size = Vector2(412, 45)
 layout_mode = 2
-placeholder_text = "
-"
+max_length = 10
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

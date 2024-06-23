@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlnu3ca4sqm1x"]
+[gd_scene load_steps=6 format=3 uid="uid://dlnu3ca4sqm1x"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_18wvq"]
 [ext_resource type="Script" path="res://scripts/menu/actual_profile_button.gd" id="2_p23ak"]
 [ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="3_pbalc"]
+[ext_resource type="Texture2D" uid="uid://clji7qyq0vemt" path="res://assets/profile_images/default/default_profile2.png" id="4_6o3qw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2013e"]
 shader = ExtResource("3_pbalc")
@@ -34,11 +35,15 @@ layout_mode = 2
 texture_filter = 3
 material = SubResource("ShaderMaterial_2013e")
 layout_mode = 2
+texture = ExtResource("4_6o3qw")
 
 [node name="ProfileName" type="Label" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Selecciona un perfilas"
+text = "aaaaaaaaaaaaaaaa"
 clip_text = true
+max_lines_visible = 1
+visible_characters = 15
+visible_ratio = 0.9375
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

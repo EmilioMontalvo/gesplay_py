@@ -6,6 +6,9 @@ extends Node2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var material_green = preload("res://shadres/click/shader_material/shader_material_outline_green.tres")
+var material_red = preload("res://shadres/click/shader_material/shader_material_outline_red.tres")
+
 var draggable = false
 var is_inside_dropable = false
 var body_ref
@@ -60,6 +63,10 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 		body.modulate = Color('#F6EEDE',1)
 		body_ref = body
 		body_ref_temp = body
+		if body.get_type() == type:
+			set_material_outline(material_green)
+		else:
+			set_material_outline(material_red)
 	if body.is_in_group('food'):
 		food_point.emit()
 		body.queue_free()
@@ -70,6 +77,7 @@ func _on_area_2d_body_exited(body):
 		body_ref_temp = null
 		#body.modulate = Color('#F6EEDE',0.7)
 		body.modulate = Color('#' + body.color_hex,1.0)
+		sprite.material = null
 
 func _on_area_2d_mouse_entered():
 	if not GlobalClick.is_dragging:
@@ -84,3 +92,6 @@ func _on_area_2d_mouse_exited():
 func play_animation():
 	animation_player.play("idle")
 	animation_player.get_animation("idle").length = sprite.hframes * 0.2 + 0.2
+
+func set_material_outline(material_new: ShaderMaterial):
+	sprite.material = material_new

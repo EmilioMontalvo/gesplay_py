@@ -10,4 +10,5 @@ func _on_button_pressed():
 		var last_profile = DataSaver.load_profile_by_id(last_profile_id)
 		CurrentProfile.set_data_from_dic(last_profile)
 		CurrentProfile.is_profile_selected = true
+		SavedSettingsLoader.load_saved_settings()
 		MenuManager.load_menu(1)

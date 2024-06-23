@@ -3,7 +3,7 @@ extends Node
 class_name CursorLevel
 
 @onready var win_screen=$CanvasLayer/WinScreen
-@export var next_level=2
+@export var next_level=6
 @export var last=false
 
 # Called when the node enters the scene tree for the first time.

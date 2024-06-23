@@ -4,8 +4,8 @@ extends Control
 @export var scene_home: int
 @export var dialog_text: String = "¿Estas seguro de abandonar el nivel?"
 
-@onready var go_back_button: TextureButton = $ColorRect/GoBack
-@onready var home_button: TextureButton = $ColorRect/Home
+@onready var go_back_button: Button = $ColorRect/GoBack
+@onready var home_button: Button = $ColorRect/Home
 @onready var confirm_dialog_back: ConfirmDialog = $ConfirmationGoBack
 @onready var confirm_dialog_home: ConfirmDialog = $ConfirmationHome
 @onready var current_level_label: Label = $ColorRect/CurrentLevel

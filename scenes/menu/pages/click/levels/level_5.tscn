@@ -62,6 +62,9 @@ scale = Vector2(5, 5)
 position = Vector2(494, 963)
 icon = ExtResource("14_x2kq1")
 
+[node name="Sprite2D" parent="FoodArea" index="1"]
+scale = Vector2(1.5, 1.5)
+
 [node name="DropableArea2" parent="." instance=ExtResource("12_7u7ma")]
 position = Vector2(524, 785)
 type = "frog"
@@ -87,6 +90,9 @@ scale = Vector2(5, 5)
 [node name="FoodArea3" parent="." instance=ExtResource("13_giohv")]
 position = Vector2(938, 964)
 icon = ExtResource("18_fjjaq")
+
+[node name="Sprite2D" parent="FoodArea3" index="1"]
+scale = Vector2(1.5, 1.5)
 
 [node name="DraggbleObject" parent="." instance=ExtResource("10_ghg74")]
 position = Vector2(174, 321)
@@ -117,8 +123,10 @@ texture = ExtResource("15_f6ott")
 [node name="SoundControllerClick" parent="." instance=ExtResource("17_ilcc0")]
 
 [editable path="DropableArea"]
+[editable path="FoodArea"]
 [editable path="DropableArea2"]
 [editable path="DropableArea3"]
+[editable path="FoodArea3"]
 [editable path="DraggbleObject"]
 [editable path="DraggbleObject2"]
 [editable path="DraggbleObject3"]

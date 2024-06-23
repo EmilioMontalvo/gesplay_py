@@ -79,6 +79,18 @@ h_frames = 4
 [node name="Sprite2D" parent="DropableArea3" index="2"]
 scale = Vector2(5, 5)
 
+[node name="FoodArea" parent="." instance=ExtResource("19_uu6sd")]
+position = Vector2(1412, 648)
+icon = ExtResource("20_2gruc")
+
+[node name="FoodArea2" parent="." instance=ExtResource("19_uu6sd")]
+position = Vector2(804, 928)
+icon = ExtResource("21_w6yj0")
+
+[node name="FoodArea3" parent="." instance=ExtResource("19_uu6sd")]
+position = Vector2(768, 564)
+icon = ExtResource("22_qbt5o")
+
 [node name="DraggbleObject" parent="." instance=ExtResource("12_8cwfb")]
 position = Vector2(172, 309)
 icon = ExtResource("9_d7ijp")
@@ -107,18 +119,6 @@ type = "rat"
 scale = Vector2(5, 5)
 texture = ExtResource("17_pkbya")
 hframes = 4
-
-[node name="FoodArea" parent="." instance=ExtResource("19_uu6sd")]
-position = Vector2(1412, 648)
-icon = ExtResource("20_2gruc")
-
-[node name="FoodArea2" parent="." instance=ExtResource("19_uu6sd")]
-position = Vector2(804, 928)
-icon = ExtResource("21_w6yj0")
-
-[node name="FoodArea3" parent="." instance=ExtResource("19_uu6sd")]
-position = Vector2(768, 564)
-icon = ExtResource("22_qbt5o")
 
 [node name="SoundControllerClick" parent="." instance=ExtResource("20_d6sah")]
 

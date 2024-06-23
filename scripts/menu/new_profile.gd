@@ -83,6 +83,7 @@ func _on_acept_pressed():
 		CurrentProfile.reload_data()
 	else:
 		DataSaver.save_profile(get_data_as_json())
+		DataSaver.save_settings(Constants.DEFAULT_SETTINGS, profile_id)
 	if CurrentProfile.is_first_profile:
 		CurrentProfile.is_first_profile = false
 	MenuManager.load_menu(3)

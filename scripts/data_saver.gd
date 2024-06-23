@@ -3,6 +3,7 @@ class_name DataSaver
 const PATH_PROFILE: String = "user://profiles/"
 const PATH_LAST_PROFILE: String = "user://last_profile/"
 const PATH_LAST_PROFILE_FILE: String = "user://last_profile/last_profile_id.save"
+const PATH_SETTINGS: String = "user://settings/"
 
 static func save_profile(profile_data: Dictionary):
 	DirAccess.make_dir_absolute(PATH_PROFILE)
@@ -49,3 +50,16 @@ static func load_last_profile_id() -> String:
 
 static func delete_last_profile_file():
 	return DirAccess.remove_absolute(PATH_LAST_PROFILE_FILE)
+
+static func save_settings(settings: Dictionary,id: String):
+	DirAccess.make_dir_absolute(PATH_SETTINGS)
+	var settings_saver: FileAccess
+	settings_saver = FileAccess.open(PATH_SETTINGS + id +".save", FileAccess.WRITE)
+	var json_string = JSON.stringify(settings)
+	settings_saver.store_line(json_string)
+
+static func load_settings_by_id(id: String) -> Dictionary:
+	DirAccess.make_dir_absolute(PATH_SETTINGS)
+	var file_settings = FileAccess.open(PATH_SETTINGS + id + ".save",FileAccess.READ)
+	var json_string = file_settings.get_line()
+	return JSON.parse_string(json_string)

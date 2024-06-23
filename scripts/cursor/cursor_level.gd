@@ -11,6 +11,7 @@ func _ready():
 	win_screen.next_level=next_level
 	win_screen.last=last
 	$CanvasLayer/LevelHeader.scene_home
+	$CanvasLayer/LevelHeader.set_current_level(next_level-1)
 
 func _on_level_container_won():
 	win_screen.visible=true

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/cursor/cursor_configuration_menu.gd" id="2_mmugt"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
 [ext_resource type="Texture2D" uid="uid://bi4fewspqgsk8" path="res://assets/icons/plus.png" id="4_fwt03"]
-[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="7_01jom"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 [ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
-[ext_resource type="PackedScene" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
+[ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
 [ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
 

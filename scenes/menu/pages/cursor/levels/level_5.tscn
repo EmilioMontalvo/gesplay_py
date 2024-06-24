@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0d51ij2iu4u2"]
+[gd_scene load_steps=7 format=3 uid="uid://b0d51ij2iu4u2"]
 
 [ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_y54ej"]
 [ext_resource type="Texture2D" uid="uid://bld5jjvl2fblo" path="res://assets/cursor_game/background/background_02.png" id="2_jiwcr"]
 [ext_resource type="Texture2D" uid="uid://bqff2dt6t0hsj" path="res://assets/cursor_game/decorations/igloo.png" id="3_jolre"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="3_wwd51"]
 [ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="4_ukrm7"]
+[ext_resource type="AudioStream" uid="uid://dkxu7vfp42t7x" path="res://assets/cursor_game/audio/8. Teardrop Tempo.wav" id="6_qqot1"]
 
 [node name="Level5" type="Node2D"]
 
@@ -124,6 +125,9 @@ position = Vector2(765, 1016.25)
 
 [node name="TextureRect" parent="Level1/level_container" index="13"]
 scale = Vector2(1.2, 1.2)
+
+[node name="AudioStreamPlayer2D" parent="Level1" index="3"]
+stream = ExtResource("6_qqot1")
 
 [editable path="Level1"]
 [editable path="Level1/ParallaxBackground"]

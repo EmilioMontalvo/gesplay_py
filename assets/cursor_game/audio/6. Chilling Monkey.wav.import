@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b05fpj2yywdx3"
+path="res://.godot/imported/6. Chilling Monkey.wav-1fee5ced9265dc6a981824d4955342b6.sample"
+
+[deps]
+
+source_file="res://assets/cursor_game/audio/6. Chilling Monkey.wav"
+dest_files=["res://.godot/imported/6. Chilling Monkey.wav-1fee5ced9265dc6a981824d4955342b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,7 +1,7 @@
 extends GridContainer
 
 @onready var level_scene=preload("res://scenes/menu/pages/cursor/elements/level_button.tscn")
-@export var unlocked_levels=0
+@export var unlocked_levels=CurrentProfile.max_cursor_level
 @export var levelsArray=[
 	[true,"Nivel 1",1,0,"res://assets/cursor_game/levels/icons/level_1.png"],
 	[true,"Nivel 2",2,0,"res://assets/cursor_game/levels/icons/level_2.png"],
@@ -14,15 +14,17 @@ extends GridContainer
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	for x in levelsArray:
 		var instance=level_scene.instantiate()
-		instance.locked=unlocked_levels<0
+		instance.locked=unlocked_levels<1
+		print(instance.locked)
 		instance.level_name=x[1]
 		instance.level=x[2]
 		instance.stars=x[3]
 		instance.texturePath=x[4]
 		add_child(instance)
-		unlocked_levels=-1
+		unlocked_levels=unlocked_levels-1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

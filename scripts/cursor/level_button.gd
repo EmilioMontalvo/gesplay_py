@@ -12,7 +12,14 @@ class_name LevelButton
 @onready var button:TextureButton=$button
 var levels=[
 	preload("res://scenes/menu/pages/cursor/cursor_levels.tscn"),
-	preload("res://scenes/menu/pages/cursor/levels/level_1.tscn")
+	preload("res://scenes/menu/pages/cursor/levels/level_1.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_2.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_3.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_4.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_5.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_6.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_7.tscn"),
+	preload("res://scenes/menu/pages/cursor/levels/level_8.tscn"),
 ]
 
 

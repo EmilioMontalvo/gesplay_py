@@ -22,12 +22,16 @@ func set_time(time):
 
 func _on_visibility_changed():
 	$CountDown._start_countdown()
+	if CurrentProfile.max_cursor_level < next_level:
+		CurrentProfile.max_cursor_level=next_level
+		print(CurrentProfile.max_cursor_level)
+		CurrentProfile.save_profile_progress()
 
 
 func _on_forward_button_pressed():
 	if not last:
 		var next_level_path="res://scenes/menu/pages/cursor/levels/level_"+str(next_level)+".tscn"
-		MenuManager.change_to_file(next_level_path)
+		MenuManager.change_to_file(next_level_path)		
 	else:
 		var next_level_path="res://scenes/menu/pages/cursor/levels/level_1.tscn"
 		MenuManager.change_to_file(next_level_path)

@@ -44,3 +44,20 @@ func set_from_json(json):
 	general_sound = json.get("general_sound")
 	music = json.get("music")
 	sfx = json.get("sfx")
+	apply_configs()
+
+func apply_configs():
+	set_window_mode()
+	set_sound_setting()
+
+func set_window_mode():
+	match window_mode:
+		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func set_sound_setting():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(general_sound))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),linear_to_db(music))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),linear_to_db(sfx))

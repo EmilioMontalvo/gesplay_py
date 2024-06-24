@@ -60,10 +60,16 @@ animations = [{
 [node name="Level6" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_txesd")]
-next_level = 6
+next_level = 7
+
+[node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(716, 422)
+
+[node name="ParallaxLayer2" parent="Level1/ParallaxBackground" index="1"]
+position = Vector2(-30, -527.575)
 
 [node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer3" index="0"]
-position = Vector2(721, 783.5)
+position = Vector2(721, 742.7)
 scale = Vector2(0.285937, 0.160156)
 texture = ExtResource("2_bkxcf")
 

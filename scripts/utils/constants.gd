@@ -4,9 +4,9 @@ class_name Constants
 
 const DEFAULT_SETTINGS = {
 	"window_mode": 0,
-	"general_sound": 100,
-	"music": 100,
-	"sfx": 100,
+	"general_sound": 1,
+	"music": 1,
+	"sfx": 1,
 	"camera_id": 0,
 	"gesture_index": 0,
 	"spd_up": 40,

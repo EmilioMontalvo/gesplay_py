@@ -6,13 +6,13 @@
 [ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_yju7e"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="4_cjl87"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="4_docx4"]
-[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="5_h8rtx"]
 [ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_7osy7"]
 [ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="6_jduia"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_5lfnl"]
 [ext_resource type="ButtonGroup" uid="uid://bpf1mqyux4doj" path="res://scripts/click_game/utils/gesture_button_group.tres" id="9_3380y"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="10_jxrtb"]
 [ext_resource type="Texture2D" uid="uid://b7nlel0kcasb3" path="res://assets/gesture_sprites/Nip_Sprite.png" id="13_wukka"]
+[ext_resource type="PackedScene" uid="uid://ctvitji3nadc7" path="res://scenes/menu/pages/click/levels/level_test.tscn" id="14_n2ga4"]
 [ext_resource type="Texture2D" uid="uid://dqb7pa0jxesmp" path="res://assets/gesture_sprites/Catch_Sprite.png" id="14_q2sa2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my38k"]
@@ -2587,27 +2587,6 @@ script = ExtResource("2_t8nng")
 [node name="ColorRect" parent="." instance=ExtResource("2_3p8tm")]
 layout_mode = 0
 
-[node name="Panel" parent="ColorRect" instance=ExtResource("4_cjl87")]
-layout_mode = 0
-offset_left = 508.0
-offset_top = 218.0
-offset_right = 1380.0
-offset_bottom = 889.0
-
-[node name="Camera" parent="ColorRect/Panel" instance=ExtResource("5_h8rtx")]
-z_index = 1
-layout_mode = 0
-offset_left = 5.0
-offset_top = 381.0
-offset_right = 396.0
-offset_bottom = 665.0
-
-[node name="Node2D" type="Node2D" parent="ColorRect/Panel"]
-position = Vector2(-508, -218)
-
-[node name="Line2D" type="Line2D" parent="ColorRect/Panel/Node2D"]
-script = ExtResource("6_jduia")
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -2700,8 +2679,31 @@ sprite_frames = SubResource("SpriteFrames_bebnd")
 autoplay = "default"
 frame_progress = 0.641396
 
-[connection signal="mouse_entered" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/Panel" to="ColorRect/Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
+[node name="Panel" parent="." instance=ExtResource("4_cjl87")]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_left = 508.0
+offset_top = 218.0
+offset_right = 1380.0
+offset_bottom = 889.0
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+anchors_preset = 0
+offset_left = 510.0
+offset_top = 220.0
+offset_right = 1382.0
+offset_bottom = 891.0
+
+[node name="Node2D" type="Node2D" parent="Control"]
+position = Vector2(-508, -218)
+
+[node name="Line2D" type="Line2D" parent="Control/Node2D"]
+script = ExtResource("6_jduia")
+
+[node name="LevelTest" parent="Control" instance=ExtResource("14_n2ga4")]
+
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]
 

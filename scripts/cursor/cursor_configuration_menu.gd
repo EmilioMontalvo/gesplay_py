@@ -37,7 +37,9 @@ func send_new_config(config:CursorConfig):
 
 
 func _on_acept_button_down():
-	CursorConf.set_from_json(temporalCursorConfig.get_as_json())	
+	CursorConf.set_from_json(temporalCursorConfig.get_as_json())
+	CursorConf.save_config()
+	CursorIconConf.save_config()
 	send_new_config(CursorConf)
 	MenuManager.load_menu(4)
 

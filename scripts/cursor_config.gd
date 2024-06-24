@@ -51,3 +51,6 @@ func get_as_message(instruction:String):
 func send_update_to_upd():
 	UdPServer.send_message(get_as_message("update_cursor_config"))
 
+func save_config():
+	DataSaver.save_settings(get_as_json(),CurrentProfile.id)
+

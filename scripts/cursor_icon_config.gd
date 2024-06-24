@@ -43,3 +43,8 @@ func get_as_message(instruction: String):
 
 func send_update_to_upd():
 	UdPServer.send_message(get_as_message("update_cursor_icon_config"))
+
+func save_config():
+	var json_to_save=get_as_json()
+	json_to_save["color"]=[color.r,color.g,color.b,color.a]
+	DataSaver.save_settings(json_to_save,CurrentProfile.id)

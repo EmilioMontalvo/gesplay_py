@@ -11,7 +11,7 @@ func _ready():
 	$TicksSlider.set_value(temporalCursorConfig.tick_interval_ms)
 	$VisualHelp/SizeSlider.set_value(temporalCursorIconConfig.size)
 	$VisualHelp/OpacitySlider.set_value(temporalCursorIconConfig.opacity)
-	$VisualHelp/ColorPickerButton.set_pick_color(temporalCursorIconConfig.color)
+	$VisualHelp/ColorPickerButton.set_pick_color(Color(temporalCursorIconConfig.color[0],temporalCursorIconConfig.color[1],temporalCursorIconConfig.color[2],temporalCursorIconConfig.color[3]))
 	var picker:ColorPicker=$VisualHelp/ColorPickerButton.get_picker()
 	picker.sampler_visible=false
 	picker.color_modes_visible=false

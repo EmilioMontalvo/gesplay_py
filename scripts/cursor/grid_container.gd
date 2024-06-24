@@ -18,7 +18,6 @@ func _ready():
 	for x in levelsArray:
 		var instance=level_scene.instantiate()
 		instance.locked=unlocked_levels<1
-		print(instance.locked)
 		instance.level_name=x[1]
 		instance.level=x[2]
 		instance.stars=x[3]

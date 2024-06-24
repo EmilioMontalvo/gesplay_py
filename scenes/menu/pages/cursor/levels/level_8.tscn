@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctwq6igmvkbml"]
+
+[ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_qhsgu"]
+[ext_resource type="Texture2D" uid="uid://bld5jjvl2fblo" path="res://assets/cursor_game/background/background_02.png" id="2_b4dp2"]
+[ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="3_o3r8b"]
+[ext_resource type="Texture2D" uid="uid://bqff2dt6t0hsj" path="res://assets/cursor_game/decorations/igloo.png" id="4_xb0mi"]
+[ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="5_40ria"]
+[ext_resource type="Texture2D" uid="uid://by0twhittd6yr" path="res://assets/cursor_game/decorations/top_hat.png" id="6_65qln"]
+[ext_resource type="Texture2D" uid="uid://cb0jip2v3lre" path="res://assets/cursor_game/decorations/carrot.png" id="7_4wrsh"]
+[ext_resource type="Texture2D" uid="uid://xhpyb47oaofb" path="res://assets/cursor_game/decorations/branch.png" id="8_svhxn"]
+
+[node name="Level8" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_qhsgu")]
+next_level = 9
+last = true
+
+[node name="ParallaxBackground" parent="Level1" index="0"]
+offset = Vector2(0, 444.21)
+transform = Transform2D(1, 0, 0, 1, 0, 444.21)
+
+[node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2(721, 641.5)
+scale = Vector2(0.285937, 0.160156)
+texture = ExtResource("2_b4dp2")
+
+[node name="level_container" parent="Level1" index="1"]
+scale = Vector2(0.8, 0.8)
+terrain_type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container" index="0"]
+position = Vector2(6.25, 60)
+rotation = 0.0156956
+polygon = PackedVector2Array(-2.22667, 815.135, -6.28834, 1308.75, 1825.09, 1321.25, 1822.83, 800.495, 1757.32, 805.265, 1760.6, 693.95, 1750.19, 594.1, 1695.07, 538.7, 1575.04, 526.816, 1439.06, 542.683, 1399.97, 623.301, 1367.05, 695.072, 1278.73, 693.945, 1281.18, 768.917, 1361.89, 802.259, 756.988, 804.574, 875.033, 691.474, 877.312, 596.427, 871.826, 488.999, 796.43, 427.665, 717.825, 402.634, 546.451, 414.051, 443.09, 578.179, 476.519, 697.674, 600.649, 809.507)
+
+[node name="StepOn" parent="Level1/level_container" index="2"]
+modulate = Color(4.142, 2.959, 6.509, 1)
+position = Vector2(447.5, 327.5)
+
+[node name="Terrain" parent="Level1/level_container/TerrainContainer" index="0"]
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain" index="0"]
+position = Vector2(44.5, 183)
+polygon = PackedVector2Array(643.75, 201.25, 500, 202.5, 202.5, 171.25, 173.75, 162.5, 130, 187.5, 196.25, 321.25, 303.75, 393.75, 378.75, 426.25, 418.75, 416.25, 408.75, 381.25, 441.25, 352.5, 488.75, 267.5, 525, 355, 568.75, 373.75, 558.75, 421.25, 630, 387.5, 705, 408.75, 757.5, 391.25, 873.75, 335, 885, 246.25, 860, 190)
+
+[node name="Terrain2" parent="Level1/level_container/TerrainContainer" index="1"]
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain2" index="0"]
+position = Vector2(72.5, -59)
+polygon = PackedVector2Array(1056.25, 482.5, 1117.5, 482.5, 1127.5, 416.25, 1103.75, 320, 1077.5, 337.5, 1036.25, 322.5, 1017.5, 333.75)
+
+[node name="Terrain3" parent="Level1/level_container/TerrainContainer" index="2" instance=ExtResource("3_o3r8b")]
+position = Vector2(470, 614)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="0"]
+position = Vector2(432.5, 313.5)
+polygon = PackedVector2Array(842.5, 116.25, 818.75, -93.75, 783.75, -51.25, 742.5, -52.5, 766.25, 42.4999, 757.5, 112.5)
+
+[node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="1"]
+visible = true
+
+[node name="Terrain4" parent="Level1/level_container/TerrainContainer" index="3" instance=ExtResource("3_o3r8b")]
+position = Vector2(470, 614)
+type = "snow"
+
+[node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain4" index="0"]
+position = Vector2(72.5, -59)
+polygon = PackedVector2Array(15, 367.5, 82.5, 527.5, 290, 686.25, 385, 710, 496.25, 818.75, 668.75, 702.5, 910, 542.5, 977.5, 456.25, 987.5, 340, 933.75, 378.75, 913.75, 352.5, 880, 367.5, 865, 461.25, 698.75, 531.25, 623.75, 508.75, 555, 543.75, 616.25, 560, 591.25, 686.25, 350, 672.5, 410, 542.5, 375, 551.25, 296.25, 518.75, 192.5, 446.25, 125, 312.5, 90, 295, 71.25, 308.75, 41.25, 280)
+
+[node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain4" index="1"]
+visible = true
+
+[node name="Polygon2D" parent="Level1/level_container/HardTerrainContainer/HardTerrain" index="0"]
+position = Vector2(-1.5, -289.25)
+polygon = PackedVector2Array(318.75, 942.5, -2.5, 946.25, -4.25, 1302.75, 1815.75, 1302.75, 1802.5, 901.25, 1762.5, 905, 1762.5, 780, 1761.25, 682.5, 1707.5, 627.5, 1621.25, 600, 1516.25, 596.25, 1415, 613.75, 1360, 676.25, 1352.5, 780, 1260, 780, 1260, 897.5, 757.5, 895, 787.5, 968.75, 855, 1043.75, 923.75, 1031.25, 981.25, 1050, 1026.25, 1141.25, 1060, 1053.75, 1142.5, 1028.75, 1273.75, 1018.75, 1330, 968.75, 1350, 896.25, 1397.5, 900, 1398.75, 867.5, 1287.5, 867.5, 1287.5, 812.5, 1380.59, 810.476, 1393.75, 805, 1402.74, 789.233, 1403.75, 702.5, 1450, 653.75, 1522.5, 645, 1612.5, 648.75, 1685, 671.25, 1715, 722.5, 1715, 791.25, 1716.25, 870, 1711.25, 907.5, 1743.75, 1081.25, 1792.5, 1137.5, 1770, 1257.5, 1693.75, 1275, 1605, 1277.5, 1511.25, 1275, 1462.5, 1231.25, 1462.5, 1143.75, 1516.25, 1082.5, 1616.25, 1050, 1611.51, 1001.76, 1602.5, 910, 1562.5, 886.25, 1517.5, 910, 1517.5, 983.75, 1456.25, 1037.5, 1428.75, 1131.25, 1331.25, 1163.75, 1228.75, 1172.5, 1153.75, 1185, 1116.25, 1241.25, 1031.25, 1267.5, 953.75, 1250, 897.5, 1191.25, 847.5, 1162.5, 811.25, 1138.75, 720, 1106.25, 648.75, 1057.5, 612.5, 976.25, 582.5, 857.5, 493.75, 775, 472.5, 637.5, 522.5, 548.75, 620, 517.5, 707.5, 513.75, 786.25, 531.25, 850, 636.25, 835, 801.25, 732.5, 862.5, 757.5, 895, 895, 823.75, 913.75, 632.5, 863.75, 512.5, 780, 481.25, 832.5, 436.25, 846.25, 363.75, 835, 300, 806.25, 257.5, 726.25, 233.75, 603.75, 243.75, 542.5, 290, 527.5, 358.75, 547.5, 425, 583.75, 468.75, 501.25, 483.75, 441.25, 551.25, 411.25, 661.25, 446.25, 816.25, 555, 895, -5, 895, -2.5, 945)
+
+[node name="TileMap" parent="Level1/level_container/HardTerrainContainer" index="1"]
+modulate = Color(1, 1, 2.958, 1)
+position = Vector2(-5, 616.25)
+layer_0/tile_data = PackedInt32Array(196608, 65537, 0, 196609, 65537, 0, 196610, 65537, 0, 196611, 65537, 0, 196612, 65537, 0, 196613, 65537, 0, 196614, 65537, 0, 196618, 65537, 0, 196619, 65537, 0, 196620, 65537, 0, 196621, 65537, 0, 196622, 65537, 0, 196623, 65537, 0, 196630, 65537, 0)
+
+[node name="Well" parent="Level1/level_container/HardTerrainContainer" index="2"]
+position = Vector2(2230, 270)
+scale = Vector2(0.941, 0.844)
+texture = ExtResource("4_xb0mi")
+
+[node name="Point" parent="Level1/level_container/PointsContainer" index="0"]
+position = Vector2(1022.5, 1191.25)
+
+[node name="Shovel" parent="Level1/level_container" index="7"]
+position = Vector2(1538.75, 755)
+
+[node name="Duck" parent="Level1/level_container" index="8"]
+position = Vector2(1646.25, 1176.25)
+animated_sprite = "penguin"
+
+[node name="Jail" parent="Level1/level_container" index="9"]
+position = Vector2(1641.25, 1157.5)
+
+[node name="LinesContainer" parent="Level1/level_container" index="10"]
+position = Vector2(841.25, 1248.75)
+
+[node name="Line2D2" parent="Level1/level_container/LinesContainer" index="0"]
+position = Vector2(367.5, -1075)
+points = PackedVector2Array(133.75, 703.75, 183.75, 707.039, 183.75, 673.75, 81.2499, 676.25, 79.9999, 618.75, 185, 611.25, 188.75, 507.5, 235, 460, 318.75, 451.25, 377.5, 453.75, 473.75, 472.5, 506.25, 526.25, 507.5, 648.75, 507.5, 763.75, 523.75, 867.5)
+
+[node name="Line2D" parent="Level1/level_container/LinesContainer" index="1"]
+position = Vector2(-568.75, -1115)
+points = PackedVector2Array(303.75, 702.5, 228.75, 633.75, 203.75, 553.75, 203, 492, 231.25, 422.5, 276.25, 377.5, 345, 355, 463.75, 356.25, 518.75, 391.25, 560, 455, 571.25, 500, 568.75, 577.5, 560, 647.5, 465, 703.75)
+
+[node name="Line2D3" parent="Level1/level_container/LinesContainer" index="2"]
+position = Vector2(-141.25, -602.5)
+points = PackedVector2Array(127.5, 490, 192.5, 540, 236.25, 577.5, 333.75, 600, 415, 560, 447.5, 526.25)
+
+[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
+position = Vector2(775, 293.75)
+points = PackedVector2Array(-119.999, 493.75, -172.499, 447.5, -164.78, 382.118, -149.999, 300, -51.2493, 281.25, 96.2507, 287.5, 162.501, 331.25, 161.251, 415, 108.751, 485, 7.50128, 515, 28.7516, 651.25)
+
+[node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
+position = Vector2(2476.25, 1237.5)
+points = PackedVector2Array(-1825, -471.25, -1803.75, -291.25, -1607.5, -141.25, -1317.5, -141.25, -1151.25, -176.25, -1050, -268.75, -817.5, -268.75)
+type = "snow"
+
+[node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
+points = PackedVector2Array(-272.75, 291)
+type = "snow"
+
+[node name="Key" parent="Level1/level_container/KeyContainer" index="0"]
+position = Vector2(2133.75, 752.5)
+
+[node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("5_40ria")]
+position = Vector2(657.5, 643.75)
+
+[node name="TextureRect" parent="Level1/level_container" index="13"]
+scale = Vector2(1.2, 1.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level1"]
+position = Vector2(552, 134)
+scale = Vector2(0.755994, 0.881582)
+texture = ExtResource("6_65qln")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level1/Sprite2D"]
+position = Vector2(43.6511, 204.178)
+rotation = -2.22002
+scale = Vector2(0.349774, 0.230545)
+texture = ExtResource("7_4wrsh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Level1/Sprite2D"]
+position = Vector2(328.045, 285.85)
+scale = Vector2(0.411425, 0.213794)
+texture = ExtResource("8_svhxn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Level1/Sprite2D"]
+position = Vector2(-383.601, 281.313)
+scale = Vector2(0.411425, 0.213794)
+texture = ExtResource("8_svhxn")
+flip_h = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Level1/Sprite2D"]
+position = Vector2(-17.1959, -4.5373)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-100.53, 147.462, -103.175, 163.343, -85.9795, 181.492, -59.5243, 180.358, -46.2966, 165.611, -43.6511, 149.731, -58.2015, 133.85, -83.334, 132.716)
+
+[node name="Polygon2D" type="Polygon2D" parent="Level1/Sprite2D/Polygon2D"]
+position = Vector2(177.25, 4.5373)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-100.53, 147.462, -103.175, 163.343, -85.9795, 181.492, -59.5243, 180.358, -46.2966, 165.611, -43.6511, 149.731, -58.2015, 133.85, -83.334, 132.716)
+
+[editable path="Level1"]
+[editable path="Level1/ParallaxBackground"]
+[editable path="Level1/level_container"]
+[editable path="Level1/level_container/TerrainContainer/Terrain"]
+[editable path="Level1/level_container/TerrainContainer/Terrain2"]
+[editable path="Level1/level_container/TerrainContainer/Terrain3"]
+[editable path="Level1/level_container/TerrainContainer/Terrain4"]
+[editable path="Level1/level_container/HardTerrainContainer/HardTerrain"]

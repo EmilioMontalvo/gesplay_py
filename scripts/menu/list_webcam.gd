@@ -23,14 +23,14 @@ func _on_accept_button_pressed():
 
 func _on_cancel_button_pressed():
 	var message=Message.new("update_camera_config", {"camera_id":GlobalConf.camera_id})
-	#UdPServer.send_message(message)
+	UdPServer.send_message(message)
 	visible=false
 
 
 func _on_option_button_item_selected(index):
 	camera_id=index
 	var message=Message.new("update_camera_config", {"camera_id":index})
-	#UdPServer.send_message(message)
+	UdPServer.send_message(message)
 
 
 

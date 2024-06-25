@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhjupdts1dg3q"]
+[gd_scene load_steps=23 format=3 uid="uid://bhjupdts1dg3q"]
 
 [ext_resource type="Script" path="res://scripts/cursor/level_container.gd" id="1_t7ag8"]
 [ext_resource type="PackedScene" uid="uid://rfr22tb2d23q" path="res://scenes/menu/pages/cursor/elements/terrain.tscn" id="2_7lave"]
 [ext_resource type="Texture2D" uid="uid://bdrma2ebstdk3" path="res://assets/cursor_game/textures/dirt_texture.png" id="3_2t78l"]
 [ext_resource type="Texture2D" uid="uid://c0s7dag1nf71t" path="res://assets/cursor_game/tilemap/Terrain (16x16).png" id="3_fbptc"]
 [ext_resource type="Texture2D" uid="uid://5awuj8m5kixh" path="res://assets/cursor_game/tilemap/Grass.png" id="4_a1ok2"]
+[ext_resource type="PackedScene" uid="uid://boaswveknrduy" path="res://scenes/menu/pages/cursor/elements/guide_arrows.tscn" id="4_fpm5q"]
 [ext_resource type="Texture2D" uid="uid://comwkk8su7b1r" path="res://assets/cursor_game/tools/weel.png" id="5_bxqtj"]
 [ext_resource type="PackedScene" uid="uid://d04yhq1okfugp" path="res://scenes/menu/pages/cursor/elements/point.tscn" id="7_davyq"]
 [ext_resource type="PackedScene" uid="uid://hexa172hxqv2" path="res://scenes/menu/pages/cursor/elements/hard_terrain.tscn" id="7_n25we"]
@@ -334,6 +335,10 @@ points = PackedVector2Array(-153, 131)
 
 [node name="Key" parent="KeyContainer" instance=ExtResource("14_1pata")]
 position = Vector2(573, 784)
+
+[node name="Guides" type="Node2D" parent="."]
+
+[node name="ShovelArrow" parent="Guides" instance=ExtResource("4_fpm5q")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -48.0

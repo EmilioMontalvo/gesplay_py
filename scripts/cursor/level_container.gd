@@ -24,7 +24,7 @@ func _ready():
 		
 		for x in lines:
 			x.texture=texture_snow
-
+	$Guides/ShovelArrow.set_target(shovel_point/scale)
 
 
 func _on_shovel_touched(body):	

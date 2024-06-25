@@ -134,7 +134,7 @@ position = Vector2(2133.75, 752.5)
 [node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("5_40ria")]
 position = Vector2(657.5, 643.75)
 
-[node name="TextureRect" parent="Level1/level_container" index="13"]
+[node name="TextureRect" parent="Level1/level_container" index="14"]
 scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1"]

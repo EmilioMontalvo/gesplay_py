@@ -12,12 +12,13 @@ func _ready():
 	for x in cameras_dic.keys():
 		option_button.add_item(cameras_dic[x])
 	
-	#if str(camera_id) in cameras_dic.keys():
-		#option_button.select(camera_id)
+	if str(camera_id) in cameras_dic.keys():
+		option_button.selected=camera_id
 
 
 func _on_accept_button_pressed():
 	GlobalConf.camera_id=camera_id
+	GlobalConf.save_configs()
 	visible=false
 
 

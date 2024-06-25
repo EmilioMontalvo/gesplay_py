@@ -13,8 +13,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -997.0
-offset_bottom = -462.0
+offset_right = -861.0
+offset_bottom = -379.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6m4ln")
@@ -27,15 +27,13 @@ offset_bottom = 646.0
 
 [node name="InGameCamera" parent="Panel" instance=ExtResource("3_kx2r1")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -251.5
-offset_right = -215.0
-offset_bottom = -251.5
+offset_left = 76.0
+offset_top = 73.0
+offset_right = -502.0
+offset_bottom = -573.0
+
+[node name="Camera" parent="Panel/InGameCamera" index="0"]
+is_aux = true
 
 [node name="OptionButton" type="OptionButton" parent="Panel"]
 layout_mode = 0
@@ -44,6 +42,7 @@ offset_top = 459.0
 offset_right = 506.0
 offset_bottom = 511.0
 theme = ExtResource("4_3lpbx")
+alignment = 1
 
 [node name="AcceptButton" type="Button" parent="Panel"]
 layout_mode = 1
@@ -80,6 +79,7 @@ theme_override_styles/pressed = ExtResource("6_dxk73")
 text = "Cancelar"
 
 [node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
 offset_left = 509.0
 offset_top = 28.0
 offset_right = 549.0
@@ -96,6 +96,10 @@ offset_right = 393.0
 offset_bottom = 453.0
 text = "Seleccionar Webcam"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="Panel/CancelButton" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="Panel/TextureButton" to="." method="_on_cancel_button_pressed"]
+
+[editable path="Panel/InGameCamera"]

@@ -28,6 +28,7 @@ ClickConf="*res://scripts/click_game/config/click_config.gd"
 GlobalConf="*res://scripts/global_config.gd"
 CurrentProfile="*res://scripts/current_profile.gd"
 CursorIconConf="*res://scripts/cursor_icon_config.gd"
+CameraList="*res://scripts/camera_list.gd"
 
 [display]
 

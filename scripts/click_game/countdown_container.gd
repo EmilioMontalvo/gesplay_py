@@ -18,4 +18,3 @@ func _process(delta):
 	
 func _on_timer_timeout():
 	timeout_level.emit()
-	print('timeout')

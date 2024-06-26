@@ -1,13 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=22 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_configuration_menu.gd" id="2_mmugt"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
 [ext_resource type="Texture2D" uid="uid://bi4fewspqgsk8" path="res://assets/icons/plus.png" id="4_fwt03"]
-[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
-[ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="7_01jom"]
 [ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="7_qsrdo"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="8_smhg0"]
@@ -15,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 [ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
-[ext_resource type="PackedScene" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
+[ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
 [ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
+[ext_resource type="Script" path="res://scenes/menu/components/mini_game_container.gd" id="18_0y1jn"]
+[ext_resource type="PackedScene" uid="uid://7l685bky3cj7" path="res://scenes/menu/pages/cursor/levels/balloon_minigame.tscn" id="19_ny7ot"]
+[ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="19_w4v5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0sr"]
 
@@ -67,14 +69,6 @@ offset_left = 528.0
 offset_top = 218.0
 offset_right = 1380.0
 offset_bottom = 889.0
-
-[node name="Camera" parent="Panel" instance=ExtResource("6_t8p8r")]
-z_index = 1
-layout_mode = 0
-offset_left = 5.0
-offset_top = 381.0
-offset_right = 396.0
-offset_bottom = 665.0
 
 [node name="Node2D" type="Node2D" parent="Panel"]
 position = Vector2(-508, -218)
@@ -366,6 +360,33 @@ offset_right = 289.0
 offset_bottom = 565.0
 button_pressed = true
 
+[node name="MiniGameContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 222.0
+offset_right = 1375.0
+offset_bottom = 884.0
+stretch = true
+script = ExtResource("18_0y1jn")
+
+[node name="SubViewport" type="SubViewport" parent="MiniGameContainer"]
+handle_input_locally = false
+size = Vector2i(841, 662)
+render_target_update_mode = 4
+
+[node name="InGameCamera" parent="MiniGameContainer/SubViewport" instance=ExtResource("19_w4v5d")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = 0.175
+offset_top = 6.62
+offset_right = 0.175
+offset_bottom = 6.62
+grow_horizontal = 1
+
+[node name="BalloonMinigame" parent="MiniGameContainer/SubViewport" instance=ExtResource("19_ny7ot")]
+
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
 [connection signal="button_down" from="AceptCancel/Acept" to="." method="_on_acept_button_down"]
@@ -377,6 +398,7 @@ button_pressed = true
 [connection signal="value_changed" from="VisualHelp/OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
 [connection signal="color_changed" from="VisualHelp/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="gui_input" from="MiniGameContainer" to="MiniGameContainer" method="_on_gui_input"]
 
 [editable path="AceptCancel"]
 [editable path="VelocitySlider"]

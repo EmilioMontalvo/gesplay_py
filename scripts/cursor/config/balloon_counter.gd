@@ -7,7 +7,8 @@ func _ready():
 
 func add_one():
 	value=value+1
-	set_value(value)
+	if value<999:
+		set_value(value)
 
 func set_value(new_value):
 	value=new_value

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ljf6h2krs2bt"]
+[gd_scene load_steps=12 format=3 uid="uid://ljf6h2krs2bt"]
 
 [ext_resource type="Script" path="res://scripts/menu/level_header.gd" id="1_0sg0q"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_4hgpf"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_rjlat"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="4_myfvp"]
 [ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="6_h0dm8"]
+[ext_resource type="Texture2D" uid="uid://h84oyoymvu8d" path="res://assets/cursor_game/levels/icons/level_1.png" id="7_7y1cv"]
+[ext_resource type="Texture2D" uid="uid://bjl06j8mykbuq" path="res://assets/buttons/icons/cursor_game_icon.png" id="8_6oi0k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sj31r"]
 line_spacing = 5.0
@@ -78,6 +80,19 @@ anchor_right = 1.0
 offset_left = -69.0
 offset_right = -19.0
 grow_horizontal = 0
+guide_data = [{
+"image": ExtResource("7_7y1cv"),
+"text": "This is a guide text1"
+}, {
+"image": ExtResource("8_6oi0k"),
+"text": "This is a guide text2"
+}, {
+"image": ExtResource("7_7y1cv"),
+"text": "This is a guide text3"
+}, {
+"image": ExtResource("7_7y1cv"),
+"text": "This is a guide text4"
+}]
 
 [node name="ButtonProfile" parent="ColorRect" instance=ExtResource("4_myfvp")]
 layout_mode = 0

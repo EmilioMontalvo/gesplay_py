@@ -139,10 +139,17 @@ scale = Vector2(1, 1.01264)
 
 [node name="HelpButton" parent="." instance=ExtResource("7_7h5t8")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1339.0
 offset_top = 71.0
 offset_right = 1389.0
 offset_bottom = 121.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Home" parent="." instance=ExtResource("8_lu1k0")]
 layout_mode = 0

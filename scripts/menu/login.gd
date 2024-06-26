@@ -7,6 +7,9 @@ extends Node2D
 @onready var login_guest_button = $CanvasLayer/Control/LoginGuest
 @onready var no_internet_message = $CanvasLayer/Control/NoInternetMessage
 @onready var no_internet_animation = $NoConnectionAnimation
+@onready var user_lbl = $CanvasLayer/Control/UserLbl
+@onready var password_lbl = $CanvasLayer/Control/PasswordLbl
+@onready var panel = $CanvasLayer/Control/Panel
 
 var http_request: HTTPRequest
 
@@ -34,16 +37,13 @@ func _on_button_pressed():
 		MenuManager.load_menu(1)
 
 func set_invite_mode():
-	user_input.editable = false
-	password_input.editable = false
+	user_input.queue_free()
+	password_input.queue_free()
 	register_link.queue_free()
 	login_button.queue_free()
+	user_lbl.queue_free()
+	password_lbl.queue_free()
+	panel.size.y = 179
 	login_guest_button.visible = true
 	no_internet_message.visible = true
 	no_internet_animation.visible = true
-	#var invite_button = Button.new()
-	#invite_button.text = "Ingresa como invitado"
-	#invite_button.global_position = login_button.global_position
-	#invite_button.pressed.connect(_on_button_pressed)
-	#add_child(invite_button)
-

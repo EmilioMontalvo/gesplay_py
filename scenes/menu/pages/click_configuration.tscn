@@ -1,4 +1,4 @@
-[gd_scene load_steps=379 format=3 uid="uid://slim1xm70p63"]
+[gd_scene load_steps=380 format=3 uid="uid://slim1xm70p63"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mo2un"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_3p8tm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7nlel0kcasb3" path="res://assets/gesture_sprites/Nip_Sprite.png" id="13_wukka"]
 [ext_resource type="PackedScene" uid="uid://ctvitji3nadc7" path="res://scenes/menu/pages/click/levels/level_test.tscn" id="14_n2ga4"]
 [ext_resource type="Texture2D" uid="uid://dqb7pa0jxesmp" path="res://assets/gesture_sprites/Catch_Sprite.png" id="14_q2sa2"]
+[ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="15_kitbb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my38k"]
 bg_color = Color(0.956863, 0.803922, 0.0431373, 1)
@@ -2695,6 +2696,14 @@ script = ExtResource("6_jduia")
 
 [node name="LevelTest" parent="Panel" instance=ExtResource("14_n2ga4")]
 position = Vector2(2, 2)
+
+[node name="HelpButtonMenu" parent="." instance=ExtResource("15_kitbb")]
+layout_mode = 1
+offset_left = 154.0
+offset_top = -362.0
+offset_right = 204.0
+offset_bottom = -312.0
+text_guide = "El gesto que selecciones sera el; gesto que debas realizar para que se realice el click en la aplicación."
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]

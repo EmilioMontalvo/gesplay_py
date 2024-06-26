@@ -18,8 +18,10 @@ script = ExtResource("1_ievus")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -263.0
+offset_top = -255.0
+offset_right = 240.0
+offset_bottom = 228.0
 theme = ExtResource("1_jdc3f")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]

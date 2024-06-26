@@ -4,11 +4,13 @@ extends Node2D
 @onready var destructionPoligon=$Shovel.get_destruction_polygon()
 @onready var points=$CanvasLayer/Points
 @onready var timer=$CanvasLayer/Time
+@onready var helpArrow=$Guides/ShovelArrow
 
 @onready var character_sprite=preload("res://assets/cursor_game/ducky_3_spritesheet.png")
 @export var keys=1
 
 var shovel_point
+
 
 @export var terrain_type="dirt"
 
@@ -24,7 +26,7 @@ func _ready():
 		
 		for x in lines:
 			x.texture=texture_snow
-	$Guides/ShovelArrow.set_target(shovel_point/scale)
+	helpArrow.set_target(shovel_point/scale-position)
 
 
 func _on_shovel_touched(body):	
@@ -74,6 +76,7 @@ func get_points_from(body):
 
 func _on_shovel_has_been_grabbed():
 	points.add_points(shovel.grab_points)
+	helpArrow.visible=false
 
 func get_points():
 	return points.actualPoints

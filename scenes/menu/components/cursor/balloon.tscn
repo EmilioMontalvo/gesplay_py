@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://blt8x428s5me1"]
+
+[ext_resource type="Texture2D" uid="uid://bsp3y82ek3xyx" path="res://assets/cursor_game/tools/balloon.png" id="1_47bqe"]
+[ext_resource type="Script" path="res://scripts/cursor/config/balloon.gd" id="1_n6mbj"]
+[ext_resource type="AudioStream" uid="uid://d0uscd42r8yn2" path="res://assets/cursor_game/audio/soft-balloon-pop-88692.mp3" id="3_u37sv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyw74"]
+atlas = ExtResource("1_47bqe")
+region = Rect2(172, 90, 86, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoa58"]
+atlas = ExtResource("1_47bqe")
+region = Rect2(258, 90, 86, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y07vv"]
+atlas = ExtResource("1_47bqe")
+region = Rect2(344, 90, 86, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ics"]
+atlas = ExtResource("1_47bqe")
+region = Rect2(430, 90, 86, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hbl5"]
+atlas = ExtResource("1_47bqe")
+region = Rect2(344, 0, 86, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsr5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyw74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoa58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y07vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ics")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hbl5")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h26cr"]
+radius = 30.0
+height = 66.0
+
+[node name="Balloon" type="Node2D"]
+script = ExtResource("1_n6mbj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rsr5p")
+animation = &"pop"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_h26cr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u37sv")
+volume_db = 5.0
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

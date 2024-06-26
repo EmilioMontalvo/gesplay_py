@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cmpht74onoe3b"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://cmpht74onoe3b"]
 
 [ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_y85is"]
 [ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="2_g21tc"]
@@ -8,6 +8,39 @@
 [ext_resource type="Texture2D" uid="uid://8xec03d3y1yv" path="res://assets/buttons/icons/comboboxArrow.png" id="6_y83o4"]
 [ext_resource type="StyleBox" uid="uid://bhduf2n1cbt6y" path="res://assets/buttons/resources/style_box_flat_accept_button_hover.tres" id="7_0lyfp"]
 [ext_resource type="Texture2D" uid="uid://dm5tstsfdpxf1" path="res://assets/buttons/icons/up_down.png" id="8_2tcj1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2fv2"]
+bg_color = Color(0.792911, 0.267154, 0.145682, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4okr"]
+bg_color = Color(0.94902, 0.415686, 0.294118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhx6m"]
+bg_color = Color(0.94902, 0.415686, 0.294118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpcf"]
 
@@ -38,6 +71,9 @@ Button/colors/font_hover_pressed_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_pressed_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("1_y85is")
+Button/styles/hover = SubResource("StyleBoxFlat_t2fv2")
+Button/styles/normal = SubResource("StyleBoxFlat_a4okr")
+Button/styles/pressed = SubResource("StyleBoxFlat_nhx6m")
 HSlider/icons/grabber = ExtResource("3_5v13y")
 HSlider/icons/grabber_disabled = ExtResource("3_5v13y")
 HSlider/icons/grabber_highlight = ExtResource("3_5v13y")

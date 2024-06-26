@@ -74,15 +74,10 @@ icon = ExtResource("3_fjcen")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
 offset_left = -69.0
-offset_top = -25.0
 offset_right = -19.0
-offset_bottom = 25.0
 grow_horizontal = 0
-grow_vertical = 2
 
 [node name="ButtonProfile" parent="ColorRect" instance=ExtResource("4_myfvp")]
 layout_mode = 0

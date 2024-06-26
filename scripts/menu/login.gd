@@ -47,9 +47,3 @@ func set_invite_mode():
 	login_guest_button.visible = true
 	no_internet_message.visible = true
 	no_internet_animation.visible = true
-	#var invite_button = Button.new()
-	#invite_button.text = "Ingresa como invitado"
-	#invite_button.global_position = login_button.global_position
-	#invite_button.pressed.connect(_on_button_pressed)
-	#add_child(invite_button)
-

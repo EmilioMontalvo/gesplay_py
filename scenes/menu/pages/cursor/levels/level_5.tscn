@@ -104,10 +104,6 @@ points = PackedVector2Array(511.25, 595, 476.25, 633.75, 428.75, 650, 322.5, 653
 position = Vector2(1175, 525)
 points = PackedVector2Array(187.5, 482.5, 253.75, 563.75, 308.75, 616.25, 412.5, 628.75, 512.5, 583.75, 535, 531.25, 528.75, 440, 486.25, 355, 348.75, 320)
 
-[node name="Line2D4" parent="Level1/level_container/LinesContainer" index="3"]
-position = Vector2(1098.75, 1475)
-points = PackedVector2Array(218.751, 404.999, 256.251, 354.999, 377.501, 349.999, 448.751, 429.999, 436.251, 534.999, 353.751, 577.499, 273.751, 552.499)
-
 [node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
 position = Vector2(1078.75, 527.5)
 points = PackedVector2Array(-506.25, 81.25, -366.25, 77.5, -238.75, 76.25, -116.25, 77.5, -2.5, 78.75, 131.25, 77.5, 270, 68.75, 368.75, 117.5, 367.5, 222.5, 351.31, 321.256, 270, 372.5, 168.75, 401.25, 68.75, 387.5, -43.75, 408.75)

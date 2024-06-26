@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://pxnpwvmykvjd"]
+[gd_scene load_steps=14 format=3 uid="uid://pxnpwvmykvjd"]
 
 [ext_resource type="Script" path="res://scripts/menu/login.gd" id="1_cllod"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_fiuw7"]
@@ -10,6 +10,22 @@
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_25m63"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_xrtw7"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_l25yf"]
+[ext_resource type="Texture2D" uid="uid://dnnp364qswtw7" path="res://assets/buttons/icons/cloud.png" id="11_1iv5b"]
+[ext_resource type="Texture2D" uid="uid://d2isotcyvrsb" path="res://assets/buttons/icons/cloud_off.png" id="12_mbjjm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64rs7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1iv5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mbjjm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Login" type="Node2D"]
 script = ExtResource("1_cllod")
@@ -154,6 +170,13 @@ offset_bottom = 473.0
 texture = ExtResource("9_l25yf")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="NoConnectionAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(857, 327)
+sprite_frames = SubResource("SpriteFrames_64rs7")
+autoplay = "default"
+frame_progress = 0.0882825
 
 [connection signal="pressed" from="CanvasLayer/Control/Login" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoginGuest" to="." method="_on_button_pressed"]

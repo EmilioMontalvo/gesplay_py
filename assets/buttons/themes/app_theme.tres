@@ -1,13 +1,13 @@
-[gd_resource type="Theme" load_steps=28 format=3 uid="uid://8783p7rjqna0"]
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://8783p7rjqna0"]
 
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
-[ext_resource type="FontFile" uid="uid://dt21vy2j7shjg" path="res://assets/font/Montserrat-Regular.ttf" id="1_unok0"]
+[ext_resource type="FontFile" uid="uid://dluutf34frym6" path="res://assets/font/Montserrat-Regular.ttf" id="1_unok0"]
 [ext_resource type="StyleBox" uid="uid://bnh6qrhlmi4vg" path="res://assets/buttons/resources/style_box_input.tres" id="2_fnnhp"]
 [ext_resource type="Texture2D" uid="uid://dmclhfwi0akg5" path="res://assets/buttons/icons/check_small.png" id="3_luqik"]
 [ext_resource type="Texture2D" uid="uid://8xec03d3y1yv" path="res://assets/buttons/icons/comboboxArrow.png" id="3_yyf8g"]
 [ext_resource type="StyleBox" uid="uid://bple5ccngpe6x" path="res://assets/buttons/resources/style_box_games.tres" id="4_7ji4q"]
-[ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="7_jc4so"]
+[ext_resource type="StyleBox" uid="uid://ddxbn3t6yk16b" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="7_jc4so"]
 [ext_resource type="Texture2D" uid="uid://dm5tstsfdpxf1" path="res://assets/buttons/icons/up_down.png" id="8_5jyra"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1t8f"]
@@ -117,6 +117,18 @@ corner_radius_bottom_left = 50
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk686"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpcf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2bdq"]
+bg_color = Color(0.74902, 0.643137, 0.454902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2r0o"]
 bg_color = Color(0.909804, 0.843137, 0.72549, 1)
@@ -234,6 +246,7 @@ LineEdit/font_sizes/font_size = 30
 LineEdit/fonts/font = ExtResource("1_unok0")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_hwpcf")
 LineEdit/styles/normal = ExtResource("2_fnnhp")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_v2bdq")
 LinkButton/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 LinkButton/colors/font_hover_color = Color(0.239404, 0.172234, 0.536684, 1)
 LinkButton/colors/font_pressed_color = Color(0.239404, 0.172234, 0.536684, 1)

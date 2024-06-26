@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://7l685bky3cj7"]
+
+[ext_resource type="Script" path="res://scripts/cursor/config/balloon_minigame.gd" id="1_2mxth"]
+[ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_fqkvs"]
+[ext_resource type="Texture2D" uid="uid://mq5s73ps8hue" path="res://assets/cursor_game/background/uncolored_desert.png" id="2_atwu3"]
+[ext_resource type="Texture2D" uid="uid://cpitq2rv4k1rp" path="res://assets/cursor_game/background/colored_castle.png" id="2_jkim3"]
+[ext_resource type="PackedScene" uid="uid://3nrv0p86hsrs" path="res://scenes/menu/components/cursor/ballon_counter.tscn" id="5_s6ryx"]
+
+[node name="BalloonMinigame" type="Node2D"]
+script = ExtResource("1_2mxth")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_fqkvs")]
+
+[node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(725, 543)
+scale = Vector2(1.43, 1.43)
+texture = ExtResource("2_atwu3")
+
+[node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2(720, 529)
+scale = Vector2(3, 3)
+texture = ExtResource("2_jkim3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("5_s6ryx")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_top = 54.0
+offset_right = 0.0
+offset_bottom = 54.0
+grow_vertical = 1
+
+[editable path="ParallaxBackground"]

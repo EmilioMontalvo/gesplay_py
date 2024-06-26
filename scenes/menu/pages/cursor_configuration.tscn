@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/cursor/cursor_configuration_menu.gd" id="2_mmugt"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_8oraa"]
 [ext_resource type="Texture2D" uid="uid://bi4fewspqgsk8" path="res://assets/icons/plus.png" id="4_fwt03"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="4_jlobb"]
 [ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="5_q5ouv"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="6_t8p8r"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="7_01jom"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 [ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
-[ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
+[ext_resource type="PackedScene" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
 [ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
 
@@ -106,10 +106,17 @@ offset_bottom = 123.0
 
 [node name="HelpButton" parent="." instance=ExtResource("10_xu8ue")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1367.0
 offset_top = 50.0
 offset_right = 1417.0
 offset_bottom = 100.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -128,10 +135,17 @@ text = "Velocidad
 "
 
 [node name="HelpButton" parent="VelocitySlider" index="3"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 159.0
 offset_top = -9.0
 offset_right = 209.0
 offset_bottom = 41.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PointerSmootSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -162,10 +176,17 @@ offset_right = 467.0
 offset_bottom = 83.5
 
 [node name="HelpButton" parent="PointerSmootSlider" index="3"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 326.0
 offset_top = -2.0
 offset_right = 376.0
 offset_bottom = 48.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="TicksSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -186,10 +207,17 @@ text = "Tics por Segundo
 "
 
 [node name="HelpButton" parent="TicksSlider" index="3"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 263.0
 offset_top = -2.0
 offset_right = 313.0
 offset_bottom = 48.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="VisualHelp" type="Control" parent="."]
 anchors_preset = 0

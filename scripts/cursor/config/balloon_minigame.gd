@@ -1,7 +1,7 @@
 extends Node2D
 
 var balloon_scene = preload("res://scenes/menu/components/cursor/balloon.tscn")
-@export var spawn_interval: float = 1.0
+@export var spawn_interval: float = 0.8
 @export var max_balloons: int = 4
 
 # Internal variables

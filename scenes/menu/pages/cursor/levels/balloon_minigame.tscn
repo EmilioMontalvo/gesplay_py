@@ -31,6 +31,7 @@ texture = ExtResource("2_jkim3")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.709804)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

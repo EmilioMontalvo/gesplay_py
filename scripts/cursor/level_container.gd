@@ -29,13 +29,14 @@ func _ready():
 	helpArrow.set_target(shovel_point/scale-position)
 
 
-func _on_shovel_touched(body):	
+func _on_shovel_touched(body):
+	
 	if body.is_in_group("destructible"):
 		destroy_terrain(body)
 	elif body.is_in_group("points"):
 		get_points_from(body)
 		shovel_point=body.global_position
-	elif body.is_in_group("HardTerrain"):
+	elif body.is_in_group("HardTerrain"):		
 		shovel.out_of_terrain(shovel_point)
 		points.sub_points(50)
 	elif body.is_in_group("objective"):
@@ -76,7 +77,7 @@ func get_points_from(body):
 
 func _on_shovel_has_been_grabbed():
 	points.add_points(shovel.grab_points)
-	helpArrow.visible=false
+	
 
 func get_points():
 	return points.actualPoints
@@ -90,3 +91,14 @@ func grab_key(body):
 	keys=keys-1
 	if keys<=0:
 		$Jail.open()
+
+
+func _on_shovel_grabbed_shovel():
+	helpArrow.visible=false
+
+
+
+func _on_shovel_dropped():
+	helpArrow.set_target(shovel.global_position/scale-position)
+	helpArrow.visible=true
+	

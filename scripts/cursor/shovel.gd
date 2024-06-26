@@ -15,6 +15,8 @@ var grabbed = false
 var firstTime=true
 signal touched
 signal has_been_grabbed
+signal grabbed_shovel
+signal dropped
 
 func _ready():
 	add_child(grab_timer)
@@ -36,6 +38,7 @@ func _on_collision_detection_area_entered(area:Area2D):
 
 func _on_area_2d_mouse_entered():
 	grabbed=true
+	grabbed_shovel.emit()
 	if firstTime:
 		emit_signal("has_been_grabbed")
 		audioPlayer.play()
@@ -59,4 +62,5 @@ func out_of_terrain(point):
 	grabbed=false
 	global_position=point
 	$HardKick.play()
+	dropped.emit()
 

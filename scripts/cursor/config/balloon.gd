@@ -14,7 +14,6 @@ func _ready():
 		modulate=Color(0,1,0)
 	if modulate_color==3:
 		modulate=Color(0,1,1)
-		
 
 func _on_area_2d_mouse_entered():
 	popped.emit()

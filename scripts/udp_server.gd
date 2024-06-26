@@ -4,6 +4,7 @@ extends Node
 var server := UDPServer.new()
 var peers = []
 var cameraTexture:TextureRect
+var auxCameraTexture:TextureRect
 
 func _ready():
 	server.listen(4242)
@@ -25,12 +26,19 @@ func _process(_delta):
 		#TODO verify type of data that arrives
 		if cameraTexture != null && peerPacket.size()!=0:
 			# Assign the texture to the TextureRect
-			cameraTexture.texture = create_texture_from_pool_byte_array(peerPacket)
+			var created_texture=create_texture_from_pool_byte_array(peerPacket)
+			cameraTexture.texture = created_texture
+			
+			if auxCameraTexture != null:
+				auxCameraTexture.texture = created_texture
 			#print(peerPacket)
 
 
 func set_cameraTexture(textureRect:TextureRect):
 	cameraTexture=textureRect
+
+func set_aux_camera(textureRect:TextureRect):
+	auxCameraTexture=textureRect
 
 func create_texture_from_pool_byte_array(byte_array):
 	var image = Image.new()

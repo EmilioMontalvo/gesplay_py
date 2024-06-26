@@ -8,13 +8,14 @@ func _ready():
 
 
 func _on_pressed():
-	set_icon()
+	
 	if not paused:
 		UdPServer.send_message(Message.new("pause_mouse",{"info": "mouse paused"}))
 	else: 
 		UdPServer.send_message(Message.new("resume_mouse",{"info": "mouse resumed"}))
 	
 	paused=not paused
+	set_icon()
 	GlobalConf.is_camera_mouse_paused=paused
 
 func set_icon():

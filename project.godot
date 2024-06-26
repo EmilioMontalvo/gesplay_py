@@ -13,7 +13,8 @@ config_version=5
 config/name="gestplay_py"
 run/main_scene="res://scenes/menu/pages/loanding.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/ui/title/Gestplay_logo.png"
+config/windows_native_icon="res://assets/Gestplay_logo.ico"
 
 [autoload]
 
@@ -28,6 +29,7 @@ ClickConf="*res://scripts/click_game/config/click_config.gd"
 GlobalConf="*res://scripts/global_config.gd"
 CurrentProfile="*res://scripts/current_profile.gd"
 CursorIconConf="*res://scripts/cursor_icon_config.gd"
+CameraList="*res://scripts/camera_list.gd"
 
 [display]
 

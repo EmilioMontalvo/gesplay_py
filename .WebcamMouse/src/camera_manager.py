@@ -23,34 +23,40 @@ class CameraManager(metaclass=Singleton):
     def get_frame_rgb(self):
         if self.is_started:
             self.is_started = True
-            ret,self.frame = self.cap.read()
+            try:
+                ret,self.frame = self.cap.read()
 
-            if self.frame is None:
+                if self.frame is None:
+                    return None
+                frame_rgb = cv2.cvtColor(self.frame, cv2.COLOR_BGR2RGB)
+
+                return frame_rgb
+            except Exception as e:
+                logging.error("Error getting frame")
+                logging.error(e)
                 return None
-            frame_rgb = cv2.cvtColor(self.frame, cv2.COLOR_BGR2RGB)
-
-            return frame_rgb
         else:
-            return cv2.imread("placeholder.jpg")
+            return None
     
     def get_frame(self):
         if self.is_started:
             return self.frame
         else:
-            return cv2.imread("placeholder.jpg")
+            return None
     
     def get_fliped_frame(self):
         if self.is_started:
             return cv2.flip(self.frame,1)
         else:
-            return cv2.imread("placeholder.jpg")
+            return None
 
     def release(self):
         self.cap.release()
 
     def destroy(self):
-        self.release()
         self.is_started = False
+        self.release()
+        
     
     def change_camera(self, camera_id):
         self.camera_id = camera_id

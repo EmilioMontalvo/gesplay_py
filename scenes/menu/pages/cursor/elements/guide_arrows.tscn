@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://boaswveknrduy"]
+
+[ext_resource type="Script" path="res://scripts/menu/guide_parent.gd" id="1_mlq3p"]
+[ext_resource type="Script" path="res://scripts/menu/guide_arrows.gd" id="1_o5ajj"]
+[ext_resource type="Texture2D" uid="uid://den7ie7b32bsq" path="res://assets/icons/guide_arrow.png" id="2_n0uhu"]
+
+[node name="GuidetArrow" type="Node2D"]
+script = ExtResource("1_mlq3p")
+
+[node name="Line2D" type="Line2D" parent="."]
+modulate = Color(1, 1, 1, 0.407843)
+texture_filter = 2
+texture_repeat = 2
+scale = Vector2(5, 5)
+points = PackedVector2Array(0.2, 0, 57.6, 0.2)
+texture = ExtResource("2_n0uhu")
+texture_mode = 1
+
+[node name="GuideArrows" type="Marker2D" parent="."]
+script = ExtResource("1_o5ajj")

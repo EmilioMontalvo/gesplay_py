@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dd54atv3cfg7u"]
+[gd_scene load_steps=25 format=3 uid="uid://dd54atv3cfg7u"]
 
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_baw05"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="12_r5y54"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="13_654sp"]
 [ext_resource type="PackedScene" uid="uid://6x4im8p0stpr" path="res://scenes/windows/window.tscn" id="15_vcymu"]
+[ext_resource type="PackedScene" uid="uid://7iurv83hg0qb" path="res://scenes/menu/list_webcam.tscn" id="16_1ybbf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld27w"]
 atlas = ExtResource("6_xou64")
@@ -206,11 +207,26 @@ offset_top = 148.0
 offset_right = 1268.0
 offset_bottom = 242.0
 
+[node name="ListWebcam" parent="." instance=ExtResource("16_1ybbf")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -301.0
+offset_right = -280.0
+offset_bottom = -301.0
+
 [node name="Window" parent="." instance=ExtResource("15_vcymu")]
 visible = false
 
+[connection signal="pressed" from="MenuButtons/BtnSelectWebcam" to="." method="_on_btn_select_webcam_pressed"]
 [connection signal="pressed" from="ControlComputer" to="ControlComputer" method="_on_pressed"]
 [connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
+[connection signal="finalized" from="ListWebcam" to="." method="_on_list_webcam_finalized"]
 [connection signal="visibility_changed" from="Window" to="Window" method="_on_visibility_changed"]
 
 [editable path="MenuButtons/BtnSelectProfile"]

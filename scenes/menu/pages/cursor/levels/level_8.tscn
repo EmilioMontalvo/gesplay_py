@@ -121,7 +121,7 @@ points = PackedVector2Array(-119.999, 493.75, -172.499, 447.5, -164.78, 382.118,
 
 [node name="PointsLine" parent="Level1/level_container/PointLinesContainer" index="0"]
 position = Vector2(2476.25, 1237.5)
-points = PackedVector2Array(-1825, -471.25, -1803.75, -291.25, -1607.5, -141.25, -1317.5, -141.25, -1151.25, -176.25, -1050, -268.75, -817.5, -268.75)
+points = PackedVector2Array(-1803.75, -291.25, -1607.5, -141.25, -1317.5, -141.25, -1151.25, -176.25, -1050, -268.75, -817.5, -268.75)
 type = "snow"
 
 [node name="PointsLine2" parent="Level1/level_container/PointLinesContainer" index="1"]
@@ -134,7 +134,7 @@ position = Vector2(2133.75, 752.5)
 [node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("5_40ria")]
 position = Vector2(657.5, 643.75)
 
-[node name="TextureRect" parent="Level1/level_container" index="13"]
+[node name="TextureRect" parent="Level1/level_container" index="14"]
 scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1"]

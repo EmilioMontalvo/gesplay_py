@@ -51,7 +51,7 @@ type = "snow"
 
 [node name="Polygon2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="0"]
 position = Vector2(432.5, 313.5)
-polygon = PackedVector2Array(245, 20, 150, -1.25, 72.4999, 47.4999, -17.5, 57.4999, 0, 87.4999, -15, 140, 86.2499, 120, 236.25, 89.9999, 432.5, 41.2499, 461.25, 68.7499, 518.75, 53.7499, 530, -2.5, 592.5, -21.25, 607.5, -76.25, 505, -102.5, 473.75, -47.5, 413.75, -30, 310, -38.75)
+polygon = PackedVector2Array(245, 20, 150, -1.25, 72.4999, 47.4999, -17.5, 57.4999, 0, 87.4999, -15, 140, 78.7499, 186.25, 258.75, 156.25, 386.25, 152.5, 461.25, 68.7499, 518.75, 53.7499, 530, -2.5, 592.5, -21.25, 607.5, -76.25, 505, -102.5, 473.75, -47.5, 413.75, -30, 310, -38.75)
 
 [node name="StaticBody2D" parent="Level1/level_container/TerrainContainer/Terrain3" index="1"]
 visible = true
@@ -123,7 +123,7 @@ position = Vector2(1583.75, 530)
 [node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("4_ukrm7")]
 position = Vector2(765, 1016.25)
 
-[node name="TextureRect" parent="Level1/level_container" index="13"]
+[node name="TextureRect" parent="Level1/level_container" index="14"]
 scale = Vector2(1.2, 1.2)
 
 [node name="AudioStreamPlayer2D" parent="Level1" index="3"]

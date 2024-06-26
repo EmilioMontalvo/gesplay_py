@@ -7,7 +7,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(global_position)
 	line.set_point_position(1,get_local_mouse_position()/line.scale)
 
 func set_target(point:Vector2):

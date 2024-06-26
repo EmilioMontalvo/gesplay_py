@@ -175,8 +175,7 @@ stretch_mode = 4
 visible = false
 position = Vector2(857, 327)
 sprite_frames = SubResource("SpriteFrames_64rs7")
-autoplay = "default"
-frame_progress = 0.0882825
+frame_progress = 0.79096
 
 [connection signal="pressed" from="CanvasLayer/Control/Login" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoginGuest" to="." method="_on_button_pressed"]

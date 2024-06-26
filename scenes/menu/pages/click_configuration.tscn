@@ -2680,7 +2680,6 @@ autoplay = "default"
 frame_progress = 0.641396
 
 [node name="Panel" parent="." instance=ExtResource("4_cjl87")]
-visible = false
 clip_contents = true
 layout_mode = 0
 offset_left = 508.0
@@ -2688,21 +2687,14 @@ offset_top = 218.0
 offset_right = 1380.0
 offset_bottom = 889.0
 
-[node name="Control" type="Control" parent="."]
-clip_contents = true
-anchors_preset = 0
-offset_left = 510.0
-offset_top = 220.0
-offset_right = 1382.0
-offset_bottom = 891.0
+[node name="Node2D" type="Node2D" parent="Panel"]
+position = Vector2(-506, -216)
 
-[node name="Node2D" type="Node2D" parent="Control"]
-position = Vector2(-508, -218)
-
-[node name="Line2D" type="Line2D" parent="Control/Node2D"]
+[node name="Line2D" type="Line2D" parent="Panel/Node2D"]
 script = ExtResource("6_jduia")
 
-[node name="LevelTest" parent="Control" instance=ExtResource("14_n2ga4")]
+[node name="LevelTest" parent="Panel" instance=ExtResource("14_n2ga4")]
+position = Vector2(2, 2)
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]

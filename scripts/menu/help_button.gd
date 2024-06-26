@@ -1,11 +1,28 @@
-extends Node
+extends Button
 
-signal help_request
+@export var guide_data = [
+	{
+	"text": "This is a guide text1",
+	"image": preload("res://assets/cursor_game/levels/icons/level_1.png")
+	},
+	{
+	"text": "This is a guide text2",
+	"image": preload("res://assets/buttons/icons/cursor_game_icon.png")
+	},
+	{
+	"text": "This is a guide text3",
+	"image": preload("res://assets/cursor_game/levels/icons/level_1.png")
+	},
+	{
+	"text": "This is a guide text4",
+	"image": preload("res://assets/cursor_game/levels/icons/level_1.png")
+	},
+]
+
+@onready var guide = $GameGuide
 
 func _ready():
-	pass # Replace with function body.
-
-
+	guide.set_data(guide_data)
 
 func _on_pressed():
-	help_request.emit()
+	guide.on_show()

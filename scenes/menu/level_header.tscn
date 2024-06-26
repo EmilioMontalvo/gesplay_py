@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="3_0uxoj"]
 [ext_resource type="Texture2D" uid="uid://cmamse6j1n0mv" path="res://assets/buttons/icons/arrow_back.png" id="3_edegg"]
 [ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="3_fjcen"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="3_rjlat"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_rjlat"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="4_myfvp"]
 [ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="6_h0dm8"]
 
@@ -74,15 +74,10 @@ icon = ExtResource("3_fjcen")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
 offset_left = -69.0
-offset_top = -25.0
 offset_right = -19.0
-offset_bottom = 25.0
 grow_horizontal = 0
-grow_vertical = 2
 
 [node name="ButtonProfile" parent="ColorRect" instance=ExtResource("4_myfvp")]
 layout_mode = 0

@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://jhfkcwhkj4oj"]
+[gd_scene load_steps=10 format=3 uid="uid://jhfkcwhkj4oj"]
 
 [ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="1_f4dqd"]
 [ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_o7kdr"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_cqwta"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_cqwta"]
 [ext_resource type="Script" path="res://scripts/menu/help_button.gd" id="3_iqylv"]
+[ext_resource type="Texture2D" uid="uid://h84oyoymvu8d" path="res://assets/cursor_game/levels/icons/level_1.png" id="5_a5dia"]
+[ext_resource type="PackedScene" uid="uid://lrpfqyo4avr2" path="res://scenes/menu/components/game_guide.tscn" id="5_kolq1"]
+[ext_resource type="Texture2D" uid="uid://bjl06j8mykbuq" path="res://assets/buttons/icons/cursor_game_icon.png" id="6_csxfh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb3bg"]
 bg_color = Color(0.156863, 0.74902, 0.839216, 1)
@@ -32,8 +35,17 @@ corner_radius_bottom_left = 50
 shadow_color = Color(0.00392157, 0.12549, 0.596078, 0.6)
 
 [node name="HelpButton" type="Button"]
-offset_right = 50.0
-offset_bottom = 50.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_o7kdr")
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 theme_override_constants/outline_size = 0
@@ -45,5 +57,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hb3bg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_si23p")
 text = "i"
 script = ExtResource("3_iqylv")
+guide_data = [{
+"image": ExtResource("5_a5dia"),
+"text": "This is a guide text"
+}, {
+"image": ExtResource("6_csxfh"),
+"text": "This is a guide text"
+}, {
+"image": ExtResource("5_a5dia"),
+"text": "This is a guide text"
+}, {
+"image": ExtResource("5_a5dia"),
+"text": "This is a guide text"
+}]
+
+[node name="GameGuide" parent="." instance=ExtResource("5_kolq1")]
+layout_mode = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

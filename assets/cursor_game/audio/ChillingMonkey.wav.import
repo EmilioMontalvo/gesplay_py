@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b05fpj2yywdx3"
-path="res://.godot/imported/6. Chilling Monkey.wav-1fee5ced9265dc6a981824d4955342b6.sample"
+path="res://.godot/imported/ChillingMonkey.wav-4c568009a29e197433eab8969e19e397.sample"
 
 [deps]
 
-source_file="res://assets/cursor_game/audio/6. Chilling Monkey.wav"
-dest_files=["res://.godot/imported/6. Chilling Monkey.wav-1fee5ced9265dc6a981824d4955342b6.sample"]
+source_file="res://assets/cursor_game/audio/ChillingMonkey.wav"
+dest_files=["res://.godot/imported/ChillingMonkey.wav-4c568009a29e197433eab8969e19e397.sample"]
 
 [params]
 

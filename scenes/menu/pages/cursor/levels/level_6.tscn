@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bq5omlmkdkmvh"]
+[gd_scene load_steps=14 format=3 uid="uid://bq5omlmkdkmvh"]
 
 [ext_resource type="PackedScene" uid="uid://omguc2d7uttv" path="res://scenes/menu/pages/cursor/levels/level_1.tscn" id="1_txesd"]
 [ext_resource type="Texture2D" uid="uid://bld5jjvl2fblo" path="res://assets/cursor_game/background/background_02.png" id="2_bkxcf"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bqff2dt6t0hsj" path="res://assets/cursor_game/decorations/igloo.png" id="4_wtqau"]
 [ext_resource type="PackedScene" uid="uid://b5ft6sih0qluy" path="res://scenes/menu/pages/cursor/elements/key.tscn" id="5_1xcwd"]
 [ext_resource type="Texture2D" uid="uid://dasaflxx1djl7" path="res://assets/cursor_game/decorations/WaterFall(Water).png" id="5_5156y"]
-[ext_resource type="AudioStream" uid="uid://dkxu7vfp42t7x" path="res://assets/cursor_game/audio/8. Teardrop Tempo.wav" id="7_nkuxi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4is4"]
 atlas = ExtResource("5_5156y")
@@ -62,6 +61,7 @@ animations = [{
 
 [node name="Level1" parent="." instance=ExtResource("1_txesd")]
 next_level = 7
+song = 2
 
 [node name="Sprite2D" parent="Level1/ParallaxBackground/ParallaxLayer" index="0"]
 position = Vector2(716, 422)
@@ -204,13 +204,10 @@ position = Vector2(1605, 507.5)
 [node name="Key2" parent="Level1/level_container/KeyContainer" index="1" instance=ExtResource("5_1xcwd")]
 position = Vector2(336.25, 488.75)
 
-[node name="TextureRect" parent="Level1/level_container" index="13"]
+[node name="TextureRect" parent="Level1/level_container" index="14"]
 offset_top = -265.0
 offset_bottom = 106.0
 scale = Vector2(1.2, 1.2)
-
-[node name="AudioStreamPlayer2D" parent="Level1" index="3"]
-stream = ExtResource("7_nkuxi")
 
 [editable path="Level1"]
 [editable path="Level1/ParallaxBackground"]

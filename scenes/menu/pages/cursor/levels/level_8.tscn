@@ -14,6 +14,7 @@
 [node name="Level1" parent="." instance=ExtResource("1_qhsgu")]
 next_level = 9
 last = true
+song = 2
 
 [node name="ParallaxBackground" parent="Level1" index="0"]
 offset = Vector2(0, 444.21)

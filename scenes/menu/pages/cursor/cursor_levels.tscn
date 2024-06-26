@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv8eq0tigyo03"]
+[gd_scene load_steps=10 format=3 uid="uid://bv8eq0tigyo03"]
 
+[ext_resource type="Script" path="res://scripts/cursor/cursor_levels.gd" id="1_cly3w"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
 [ext_resource type="PackedScene" uid="uid://d2oymkkl6p63p" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="11_62lih"]
 
 [node name="Cursor" type="Node2D"]
+script = ExtResource("1_cly3w")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_t3q83")]
 

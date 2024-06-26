@@ -8,7 +8,7 @@
 script = ExtResource("1_mlq3p")
 
 [node name="Line2D" type="Line2D" parent="."]
-modulate = Color(1, 1, 1, 0.407843)
+modulate = Color(1, 1, 0, 0.388235)
 texture_filter = 2
 texture_repeat = 2
 scale = Vector2(5, 5)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpaw5x64m67ir"]
+
+[ext_resource type="Script" path="res://scripts/menu/sound_controller_menu.gd" id="1_at0mm"]
+[ext_resource type="AudioStream" uid="uid://0la5h0k5b534" path="res://assets/audio/1. Palm Tree Shade.wav" id="2_gekhk"]
+
+[node name="SoundControllerMenu" type="Node"]
+script = ExtResource("1_at0mm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_gekhk")
+bus = &"Music"

@@ -30,6 +30,7 @@ GlobalConf="*res://scripts/global_config.gd"
 CurrentProfile="*res://scripts/current_profile.gd"
 CursorIconConf="*res://scripts/cursor_icon_config.gd"
 CameraList="*res://scripts/camera_list.gd"
+SoundControllerMenu="*res://scenes/menu/components/sound_controller_menu.tscn"
 
 [display]
 

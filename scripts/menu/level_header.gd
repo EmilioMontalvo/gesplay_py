@@ -18,10 +18,12 @@ func _ready():
 
 func _on_go_back_pressed():
 	if await confirm_dialog_back.on_show():
+		SoundControllerMenu.continue_music()
 		MenuManager.load_menu(scene_go_back)
 
 func _on_home_pressed():
 	if await confirm_dialog_home.on_show():
+		SoundControllerMenu.continue_music()
 		MenuManager.load_menu(scene_home)
 		
 func set_current_level(level: int):

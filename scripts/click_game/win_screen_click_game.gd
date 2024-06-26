@@ -23,6 +23,7 @@ func _on_repeat_button_pressed():
 	get_tree().reload_current_scene()
 
 func _on_home_button_pressed():
+	SoundControllerMenu.continue_music()
 	get_tree().change_scene_to_file("res://scenes/menu/pages/click/click_levels.tscn")
 
 func set_time_container(time: String):

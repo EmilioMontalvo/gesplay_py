@@ -23,6 +23,7 @@ func _ready():
 	set_points()
 	time_init = Time.get_unix_time_from_system()
 	level_header.set_current_level(CurrentClickLevel.level)
+	SoundControllerMenu.pause_music()
 	sound_controller.play_music(CurrentClickLevel.level)
 
 func init_dragabble_objects():

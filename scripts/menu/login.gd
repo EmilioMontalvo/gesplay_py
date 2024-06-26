@@ -26,6 +26,7 @@ func _on_request_completed(result, response_code, headers, body):
 func _on_button_pressed():
 	var last_profile_id: String = DataSaver.load_last_profile_id()
 	print(last_profile_id)
+	SoundControllerMenu.play_music()
 	if last_profile_id.is_empty():
 		if not CurrentProfile.is_profile_selected:
 			MenuManager.load_menu(3)

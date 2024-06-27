@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var star_points = $StarPoints
-@onready var time_container = $TimeContainer
 @onready var sound_controller = $SoundControllerClick
 
 var success_count = 0
@@ -10,13 +9,13 @@ var mistakes_count = 0
 var final_points: float = 0
 var points_by_food: float
 var points_by_animal: float
-var time_init
+
+signal game_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_dragabble_objects()
 	set_points()
-	time_init = Time.get_unix_time_from_system()
 
 func init_dragabble_objects():
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')
@@ -59,9 +58,8 @@ func increase_success():
 
 func check_success():
 	if success_count >= success_to_win:
-		stop_timer()
 		sound_controller.play_fx(SoundClickSources.sounds_fx.LEVEL_COMPLETE)
-		#get_tree().reload_current_scene()
+		game_finished.emit(get_node("."))
 	else:
 		sound_controller.play_fx(SoundClickSources.sounds_fx.SUCESS)
 		
@@ -69,11 +67,5 @@ func increase_mistakes():
 	mistakes_count += 1
 	print("Mistakes count: ", mistakes_count)
 	
-func get_time_to_complete_level():
-	return time_container.get_time()
-	
 func set_star_points():
 	star_points.set_stars_image(final_points)
-	
-func stop_timer():
-	time_container.stop()

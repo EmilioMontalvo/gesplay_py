@@ -215,4 +215,4 @@ text = "Cargando...."
 position = Vector2(704, 822)
 sprite_frames = SubResource("SpriteFrames_inngj")
 autoplay = "default"
-frame_progress = 0.343611
+frame_progress = 0.178333

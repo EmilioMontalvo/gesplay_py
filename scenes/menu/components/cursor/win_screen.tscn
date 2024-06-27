@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://scripts/menu/repeat_button.gd" id="10_f2bu5"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="10_y3gp4"]
 [ext_resource type="Texture2D" uid="uid://c54ja34nivk6n" path="res://assets/buttons/icons/level_list.png" id="11_yhu6j"]
-[ext_resource type="PackedScene" uid="uid://cb66wvo2q3mqa" path="res://scenes/menu/pages/cursor/elements/count_down.tscn" id="12_phiix"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pages/cursor/elements/count_down.tscn" id="12_phiix"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3

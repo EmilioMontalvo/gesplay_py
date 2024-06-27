@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_3p8tm"]
 [ext_resource type="Script" path="res://scripts/click_game/config/click_configuration_menu.gd" id="2_t8nng"]
 [ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="3_yju7e"]
-[ext_resource type="PackedScene" uid="uid://cyx6wx7j7gmqa" path="res://scenes/menu/components/border_panel.tscn" id="4_cjl87"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="4_docx4"]
 [ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_7osy7"]
 [ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="6_jduia"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ctvitji3nadc7" path="res://scenes/menu/pages/click/levels/level_test.tscn" id="14_n2ga4"]
 [ext_resource type="Texture2D" uid="uid://dqb7pa0jxesmp" path="res://assets/gesture_sprites/Catch_Sprite.png" id="14_q2sa2"]
 [ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="15_kitbb"]
+[ext_resource type="Script" path="res://scripts/utils/mini_game_container.gd" id="15_p117a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my38k"]
 bg_color = Color(0.956863, 0.803922, 0.0431373, 1)
@@ -2680,22 +2680,27 @@ sprite_frames = SubResource("SpriteFrames_bebnd")
 autoplay = "default"
 frame_progress = 0.641396
 
-[node name="Panel" parent="." instance=ExtResource("4_cjl87")]
-clip_contents = true
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
 offset_left = 508.0
 offset_top = 218.0
 offset_right = 1380.0
 offset_bottom = 889.0
+stretch = true
+script = ExtResource("15_p117a")
 
-[node name="Node2D" type="Node2D" parent="Panel"]
-position = Vector2(-506, -216)
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(872, 671)
+render_target_update_mode = 4
 
-[node name="Line2D" type="Line2D" parent="Panel/Node2D"]
-script = ExtResource("6_jduia")
+[node name="LevelTest" parent="SubViewportContainer/SubViewport" instance=ExtResource("14_n2ga4")]
 
-[node name="LevelTest" parent="Panel" instance=ExtResource("14_n2ga4")]
+[node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(2, 2)
+
+[node name="Line2D" type="Line2D" parent="SubViewportContainer/SubViewport/Node2D"]
+script = ExtResource("6_jduia")
 
 [node name="HelpButtonMenu" parent="." instance=ExtResource("15_kitbb")]
 layout_mode = 1
@@ -2703,7 +2708,7 @@ offset_left = 154.0
 offset_top = -362.0
 offset_right = 204.0
 offset_bottom = -312.0
-text_guide = "El gesto que selecciones sera el; gesto que debas realizar para que se realice el click en la aplicación."
+text_guide = "El gesto que selecciones sera el que debes realizar para hacer el click en la aplicación."
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]

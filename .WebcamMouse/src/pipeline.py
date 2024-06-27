@@ -1,6 +1,5 @@
 import logging
 import src.utils as utils
-import time
 from src.camera_manager import CameraManager
 from src.detectors.hand_detector import HandDetector
 from src.udp.udp_client import UdpClient

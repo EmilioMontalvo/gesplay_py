@@ -2,7 +2,6 @@ import os
 import numpy as np
 import tensorflow as tf
 from src.singleton_meta import Singleton
-from src.click_config import ClickConfig
 import logging
 
 
@@ -16,11 +15,12 @@ class KeyPointClassifier(metaclass=Singleton):
         self.absolute_models_paths = [os.path.join(base_dir, model_path) for model_path in models_paths]
         logging.info(self.absolute_models_paths[0])
 
+        from src.click_config import ClickConfig
         self.model = tf.keras.models.load_model(filepath=self.absolute_models_paths[ClickConfig().gesture_index],
                                                 compile=True)
 
     def predict_gesture(self, landmarks_list):
-        result = self.model.predict(np.array([landmarks_list], dtype=np.float32), verbose=0)
+        result = self.model.predict(np.array([landmarks_list]), verbose=0)
         result_index = np.argmax(np.squeeze(result))
         return result_index
 

@@ -4,7 +4,7 @@ extends Node
 
 var selected_song=0
 
-var menu_music = preload("res://assets/click_game/sounds/music/level4.wav")
+var menu_music = preload("res://assets/audio/1. Palm Tree Shade.wav")
 var cursor_duck_levels=preload("res://assets/cursor_game/audio/ChillingMonkey.wav")
 var cursor_penguin_levels=preload("res://assets/cursor_game/audio/TeardropTempo.wav")
 

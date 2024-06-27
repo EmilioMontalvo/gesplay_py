@@ -3,9 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var container=preload("res://scenes/menu/scene_container.tscn")	
-	call_deferred("_deferred_change", container)
+	pass
 
-
-func _deferred_change(scene):
-	get_tree().change_scene_to_packed(scene)
+func _process(delta):
+	if UdPServer.is_ready and CameraList.is_ready:
+		MenuManager.load_menu(11)

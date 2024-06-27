@@ -50,8 +50,6 @@ class UdpClient(metaclass=Singleton):
                 message = Message.from_json(data.decode('utf-8'))
                 self.message_interpreter.interpret(message)
             except Exception as e:
-                #TODO: Close the application is the server closes
-                #TaskManager().exit()
-                #print("Socket error Error")
-                print(e)
-                pass
+                logger.info(e)
+                TaskManager().exit()
+                break

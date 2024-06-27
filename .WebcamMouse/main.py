@@ -15,7 +15,7 @@ logging.basicConfig(format=FORMAT,
 
 def main_loop():
     pipeline = Pipeline()
-    while True:
+    while TaskManager().is_running:
         pipeline.pipeline_tick()
 
 if __name__ == "__main__":

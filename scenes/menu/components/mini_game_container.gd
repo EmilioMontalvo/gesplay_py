@@ -8,7 +8,7 @@ func _input(_event):
 	sub_viewport.audio_listener_enable_2d = true
 	sub_viewport.push_input(_event)
 	sub_viewport.push_unhandled_input(_event)
-	
+
 
 func _unhandled_input(event):
 	sub_viewport.push_unhandled_input(event)

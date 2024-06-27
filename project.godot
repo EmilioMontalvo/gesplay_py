@@ -18,6 +18,7 @@ config/windows_native_icon="res://assets/Gestplay_logo.ico"
 
 [autoload]
 
+CameraList="*res://scripts/camera_list.gd"
 UdPServer="*res://scripts/udp_server.gd"
 CursorConf="*res://scripts/cursor_config.gd"
 ConfigManager="*res://scripts/config_manager.gd"
@@ -29,7 +30,6 @@ ClickConf="*res://scripts/click_game/config/click_config.gd"
 GlobalConf="*res://scripts/global_config.gd"
 CurrentProfile="*res://scripts/current_profile.gd"
 CursorIconConf="*res://scripts/cursor_icon_config.gd"
-CameraList="*res://scripts/camera_list.gd"
 SoundControllerMenu="*res://scenes/menu/components/sound_controller_menu.tscn"
 
 [display]

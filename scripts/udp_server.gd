@@ -6,6 +6,8 @@ var peers = []
 var cameraTexture:TextureRect
 var auxCameraTexture:TextureRect
 
+var is_ready=false
+
 func _ready():
 	server.listen(4242)
 	print("UDP server listening:",server.is_listening())
@@ -24,6 +26,7 @@ func _process(_delta):
 	for i in range(0, peers.size()):
 		var peerPacket=peers[i].get_packet()
 		#TODO verify type of data that arrives
+		is_ready=true
 		if cameraTexture != null && peerPacket.size()!=0:
 			# Assign the texture to the TextureRect
 			var created_texture=create_texture_from_pool_byte_array(peerPacket)

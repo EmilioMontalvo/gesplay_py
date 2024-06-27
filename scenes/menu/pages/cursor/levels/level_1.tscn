@@ -41,3 +41,4 @@ offset_bottom = 32.0
 [connection signal="won" from="level_container" to="." method="_on_level_container_won"]
 
 [editable path="ParallaxBackground"]
+[editable path="CanvasLayer/LevelHeader"]

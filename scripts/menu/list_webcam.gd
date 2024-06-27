@@ -9,6 +9,9 @@ signal finalized
 func _ready():
 	cameras_dic=CameraList.list_of_cameras
 	
+	if not CameraList.is_ready:
+		return
+	
 	for x in cameras_dic.keys():
 		option_button.add_item(cameras_dic[x])
 	

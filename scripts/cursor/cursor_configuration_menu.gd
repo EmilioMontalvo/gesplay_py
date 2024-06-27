@@ -63,7 +63,7 @@ func _on_opacity_slider_value_changed(value):
 
 
 func _on_color_picker_button_color_changed(color):
-	CursorIconConf.color=color
+	CursorIconConf.color=[color.r,color.g,color.b,color.a]
 	CursorIconConf.send_update_to_upd()
 
 

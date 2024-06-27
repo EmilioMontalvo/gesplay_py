@@ -38,7 +38,7 @@ func save_configs():
 		 "control_computer_window_position": control_computer_window_position,
 		"first_time": first_time,
 		"config_window_id": config_window_id,
-		"contrl_window_size": contrl_window_size,
+		"contrl_window_size": [contrl_window_size[0],contrl_window_size[1]],
 		"window_size_value": window_size_value,
 		"alpha_opacity": alpha_opacity
 	}
@@ -53,7 +53,8 @@ func set_from_json(json):
 	control_computer_window_position = json.get("control_computer_window_position")
 	first_time = json.get("first_time")
 	config_window_id = json.get("config_window_id")
-	contrl_window_size = json.get("contrl_window_size")
+	var aux_size = json.get("contrl_window_size")
+	contrl_window_size = Vector2(aux_size[0],aux_size[1])
 	window_size_value = json.get("window_size_value")
 	alpha_opacity = json.get("alpha_opacity")
 	apply_configs()

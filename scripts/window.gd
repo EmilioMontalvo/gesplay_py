@@ -13,6 +13,7 @@ func _ready():
 	set_content_scale_size(Vector2i(362,475))
 	
 	if GlobalConf.contrl_window_size:
+		print(type_string(typeof(GlobalConf.contrl_window_size)),GlobalConf.contrl_window_size)
 		size=GlobalConf.contrl_window_size
 	
 	save_opacity=GlobalConf.alpha_opacity

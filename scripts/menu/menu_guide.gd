@@ -8,11 +8,9 @@ func set_data(text: String):
 	
 func on_show():
 	visible = true
-	get_tree().paused = true
 
 func _on_close_button_pressed():
 	visible = false
-	get_tree().paused = false
 
 func get_size_panel() -> Vector2:
 	return panel_container.size

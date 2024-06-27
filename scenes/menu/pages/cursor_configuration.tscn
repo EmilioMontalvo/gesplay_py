@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
 [ext_resource type="Script" path="res://scripts/cursor/cursor_aid_slider.gd" id="16_vq7ki"]
 [ext_resource type="Texture2D" uid="uid://dalvsnc8naiao" path="res://assets/icons/less.png" id="17_oyyvg"]
-[ext_resource type="Script" path="res://scenes/menu/components/mini_game_container.gd" id="18_0y1jn"]
+[ext_resource type="Script" path="res://scripts/utils/mini_game_container.gd" id="18_tm6q7"]
 [ext_resource type="PackedScene" uid="uid://7l685bky3cj7" path="res://scenes/menu/pages/cursor/levels/balloon_minigame.tscn" id="19_ny7ot"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="19_w4v5d"]
 
@@ -367,7 +367,7 @@ offset_top = 222.0
 offset_right = 1375.0
 offset_bottom = 884.0
 stretch = true
-script = ExtResource("18_0y1jn")
+script = ExtResource("18_tm6q7")
 
 [node name="SubViewport" type="SubViewport" parent="MiniGameContainer"]
 handle_input_locally = false

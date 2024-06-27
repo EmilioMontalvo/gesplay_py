@@ -15,10 +15,8 @@ func _process(delta):
 	pass
 	
 func execute_camera_script():
-	print("llegue")
 	var output = []
 	var executable = ProjectSettings.globalize_path("res://executables/list_webcams.exe")
 	var exit_code = OS.execute(executable, [], output)
-	print(output[0])
 	list_of_cameras=JSON.parse_string(str(output[0]))
 	is_ready=true

@@ -44,7 +44,7 @@ class CustomCursor(metaclass=Singleton):
         self.cursor_id = data["cursor_id"]
         self.size = data["size"]
         self.opacity = data["opacity"]
-        self.color = tuple(eval(data["color"]))
+        self.color = data["color"]
         self.active = data["active"]
         self.set_cursor(self.cursor_id)
     

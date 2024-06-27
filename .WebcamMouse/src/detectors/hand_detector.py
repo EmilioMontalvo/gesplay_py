@@ -44,9 +44,15 @@ class HandDetector(metaclass=Singleton):
                 self.hand_position = None               
         return self.hand_position
     
+    def hand_process(self, frame_rgb):
+        if self.is_started:
+            return self.hands.process(frame_rgb)
+        else:
+            return None
 
     def destroy(self):
-        self.hands.close()
+        if self.hands:
+            self.hands.close()
         self.is_started = False
         self.hand_position = None
         self.mp_landmarks = None

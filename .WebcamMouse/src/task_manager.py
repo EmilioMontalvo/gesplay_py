@@ -24,6 +24,7 @@ class TaskManager(metaclass=Singleton):
         logger.info("Intialize TaskManaller singleton")
         self.is_started = False
         self.is_running = True
+        self.pipeline_thread = None
 
     def start(self):
         if not self.is_started:          
@@ -61,6 +62,7 @@ class TaskManager(metaclass=Singleton):
     def exit(self):
         logger.info("Exit program")
         self.is_running = False
+        self.pipeline_thread.shutdown(wait=False,cancel_futures=True)
 
         # Stop singletons
         from src.camera_manager import CameraManager

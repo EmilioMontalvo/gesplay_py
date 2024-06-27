@@ -23,6 +23,7 @@ if __name__ == "__main__":
     logging.info("Starting main app")
     TaskManager().start()
     pool = futures.ThreadPoolExecutor(max_workers=1)
+    TaskManager().pipeline_thread = pool
     pool.submit(main_loop)
     
     from src.windows.cursor_window import CursorWindow

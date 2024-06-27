@@ -30,15 +30,17 @@ class Pipeline:
         frame = CameraManager().get_fliped_frame()
         hand_position = HandDetector().get_hand_position(frame_rgb)
         frame_rgb.flags.writeable = False
-        results_image = HandDetector().hands.process(frame_rgb)
-        frame_rgb.flags.writeable = True
-        ClickController().act(image_results=results_image, image=frame)
-        if ClickController().is_clicked and not self.last_clicked:
-            MouseController().pause()
-        self.last_clicked = ClickController().is_clicked
-        MouseController().act(track_loc=hand_position)
+        results_image = HandDetector().hand_process(frame_rgb)
 
-        send_frame = CameraManager().frame
-        utils.draw_circle(send_frame, hand_position)
-        send_frame = utils.invert_frame(send_frame)
-        UdpClient().send_bytes(send_frame)
+        if results_image:
+            frame_rgb.flags.writeable = True
+            ClickController().act(image_results=results_image, image=frame)
+            if ClickController().is_clicked and not self.last_clicked:
+                MouseController().pause()
+            self.last_clicked = ClickController().is_clicked
+            MouseController().act(track_loc=hand_position)
+
+            send_frame = CameraManager().frame
+            utils.draw_circle(send_frame, hand_position)
+            send_frame = utils.invert_frame(send_frame)
+            UdpClient().send_bytes(send_frame)

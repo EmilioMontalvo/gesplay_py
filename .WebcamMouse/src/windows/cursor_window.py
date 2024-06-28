@@ -3,6 +3,7 @@ from PIL import Image, ImageTk
 import pyautogui
 from src.singleton_meta import Singleton
 from src.windows.custom_cursor import CustomCursor
+import logging
 
 class CursorWindow(metaclass=Singleton):
 
@@ -69,6 +70,7 @@ class CursorWindow(metaclass=Singleton):
         self.root.mainloop()
 
     def destroy(self):
+        logging.info("CursorWindow destroyed")
         self.root.quit()
-        self.root.destroy()
+        #self.root.destroy()
 

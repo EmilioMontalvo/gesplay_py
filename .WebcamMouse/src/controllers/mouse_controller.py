@@ -7,12 +7,13 @@ import time
 import concurrent.futures as futures
 from src.singleton_meta import Singleton
 from src.cursor_config import CursorConfig
+import logging
 
 # Max buffer number for apply smoothing.
 N_BUFFER = 100
 pyautogui.PAUSE = 0
 pyautogui.FAILSAFE = False
-
+logger = logging.getLogger("MouseController")
 
 class MouseController(metaclass=Singleton):
     def __init__(self) -> None:
@@ -111,6 +112,7 @@ class MouseController(metaclass=Singleton):
             self.is_active = False
 
     def destroy(self):
+        logger.info("Exit MouseController")
         self.is_active = False
         self.is_started = False
         self.is_stoped = True

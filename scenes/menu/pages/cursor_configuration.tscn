@@ -134,6 +134,7 @@ offset_left = -67.9706
 offset_top = -48.3235
 offset_right = -17.9706
 offset_bottom = 1.67652
+text_guide = "Ajusta lo rápido que se mueve el cursor en la pantalla según el movimiento de la manoeve tu mano"
 
 [node name="PointerSmootSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -168,6 +169,7 @@ offset_left = -53.8529
 offset_top = -53.0294
 offset_right = -3.85291
 offset_bottom = -3.02941
+text_guide = "Hace que el movimiento del cursor sea más suave. La suavidad del movimiento puede afectar la precición"
 
 [node name="TicksSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -192,6 +194,7 @@ offset_left = 41.4412
 offset_top = -47.1471
 offset_right = 91.4412
 offset_bottom = 2.85294
+text_guide = "Aumenta la precisión, Un valor alto puede hacer que el juego sea más preciso, pero también puede hacer que el cursor sea muy lentose mueva más lentamente si es demasiado alto."
 
 [node name="VisualHelp" type="Control" parent="."]
 anchors_preset = 0

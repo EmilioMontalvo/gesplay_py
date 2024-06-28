@@ -34,7 +34,8 @@ func _on_accept_button_pressed():
 
 
 func _on_cancel_button_pressed():
-	DisplayServer.window_set_size(user_size,GlobalConf.config_window_id)
+	if GlobalConf.config_window_id:
+		DisplayServer.window_set_size(user_size,GlobalConf.config_window_id)
 	$Panel/SizeSlider.value=GlobalConf.window_size_value
 	size_value=GlobalConf.window_size_value
 	cancel.emit()

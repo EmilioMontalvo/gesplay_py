@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://omguc2d7uttv"]
+[gd_scene load_steps=14 format=3 uid="uid://omguc2d7uttv"]
 
 [ext_resource type="Script" path="res://scripts/cursor/cursor_level.gd" id="1_5cbu7"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_b8157"]
 [ext_resource type="PackedScene" uid="uid://bhjupdts1dg3q" path="res://scenes/menu/pages/cursor/elements/level_container.tscn" id="2_6owtb"]
 [ext_resource type="PackedScene" uid="uid://ljf6h2krs2bt" path="res://scenes/menu/level_header.tscn" id="4_mknjm"]
+[ext_resource type="Texture2D" uid="uid://ctte8vbtx5oov" path="res://assets/cursor_game/doc_images/cursor_guide_1.png" id="5_8ttin"]
+[ext_resource type="Texture2D" uid="uid://bkqy1t8vu1enx" path="res://assets/cursor_game/doc_images/cursor_guide_2.png" id="6_5hj2w"]
+[ext_resource type="Texture2D" uid="uid://bmv740nj3tqga" path="res://assets/cursor_game/doc_images/cursor_guide_3.png" id="7_t45l2"]
 [ext_resource type="PackedScene" uid="uid://mdf5sf8oq4ue" path="res://scenes/menu/components/cursor/win_screen.tscn" id="8_qebgv"]
+[ext_resource type="Texture2D" uid="uid://dq03ogblaef2" path="res://assets/cursor_game/doc_images/cursor_guide_7.png" id="8_xejai"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="9_1xh55"]
+[ext_resource type="Texture2D" uid="uid://dirkn4irdnqqs" path="res://assets/cursor_game/doc_images/cursor_guide_4.png" id="9_aqkr1"]
+[ext_resource type="Texture2D" uid="uid://d23tehksxkyn2" path="res://assets/cursor_game/doc_images/cursor_guide_5.png" id="10_yxfq2"]
+[ext_resource type="Texture2D" uid="uid://cjidw67vbwyco" path="res://assets/cursor_game/doc_images/cursor_guide_6.png" id="11_mhno6"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_5cbu7")
@@ -28,6 +35,30 @@ position = Vector2(2, -615)
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("4_mknjm")]
 scene_go_back = 10
 scene_home = 1
+
+[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="3"]
+guide_data = [{
+"image": ExtResource("5_8ttin"),
+"text": "Mueve el cursor hacia la pala."
+}, {
+"image": ExtResource("6_5hj2w"),
+"text": "Usa la pala para cavar en la tierra con grietas."
+}, {
+"image": ExtResource("7_t45l2"),
+"text": "Recoge las estrellas para ganar puntos extra."
+}, {
+"image": ExtResource("8_xejai"),
+"text": "¡Cuidado! La pala caerá si chocas."
+}, {
+"image": ExtResource("9_aqkr1"),
+"text": "Recolecta todas las llaves."
+}, {
+"image": ExtResource("10_yxfq2"),
+"text": "Cuando tengas todas las llaves, se abrirá la jaula."
+}, {
+"image": ExtResource("11_mhno6"),
+"text": "Rescata al animal usando la pala y termina el nivel. ¡Suerte!"
+}]
 
 [node name="WinScreen" parent="CanvasLayer" instance=ExtResource("8_qebgv")]
 visible = false

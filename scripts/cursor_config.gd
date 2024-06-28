@@ -4,10 +4,10 @@ extends Node
 class_name CursorConfig
 
 var camera_id=0
-var spd_up=40
-var spd_down=40
-var spd_left=40
-var spd_right=40
+var spd_up=10
+var spd_down=10
+var spd_left=10
+var spd_right=10
 var pointer_smooth=65
 var tick_interval_ms=16
 

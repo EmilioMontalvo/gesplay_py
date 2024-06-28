@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1t1oj0fdb2ip"]
 
 [ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_8e80b"]
-[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_n3hna"]
+[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_n3hna"]
 [ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="3_rhmdb"]
 [ext_resource type="Script" path="res://scripts/menu/help_button_menu.gd" id="4_om5lk"]
 [ext_resource type="PackedScene" uid="uid://c6ckhgn7yowwx" path="res://scenes/menu/components/menu_guide.tscn" id="5_ybews"]

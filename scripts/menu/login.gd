@@ -18,6 +18,7 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
 	http_request.request("https://example.com/")
+	user_input.grab_focus()
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
@@ -38,6 +39,7 @@ func _on_button_pressed():
 		MenuManager.load_menu(1)
 
 func set_invite_mode():
+	
 	user_input.queue_free()
 	password_input.queue_free()
 	register_link.queue_free()
@@ -48,3 +50,4 @@ func set_invite_mode():
 	login_guest_button.visible = true
 	no_internet_message.visible = true
 	no_internet_animation.visible = true
+	login_guest_button.grab_focus()

@@ -11,11 +11,11 @@ func _ready():
 		interpreter_path = ProjectSettings.globalize_path("res://.WebcamMouse/env/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://.WebcamMouse/main.py")
 	thread = Thread.new()
-	#thread.start(activate)
+	thread.start(activate)
 
 func activate():
 	var output=[]
-	var err = OS.execute(interpreter_path, [script_path], output, false,true)
+	var err = OS.execute(interpreter_path, [script_path], output, false,false)
 	print(err)
 
 func _exit_tree():

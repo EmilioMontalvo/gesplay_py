@@ -43,6 +43,9 @@ theme_override_constants/separation = 10
 [node name="SearchBar" type="LineEdit" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../../HelpButton")
 theme = ExtResource("1_awgda")
 placeholder_text = "Buscar"
 alignment = 1
@@ -50,6 +53,7 @@ right_icon = ExtResource("5_cmqiq")
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+focus_previous = NodePath("../SearchBar")
 text = " Nuevo Perfil"
 icon = ExtResource("6_wg5pn")
 icon_alignment = 2
@@ -62,16 +66,28 @@ offset_left = 1208.0
 offset_top = 28.0
 offset_right = 1304.0
 offset_bottom = 124.0
+focus_next = NodePath("../HelpButton")
+focus_previous = NodePath("../GoBack")
 
 [node name="GoBack" parent="." instance=ExtResource("6_6huvo")]
 layout_mode = 0
+focus_next = NodePath("../Home")
 
 [node name="HelpButton" parent="." instance=ExtResource("9_cqyjp")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1318.0
 offset_top = 51.0
 offset_right = 1368.0
 offset_bottom = 101.0
+grow_horizontal = 1
+grow_vertical = 1
+focus_next = NodePath("../HBoxContainer/SearchBar")
+focus_previous = NodePath("../Home")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(1126, 540)

@@ -60,3 +60,7 @@ func _on_opacity_slider_value_changed(value):
 func _on_link_button_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	DisplayServer.window_move_to_foreground(0)
+
+
+func _on_visibility_changed():
+	$Panel/SizeSlider.grab_focus()

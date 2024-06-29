@@ -57,3 +57,8 @@ func _on_drag_panel_dragged_panel(following,dragPoint):
 
 func _on_control_camer_conf_btn_pressed():
 	config.emit(window_id)
+
+
+func _on_visibility_changed():
+	if visible:
+		$Panel/GoBack.grab_focus()

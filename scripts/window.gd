@@ -77,3 +77,4 @@ func _on_control_computer_configuration_cancel():
 func _on_visibility_changed():
 	if visible:
 		_ready()
+		

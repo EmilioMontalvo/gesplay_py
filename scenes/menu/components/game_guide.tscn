@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lrpfqyo4avr2"]
+[gd_scene load_steps=11 format=3 uid="uid://lrpfqyo4avr2"]
 
 [ext_resource type="Script" path="res://scripts/menu/game_guide.gd" id="1_ievus"]
 [ext_resource type="Theme" uid="uid://cmpht74onoe3b" path="res://assets/buttons/themes/confirm_dialog_theme.tres" id="1_jdc3f"]
@@ -7,7 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://u2d7lxxp73yp" path="res://assets/buttons/icons/arrow_right_24dp.png" id="3_e4xwd"]
 [ext_resource type="Texture2D" uid="uid://c61kptdu3hyr4" path="res://assets/buttons/icons/place_holder_profile.png" id="3_ycxtc"]
 [ext_resource type="Texture2D" uid="uid://crvwl3givlide" path="res://assets/buttons/icons/arrow_left_24dp_hover.png" id="4_4rbp6"]
+[ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="6_qwf5i"]
 [ext_resource type="Texture2D" uid="uid://dck83eee6iq1l" path="res://assets/buttons/icons/arrow_right_24dp_hover.png" id="8_fyhtb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7dh4r"]
+shader = ExtResource("6_qwf5i")
+shader_parameter/corner_radius = 25.0
 
 [node name="GameGuide" type="Control"]
 process_mode = 3
@@ -77,6 +82,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Image" type="TextureRect" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_7dh4r")
 layout_mode = 2
 texture = ExtResource("3_ycxtc")
 

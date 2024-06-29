@@ -19,6 +19,7 @@ func _ready():
 	picker.presets_visible=false
 	
 	$CheckBox.button_pressed=temporalCursorIconConfig.active
+	$VelocitySlider/HSlider3.grab_focus()
 
 func _on_ticks_slider_value_changed(value):
 	temporalCursorConfig.tick_interval_ms=value

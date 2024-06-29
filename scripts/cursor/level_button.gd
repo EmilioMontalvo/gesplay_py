@@ -29,6 +29,9 @@ func _ready():
 	label.text=level_name
 	$stars.set_stars(stars)
 	change_texture(texturePath)
+	
+	if locked:
+		$button.focus_mode=0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,3 +43,12 @@ func _on_button_pressed():
 
 func change_texture(res):
 	button.texture_normal=load(res)
+
+
+func _on_button_focus_entered():
+	$button.modulate=Color(0.5,0.5,0.5)
+	print(level_name)
+
+
+func _on_button_focus_exited():
+	$button.modulate=Color(1,1,1)

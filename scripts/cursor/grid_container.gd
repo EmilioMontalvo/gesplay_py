@@ -14,7 +14,7 @@ extends GridContainer
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	var first=true
 	for x in levelsArray:
 		var instance=level_scene.instantiate()
 		instance.locked=unlocked_levels<1
@@ -24,6 +24,7 @@ func _ready():
 		instance.texturePath=x[4]
 		add_child(instance)
 		unlocked_levels=unlocked_levels-1
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

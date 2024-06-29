@@ -15,6 +15,7 @@ func _ready():
 	for button in buttons_list:
 		button.pressed.connect(_on_change)
 	buttons_list[temporal_click_config.gesture_index].button_pressed = true
+	$HelpButtonMenu.grab_focus()
 
 func _on_change():
 	print(button_group.get_pressed_button().text)

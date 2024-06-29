@@ -12,3 +12,10 @@ func _on_btn_select_webcam_pressed():
 func _on_list_webcam_finalized():
 	pass # Replace with function body.
 				
+
+
+func _on_confirmation_dialog_option_selected(option):
+	if option:
+		get_tree().quit()
+	else:
+		$ConfirmationDialog.visible=false

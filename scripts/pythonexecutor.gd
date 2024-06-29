@@ -13,6 +13,10 @@ func _ready():
 	thread = Thread.new()
 	thread.start(activate)
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		disconect() # default behavior
+
 func activate():
 	var output=[]
 	var err = OS.execute(interpreter_path, [script_path], output, false,true)
@@ -23,4 +27,9 @@ func _exit_tree():
 	var terminate_message=Message.new("exit",{"info": "program terminated"})
 	UdPServer.send_message(terminate_message)
 	thread.wait_to_finish()
-	pass
+
+func disconect():
+	var terminate_message=Message.new("exit",{"info": "program terminated"})
+	UdPServer.send_message(terminate_message)
+	thread.wait_to_finish()
+	get_tree().quit()

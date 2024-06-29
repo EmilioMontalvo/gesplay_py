@@ -1,20 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1gds3k5pvky6"]
+[gd_scene load_steps=25 format=3 uid="uid://b1gds3k5pvky6"]
 
 [ext_resource type="PackedScene" uid="uid://wtabsm7ma7mu" path="res://scenes/menu/pages/click/backgrounds/background_beach.tscn" id="1_84ab4"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_pegg3"]
 [ext_resource type="PackedScene" uid="uid://ljf6h2krs2bt" path="res://scenes/menu/level_header.tscn" id="3_76oyr"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/star_points.tscn" id="6_vnbdp"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/time_container.tscn" id="7_64w8i"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="6_vnbdp"]
+[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="7_64w8i"]
+[ext_resource type="Texture2D" uid="uid://oewyiti8fnfu" path="res://assets/click_game/doc_images/doc_click_1.png" id="7_gprnl"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_uvch6"]
+[ext_resource type="Texture2D" uid="uid://13p7h3ibtas5" path="res://assets/click_game/doc_images/doc_click_2.png" id="8_3rkfv"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="8_hsn2u"]
+[ext_resource type="Texture2D" uid="uid://da6ua3ig35fym" path="res://assets/click_game/doc_images/doc_click_3.png" id="9_bwosn"]
+[ext_resource type="Texture2D" uid="uid://bfxqae4w3yob7" path="res://assets/click_game/doc_images/doc_click_4.png" id="10_bfura"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="10_rkxrj"]
 [ext_resource type="Texture2D" uid="uid://cm03dm8g23ro0" path="res://assets/click_game/animals/beach/CoralCrabIdleSide.png" id="11_bqjw2"]
+[ext_resource type="Texture2D" uid="uid://cc743qejwqa3a" path="res://assets/click_game/doc_images/doc_click_5.png" id="11_kynxs"]
+[ext_resource type="Texture2D" uid="uid://bxmda15cn4yu2" path="res://assets/click_game/doc_images/doc_click_6.png" id="12_gfagk"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="12_lu24v"]
+[ext_resource type="Texture2D" uid="uid://8mungo45mwxw" path="res://assets/click_game/doc_images/doc_click_7.png" id="13_0o23r"]
 [ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="13_cjiam"]
 [ext_resource type="Texture2D" uid="uid://gghkeful1hpg" path="res://assets/click_game/foods/beach/props.png" id="14_nk4o7"]
 [ext_resource type="Texture2D" uid="uid://dnb80ut3uqp8f" path="res://assets/click_game/animals/beach/gull.png" id="15_i76o6"]
 [ext_resource type="Texture2D" uid="uid://3ffwpb0vm4td" path="res://assets/click_game/foods/beach/Ant.png" id="16_b0da6"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_6bd01"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_6bd01"]
 [ext_resource type="Texture2D" uid="uid://cas33tpc11obf" path="res://assets/click_game/animals/beach/SlowTurtleIdleSide.png" id="17_w3pta"]
 [ext_resource type="Texture2D" uid="uid://d06ajau7emjyp" path="res://assets/click_game/foods/beach/Apple Red.png" id="18_utlxr"]
 
@@ -46,6 +53,30 @@ offset_bottom = -541.0
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_76oyr")]
 scene_go_back = 13
 scene_home = 1
+
+[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="3"]
+guide_data = [{
+"image": ExtResource("7_gprnl"),
+"text": "Haz clic en un animal y mantén presionado para arrastrarlo."
+}, {
+"image": ExtResource("8_3rkfv"),
+"text": "Lleva el animal a la sombra que coincide con su forma."
+}, {
+"image": ExtResource("9_bwosn"),
+"text": "Si el animal está en su lugar correcto, el contorno será verde; de lo contrario, será rojo."
+}, {
+"image": ExtResource("10_bfura"),
+"text": "Gana puntos colocando cada animal en su lugar correcto."
+}, {
+"image": ExtResource("11_kynxs"),
+"text": "Gana puntos recogiendo la comida mientras arrastras el animal."
+}, {
+"image": ExtResource("12_gfagk"),
+"text": "Si colocas el animal en un lugar incorrecto, vuelve a su posición inicial."
+}, {
+"image": ExtResource("13_0o23r"),
+"text": "El nivel termina cuando se han colocado todos los animales en sus lugares correspondientes."
+}]
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_uvch6")]
 
@@ -123,6 +154,7 @@ hframes = 4
 
 [node name="SoundControllerClick" parent="." instance=ExtResource("17_6bd01")]
 
+[editable path="CanvasLayer/LevelHeader"]
 [editable path="DropableArea"]
 [editable path="FoodArea"]
 [editable path="DropableArea2"]

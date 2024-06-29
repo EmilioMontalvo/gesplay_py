@@ -1,17 +1,24 @@
-[gd_scene load_steps=21 format=3 uid="uid://6bbabjihidho"]
+[gd_scene load_steps=28 format=3 uid="uid://6bbabjihidho"]
 
 [ext_resource type="PackedScene" uid="uid://gadmbbqlob6m" path="res://scenes/menu/pages/click/backgrounds/background_desert.tscn" id="1_1wx0q"]
 [ext_resource type="Script" path="res://scripts/click_game/levels_script.gd" id="1_ci6ch"]
 [ext_resource type="PackedScene" uid="uid://ljf6h2krs2bt" path="res://scenes/menu/level_header.tscn" id="3_7bew4"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_jckip"]
+[ext_resource type="Texture2D" uid="uid://oewyiti8fnfu" path="res://assets/click_game/doc_images/doc_click_1.png" id="7_xlmfo"]
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="7_ygsh1"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="8_3idpr"]
 [ext_resource type="PackedScene" uid="uid://y3j67rabsoux" path="res://scenes/menu/pages/click/dropable_area.tscn" id="8_7x5ip"]
+[ext_resource type="Texture2D" uid="uid://13p7h3ibtas5" path="res://assets/click_game/doc_images/doc_click_2.png" id="8_ga230"]
 [ext_resource type="Texture2D" uid="uid://cecoa4refrmti" path="res://assets/click_game/animals/raton2.png" id="9_d7ijp"]
+[ext_resource type="Texture2D" uid="uid://da6ua3ig35fym" path="res://assets/click_game/doc_images/doc_click_3.png" id="9_kiqp4"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="9_xi8h4"]
+[ext_resource type="Texture2D" uid="uid://bfxqae4w3yob7" path="res://assets/click_game/doc_images/doc_click_4.png" id="10_eq8hn"]
 [ext_resource type="Texture2D" uid="uid://tfa8svjmkh0" path="res://assets/click_game/animals/tiger2.png" id="10_nilgq"]
 [ext_resource type="Texture2D" uid="uid://dv5n28sl1j7bt" path="res://assets/click_game/animals/bird2.png" id="11_4w7me"]
+[ext_resource type="Texture2D" uid="uid://cc743qejwqa3a" path="res://assets/click_game/doc_images/doc_click_5.png" id="11_kep6d"]
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="12_8cwfb"]
+[ext_resource type="Texture2D" uid="uid://bxmda15cn4yu2" path="res://assets/click_game/doc_images/doc_click_6.png" id="12_v6sbe"]
+[ext_resource type="Texture2D" uid="uid://8mungo45mwxw" path="res://assets/click_game/doc_images/doc_click_7.png" id="13_6akk8"]
 [ext_resource type="Texture2D" uid="uid://b8a6ypvwjw8rx" path="res://assets/click_game/animals/desert/fox.png" id="15_ho4x1"]
 [ext_resource type="Texture2D" uid="uid://c476ddadye5ic" path="res://assets/click_game/animals/desert/snake.png" id="16_lgch1"]
 [ext_resource type="Texture2D" uid="uid://3grk4ep77sgc" path="res://assets/click_game/animals/desert/rat.png" id="17_pkbya"]
@@ -49,6 +56,30 @@ offset_bottom = -541.0
 [node name="LevelHeader" parent="CanvasLayer" instance=ExtResource("3_7bew4")]
 scene_go_back = 13
 scene_home = 1
+
+[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="3"]
+guide_data = [{
+"image": ExtResource("7_xlmfo"),
+"text": "Haz clic en un animal y mantén presionado para arrastrarlo."
+}, {
+"image": ExtResource("8_ga230"),
+"text": "Lleva el animal a la sombra que coincide con su forma."
+}, {
+"image": ExtResource("9_kiqp4"),
+"text": "Si el animal está en su lugar correcto, el contorno será verde; de lo contrario, será rojo."
+}, {
+"image": ExtResource("10_eq8hn"),
+"text": "Gana puntos colocando cada animal en su lugar correcto."
+}, {
+"image": ExtResource("11_kep6d"),
+"text": "Gana puntos recogiendo la comida mientras arrastras el animal."
+}, {
+"image": ExtResource("12_v6sbe"),
+"text": "Si colocas el animal en un lugar incorrecto, vuelve a su posición inicial."
+}, {
+"image": ExtResource("13_6akk8"),
+"text": "El nivel termina cuando se han colocado todos los animales en sus lugares correspondientes."
+}]
 
 [node name="AnimalsContainer" parent="." instance=ExtResource("7_jckip")]
 
@@ -131,6 +162,7 @@ hframes = 4
 
 [node name="SoundControllerClick" parent="." instance=ExtResource("20_d6sah")]
 
+[editable path="CanvasLayer/LevelHeader"]
 [editable path="DropableArea"]
 [editable path="DropableArea2"]
 [editable path="DropableArea3"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=24 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
@@ -23,6 +23,20 @@
 [ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="21_wn8ax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0sr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty5jb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0862745, 0.8, 0.8, 0.568627)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 2
 
 [node name="CursorConfiguration" type="Control"]
 layout_mode = 3
@@ -84,12 +98,22 @@ offset_top = 941.0
 offset_right = -333.0
 offset_bottom = -27.0
 
+[node name="Acept" parent="AceptCancel" index="0"]
+focus_next = NodePath("../Cancel")
+focus_previous = NodePath("../../MiniGameContainer/SubViewport/InGameCamera/PauseCameraButton")
+
+[node name="Cancel" parent="AceptCancel" index="1"]
+focus_next = NodePath("../../GoBack")
+focus_previous = NodePath("../Acept")
+
 [node name="GoBack" parent="." instance=ExtResource("8_smhg0")]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 29.0
 offset_right = 142.0
 offset_bottom = 129.0
+focus_next = NodePath("../Home")
+focus_previous = NodePath("../AceptCancel/Cancel")
 scene = 4
 
 [node name="Home" parent="." instance=ExtResource("9_1gns7")]
@@ -98,6 +122,8 @@ offset_left = 1251.0
 offset_top = 27.0
 offset_right = 1347.0
 offset_bottom = 123.0
+focus_next = NodePath("../HelpButton")
+focus_previous = NodePath("../GoBack")
 
 [node name="HelpButton" parent="." instance=ExtResource("10_xu8ue")]
 layout_mode = 0
@@ -112,6 +138,8 @@ offset_right = 1415.0
 offset_bottom = 106.0
 grow_horizontal = 1
 grow_vertical = 1
+focus_next = NodePath("../VelocitySlider/HSlider3")
+focus_previous = NodePath("../Home")
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -163,6 +191,7 @@ offset_left = 313.0
 offset_top = 43.5
 offset_right = 467.0
 offset_bottom = 83.5
+focus_mode = 2
 
 [node name="HelpButtonMenu" parent="PointerSmootSlider" index="3"]
 offset_left = -53.8529
@@ -194,6 +223,7 @@ offset_left = 41.4412
 offset_top = -47.1471
 offset_right = 91.4412
 offset_bottom = 2.85294
+focus_next = NodePath("../../CheckBox")
 text_guide = "Aumenta la precisión, Un valor alto puede hacer que el juego sea más preciso, pero también puede hacer que el cursor sea muy lentose mueva más lentamente si es demasiado alto."
 
 [node name="VisualHelp" type="Control" parent="."]
@@ -280,6 +310,9 @@ offset_top = 612.0
 offset_right = 243.0
 offset_bottom = 713.0
 scale = Vector2(0.85, 0.85)
+focus_next = NodePath("../ColorPickerButton")
+focus_previous = NodePath("../../HelpButtonMenu")
+focus_mode = 2
 
 [node name="SizeSlider" type="HSlider" parent="VisualHelp"]
 layout_mode = 0
@@ -288,6 +321,8 @@ offset_top = 761.0
 offset_right = 455.0
 offset_bottom = 791.0
 scale = Vector2(0.85, 0.85)
+focus_next = NodePath("../OpacitySlider")
+focus_previous = NodePath("../ColorPickerButton")
 min_value = 50.0
 max_value = 200.0
 value = 100.0
@@ -300,6 +335,8 @@ offset_top = 853.0
 offset_right = 456.0
 offset_bottom = 883.0
 scale = Vector2(0.85, 0.85)
+focus_next = NodePath("../../MiniGameContainer/SubViewport/InGameCamera/PauseCameraButton")
+focus_previous = NodePath("../SizeSlider")
 min_value = 0.2
 max_value = 1.0
 step = 0.1
@@ -313,7 +350,10 @@ offset_top = 611.0
 offset_right = 414.0
 offset_bottom = 716.0
 scale = Vector2(0.85, 0.85)
+focus_next = NodePath("../SizeSlider")
+focus_previous = NodePath("../MenuButton")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7n0sr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ty5jb")
 color = Color(0.145098, 0.0980392, 0.34902, 1)
 
 [node name="TextureRect4" type="TextureRect" parent="VisualHelp"]
@@ -341,7 +381,19 @@ offset_left = 260.0
 offset_top = 536.0
 offset_right = 289.0
 offset_bottom = 565.0
+focus_next = NodePath("../HelpButtonMenu")
+focus_previous = NodePath("../TicksSlider/HelpButtonMenu")
 button_pressed = true
+
+[node name="HelpButtonMenu" parent="." instance=ExtResource("21_wn8ax")]
+layout_mode = 1
+offset_left = -408.0
+offset_top = 21.0
+offset_right = -358.0
+offset_bottom = 71.0
+scale = Vector2(0.7, 0.7)
+focus_next = NodePath("../VisualHelp/MenuButton")
+focus_previous = NodePath("../CheckBox")
 
 [node name="MiniGameContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
@@ -368,15 +420,11 @@ offset_right = 0.175
 offset_bottom = 6.62
 grow_horizontal = 1
 
-[node name="BalloonMinigame" parent="MiniGameContainer/SubViewport" instance=ExtResource("19_ny7ot")]
+[node name="PauseCameraButton" parent="MiniGameContainer/SubViewport/InGameCamera" index="1"]
+focus_next = NodePath("../../../../AceptCancel/Acept")
+focus_previous = NodePath("../../../../VisualHelp/OpacitySlider")
 
-[node name="HelpButtonMenu" parent="." instance=ExtResource("21_wn8ax")]
-layout_mode = 1
-offset_left = -408.0
-offset_top = 18.0
-offset_right = -358.0
-offset_bottom = 68.0
-scale = Vector2(0.8, 0.8)
+[node name="BalloonMinigame" parent="MiniGameContainer/SubViewport" instance=ExtResource("19_ny7ot")]
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]
@@ -394,3 +442,4 @@ scale = Vector2(0.8, 0.8)
 [editable path="VelocitySlider"]
 [editable path="PointerSmootSlider"]
 [editable path="TicksSlider"]
+[editable path="MiniGameContainer/SubViewport/InGameCamera"]

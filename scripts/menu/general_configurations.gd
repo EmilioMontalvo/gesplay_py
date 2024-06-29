@@ -7,6 +7,7 @@ func _ready():
 		window_mode_option.selected = 0
 	elif get_current_display_mode() == 3:
 		window_mode_option.selected = 1
+	$MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/WindowMode.grab_focus()
 
 func _on_acept_pressed():
 	var window_mode_id = window_mode_option.get_selected_id()

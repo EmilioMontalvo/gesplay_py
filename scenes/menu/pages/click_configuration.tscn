@@ -2624,12 +2624,22 @@ offset_top = 424.0
 offset_right = -378.0
 offset_bottom = 424.0
 
+[node name="Acept" parent="AceptCancel" index="0"]
+focus_next = NodePath("../Cancel")
+focus_previous = NodePath("../../RadioButtons/CheckButton2")
+
+[node name="Cancel" parent="AceptCancel" index="1"]
+focus_next = NodePath("../../GoBack")
+focus_previous = NodePath("../Acept")
+
 [node name="GoBack" parent="." instance=ExtResource("9_5lfnl")]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 29.0
 offset_right = 142.0
 offset_bottom = 129.0
+focus_next = NodePath("../Home")
+focus_previous = NodePath("../AceptCancel/Cancel")
 scene = 4
 
 [node name="Home" parent="." instance=ExtResource("10_jxrtb")]
@@ -2638,6 +2648,8 @@ offset_left = 1324.0
 offset_top = 27.0
 offset_right = 1420.0
 offset_bottom = 123.0
+focus_next = NodePath("../RadioButtons/CheckButton")
+focus_previous = NodePath("../GoBack")
 
 [node name="RadioButtons" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -2649,6 +2661,8 @@ theme_override_constants/separation = 140
 
 [node name="CheckButton" type="CheckButton" parent="RadioButtons"]
 layout_mode = 2
+focus_next = NodePath("../CheckButton2")
+focus_previous = NodePath("../../HelpButtonMenu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_my38k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_my38k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_my38k")
@@ -2659,6 +2673,8 @@ text = "Agarrar"
 
 [node name="CheckButton2" type="CheckButton" parent="RadioButtons"]
 layout_mode = 2
+focus_next = NodePath("../../AceptCancel/Acept")
+focus_previous = NodePath("../CheckButton")
 theme_override_styles/normal = SubResource("StyleBoxFlat_my38k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_my38k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_my38k")
@@ -2708,6 +2724,8 @@ offset_left = 154.0
 offset_top = -362.0
 offset_right = 204.0
 offset_bottom = -312.0
+focus_next = NodePath("../RadioButtons/CheckButton")
+focus_previous = NodePath("../Home")
 text_guide = "El gesto que selecciones sera el que debes realizar para hacer el click en la aplicación."
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]

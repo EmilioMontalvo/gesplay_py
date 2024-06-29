@@ -1,7 +1,25 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://jhce8kd44akt"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://jhce8kd44akt"]
 
-[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_50xwy"]
+[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_50xwy"]
 [ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="2_yjyp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikafc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0862745, 0.8, 0.8, 0.568627)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 2
 
 [resource]
 Button/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
@@ -9,4 +27,5 @@ Button/colors/font_focus_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_hover_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_50xwy")
+Button/styles/focus = SubResource("StyleBoxFlat_ikafc")
 Button/styles/normal = ExtResource("2_yjyp4")

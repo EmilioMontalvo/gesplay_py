@@ -16,6 +16,7 @@ shader_parameter/corner_radius = 25.0
 [node name="ButtonProfile" type="MenuButton"]
 offset_right = 400.0
 offset_bottom = 94.0
+focus_mode = 2
 theme = ExtResource("1_127x3")
 theme_type_variation = &"FlatMenuButton"
 flat = false

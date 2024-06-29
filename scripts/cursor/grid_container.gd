@@ -12,20 +12,31 @@ extends GridContainer
 	[true,"Nivel 7",7,0,"res://assets/cursor_game/levels/icons/level_7.png"],
 	[true,"Nivel 8",8,0,"res://assets/cursor_game/levels/icons/level_8.png"],
 ]
+
+var lastUnlocked:Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	var first=true
 	for x in levelsArray:
 		var instance=level_scene.instantiate()
 		instance.locked=unlocked_levels<1
+		
+		if not unlocked_levels<1:
+			lastUnlocked=instance
+		
 		instance.level_name=x[1]
 		instance.level=x[2]
 		instance.stars=x[3]
 		instance.texturePath=x[4]
 		add_child(instance)
 		unlocked_levels=unlocked_levels-1
-
+	
+	lastUnlocked.get_child(0).focus_next=NodePath("../../../GoBack")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_focus_entered():
+	get_child(0).get_child(0).grab_focus()

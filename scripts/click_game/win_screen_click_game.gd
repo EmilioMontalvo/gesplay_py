@@ -3,6 +3,7 @@ extends Control
 @onready var star_points = $Panel/StarPoints
 @onready var time_container = $Panel/TimeContainer
 @onready var countdown_container = $Panel/CountdownContainer
+@onready var label: Label = $Panel/Label
 
 var final_points: float
 var time_elapsed: String
@@ -13,7 +14,10 @@ func _ready():
 	set_time_container(time_elapsed)
 	countdown_container.timeout_level.connect(_on_forward_button_pressed)
 	if final_level:
-		time_container.queue_free()
+		star_points.position.y = 171
+		label.position.y = 125
+		time_container.position.y = 330
+		countdown_container.queue_free()
 		$Panel/HBoxContainer/ForwardButton.queue_free()
 
 func _on_forward_button_pressed():

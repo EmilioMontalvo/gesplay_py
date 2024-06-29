@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dd54atv3cfg7u"]
+[gd_scene load_steps=24 format=3 uid="uid://dd54atv3cfg7u"]
 
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="1_6ya5u"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_baw05"]
@@ -15,10 +15,7 @@
 [ext_resource type="Script" path="res://scripts/control_computer_btn.gd" id="11_iw5sp"]
 [ext_resource type="PackedScene" uid="uid://dlnu3ca4sqm1x" path="res://scenes/menu/components/actual_profile_button.tscn" id="13_654sp"]
 [ext_resource type="PackedScene" uid="uid://7iurv83hg0qb" path="res://scenes/menu/list_webcam.tscn" id="14_k6opc"]
-[ext_resource type="Script" path="res://scripts/menu/leave_app_button.gd" id="15_fqdcs"]
 [ext_resource type="PackedScene" uid="uid://6x4im8p0stpr" path="res://scenes/windows/window.tscn" id="15_vcymu"]
-[ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="17_irtyu"]
-[ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="19_81nxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld27w"]
 atlas = ExtResource("6_xou64")
@@ -182,7 +179,7 @@ offset_bottom = 934.0
 focus_neighbor_top = NodePath("../MenuButtons/BtnSelectWebcam")
 focus_neighbor_right = NodePath("../Games")
 focus_neighbor_bottom = NodePath("../ButtonProfile")
-focus_next = NodePath("../LeaveApp")
+focus_next = NodePath("../ButtonProfile")
 focus_previous = NodePath("../MenuButtons/BtnSelectWebcam")
 theme = ExtResource("7_jbsl3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b6l1d")
@@ -225,15 +222,6 @@ offset_bottom = 288.0
 theme_override_font_sizes/font_size = 40
 text = "Juegos"
 
-[node name="LeaveApp" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1322.0
-offset_top = 40.0
-offset_right = 1395.0
-offset_bottom = 113.0
-texture_normal = ExtResource("17_irtyu")
-script = ExtResource("15_fqdcs")
-
 [node name="ButtonProfile" parent="." instance=ExtResource("13_654sp")]
 layout_mode = 0
 offset_left = 943.0
@@ -245,7 +233,8 @@ focus_neighbor_top = NodePath("../ControlComputer")
 focus_neighbor_right = NodePath("../Games")
 focus_neighbor_bottom = NodePath("../MenuButtons/BtnSelectProfile")
 focus_next = NodePath("../MenuButtons/BtnSelectProfile")
-focus_previous = NodePath("../LeaveApp")
+focus_previous = NodePath("../ControlComputer")
+focus_mode = 2
 
 [node name="ListWebcam" parent="." instance=ExtResource("14_k6opc")]
 visible = false
@@ -263,25 +252,10 @@ grow_vertical = 1
 [node name="Window" parent="." instance=ExtResource("15_vcymu")]
 visible = false
 
-[node name="ConfirmationDialog" parent="." instance=ExtResource("19_81nxg")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-dialog_text = "La aplicación se cerrará"
-
 [connection signal="pressed" from="MenuButtons/BtnSelectWebcam" to="." method="_on_btn_select_webcam_pressed"]
 [connection signal="pressed" from="ControlComputer" to="ControlComputer" method="_on_pressed"]
 [connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
-[connection signal="focus_entered" from="LeaveApp" to="LeaveApp" method="_on_focus_entered"]
-[connection signal="focus_exited" from="LeaveApp" to="LeaveApp" method="_on_focus_exited"]
-[connection signal="pressed" from="LeaveApp" to="LeaveApp" method="_on_pressed"]
 [connection signal="visibility_changed" from="Window" to="Window" method="_on_visibility_changed"]
-[connection signal="option_selected" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_option_selected"]
 
 [editable path="MenuButtons/BtnSelectProfile"]
 [editable path="MenuButtons/BtnReport"]

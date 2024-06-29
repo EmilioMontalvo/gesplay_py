@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs3cj24dgjclq"]
+[gd_scene load_steps=12 format=3 uid="uid://bs3cj24dgjclq"]
 
+[ext_resource type="Script" path="res://scripts/menu/register.gd" id="1_ah40m"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_f0sx1"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_5bgvs"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_7otiy"]
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ah40m")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_f0sx1")]
 
@@ -99,7 +101,6 @@ offset_right = 406.0
 offset_bottom = 538.0
 text = "Resgistrarse"
 script = ExtResource("4_pr16r")
-scene = 1
 
 [node name="LinkButton" type="LinkButton" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -114,6 +115,7 @@ offset_right = 171.0
 offset_bottom = 161.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 theme_override_font_sizes/font_size = 20
 text = "Iniciar Sesión"

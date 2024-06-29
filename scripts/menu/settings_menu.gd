@@ -9,6 +9,7 @@ func _ready():
 	current_profile_data = CurrentProfile.get_profile_data()
 	lbl_profile_name.text = current_profile_data.get("first_name") + " " + current_profile_data.get("last_name")
 	set_profile_image(current_profile_data.get("image_path"))
+	$HBoxContainer/Configs/BtnGeneralSettings.grab_focus()
 	
 func set_profile_image(path: String):
 	var profile_image = Image.load_from_file(path)

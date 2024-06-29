@@ -1,6 +1,7 @@
 extends TextureRect
 
 var star_images: Dictionary
+var star_points: float = 0
 
 func _ready():
 	star_images = {
@@ -19,5 +20,9 @@ func get_texture_from_file(path: String) -> ImageTexture:
 func set_stars_image(points: float):
 	if fmod(points,0.75) == 0 and fmod(points,0.5) != 0:
 		points += 0.25
+	star_points = points
 	print("points: ",points)
-	texture = star_images.get(str(points))
+	texture = star_images.get(str(star_points))
+
+func get_stars() -> float:
+	return star_points

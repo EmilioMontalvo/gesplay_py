@@ -31,6 +31,7 @@ GlobalConf="*res://scripts/global_config.gd"
 CurrentProfile="*res://scripts/current_profile.gd"
 CursorIconConf="*res://scripts/cursor_icon_config.gd"
 SoundControllerMenu="*res://scenes/menu/components/sound_controller_menu.tscn"
+GameDataController="*res://scripts/game_data_controller.gd"
 
 [display]
 

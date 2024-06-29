@@ -27,3 +27,29 @@ const DEFAULT_SETTINGS = {
 	"color": [0.3098,0.639,0.866,1],
 	"active": true
 }
+
+const DEFAULT_GAME_DATA_CURSOR = {
+	"profile_id": "",
+	"game_data": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+		"5": [],
+		"6": [],
+		"7": [],
+		"8": []
+	}
+}
+
+const DEFAULT_GAME_DATA_CLICK = {
+	"profile_id": "",
+	"game_data": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+		"5": [],
+		"6": []
+	}
+}

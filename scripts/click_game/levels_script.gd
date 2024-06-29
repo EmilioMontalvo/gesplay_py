@@ -14,6 +14,7 @@ var points_by_food: float
 var points_by_animal: float
 var time_init
 var actual_level: String
+var level_data: LevelData = LevelData.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -72,6 +73,7 @@ func check_success():
 		stop_timer()
 		sound_controller.play_fx(SoundClickSources.sounds_fx.LEVEL_COMPLETE)
 		save_progress()
+		save_level_progress()
 		show_win_screen()
 	else:
 		sound_controller.play_fx(SoundClickSources.sounds_fx.SUCESS)
@@ -99,3 +101,14 @@ func set_star_points():
 	
 func stop_timer():
 	time_container.stop()
+
+func save_level_progress():
+	level_data.profile_id = CurrentProfile.id
+	level_data.level_id = str(CurrentClickLevel.level)
+	level_data.mistake = mistakes_count
+	level_data.elapsed_time = float(get_time_to_complete_level())
+	level_data.score = final_points
+	level_data.stars = star_points.get_stars()
+	level_data.completed = true
+	level_data.date_time = Time.get_datetime_string_from_system()
+	GameDataController.save_level_progress_click(level_data)

@@ -18,3 +18,4 @@ func _on_confirmation_dialog_option_selected(option):
 		acepted.emit()
 	else:
 		canceled.emit()
+

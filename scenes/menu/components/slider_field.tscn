@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_gj6im"]
 [ext_resource type="Script" path="res://scripts/cursor/slider_field.gd" id="2_fqnhp"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="3_lwxts"]
+[ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="3_d3x5b"]
 
 [node name="SliderField" type="Control"]
 custom_minimum_size = Vector2(463, 99)
@@ -42,14 +42,13 @@ min_value = 1.0
 value = 16.0
 alignment = 1
 
-[node name="HelpButton" parent="." instance=ExtResource("3_lwxts")]
-layout_mode = 0
-offset_left = 174.0
-offset_top = 9.0
-offset_right = 224.0
-offset_bottom = 59.0
-scale = Vector2(0.5, 0.5)
+[node name="HelpButtonMenu" parent="." instance=ExtResource("3_d3x5b")]
+layout_mode = 1
+offset_left = 168.5
+offset_top = -69.5
+offset_right = 218.5
+offset_bottom = -19.5
+scale = Vector2(0.8, 0.8)
 
 [connection signal="value_changed" from="HSlider3" to="." method="_on_h_slider_3_value_changed"]
 [connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
-[connection signal="help_request" from="HelpButton" to="." method="_on_help_button_help_request"]

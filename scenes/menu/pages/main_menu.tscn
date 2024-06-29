@@ -109,6 +109,11 @@ offset_bottom = 331.0
 
 [node name="BtnSelectProfile" parent="MenuButtons" instance=ExtResource("4_s0b3s")]
 layout_mode = 0
+focus_neighbor_top = NodePath("../../ButtonProfile")
+focus_neighbor_right = NodePath("../../Games")
+focus_neighbor_bottom = NodePath("../BtnReport")
+focus_next = NodePath("../../Games")
+focus_previous = NodePath("../../ButtonProfile")
 script = ExtResource("5_sfo2u")
 scene = 3
 
@@ -118,6 +123,11 @@ offset_left = 6.0
 offset_top = 112.0
 offset_right = 450.0
 offset_bottom = 203.0
+focus_neighbor_top = NodePath("../BtnSelectProfile")
+focus_neighbor_right = NodePath("../../Games")
+focus_neighbor_bottom = NodePath("../BtnConfiguration")
+focus_next = NodePath("../BtnConfiguration")
+focus_previous = NodePath("../BtnSelectProfile")
 icon = SubResource("AtlasTexture_ld27w")
 
 [node name="Text" parent="MenuButtons/BtnReport" index="0"]
@@ -130,6 +140,11 @@ offset_left = 7.0
 offset_top = 223.0
 offset_right = 451.0
 offset_bottom = 314.0
+focus_neighbor_top = NodePath("../BtnReport")
+focus_neighbor_right = NodePath("../../Games")
+focus_neighbor_bottom = NodePath("../BtnSelectWebcam")
+focus_next = NodePath("../BtnSelectWebcam")
+focus_previous = NodePath("../BtnReport")
 icon = SubResource("AtlasTexture_e7e8j")
 script = ExtResource("5_sfo2u")
 scene = 4
@@ -144,6 +159,11 @@ offset_left = 7.0
 offset_top = 338.0
 offset_right = 451.0
 offset_bottom = 429.0
+focus_neighbor_top = NodePath("../BtnConfiguration")
+focus_neighbor_right = NodePath("../../Games")
+focus_neighbor_bottom = NodePath("../../ControlComputer")
+focus_next = NodePath("../../ControlComputer")
+focus_previous = NodePath("../BtnConfiguration")
 icon = SubResource("AtlasTexture_dy8f6")
 
 [node name="Text" parent="MenuButtons/BtnSelectWebcam" index="0"]
@@ -156,6 +176,11 @@ offset_left = 90.0
 offset_top = 796.0
 offset_right = 1349.0
 offset_bottom = 934.0
+focus_neighbor_top = NodePath("../MenuButtons/BtnSelectWebcam")
+focus_neighbor_right = NodePath("../Games")
+focus_neighbor_bottom = NodePath("../ButtonProfile")
+focus_next = NodePath("../ButtonProfile")
+focus_previous = NodePath("../MenuButtons/BtnSelectWebcam")
 theme = ExtResource("7_jbsl3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b6l1d")
 theme_override_styles/hover = ExtResource("8_k2wsd")
@@ -177,6 +202,11 @@ offset_left = 814.0
 offset_top = 357.0
 offset_right = 1287.0
 offset_bottom = 673.0
+focus_neighbor_left = NodePath("../MenuButtons/BtnSelectProfile")
+focus_neighbor_top = NodePath("../ButtonProfile")
+focus_neighbor_bottom = NodePath("../ControlComputer")
+focus_next = NodePath("../MenuButtons/BtnReport")
+focus_previous = NodePath("../MenuButtons/BtnSelectProfile")
 icon = SubResource("AtlasTexture_mslbd")
 icon_alignment = 1
 vertical_icon_alignment = 0
@@ -198,6 +228,13 @@ offset_left = 943.0
 offset_top = 148.0
 offset_right = 1268.0
 offset_bottom = 242.0
+focus_neighbor_left = NodePath("../MenuButtons/BtnSelectProfile")
+focus_neighbor_top = NodePath("../ControlComputer")
+focus_neighbor_right = NodePath("../Games")
+focus_neighbor_bottom = NodePath("../MenuButtons/BtnSelectProfile")
+focus_next = NodePath("../MenuButtons/BtnSelectProfile")
+focus_previous = NodePath("../ControlComputer")
+focus_mode = 2
 
 [node name="ListWebcam" parent="." instance=ExtResource("14_k6opc")]
 visible = false

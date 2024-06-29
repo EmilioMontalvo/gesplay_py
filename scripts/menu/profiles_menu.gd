@@ -3,6 +3,7 @@ extends Control
 @onready var profile_container: VBoxContainer =  $ScrollContainer/ProfilesContainer
 
 func _ready():
+	$HBoxContainer/SearchBar.grab_focus()
 	check_profile_selected()
 	fill_profiles_container()
 

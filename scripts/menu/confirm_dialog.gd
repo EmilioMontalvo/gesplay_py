@@ -39,3 +39,8 @@ func _on_cancel_button_pressed():
 func set_dialog_text(dialog_new_text):
 	dialog_text=dialog_new_text
 	dialog_label.text = dialog_new_text
+
+
+func _on_visibility_changed():
+	if visible:
+		$PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2/CancelButton.grab_focus()

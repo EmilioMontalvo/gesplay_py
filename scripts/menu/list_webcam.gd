@@ -37,4 +37,6 @@ func _on_option_button_item_selected(index):
 	UdPServer.send_message(message)
 
 
-
+func _on_visibility_changed():
+	if visible:
+		option_button.grab_focus()

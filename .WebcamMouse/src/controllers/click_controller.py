@@ -7,6 +7,7 @@ from src.singleton_meta import Singleton
 from src.landmark_processor import LandmarkProcessor
 from src.keypoint_classifier import KeyPointClassifier
 
+
 class ClickController(metaclass=Singleton):
     def __init__(self) -> None:
         self.is_started = False
@@ -72,6 +73,7 @@ class ClickController(metaclass=Singleton):
             self.is_active = False
 
     def destroy(self):
+        logging.info("ClickController destroyed")
         self.is_active = False
         self.is_started = False
         self.is_stoped = True

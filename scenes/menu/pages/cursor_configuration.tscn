@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=23 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://scripts/utils/mini_game_container.gd" id="18_tm6q7"]
 [ext_resource type="PackedScene" uid="uid://7l685bky3cj7" path="res://scenes/menu/pages/cursor/levels/balloon_minigame.tscn" id="19_ny7ot"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="19_w4v5d"]
+[ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="21_wn8ax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0sr"]
 
@@ -105,10 +106,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1367.0
-offset_top = 50.0
-offset_right = 1417.0
-offset_bottom = 100.0
+offset_left = 1365.0
+offset_top = 56.0
+offset_right = 1415.0
+offset_bottom = 106.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -128,18 +129,12 @@ text = "Velocidad
 
 "
 
-[node name="HelpButton" parent="VelocitySlider" index="3"]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 159.0
-offset_top = -9.0
-offset_right = 209.0
-offset_bottom = 41.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="HelpButtonMenu" parent="VelocitySlider" index="3"]
+offset_left = -67.9706
+offset_top = -48.3235
+offset_right = -17.9706
+offset_bottom = 1.67652
+text_guide = "Ajusta lo rápido que se mueve el cursor en la pantalla según el movimiento de la manoeve tu mano"
 
 [node name="PointerSmootSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -169,18 +164,12 @@ offset_top = 43.5
 offset_right = 467.0
 offset_bottom = 83.5
 
-[node name="HelpButton" parent="PointerSmootSlider" index="3"]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 326.0
-offset_top = -2.0
-offset_right = 376.0
-offset_bottom = 48.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="HelpButtonMenu" parent="PointerSmootSlider" index="3"]
+offset_left = -53.8529
+offset_top = -53.0294
+offset_right = -3.85291
+offset_bottom = -3.02941
+text_guide = "Hace que el movimiento del cursor sea más suave. La suavidad del movimiento puede afectar la precición"
 
 [node name="TicksSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -200,18 +189,12 @@ offset_right = 258.824
 text = "Tics por Segundo
 "
 
-[node name="HelpButton" parent="TicksSlider" index="3"]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 263.0
-offset_top = -2.0
-offset_right = 313.0
-offset_bottom = 48.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="HelpButtonMenu" parent="TicksSlider" index="3"]
+offset_left = 41.4412
+offset_top = -47.1471
+offset_right = 91.4412
+offset_bottom = 2.85294
+text_guide = "Aumenta la precisión, Un valor alto puede hacer que el juego sea más preciso, pero también puede hacer que el cursor sea muy lentose mueva más lentamente si es demasiado alto."
 
 [node name="VisualHelp" type="Control" parent="."]
 anchors_preset = 0
@@ -253,9 +236,9 @@ text = "Tamaño
 
 [node name="Label" type="Label" parent="VisualHelp"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 78.0
 offset_top = 806.0
-offset_right = 285.0
+offset_right = 282.0
 offset_bottom = 848.0
 scale = Vector2(0.85, 0.85)
 text = "Opacidad"
@@ -386,6 +369,14 @@ offset_bottom = 6.62
 grow_horizontal = 1
 
 [node name="BalloonMinigame" parent="MiniGameContainer/SubViewport" instance=ExtResource("19_ny7ot")]
+
+[node name="HelpButtonMenu" parent="." instance=ExtResource("21_wn8ax")]
+layout_mode = 1
+offset_left = -408.0
+offset_top = 18.0
+offset_right = -358.0
+offset_bottom = 68.0
+scale = Vector2(0.8, 0.8)
 
 [connection signal="mouse_entered" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel/Node2D/Line2D" method="_on_panel_mouse_exited"]

@@ -97,6 +97,7 @@ offset_left = 521.0
 offset_top = 654.0
 offset_right = 938.0
 offset_bottom = 711.0
+secret = true
 
 [node name="Login" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -138,6 +139,7 @@ offset_right = 785.0
 offset_bottom = 857.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 theme_override_font_sizes/font_size = 20
 text = "Registrate aquí"

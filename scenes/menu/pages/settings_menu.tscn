@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
 [ext_resource type="Script" path="res://scripts/menu/settings_menu.gd" id="2_pkge3"]
-[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
 [ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ipy7k"]
 [ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_a6g5f"]
-[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
+[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_uacma"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_fjkx8"]
 [ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_kamni"]
@@ -67,6 +67,8 @@ offset_left = 26.0
 offset_top = 24.0
 offset_right = 126.0
 offset_bottom = 124.0
+focus_next = NodePath("../Home")
+focus_previous = NodePath("../HBoxContainer/CurrentProfile/BtnEditProfile")
 
 [node name="Home" parent="." instance=ExtResource("12_vg1ue")]
 layout_mode = 0
@@ -74,14 +76,25 @@ offset_left = 1248.0
 offset_top = 30.0
 offset_right = 1344.0
 offset_bottom = 126.0
+focus_next = NodePath("../HelpButton")
+focus_previous = NodePath("../GoBack")
 scene = 0
 
 [node name="HelpButton" parent="." instance=ExtResource("13_518jn")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1365.0
 offset_top = 55.0
 offset_right = 1415.0
 offset_bottom = 105.0
+grow_horizontal = 1
+grow_vertical = 1
+focus_next = NodePath("../HBoxContainer/Configs/BtnGeneralSettings")
+focus_previous = NodePath("../Home")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -106,6 +119,8 @@ alignment = 1
 [node name="BtnGeneralSettings" type="Button" parent="HBoxContainer/Configs"]
 custom_minimum_size = Vector2(491, 84)
 layout_mode = 2
+focus_next = NodePath("../BtnCursorSettings")
+focus_previous = NodePath("../../../HelpButton")
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")
@@ -143,6 +158,8 @@ texture = ExtResource("7_uacma")
 [node name="BtnCursorSettings" type="Button" parent="HBoxContainer/Configs"]
 custom_minimum_size = Vector2(491, 84)
 layout_mode = 2
+focus_next = NodePath("../BtnClicSettings3")
+focus_previous = NodePath("../BtnGeneralSettings")
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")
@@ -181,6 +198,8 @@ texture = ExtResource("7_uacma")
 [node name="BtnClicSettings3" type="Button" parent="HBoxContainer/Configs"]
 custom_minimum_size = Vector2(491, 84)
 layout_mode = 2
+focus_next = NodePath("../../CurrentProfile/BtnEditProfile")
+focus_previous = NodePath("../BtnCursorSettings")
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")

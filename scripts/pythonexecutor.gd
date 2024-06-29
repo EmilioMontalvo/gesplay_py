@@ -15,7 +15,7 @@ func _ready():
 
 func activate():
 	var output=[]
-	var err = OS.execute(interpreter_path, [script_path], output, false,true)
+	var err = OS.execute(interpreter_path, [script_path], output, false,false)
 	print(err)
 
 func _exit_tree():

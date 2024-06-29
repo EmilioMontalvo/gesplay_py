@@ -51,8 +51,11 @@ class HandDetector(metaclass=Singleton):
             return None
 
     def destroy(self):
-        if self.hands:
+        try:
             self.hands.close()
+            logging.info("HandDetector destroyed")
+        except Exception as e:
+            logging.error(e)
         self.is_started = False
         self.hand_position = None
         self.mp_landmarks = None

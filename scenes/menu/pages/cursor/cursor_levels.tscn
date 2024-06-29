@@ -43,6 +43,7 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 113.0
 offset_bottom = 117.0
+focus_next = NodePath("../Home")
 scene = 6
 
 [node name="Home" parent="CanvasLayer" instance=ExtResource("11_62lih")]
@@ -50,6 +51,16 @@ offset_left = 1238.0
 offset_top = 30.0
 offset_right = 1334.0
 offset_bottom = 126.0
+focus_next = NodePath("../HelpButton")
+focus_previous = NodePath("../GoBack")
+
+[node name="HelpButton" parent="CanvasLayer" instance=ExtResource("9_4ky0y")]
+offset_left = 619.0
+offset_top = -457.0
+offset_right = 669.0
+offset_bottom = -407.0
+focus_next = NodePath("../GridContainer")
+focus_previous = NodePath("../Home")
 
 [node name="GridContainer" parent="CanvasLayer" instance=ExtResource("6_6vwgj")]
 anchors_preset = 8
@@ -63,11 +74,10 @@ offset_right = 380.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_next = NodePath("../GoBack")
+focus_previous = NodePath("../Home")
+focus_mode = 2
 
 [node name="TileMap" parent="." instance=ExtResource("7_8kckn")]
 
-[node name="HelpButton" parent="." instance=ExtResource("9_4ky0y")]
-offset_left = 1339.0
-offset_top = 55.0
-offset_right = 1389.0
-offset_bottom = 105.0
+[connection signal="focus_entered" from="CanvasLayer/GridContainer" to="CanvasLayer/GridContainer" method="_on_focus_entered"]

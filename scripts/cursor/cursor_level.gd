@@ -14,6 +14,7 @@ func _ready():
 	$CanvasLayer/LevelHeader.set_current_level(next_level-1)
 	SoundControllerMenu.change_song(song)
 	SoundControllerMenu.continue_music()
+	$CanvasLayer/LevelHeader/ColorRect/GoBack.grab_focus()
 
 func _on_level_container_won():
 	win_screen.visible=true

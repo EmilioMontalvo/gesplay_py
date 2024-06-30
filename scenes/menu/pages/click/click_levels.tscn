@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_uil07"]
 [ext_resource type="Texture2D" uid="uid://oewyiti8fnfu" path="res://assets/click_game/doc_images/doc_click_1.png" id="6_cuc5j"]
 [ext_resource type="Texture2D" uid="uid://uhrnuab3ww5e" path="res://assets/click_game/levels_container.png" id="6_sg7wb"]
-[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="7_0772l"]
+[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="7_0772l"]
 [ext_resource type="Texture2D" uid="uid://13p7h3ibtas5" path="res://assets/click_game/doc_images/doc_click_2.png" id="7_lw502"]
 [ext_resource type="Texture2D" uid="uid://da6ua3ig35fym" path="res://assets/click_game/doc_images/doc_click_3.png" id="8_h3nvg"]
 [ext_resource type="Texture2D" uid="uid://bfxqae4w3yob7" path="res://assets/click_game/doc_images/doc_click_4.png" id="9_55lmh"]

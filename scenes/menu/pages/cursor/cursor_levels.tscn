@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cursor/cursor_levels.gd" id="1_cly3w"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
-[ext_resource type="PackedScene" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
+[ext_resource type="PackedScene" uid="uid://d2oymkkl6p63p" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]

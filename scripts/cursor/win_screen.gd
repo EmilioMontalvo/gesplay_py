@@ -9,9 +9,9 @@ func _ready():
 
 func set_points(points):
 	$points.text=str(points)
-	if points >= 300:
+	if points >= 650:
 		$"3Stars".visible=true
-	elif points >= 200:
+	elif points >= 300:
 		$"2Stars".visible=true
 	else:
 		$"1Star".visible=true

@@ -8,12 +8,13 @@ extends Node2D
 
 @onready var character_sprite=preload("res://assets/cursor_game/ducky_3_spritesheet.png")
 @export var keys=1
+@export var current_level:int=1
 
 var shovel_point
-
+var mistakes_count=0
 
 @export var terrain_type="dirt"
-
+var level_data: LevelData = LevelData.new()
 signal won
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -101,4 +102,28 @@ func _on_shovel_grabbed_shovel():
 func _on_shovel_dropped():
 	helpArrow.set_target(shovel.global_position/scale-position)
 	helpArrow.visible=true
-	
+
+func save_level_progress():
+	level_data.profile_id = CurrentProfile.id
+	level_data.level_id = str(current_level)
+	level_data.mistake = mistakes_count
+	level_data.elapsed_time = float(get_time_to_complete_level())
+	level_data.score = points.get_points()
+	level_data.stars = calculate_stars(points.get_points())
+	level_data.completed = true
+	level_data.date_time = Time.get_datetime_string_from_system()
+	GameDataController.save_level_progress_cursor(level_data)
+
+func get_time_to_complete_level():
+	return $CanvasLayer/Time.get_time()
+
+func calculate_stars(points):
+	if points >= 600:
+		return 3
+	elif points >= 300:
+		return 2
+	else:
+		return 1
+
+func _on_won():
+	save_level_progress()

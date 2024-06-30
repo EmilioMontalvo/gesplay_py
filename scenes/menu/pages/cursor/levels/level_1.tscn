@@ -36,7 +36,7 @@ position = Vector2(2, -615)
 scene_go_back = 10
 scene_home = 1
 
-[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="3"]
+[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="4"]
 guide_data = [{
 "image": ExtResource("5_8ttin"),
 "text": "Mueve el cursor hacia la pala."

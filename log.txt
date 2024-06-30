@@ -1,12 +1,18 @@
-2024-06-26 22:09:19,008 INFO root: <module>: Starting main app
-2024-06-26 22:09:19,008 INFO TaskManager: __init__: Intialize TaskManaller singleton
-2024-06-26 22:09:19,011 INFO TaskManager: receiveData: Listener Started...
-2024-06-26 22:09:19,011 INFO root: __init__: CameraManager Init
-2024-06-26 22:09:19,011 INFO root: start: CameraManager started
-2024-06-26 22:09:20,449 INFO root: __init__: Init HandDetector
-2024-06-26 22:09:20,450 INFO root: start: HandDetector Started
-2024-06-26 22:09:20,457 INFO root: start: MouseController started
-2024-06-26 22:09:20,458 INFO root: main_loop: MouseController thread started
-2024-06-26 22:09:20,458 INFO root: start: ClickController started
-2024-06-26 22:09:20,460 INFO root: main_loop: ClickController thread started
-2024-06-26 22:09:20,472 INFO root: __init__: Init Pipeline
+2024-06-30 17:34:54,268 INFO root: <module>: Starting main app
+2024-06-30 17:34:54,268 INFO TaskManager: __init__: Intialize TaskManaller singleton
+2024-06-30 17:34:54,270 INFO TaskManager: receiveData: Listener Started...
+2024-06-30 17:34:54,270 INFO root: __init__: CameraManager Init
+2024-06-30 17:34:54,270 INFO root: start: CameraManager started
+2024-06-30 17:34:55,652 INFO root: __init__: Init HandDetector
+2024-06-30 17:34:55,652 INFO root: start: HandDetector Started
+2024-06-30 17:34:55,659 INFO root: start: MouseController started
+2024-06-30 17:34:55,659 INFO root: main_loop: MouseController thread started
+2024-06-30 17:34:55,659 INFO root: start: ClickController started
+2024-06-30 17:34:55,660 INFO root: main_loop: ClickController thread started
+2024-06-30 17:34:55,668 INFO root: __init__: Init Pipeline
+2024-06-30 17:36:05,020 INFO TaskManager: exit: Exit program
+2024-06-30 17:36:05,504 INFO root: destroy: HandDetector destroyed
+2024-06-30 17:36:05,505 INFO TaskManager: destroy: UdpClient destroyed
+2024-06-30 17:36:05,505 INFO MouseController: destroy: Exit MouseController
+2024-06-30 17:36:05,505 INFO root: destroy: ClickController destroyed
+2024-06-30 17:36:05,505 INFO root: destroy: CursorWindow destroyed

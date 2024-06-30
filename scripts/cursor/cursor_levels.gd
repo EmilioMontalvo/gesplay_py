@@ -11,7 +11,7 @@ func _ready():
 		first_level.get_child(0).grab_focus()
 		first_level.get_child(0).focus_previous=NodePath("../../../HelpButton")
 	
-	if grid.lastUnlocked:	
+	if grid.lastUnlocked:
 		$CanvasLayer/GoBack.focus_previous=NodePath(grid.lastUnlocked.get_child(0).get_path())
 		
 	

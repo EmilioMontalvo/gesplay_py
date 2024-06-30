@@ -363,6 +363,7 @@ offset_top = 233.0
 offset_right = -1226.0
 offset_bottom = -749.0
 
+[connection signal="won" from="." to="." method="_on_won"]
 [connection signal="dropped" from="Shovel" to="." method="_on_shovel_dropped"]
 [connection signal="grabbed_shovel" from="Shovel" to="." method="_on_shovel_grabbed_shovel"]
 [connection signal="has_been_grabbed" from="Shovel" to="." method="_on_shovel_has_been_grabbed"]

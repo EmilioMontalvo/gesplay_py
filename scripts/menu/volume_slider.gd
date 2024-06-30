@@ -9,7 +9,7 @@ extends HBoxContainer
 @onready var volume_mute_icon = preload("res://assets/buttons/icons/volume_mute_48.png")
 
 var bus_index: int
-var last_volume_linear: float
+var last_volume_linear: float = 1
 
 func _ready():
 	mute_button.size = Vector2(0.5,0.5)

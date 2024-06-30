@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://kpjepbg28y37"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_ri4pu"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
 [ext_resource type="Script" path="res://scripts/menu/general_configurations.gd" id="2_ecmw8"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="8_8w3m3"]
 [ext_resource type="PackedScene" uid="uid://dyptrbjyf36xs" path="res://scenes/menu/components/volume_slider.tscn" id="8_iqox8"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_ejfp2"]
@@ -104,7 +104,6 @@ layout_mode = 2
 
 [node name="WindowMode" type="OptionButton" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
-focus_previous = NodePath("../../../../../HelpButton")
 alignment = 1
 item_count = 2
 selected = 0
@@ -131,11 +130,7 @@ bus_name = "Music"
 
 [node name="VolumeSFX" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer" instance=ExtResource("8_iqox8")]
 layout_mode = 2
-focus_next = NodePath("../../../../../../../AceptCancel/Acept")
 bus_name = "SFX"
-
-[node name="VolumeSlider" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/VolumeSFX" index="1"]
-focus_next = NodePath("../../../../../../../../AceptCancel/Acept")
 
 [node name="GoBack" parent="." instance=ExtResource("11_ejfp2")]
 layout_mode = 0
@@ -143,7 +138,6 @@ offset_left = 26.0
 offset_top = 24.0
 offset_right = 126.0
 offset_bottom = 124.0
-focus_next = NodePath("../Home")
 scene = 4
 
 [node name="Home" parent="." instance=ExtResource("12_86b1d")]
@@ -152,8 +146,6 @@ offset_left = 1248.0
 offset_top = 30.0
 offset_right = 1344.0
 offset_bottom = 126.0
-focus_next = NodePath("../HelpButton")
-focus_previous = NodePath("../GoBack")
 
 [node name="HelpButton" parent="." instance=ExtResource("13_ik6jx")]
 layout_mode = 0
@@ -168,8 +160,6 @@ offset_right = 1415.0
 offset_bottom = 105.0
 grow_horizontal = 1
 grow_vertical = 1
-focus_next = NodePath("../MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/WindowMode")
-focus_previous = NodePath("../Home")
 
 [node name="AceptCancel" parent="." instance=ExtResource("8_8w3m3")]
 layout_mode = 1
@@ -183,14 +173,7 @@ offset_right = -382.0
 offset_bottom = -162.0
 grow_vertical = 0
 
-[node name="Acept" parent="AceptCancel" index="0"]
-focus_next = NodePath("../Cancel")
-
-[node name="Cancel" parent="AceptCancel" index="1"]
-focus_previous = NodePath("../Acept")
-
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]
 
-[editable path="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer/VolumeSFX"]
 [editable path="AceptCancel"]

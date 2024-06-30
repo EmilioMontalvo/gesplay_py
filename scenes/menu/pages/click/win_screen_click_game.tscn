@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://detwhko83a5on" path="res://assets/buttons/icons/repeat_arrow.png" id="3_dvds7"]
 [ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="4_g0mu2"]
 [ext_resource type="Texture2D" uid="uid://bbn762sxoj0jy" path="res://assets/buttons/icons/arrow_forward.png" id="4_gmluo"]
-[ext_resource type="Texture2D" uid="uid://b3jtfqwuixldy" path="res://assets/buttons/icons/Home.png" id="5_rm616"]
 [ext_resource type="PackedScene" uid="uid://c3ha3edud3yod" path="res://scenes/menu/pages/click/countdown_container.tscn" id="6_uh6yv"]
 [ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="8_43cj7"]
+[ext_resource type="Texture2D" uid="uid://c54ja34nivk6n" path="res://assets/buttons/icons/level_list.png" id="9_pb102"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asiq8"]
 bg_color = Color(0.964706, 0.933333, 0.870588, 1)
@@ -118,18 +118,20 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="RepeatButton" type="Button" parent="Panel/HBoxContainer"]
+[node name="HomeButton" type="Button" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
-icon = ExtResource("3_dvds7")
+icon = ExtResource("9_pb102")
+icon_alignment = 1
 
 [node name="ForwardButton" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_gmluo")
 
-[node name="HomeButton" type="Button" parent="Panel/HBoxContainer"]
+[node name="RepeatButton" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
-icon = ExtResource("5_rm616")
+icon = ExtResource("3_dvds7")
 
-[connection signal="pressed" from="Panel/HBoxContainer/RepeatButton" to="." method="_on_repeat_button_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/ForwardButton" to="." method="_on_forward_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/ForwardButton" to="." method="_on_forward_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/RepeatButton" to="." method="_on_repeat_button_pressed"]

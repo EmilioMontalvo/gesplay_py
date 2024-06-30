@@ -28,7 +28,7 @@ func _on_repeat_button_pressed():
 
 func _on_home_button_pressed():
 	SoundControllerMenu.continue_music()
-	get_tree().change_scene_to_file("res://scenes/menu/pages/click/click_levels.tscn")
+	MenuManager.load_menu(MenuManager.MENU_LEVEL.CLICK_LEVELS)
 
 func set_time_container(time: String):
 	time_container.stop()
@@ -38,4 +38,3 @@ func go_next_level():
 	var next_level = CurrentClickLevel.level + 1
 	CurrentClickLevel.level = next_level
 	MenuManager.change_to_file("res://scenes/menu/pages/click/levels/level_"+str(next_level)+".tscn")
-	#get_tree().change_scene_to_file("res://scenes/menu/pages/click/levels/level_"+str(next_level)+".tscn")

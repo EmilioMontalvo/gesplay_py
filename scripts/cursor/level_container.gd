@@ -40,6 +40,7 @@ func _on_shovel_touched(body):
 	elif body.is_in_group("HardTerrain"):		
 		shovel.out_of_terrain(shovel_point)
 		points.sub_points(50)
+		mistakes_count=mistakes_count+1
 	elif body.is_in_group("objective"):
 		get_points_from(body)
 		shovel.drop_end()

@@ -27,8 +27,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="AceptCancel" type="Control"]
-layout_mode = 3
+[node name="AceptCancel" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,18 +36,17 @@ offset_bottom = -968.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_n24al")
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="Acept" type="Button" parent="."]
-layout_mode = 0
-offset_right = 373.0
-offset_bottom = 56.0
+custom_minimum_size = Vector2(373, 0)
+layout_mode = 2
 text = "Guardar"
 
 [node name="Cancel" type="Button" parent="."]
-layout_mode = 0
-offset_left = 406.0
-offset_right = 779.0
-offset_bottom = 56.0
+custom_minimum_size = Vector2(373, 0)
+layout_mode = 2
 theme_override_styles/normal = ExtResource("2_eronh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_iwlaj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vvjqw")

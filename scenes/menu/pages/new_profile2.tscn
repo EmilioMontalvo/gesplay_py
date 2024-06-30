@@ -134,9 +134,6 @@ offset_top = 840.0
 offset_right = -328.0
 offset_bottom = -128.0
 
-[node name="Acept" parent="AceptCancel" index="0"]
-scale = Vector2(1, 1.01264)
-
 [node name="HelpButton" parent="." instance=ExtResource("7_7h5t8")]
 layout_mode = 0
 anchors_preset = 0

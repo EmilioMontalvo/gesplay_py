@@ -25,6 +25,7 @@ func _ready():
 		$VBoxContainer/FirstProfileAlert.visible = true
 		$Home.visible = false
 		$GoBack.visible = false
+		$AceptCancel/Cancel.queue_free()
 	for button_image in get_tree().get_nodes_in_group('default_images'):
 		button_image.button_group = button_group_images
 		button_image.pressed.connect(_on_change_image_default)

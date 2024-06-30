@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="3_8jr0r"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="4_uil07"]
 [ext_resource type="Texture2D" uid="uid://uhrnuab3ww5e" path="res://assets/click_game/levels_container.png" id="6_sg7wb"]
-[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="7_c1obl"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="7_0772l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ir67h"]
-font = ExtResource("7_c1obl")
+font = ExtResource("7_0772l")
 font_size = 100
 outline_size = 10
 outline_color = Color(0.145098, 0.0980392, 0.34902, 1)
@@ -112,9 +112,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.5
+offset_left = -189.0
 offset_top = -246.0
-offset_right = 185.5
+offset_right = 189.0
 offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2

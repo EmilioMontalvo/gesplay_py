@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cursor/cursor_levels.gd" id="1_cly3w"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="5_km6w8"]
-[ext_resource type="PackedScene" uid="uid://d2oymkkl6p63p" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
+[ext_resource type="PackedScene" path="res://scripts/click_game/config/levels_grid.tscn" id="6_6vwgj"]
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]
@@ -43,7 +43,6 @@ offset_left = 13.0
 offset_top = 17.0
 offset_right = 113.0
 offset_bottom = 117.0
-focus_next = NodePath("../Home")
 scene = 6
 
 [node name="Home" parent="CanvasLayer" instance=ExtResource("11_62lih")]
@@ -51,16 +50,6 @@ offset_left = 1238.0
 offset_top = 30.0
 offset_right = 1334.0
 offset_bottom = 126.0
-focus_next = NodePath("../HelpButton")
-focus_previous = NodePath("../GoBack")
-
-[node name="HelpButton" parent="CanvasLayer" instance=ExtResource("9_4ky0y")]
-offset_left = 619.0
-offset_top = -457.0
-offset_right = 669.0
-offset_bottom = -407.0
-focus_next = NodePath("../GridContainer")
-focus_previous = NodePath("../Home")
 
 [node name="GridContainer" parent="CanvasLayer" instance=ExtResource("6_6vwgj")]
 anchors_preset = 8
@@ -74,10 +63,11 @@ offset_right = 380.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_next = NodePath("../GoBack")
-focus_previous = NodePath("../Home")
-focus_mode = 2
 
 [node name="TileMap" parent="." instance=ExtResource("7_8kckn")]
 
-[connection signal="focus_entered" from="CanvasLayer/GridContainer" to="CanvasLayer/GridContainer" method="_on_focus_entered"]
+[node name="HelpButton" parent="." instance=ExtResource("9_4ky0y")]
+offset_left = 1339.0
+offset_top = 55.0
+offset_right = 1389.0
+offset_bottom = 105.0

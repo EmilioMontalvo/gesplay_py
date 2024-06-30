@@ -2,6 +2,9 @@ extends Control
 
 @onready var box_container_top: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer
 @onready var box_container_bottom: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer2
+@onready var go_back: TextureButton = $Header/GoBack
+@onready var home: TextureButton = $Header/Home
+@onready var help_button = $Header/HelpButton
 
 var max_level: int
 
@@ -13,6 +16,10 @@ func _ready():
 			box_container_top.add_child(get_level_selector(i,level_selector.instantiate()))
 		else:
 			box_container_bottom.add_child(get_level_selector(i,level_selector.instantiate()))
+	var first_level = box_container_top.get_child(0).button
+	first_level.grab_focus()
+	box_container_bottom.get_child(2).button.focus_next = NodePath(go_back.get_path())
+	help_button.focus_next = NodePath(first_level.get_path())
 
 func get_level_selector(level,level_selector):
 	level_selector.is_locked = !(level <= max_level)

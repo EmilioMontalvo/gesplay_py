@@ -7,17 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://cv4r3xrebyyon" path="res://assets/click_game/backgrounds/background_ocean/4.png" id="5_8cddq"]
 
 [node name="BackgroundOcean" type="ParallaxBackground"]
-scale = Vector2(2.85, 2.85)
-transform = Transform2D(2.85, 0, 0, 2.85, 0, 0)
+scale = Vector2(3.2, 3.2)
+transform = Transform2D(3.2, 0, 0, 3.2, 0, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(245.614, 195.439)
+position = Vector2(242.5, 159.688)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 texture = ExtResource("1_2xgl8")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-position = Vector2(245.614, 195.439)
+position = Vector2(242.5, 159.688)
 script = ExtResource("2_2ilsw")
 speed = 1.5
 
@@ -37,7 +37,7 @@ position = Vector2(-1719.3, 0)
 texture = ExtResource("3_06orp")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-position = Vector2(245.614, 195.439)
+position = Vector2(242.5, 159.688)
 script = ExtResource("2_2ilsw")
 speed = 2.5
 
@@ -57,7 +57,7 @@ position = Vector2(-1721.05, 0)
 texture = ExtResource("4_210ge")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
-position = Vector2(245.614, 195.439)
+position = Vector2(242.5, 159.688)
 script = ExtResource("2_2ilsw")
 speed = 4.0
 

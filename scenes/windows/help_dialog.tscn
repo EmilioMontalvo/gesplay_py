@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://75l6kf7wvu41"]
+
+[ext_resource type="Script" path="res://scripts/menu/help_dialog_pop_up.gd" id="1_jqsn8"]
+[ext_resource type="Theme" uid="uid://cmpht74onoe3b" path="res://assets/buttons/themes/confirm_dialog_theme.tres" id="3_tl4b4"]
+[ext_resource type="Texture2D" uid="uid://q003ob4ghyee" path="res://assets/buttons/icons/close_32.png" id="4_jgwf6"]
+
+[node name="HelpDialog" type="Popup"]
+size = Vector2i(540, 150)
+visible = true
+script = ExtResource("1_jqsn8")
+
+[node name="MenuGuide" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuGuide"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_tl4b4")
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuGuide/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuGuide/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuGuide/PanelContainer/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CloseButton" type="Button" parent="MenuGuide/PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("4_jgwf6")
+clip_text = true
+icon_alignment = 1
+
+[node name="TextGuide" type="Label" parent="MenuGuide/PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[connection signal="pressed" from="MenuGuide/PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="visibility_changed" from="MenuGuide/PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_visibility_changed"]

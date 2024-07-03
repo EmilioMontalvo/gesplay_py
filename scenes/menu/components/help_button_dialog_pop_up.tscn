@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://jhfkcwhkj4oj"]
+[gd_scene load_steps=8 format=3 uid="uid://dgi2c62lohv68"]
 
-[ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="1_f4dqd"]
-[ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_o7kdr"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_cqwta"]
-[ext_resource type="Script" path="res://scripts/menu/help_button.gd" id="3_iqylv"]
-[ext_resource type="Texture2D" uid="uid://h84oyoymvu8d" path="res://assets/cursor_game/levels/icons/level_1.png" id="5_a5dia"]
-[ext_resource type="PackedScene" uid="uid://lrpfqyo4avr2" path="res://scenes/menu/components/game_guide.tscn" id="5_kolq1"]
-[ext_resource type="Texture2D" uid="uid://bjl06j8mykbuq" path="res://assets/buttons/icons/cursor_game_icon.png" id="6_csxfh"]
+[ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_ah7ph"]
+[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_qmb8p"]
+[ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="3_6kii8"]
+[ext_resource type="Script" path="res://scripts/menu/help_button_pop_up.gd" id="4_07d3n"]
+[ext_resource type="PackedScene" uid="uid://75l6kf7wvu41" path="res://scenes/windows/help_dialog.tscn" id="4_yko21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb3bg"]
 bg_color = Color(0.156863, 0.74902, 0.839216, 1)
@@ -34,7 +32,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_color = Color(0.00392157, 0.12549, 0.596078, 0.6)
 
-[node name="HelpButtonGame" type="Button"]
+[node name="HelpButtonMenu" type="Button"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -46,32 +44,21 @@ offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_o7kdr")
+size_flags_horizontal = 4
+theme = ExtResource("1_ah7ph")
 theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 5
-theme_override_fonts/font = ExtResource("2_cqwta")
+theme_override_fonts/font = ExtResource("2_qmb8p")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = ExtResource("1_f4dqd")
+theme_override_styles/normal = ExtResource("3_6kii8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hb3bg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_si23p")
 text = "i"
-script = ExtResource("3_iqylv")
-guide_data = [{
-"image": ExtResource("5_a5dia"),
-"text": "This is a guide text"
-}, {
-"image": ExtResource("6_csxfh"),
-"text": "This is a guide text"
-}, {
-"image": ExtResource("5_a5dia"),
-"text": "This is a guide text"
-}, {
-"image": ExtResource("5_a5dia"),
-"text": "This is a guide text"
-}]
+script = ExtResource("4_07d3n")
 
-[node name="GameGuide" parent="." instance=ExtResource("5_kolq1")]
-layout_mode = 1
+[node name="HelpDialog" parent="." instance=ExtResource("4_yko21")]
+position = Vector2i(55, 5)
+visible = false
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

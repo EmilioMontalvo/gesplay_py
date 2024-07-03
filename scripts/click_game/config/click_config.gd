@@ -23,6 +23,7 @@ func get_as_json() -> Dictionary:
 func set_from_json(config: Dictionary):
 	camera_id = config["camera_id"]
 	gesture_index = config["gesture_index"]
+	apply_config()
 
 func get_as_message(instruction: String) -> Message:
 	return Message.new(instruction,get_as_json())
@@ -35,3 +36,6 @@ func load_saved_config():
 
 func save_config():
 	DataSaver.save_settings(get_as_json(),CurrentProfile.id)
+
+func apply_config():
+	UdPServer.send_message(get_as_message("update_click_config"))

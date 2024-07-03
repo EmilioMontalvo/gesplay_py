@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8sda5old6kra"]
+
+[ext_resource type="PackedScene" uid="uid://lrpfqyo4avr2" path="res://scenes/menu/components/game_guide.tscn" id="1_dpkab"]
+[ext_resource type="Script" path="res://scripts/menu/help_guide_pop_up.gd" id="1_kews6"]
+
+[node name="GameGuidePopup" type="Popup"]
+transparent_bg = true
+initial_position = 5
+size = Vector2i(940, 760)
+visible = true
+transparent = true
+script = ExtResource("1_kews6")
+
+[node name="GameGuide" parent="." instance=ExtResource("1_dpkab")]
+visible = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

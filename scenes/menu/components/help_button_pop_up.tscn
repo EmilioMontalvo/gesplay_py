@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://sto80dmks142"]
+
+[ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_l2qk3"]
+[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_utjtt"]
+[ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="3_dvfql"]
+[ext_resource type="Script" path="res://scripts/menu/help_button_game_guide.gd" id="4_r8dnj"]
+[ext_resource type="PackedScene" uid="uid://8sda5old6kra" path="res://scenes/windows/game_guide_popup.tscn" id="5_2psf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb3bg"]
+bg_color = Color(0.156863, 0.74902, 0.839216, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.00392157, 0.12549, 0.596078, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si23p"]
+bg_color = Color(0.113725, 0.631373, 0.709804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.00392157, 0.12549, 0.596078, 0.6)
+
+[node name="HelpButtonMenu" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_l2qk3")
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 5
+theme_override_fonts/font = ExtResource("2_utjtt")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_dvfql")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hb3bg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_si23p")
+text = "i"
+script = ExtResource("4_r8dnj")
+
+[node name="GameGuidePopup" parent="." instance=ExtResource("5_2psf6")]
+visible = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="move_button_pressed" from="GameGuidePopup/GameGuide" to="GameGuidePopup" method="_on_game_guide_move_button_pressed"]
+
+[editable path="GameGuidePopup"]

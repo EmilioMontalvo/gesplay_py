@@ -10,10 +10,12 @@ var data: Array
 var total_pages: int
 var actual_page: int = 1
 
+signal move_button_pressed
 func _ready():
 	set_actual_page_number(actual_page)
 	set_global_position(get_viewport_rect().size / 2)
 	button_back.disabled = true
+	button_next.grab_focus()
 
 func set_actual_page_number(page: int):
 	page_number.text = str(page) + " / " + str(total_pages)
@@ -28,6 +30,7 @@ func set_page_data(page: int):
 	text.text = data[page - 1].text
 
 func _on_button_back_pressed():
+	move_button_pressed.emit()
 	if actual_page > 1:
 		actual_page -= 1
 		set_actual_page_number(actual_page)
@@ -37,6 +40,7 @@ func _on_button_back_pressed():
 			button_back.disabled = true
 
 func _on_button_next_pressed():
+	move_button_pressed.emit()
 	if actual_page < total_pages:
 		actual_page += 1
 		set_actual_page_number(actual_page)

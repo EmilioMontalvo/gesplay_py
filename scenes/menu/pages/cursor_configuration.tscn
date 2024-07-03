@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b3ms8ciks6rcs"]
+[gd_scene load_steps=23 format=3 uid="uid://b3ms8ciks6rcs"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_rc3o2"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_5db0t"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://scripts/cursor/line_trail.gd" id="7_qsrdo"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="8_smhg0"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="9_1gns7"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="10_xu8ue"]
 [ext_resource type="PackedScene" uid="uid://s24jn5usad8q" path="res://scenes/menu/components/slider_field.tscn" id="12_nggvr"]
 [ext_resource type="PackedScene" uid="uid://benuurw2x2axq" path="res://scenes/menu/components/cursor/cursor_menu_button.tscn" id="14_mnw1j"]
 [ext_resource type="PackedScene" uid="uid://bj2u2kgvkh7wi" path="res://scenes/menu/components/color_pick_button.tscn" id="15_d11qb"]
@@ -118,28 +117,11 @@ scene = 4
 
 [node name="Home" parent="." instance=ExtResource("9_1gns7")]
 layout_mode = 0
-offset_left = 1251.0
-offset_top = 27.0
-offset_right = 1347.0
-offset_bottom = 123.0
-focus_next = NodePath("../HelpButton")
+offset_left = 1299.0
+offset_top = 31.0
+offset_right = 1395.0
+offset_bottom = 127.0
 focus_previous = NodePath("../GoBack")
-
-[node name="HelpButton" parent="." instance=ExtResource("10_xu8ue")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1365.0
-offset_top = 56.0
-offset_right = 1415.0
-offset_bottom = 106.0
-grow_horizontal = 1
-grow_vertical = 1
-focus_next = NodePath("../VelocitySlider/HSlider3")
-focus_previous = NodePath("../Home")
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1

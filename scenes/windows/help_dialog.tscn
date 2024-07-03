@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://q003ob4ghyee" path="res://assets/buttons/icons/close_32.png" id="4_jgwf6"]
 
 [node name="HelpDialog" type="Popup"]
-size = Vector2i(540, 150)
+transparent_bg = true
 visible = true
+unresizable = false
+transparent = true
+content_scale_mode = 1
 script = ExtResource("1_jqsn8")
 
 [node name="MenuGuide" type="Control" parent="."]

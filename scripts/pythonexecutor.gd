@@ -11,7 +11,7 @@ func _ready():
 		interpreter_path = ProjectSettings.globalize_path("res://.WebcamMouse/env/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://.WebcamMouse/main.py")
 	thread = Thread.new()
-	#thread.start(activate)
+	thread.start(activate)
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

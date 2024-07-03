@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv8eq0tigyo03"]
+[gd_scene load_steps=17 format=3 uid="uid://bv8eq0tigyo03"]
 
 [ext_resource type="Script" path="res://scripts/cursor/cursor_levels.gd" id="1_cly3w"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_t3q83"]
@@ -7,8 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c5c63gvj7nxk4" path="res://scenes/menu/components/app_icon.tscn" id="6_l5dlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggh2e62go5" path="res://scenes/menu/components/border_tile_map.tscn" id="7_8kckn"]
 [ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="9_4ky0y"]
+[ext_resource type="Texture2D" uid="uid://ctte8vbtx5oov" path="res://assets/cursor_game/doc_images/cursor_guide_1.png" id="10_44ead"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="10_mmg1k"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="11_62lih"]
+[ext_resource type="Texture2D" uid="uid://bkqy1t8vu1enx" path="res://assets/cursor_game/doc_images/cursor_guide_2.png" id="11_o0ywi"]
+[ext_resource type="Texture2D" uid="uid://bmv740nj3tqga" path="res://assets/cursor_game/doc_images/cursor_guide_3.png" id="12_x7hh0"]
+[ext_resource type="Texture2D" uid="uid://dq03ogblaef2" path="res://assets/cursor_game/doc_images/cursor_guide_7.png" id="13_byqnj"]
+[ext_resource type="Texture2D" uid="uid://dirkn4irdnqqs" path="res://assets/cursor_game/doc_images/cursor_guide_4.png" id="14_yyjgw"]
+[ext_resource type="Texture2D" uid="uid://d23tehksxkyn2" path="res://assets/cursor_game/doc_images/cursor_guide_5.png" id="15_f421o"]
+[ext_resource type="Texture2D" uid="uid://cjidw67vbwyco" path="res://assets/cursor_game/doc_images/cursor_guide_6.png" id="16_oh8n1"]
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_cly3w")
@@ -64,10 +71,37 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TileMap" parent="." instance=ExtResource("7_8kckn")]
+[node name="HelpButton2" parent="CanvasLayer" instance=ExtResource("9_4ky0y")]
+z_index = 4
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = -459.0
+offset_right = -44.0
+offset_bottom = -409.0
+grow_horizontal = 0
+guide_data = [{
+"image": ExtResource("10_44ead"),
+"text": "Mueve el cursor hacia la pala."
+}, {
+"image": ExtResource("11_o0ywi"),
+"text": "Usa la pala para cavar en la tierra con grietas."
+}, {
+"image": ExtResource("12_x7hh0"),
+"text": "Recoge las estrellas para ganar puntos extra."
+}, {
+"image": ExtResource("13_byqnj"),
+"text": "¡Cuidado! La pala caerá si chocas."
+}, {
+"image": ExtResource("14_yyjgw"),
+"text": "Recolecta todas las llaves."
+}, {
+"image": ExtResource("15_f421o"),
+"text": "Cuando tengas todas las llaves, se abrirá la jaula."
+}, {
+"image": ExtResource("16_oh8n1"),
+"text": "Rescata al animal usando la pala y termina el nivel. ¡Suerte!"
+}]
 
-[node name="HelpButton" parent="." instance=ExtResource("9_4ky0y")]
-offset_left = 1339.0
-offset_top = 55.0
-offset_right = 1389.0
-offset_bottom = 105.0
+[node name="TileMap" parent="." instance=ExtResource("7_8kckn")]

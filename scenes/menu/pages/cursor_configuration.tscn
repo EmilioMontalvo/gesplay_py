@@ -118,9 +118,9 @@ scene = 4
 [node name="Home" parent="." instance=ExtResource("9_1gns7")]
 layout_mode = 0
 offset_left = 1299.0
-offset_top = 31.0
+offset_top = 32.0
 offset_right = 1395.0
-offset_bottom = 127.0
+offset_bottom = 128.0
 focus_previous = NodePath("../GoBack")
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]

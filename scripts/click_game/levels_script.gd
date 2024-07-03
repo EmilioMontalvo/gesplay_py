@@ -26,6 +26,7 @@ func _ready():
 	level_header.set_current_level(CurrentClickLevel.level)
 	SoundControllerMenu.pause_music()
 	sound_controller.play_music(CurrentClickLevel.level)
+	$CanvasLayer/LevelHeader/ColorRect/GoBack.grab_focus()
 
 func init_dragabble_objects():
 	var dragabbles_list = get_tree().get_nodes_in_group('draggable')

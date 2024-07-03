@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyh4poxlaa4ji"]
+[gd_scene load_steps=16 format=3 uid="uid://dyh4poxlaa4ji"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
 [ext_resource type="Script" path="res://scripts/menu/settings_menu.gd" id="2_pkge3"]
@@ -12,7 +12,6 @@
 [ext_resource type="Shader" path="res://shadres/profile/profile_image_corner_radius.gdshader" id="11_dirq8"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_jy6ah"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="12_vg1ue"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="13_518jn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_htof6"]
 font = ExtResource("2_ymuiq")
@@ -72,29 +71,12 @@ focus_previous = NodePath("../HBoxContainer/CurrentProfile/BtnEditProfile")
 
 [node name="Home" parent="." instance=ExtResource("12_vg1ue")]
 layout_mode = 0
-offset_left = 1248.0
+offset_left = 1309.0
 offset_top = 30.0
-offset_right = 1344.0
+offset_right = 1405.0
 offset_bottom = 126.0
-focus_next = NodePath("../HelpButton")
 focus_previous = NodePath("../GoBack")
 scene = 0
-
-[node name="HelpButton" parent="." instance=ExtResource("13_518jn")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1365.0
-offset_top = 55.0
-offset_right = 1415.0
-offset_bottom = 105.0
-grow_horizontal = 1
-grow_vertical = 1
-focus_next = NodePath("../HBoxContainer/Configs/BtnGeneralSettings")
-focus_previous = NodePath("../Home")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -120,7 +102,6 @@ alignment = 1
 custom_minimum_size = Vector2(491, 84)
 layout_mode = 2
 focus_next = NodePath("../BtnCursorSettings")
-focus_previous = NodePath("../../../HelpButton")
 theme_override_styles/normal = ExtResource("5_a6g5f")
 icon_alignment = 2
 script = ExtResource("8_fjkx8")

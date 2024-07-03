@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/utils/mini_game_container.gd" id="18_tm6q7"]
 [ext_resource type="PackedScene" uid="uid://7l685bky3cj7" path="res://scenes/menu/pages/cursor/levels/balloon_minigame.tscn" id="19_ny7ot"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="19_w4v5d"]
-[ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="21_wn8ax"]
+[ext_resource type="PackedScene" uid="uid://dgi2c62lohv68" path="res://scenes/menu/components/help_button_dialog_pop_up.tscn" id="22_yfobm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n0sr"]
 
@@ -157,12 +157,12 @@ text = "Velocidad
 
 "
 
-[node name="HelpButtonMenu" parent="VelocitySlider" index="3"]
-offset_left = -67.9706
-offset_top = -48.3235
-offset_right = -17.9706
-offset_bottom = 1.67652
-text_guide = "Ajusta lo rápido que se mueve el cursor en la pantalla según el movimiento de la manoeve tu mano"
+[node name="HelpButtonMenu2" parent="VelocitySlider" index="3"]
+offset_left = -45.6176
+offset_top = -47.1471
+offset_right = 4.38235
+offset_bottom = 2.85295
+help_text = "Ajusta lo rápido que se mueve el cursor en la pantalla según el movimiento de la manoeve tu mano"
 
 [node name="PointerSmootSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -193,12 +193,12 @@ offset_right = 467.0
 offset_bottom = 83.5
 focus_mode = 2
 
-[node name="HelpButtonMenu" parent="PointerSmootSlider" index="3"]
-offset_left = -53.8529
+[node name="HelpButtonMenu2" parent="PointerSmootSlider" index="3"]
+offset_left = -32.6765
 offset_top = -53.0294
-offset_right = -3.85291
-offset_bottom = -3.02941
-text_guide = "Hace que el movimiento del cursor sea más suave. La suavidad del movimiento puede afectar la precición"
+offset_right = 17.3235
+offset_bottom = -3.0294
+help_text = "Hace que el movimiento del cursor sea más suave. La suavidad del movimiento puede afectar la precición"
 
 [node name="TicksSlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1
@@ -218,13 +218,12 @@ offset_right = 258.824
 text = "Tics por Segundo
 "
 
-[node name="HelpButtonMenu" parent="TicksSlider" index="3"]
-offset_left = 41.4412
-offset_top = -47.1471
-offset_right = 91.4412
-offset_bottom = 2.85294
-focus_next = NodePath("../../CheckBox")
-text_guide = "Aumenta la precisión, Un valor alto puede hacer que el juego sea más preciso, pero también puede hacer que el cursor sea muy lentose mueva más lentamente si es demasiado alto."
+[node name="HelpButtonMenu2" parent="TicksSlider" index="3"]
+offset_left = 43.7941
+offset_top = -50.6765
+offset_right = 93.7941
+offset_bottom = -0.676468
+help_text = "Aumenta la precisión, Un valor alto puede hacer que el juego sea más preciso, pero también puede hacer que el cursor sea muy lentose mueva más lentamente si es demasiado alto."
 
 [node name="VisualHelp" type="Control" parent="."]
 anchors_preset = 0
@@ -311,7 +310,6 @@ offset_right = 243.0
 offset_bottom = 713.0
 scale = Vector2(0.85, 0.85)
 focus_next = NodePath("../ColorPickerButton")
-focus_previous = NodePath("../../HelpButtonMenu")
 focus_mode = 2
 
 [node name="SizeSlider" type="HSlider" parent="VisualHelp"]
@@ -381,19 +379,17 @@ offset_left = 260.0
 offset_top = 536.0
 offset_right = 289.0
 offset_bottom = 565.0
-focus_next = NodePath("../HelpButtonMenu")
 focus_previous = NodePath("../TicksSlider/HelpButtonMenu")
 button_pressed = true
 
-[node name="HelpButtonMenu" parent="." instance=ExtResource("21_wn8ax")]
+[node name="HelpButtonMenu2" parent="." instance=ExtResource("22_yfobm")]
 layout_mode = 1
-offset_left = -408.0
-offset_top = 21.0
-offset_right = -358.0
-offset_bottom = 71.0
+offset_left = -411.0
+offset_top = 22.0
+offset_right = -361.0
+offset_bottom = 72.0
 scale = Vector2(0.7, 0.7)
-focus_next = NodePath("../VisualHelp/MenuButton")
-focus_previous = NodePath("../CheckBox")
+help_text = "Icono para facilitar la localización del cursor"
 
 [node name="MiniGameContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0

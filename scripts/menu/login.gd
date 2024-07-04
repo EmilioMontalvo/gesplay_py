@@ -39,7 +39,7 @@ func _on_button_pressed():
 		MenuManager.load_menu(1)
 
 func set_invite_mode():
-	
+	GlobalConf.invite_mode=true
 	user_input.queue_free()
 	password_input.queue_free()
 	register_link.queue_free()

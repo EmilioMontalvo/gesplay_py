@@ -15,6 +15,9 @@ var contrl_window_size = Vector2(362, 475)
 var window_size_value = 0
 var alpha_opacity = 255
 
+#do not save this
+var invite_mode=false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

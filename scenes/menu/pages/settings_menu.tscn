@@ -76,7 +76,6 @@ offset_top = 30.0
 offset_right = 1405.0
 offset_bottom = 126.0
 focus_previous = NodePath("../GoBack")
-scene = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

@@ -2631,6 +2631,7 @@ offset_top = 29.0
 offset_right = 142.0
 offset_bottom = 129.0
 scene = 4
+confirm_dialog = true
 
 [node name="Home" parent="." instance=ExtResource("10_jxrtb")]
 layout_mode = 0
@@ -2638,6 +2639,7 @@ offset_left = 1324.0
 offset_top = 27.0
 offset_right = 1420.0
 offset_bottom = 123.0
+confirm_dialog = true
 
 [node name="RadioButtons" type="VBoxContainer" parent="."]
 layout_mode = 0

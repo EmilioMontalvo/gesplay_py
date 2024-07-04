@@ -114,6 +114,7 @@ offset_bottom = 129.0
 focus_next = NodePath("../Home")
 focus_previous = NodePath("../AceptCancel/Cancel")
 scene = 4
+confirm_dialog = true
 
 [node name="Home" parent="." instance=ExtResource("9_1gns7")]
 layout_mode = 0
@@ -122,6 +123,7 @@ offset_top = 32.0
 offset_right = 1395.0
 offset_bottom = 128.0
 focus_previous = NodePath("../GoBack")
+confirm_dialog = true
 
 [node name="VelocitySlider" parent="." instance=ExtResource("12_nggvr")]
 layout_mode = 1

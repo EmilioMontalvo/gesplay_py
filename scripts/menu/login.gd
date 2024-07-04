@@ -69,7 +69,9 @@ func _on_login_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	if response_code==200:
 		RequestManager.token=json["access_token"]
-		print("acces correct")
+		$CanvasLayer/AnimatedSprite2D.visible=true
+		$CanvasLayer/loanding.visible=true
+		$CanvasLayer/Control.visible=false
 		error_lbl.text=""
 		return
 	if response_code==401:

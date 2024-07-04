@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://pxnpwvmykvjd"]
+[gd_scene load_steps=16 format=3 uid="uid://pxnpwvmykvjd"]
 
 [ext_resource type="Script" path="res://scripts/menu/login.gd" id="1_cllod"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_fiuw7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_25m63"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_xrtw7"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_l25yf"]
+[ext_resource type="PackedScene" uid="uid://bwh2w3hl0wi80" path="res://scenes/menu/components/loanding_animation.tscn" id="9_soniq"]
 [ext_resource type="Texture2D" uid="uid://dnnp364qswtw7" path="res://assets/buttons/icons/cloud.png" id="11_1iv5b"]
 [ext_resource type="Texture2D" uid="uid://d2isotcyvrsb" path="res://assets/buttons/icons/cloud_off.png" id="12_mbjjm"]
 
@@ -35,23 +36,21 @@ script = ExtResource("1_cllod")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 462.0
+offset_top = 410.0
+offset_right = 984.0
+offset_bottom = 895.0
 theme = ExtResource("2_1h0r3")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = 419.0
 offset_top = 61.0
 offset_right = 1061.0
 offset_bottom = 264.0
 texture = ExtResource("3_aas83")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 offset_left = 644.0
 offset_top = 226.0
 offset_right = 807.0
@@ -59,12 +58,27 @@ offset_bottom = 383.0
 texture = ExtResource("4_spak6")
 expand_mode = 1
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 462.0
-offset_top = 410.0
-offset_right = 984.0
-offset_bottom = 895.0
+[node name="loanding" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -76.0
+offset_right = 132.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1h0r3")
+text = "Cargando Datos..."
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 theme = ExtResource("2_1h0r3")
 
 [node name="ErrorLabel" type="Label" parent="CanvasLayer/Control"]
@@ -166,6 +180,10 @@ theme_override_font_sizes/font_size = 20
 text = "Registrate aquí"
 script = ExtResource("6_liukh")
 scene = 14
+
+[node name="AnimatedSprite2D" parent="CanvasLayer" instance=ExtResource("9_soniq")]
+visible = false
+position = Vector2(717, 637)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 61.0

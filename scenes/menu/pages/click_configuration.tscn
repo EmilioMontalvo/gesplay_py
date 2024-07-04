@@ -1,4 +1,4 @@
-[gd_scene load_steps=380 format=3 uid="uid://slim1xm70p63"]
+[gd_scene load_steps=379 format=3 uid="uid://slim1xm70p63"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_mo2un"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_3p8tm"]
@@ -11,7 +11,6 @@
 [ext_resource type="ButtonGroup" uid="uid://bpf1mqyux4doj" path="res://scripts/click_game/utils/gesture_button_group.tres" id="9_3380y"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="10_jxrtb"]
 [ext_resource type="Texture2D" uid="uid://b7nlel0kcasb3" path="res://assets/gesture_sprites/Nip_Sprite.png" id="13_wukka"]
-[ext_resource type="PackedScene" uid="uid://ctvitji3nadc7" path="res://scenes/menu/pages/click/levels/level_test.tscn" id="14_n2ga4"]
 [ext_resource type="Texture2D" uid="uid://dqb7pa0jxesmp" path="res://assets/gesture_sprites/Catch_Sprite.png" id="14_q2sa2"]
 [ext_resource type="PackedScene" uid="uid://c1t1oj0fdb2ip" path="res://scenes/menu/components/help_button_menu.tscn" id="15_kitbb"]
 [ext_resource type="Script" path="res://scripts/utils/mini_game_container.gd" id="15_p117a"]
@@ -2695,8 +2694,6 @@ script = ExtResource("15_p117a")
 handle_input_locally = false
 size = Vector2i(872, 671)
 render_target_update_mode = 4
-
-[node name="LevelTest" parent="SubViewportContainer/SubViewport" instance=ExtResource("14_n2ga4")]
 
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(2, 2)

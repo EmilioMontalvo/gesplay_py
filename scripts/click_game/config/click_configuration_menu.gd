@@ -7,6 +7,9 @@ var temporal_click_config: ClickConfig = ClickConfig.new()
 var button_group: ButtonGroup = ButtonGroup.new()
 var buttons_list: Array
 
+var minigame=preload("res://scenes/menu/pages/click/levels/level_test.tscn")
+var minigame_instace
+
 func _ready():
 	temporal_click_config.set_from_json(ClickConf.get_as_json())
 	catch_button.button_group = button_group
@@ -16,6 +19,10 @@ func _ready():
 		button.pressed.connect(_on_change)
 	buttons_list[temporal_click_config.gesture_index].button_pressed = true
 	$HelpButtonMenu.grab_focus()
+	
+	minigame_instace=minigame.instantiate()
+	minigame_instace.game_finished.connect(_on_level_test_game_finished)
+	$SubViewportContainer/SubViewport.add_child(minigame_instace)
 
 func _on_change():
 	print(button_group.get_pressed_button().text)
@@ -33,3 +40,10 @@ func _on_acept_pressed():
 func _on_cancel_pressed():
 	send_new_config(ClickConf)
 	MenuManager.load_menu(MenuManager.MENU_LEVEL.SETTINGS)
+
+
+func _on_level_test_game_finished():	
+	minigame_instace.queue_free()
+	minigame_instace=minigame.instantiate()
+	minigame_instace.game_finished.connect(_on_level_test_game_finished)
+	$SubViewportContainer/SubViewport.add_child(minigame_instace)

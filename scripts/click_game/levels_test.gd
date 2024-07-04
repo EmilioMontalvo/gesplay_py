@@ -59,10 +59,18 @@ func increase_success():
 func check_success():
 	if success_count >= success_to_win:
 		sound_controller.play_fx(SoundClickSources.sounds_fx.LEVEL_COMPLETE)
-		game_finished.emit(get_node("."))
+		var timer = Timer.new()
+		timer.wait_time = 1.0
+		timer.one_shot = true
+		timer.timeout.connect(_on_timer_timeout)
+		add_child(timer)
+		timer.start()
 	else:
 		sound_controller.play_fx(SoundClickSources.sounds_fx.SUCESS)
-		
+
+func _on_timer_timeout():
+		game_finished.emit()
+
 func increase_mistakes():
 	mistakes_count += 1
 	print("Mistakes count: ", mistakes_count)

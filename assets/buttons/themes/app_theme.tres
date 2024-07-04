@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=37 format=3 uid="uid://8783p7rjqna0"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://8783p7rjqna0"]
 
 [ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_m8scv"]
 [ext_resource type="Texture2D" uid="uid://ceii5tc1ou82j" path="res://assets/buttons/icons/slider.png" id="1_rh0dc"]
@@ -10,6 +10,18 @@
 [ext_resource type="StyleBox" path="res://assets/buttons/resources/style_box_flat_accept_button.tres" id="7_jc4so"]
 [ext_resource type="Texture2D" uid="uid://dm5tstsfdpxf1" path="res://assets/buttons/icons/up_down.png" id="8_5jyra"]
 [ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="10_yr8bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ca6"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.145098, 0.0980392, 0.34902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1t8f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -312,12 +324,14 @@ expand_margin_right = 10.0
 
 [resource]
 Button/colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+Button/colors/font_disabled_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_focus_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_hover_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_hover_pressed_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/colors/font_pressed_color = Color(0.145098, 0.0980392, 0.34902, 1)
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_m8scv")
+Button/styles/disabled = SubResource("StyleBoxFlat_j3ca6")
 Button/styles/focus = SubResource("StyleBoxFlat_q1t8f")
 Button/styles/hover = SubResource("StyleBoxFlat_ve3ut")
 Button/styles/normal = ExtResource("4_7ji4q")

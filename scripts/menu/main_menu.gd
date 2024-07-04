@@ -4,6 +4,8 @@ extends Control
 
 func _ready():
 	button_select_profile.call_deferred("grab_focus")
+	if GlobalConf.invite_mode:
+		$MenuButtons/BtnReport.disabled=true
 
 func _on_btn_select_webcam_pressed():
 	$ListWebcam.visible=true
@@ -19,3 +21,16 @@ func _on_confirmation_dialog_option_selected(option):
 		get_tree().quit()
 	else:
 		$ConfirmationDialog.visible=false
+
+
+func _on_btn_report_pressed():
+	$ConfirmationDialog2.visible=true
+
+
+func _on_confirmation_dialog_2_option_selected(option):
+	if option:
+		print("what")
+		OS.shell_open("https://fis.epn.edu.ec/index.php/es/")
+		$ConfirmationDialog2.visible=false
+	else:
+		$ConfirmationDialog2.visible=false

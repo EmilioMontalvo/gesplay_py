@@ -263,6 +263,9 @@ grow_vertical = 1
 [node name="Window" parent="." instance=ExtResource("15_vcymu")]
 visible = false
 
+[node name="ConfirmationDialog2" parent="." instance=ExtResource("19_81nxg")]
+dialog_text = "Esto te llevará fuera de la aplicación"
+
 [node name="ConfirmationDialog" parent="." instance=ExtResource("19_81nxg")]
 layout_mode = 1
 anchors_preset = 8
@@ -274,6 +277,7 @@ grow_horizontal = 2
 grow_vertical = 2
 dialog_text = "La aplicación se cerrará"
 
+[connection signal="pressed" from="MenuButtons/BtnReport" to="." method="_on_btn_report_pressed"]
 [connection signal="pressed" from="MenuButtons/BtnSelectWebcam" to="." method="_on_btn_select_webcam_pressed"]
 [connection signal="pressed" from="ControlComputer" to="ControlComputer" method="_on_pressed"]
 [connection signal="pressed" from="Games" to="Games" method="_on_pressed"]
@@ -281,6 +285,7 @@ dialog_text = "La aplicación se cerrará"
 [connection signal="focus_exited" from="LeaveApp" to="LeaveApp" method="_on_focus_exited"]
 [connection signal="pressed" from="LeaveApp" to="LeaveApp" method="_on_pressed"]
 [connection signal="visibility_changed" from="Window" to="Window" method="_on_visibility_changed"]
+[connection signal="option_selected" from="ConfirmationDialog2" to="." method="_on_confirmation_dialog_2_option_selected"]
 [connection signal="option_selected" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_option_selected"]
 
 [editable path="MenuButtons/BtnSelectProfile"]

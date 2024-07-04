@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ljf6h2krs2bt" path="res://scenes/menu/level_header.tscn" id="3_cq4am"]
 [ext_resource type="Texture2D" uid="uid://oewyiti8fnfu" path="res://assets/click_game/doc_images/doc_click_1.png" id="4_wj2oo"]
 [ext_resource type="Texture2D" uid="uid://13p7h3ibtas5" path="res://assets/click_game/doc_images/doc_click_2.png" id="5_qit2m"]
-[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="6_an6k7"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/star_points.tscn" id="6_an6k7"]
 [ext_resource type="Texture2D" uid="uid://da6ua3ig35fym" path="res://assets/click_game/doc_images/doc_click_3.png" id="6_qodha"]
-[ext_resource type="PackedScene" uid="uid://dq0au1aggntqm" path="res://scenes/menu/pages/click/time_container.tscn" id="7_6txi4"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/time_container.tscn" id="7_6txi4"]
 [ext_resource type="Texture2D" uid="uid://bfxqae4w3yob7" path="res://assets/click_game/doc_images/doc_click_4.png" id="7_f2t68"]
 [ext_resource type="PackedScene" uid="uid://bihef4jxcmgrx" path="res://scenes/menu/pages/click/animals_container.tscn" id="7_nopua"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="8_ncgya"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cljhja38xumek" path="res://assets/click_game/foods/jungle/Ant.png" id="14_x2kq1"]
 [ext_resource type="Texture2D" uid="uid://v53h21f7hn5t" path="res://assets/click_game/animals/jungle/snake.png" id="15_f6ott"]
 [ext_resource type="Texture2D" uid="uid://ctpubyh8a028q" path="res://assets/click_game/foods/jungle/Banana.png" id="16_k1knc"]
-[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_ilcc0"]
+[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="17_ilcc0"]
 [ext_resource type="Texture2D" uid="uid://ds6wb2vfjohhj" path="res://assets/click_game/foods/jungle/ic_egg.png" id="18_fjjaq"]
 
 [node name="Level5" type="Node2D"]
@@ -36,7 +36,7 @@ script = ExtResource("1_u5icr")
 scene_go_back = 13
 scene_home = 1
 
-[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="3"]
+[node name="HelpButton" parent="CanvasLayer/LevelHeader/ColorRect" index="4"]
 guide_data = [{
 "image": ExtResource("4_wj2oo"),
 "text": "Haz clic en un animal y mantén presionado para arrastrarlo."

@@ -5,13 +5,16 @@ from src.pipeline import Pipeline
 from src.task_manager import TaskManager
 import concurrent.futures as futures
 
-FORMAT = "%(asctime)s %(levelname)s %(name)s: %(funcName)s: %(message)s"
-logging.basicConfig(format=FORMAT,
-                    level=logging.INFO,
-                    handlers=[
-                        logging.FileHandler("log.txt", mode='w'),
-                        logging.StreamHandler(sys.stdout)
-                    ])
+dev = False
+
+if dev:
+    FORMAT = "%(asctime)s %(levelname)s %(name)s: %(funcName)s: %(message)s"
+    logging.basicConfig(format=FORMAT,
+                        level=logging.INFO,
+                        handlers=[
+                            logging.FileHandler("log.txt", mode='w'),
+                            logging.StreamHandler(sys.stdout)
+                        ])
 
 def main_loop():
     pipeline = Pipeline()

@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://tcc05xebhbn3"]
+
+[ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_c2y72"]
+[ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_458us"]
+[ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_5ttwe"]
+[ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="4_lpog0"]
+[ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="5_w7jwq"]
+[ext_resource type="Texture2D" uid="uid://c883be060kmnq" path="res://assets/icons/letter_icon.png" id="6_v13lv"]
+[ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_lneb4"]
+[ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_yx043"]
+[ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_vci4n"]
+
+[node name="MailSend" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_c2y72")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_458us")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 61.0
+offset_right = 1061.0
+offset_bottom = 264.0
+texture = ExtResource("3_5ttwe")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 226.0
+offset_right = 807.0
+offset_bottom = 383.0
+texture = ExtResource("4_lpog0")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 410.0
+offset_right = 1099.0
+offset_bottom = 895.0
+theme = ExtResource("2_458us")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -50.0
+offset_right = 93.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_v13lv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Login" type="Button" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 104.0
+offset_right = 148.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Iniciar Sesión"
+script = ExtResource("5_w7jwq")
+scene = 11
+
+[node name="Register" type="LinkButton" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -48.0
+offset_right = 73.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 2
+theme_override_colors/font_color = Color(0.145098, 0.0980392, 0.34902, 1)
+theme_override_font_sizes/font_size = 20
+text = "Registrate aquí"
+script = ExtResource("5_w7jwq")
+scene = 14
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.5
+offset_top = -12.0
+offset_right = 370.5
+offset_bottom = 272.0
+grow_horizontal = 2
+text = "¡Tu correo de confirmación ha sido enviado exitosamente! Por favor, revisa tu bandeja de entrada. Si no lo ves allí, verifica también tu carpeta de spam o correo no deseado."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NoInternetMessage" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 963.0
+offset_bottom = 486.0
+theme_override_font_sizes/font_size = 24
+text = "Al parecer no estas conectado a internet"
+
+[node name="LoginGuest" type="Button" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 546.0
+offset_top = 492.0
+offset_right = 902.0
+offset_bottom = 562.0
+text = " Ingresa como invitado "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 61.0
+offset_top = 66.0
+offset_right = 390.0
+offset_bottom = 232.0
+texture = ExtResource("7_lneb4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 1221.0
+offset_top = 54.0
+offset_right = 1413.0
+offset_bottom = 220.0
+texture = ExtResource("8_yx043")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 1235.0
+offset_top = 307.0
+offset_right = 1417.01
+offset_bottom = 473.0
+texture = ExtResource("9_vci4n")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Login" to="CanvasLayer/Control/Panel/Login" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Register" to="CanvasLayer/Control/Panel/Register" method="_on_pressed"]

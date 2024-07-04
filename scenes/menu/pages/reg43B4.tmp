@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs3cj24dgjclq"]
+[gd_scene load_steps=12 format=3 uid="uid://bs3cj24dgjclq"]
 
 [ext_resource type="Script" path="res://scripts/menu/register.gd" id="1_ah40m"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_f0sx1"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_5bgvs"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="3_7otiy"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="4_pr16r"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="4_u4hay"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="5_ieqo3"]
 [ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="6_c3pwr"]
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_oe1aj"]
@@ -44,26 +43,6 @@ offset_top = 400.0
 offset_right = 984.0
 offset_bottom = 980.0
 theme = ExtResource("2_5bgvs")
-
-[node name="ErrorLabel" type="Label" parent="CanvasLayer/Control/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = 107.0
-offset_right = 217.0
-offset_bottom = 145.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.94902, 0.415686, 0.294118, 1)
-theme_override_fonts/font = ExtResource("4_u4hay")
-theme_override_font_sizes/font_size = 15
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="Text" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
 layout_mode = 0
@@ -117,9 +96,9 @@ secret = true
 [node name="Button" type="Button" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 110.0
-offset_top = 482.0
+offset_top = 468.0
 offset_right = 406.0
-offset_bottom = 552.0
+offset_bottom = 538.0
 text = "Resgistrarse"
 
 [node name="LinkButton" type="LinkButton" parent="CanvasLayer/Control/Panel"]
@@ -130,9 +109,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 42.0
-offset_top = 148.5
+offset_top = 121.5
 offset_right = 171.0
-offset_bottom = 188.5
+offset_bottom = 161.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -145,9 +124,9 @@ scene = 7
 [node name="Text4" parent="CanvasLayer/Control/Panel" instance=ExtResource("3_7otiy")]
 layout_mode = 0
 offset_left = 78.0
-offset_top = 442.0
+offset_top = 415.0
 offset_right = 301.0
-offset_bottom = 468.0
+offset_bottom = 441.0
 theme_override_font_sizes/font_size = 31
 text = "Ya tienes una cuenta?
 "

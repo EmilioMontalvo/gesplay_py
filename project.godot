@@ -20,6 +20,7 @@ config/windows_native_icon="res://assets/Gestplay_logo.ico"
 
 CameraList="*res://scripts/camera_list.gd"
 UdPServer="*res://scripts/udp_server.gd"
+RequestManager="*res://scripts/request_manager.gd"
 CursorConf="*res://scripts/cursor_config.gd"
 ConfigManager="*res://scripts/config_manager.gd"
 Pythonexecutor="*res://scripts/pythonexecutor.gd"

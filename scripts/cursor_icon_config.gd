@@ -31,12 +31,15 @@ func get_as_json():
 	}
 	return config
 
-func set_from_json(config: Dictionary):
+func set_from_json(config: Dictionary, send_to_udp=false):
 	cursor_id = config["cursor_id"]
 	size = config["size"]
 	opacity = config["opacity"]
 	color = config["color"]
 	active=config["active"]
+	
+	if send_to_udp:
+		send_update_to_upd()
 
 func get_as_message(instruction: String):
 	return Message.new(instruction, get_as_json())

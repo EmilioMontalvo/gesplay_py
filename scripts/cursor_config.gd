@@ -36,7 +36,7 @@ func get_as_json():
 	
 	return config
 
-func set_from_json(config: Dictionary):
+func set_from_json(config: Dictionary,send_to_udp=false):
 	camera_id = config["camera_id"]
 	spd_up = config["spd_up"]
 	spd_down = config["spd_down"]
@@ -44,6 +44,9 @@ func set_from_json(config: Dictionary):
 	spd_right = config["spd_right"]
 	pointer_smooth = config["pointer_smooth"]
 	tick_interval_ms = config["tick_interval_ms"]
+	
+	if send_to_udp:
+		send_update_to_upd()
 
 func get_as_message(instruction:String):
 	return Message.new(instruction,get_as_json())

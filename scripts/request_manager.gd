@@ -3,6 +3,7 @@ extends Node
 var http_request: HTTPRequest
 var api_route="http://localhost:8000"
 var api_is_up=false
+var token=null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	http_request = HTTPRequest.new()
@@ -29,3 +30,10 @@ method: HTTPClient.Method = 0, body={}):
 	var error = http_request.request(route, [], method, body_string)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
+
+func get_auth_headers():
+	var h_token="Authorization: Bearer "+token
+	return ["accept: application/json",h_token]
+
+func get_endpoint_path(endpoint:String):
+	return api_route + endpoint

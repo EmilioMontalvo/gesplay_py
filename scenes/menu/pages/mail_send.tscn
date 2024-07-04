@@ -112,29 +112,10 @@ offset_top = -12.0
 offset_right = 370.5
 offset_bottom = 272.0
 grow_horizontal = 2
-text = "¡Tu correo de confirmación ha sido enviado exitosamente! Por favor, revisa tu bandeja de entrada. Si no lo ves allí, verifica también tu carpeta de spam o correo no deseado."
+text = "¡Tu correo de confirmación ha sido enviado exitosamente! Por favor, revisa tu bandeja de entrada. Si no lo ves allí, verifica también tu carpeta de spam."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="NoInternetMessage" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 0
-offset_left = 480.0
-offset_top = 448.0
-offset_right = 963.0
-offset_bottom = 486.0
-theme_override_font_sizes/font_size = 24
-text = "Al parecer no estas conectado a internet"
-
-[node name="LoginGuest" type="Button" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 0
-offset_left = 546.0
-offset_top = 492.0
-offset_right = 902.0
-offset_bottom = 562.0
-text = " Ingresa como invitado "
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 61.0

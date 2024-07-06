@@ -14,6 +14,7 @@ extends Node2D
 
 var http_request: HTTPRequest
 var http_request_login: HTTPRequest
+var http_request_load_data: HTTPRequest
 var endpoint="/token"
 var http_client = HTTPClient.new()
 
@@ -26,13 +27,14 @@ func _ready():
 	http_request.request("https://example.com/")
 	user_input.grab_focus()
 	
-	#login request
-	http_request_login = HTTPRequest.new()
-	add_child(http_request_login)
-	http_request_login.request_completed.connect(_on_login_request_completed)
-	
 	if not RequestManager.api_is_up:
 		set_invite_mode()
+	else:
+		#login request
+		http_request_login = HTTPRequest.new()
+		add_child(http_request_login)
+		http_request_login.request_completed.connect(_on_login_request_completed)
+
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
@@ -66,6 +68,8 @@ func _on_login_pressed():
 	
 	block_input()
 
+	
+
 
 func _on_login_request_completed(result, response_code, headers, body):
 	enable_input()
@@ -89,7 +93,8 @@ func _on_login_request_completed(result, response_code, headers, body):
 		return
 	
 func load_login_data():
-	pass
+	#TODO: set current profile
+	MenuManager.load_menu(1)
 
 func _on_button_pressed():
 	var last_profile_id: String = DataSaver.load_last_profile_id()

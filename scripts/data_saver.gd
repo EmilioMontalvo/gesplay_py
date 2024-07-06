@@ -12,6 +12,7 @@ static func save_profile(profile_data: Dictionary):
 	var profile_saver: FileAccess
 	profile_saver = FileAccess.open(PATH_PROFILE + profile_data.get("id") + ".save", FileAccess.WRITE)
 	var json_string = JSON.stringify(profile_data)
+	print("save_profile",json_string)
 	profile_saver.store_line(json_string)
 
 static func load_profiles() -> Array:
@@ -23,13 +24,16 @@ static func load_profiles() -> Array:
 		var profile_saver = FileAccess.open(PATH_PROFILE + profile_path, FileAccess.READ)
 		var json_string = profile_saver.get_line()
 		profiles.append(JSON.parse_string(json_string))
-		
+	
+	print("load_profiles",profiles)
 	return profiles
 
 static func load_profile_by_id(id: String) -> Dictionary:
 	DirAccess.make_dir_absolute(PATH_PROFILE)
 	var file_profile = FileAccess.open(PATH_PROFILE + id + ".save", FileAccess.READ)
 	var json_string = file_profile.get_line()
+	
+	print("load_profile_by_id",json_string)
 	return JSON.parse_string(json_string)
 
 static func delete_profile(profile_id: String):

@@ -16,6 +16,9 @@ var http_request: HTTPRequest
 var http_request_login: HTTPRequest
 var endpoint="/token"
 var http_client = HTTPClient.new()
+
+signal data_loaded
+
 func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -73,6 +76,7 @@ func _on_login_request_completed(result, response_code, headers, body):
 		$CanvasLayer/loanding.visible=true
 		$CanvasLayer/Control.visible=false
 		error_lbl.text=""
+		load_login_data()
 		return
 	if response_code==401:
 		if json["detail"] == "Incorrect username or password":
@@ -84,7 +88,8 @@ func _on_login_request_completed(result, response_code, headers, body):
 		error_lbl.text="Correo o contraseña incorrectos"
 		return
 	
-	
+func load_login_data():
+	pass
 
 func _on_button_pressed():
 	var last_profile_id: String = DataSaver.load_last_profile_id()

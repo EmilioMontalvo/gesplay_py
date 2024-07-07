@@ -9,7 +9,7 @@ extends Node2D
 @onready var no_internet_animation = $NoConnectionAnimation
 @onready var user_lbl = $CanvasLayer/Control/UserLbl
 @onready var password_lbl = $CanvasLayer/Control/PasswordLbl
-@onready var panel = $CanvasLayer/Control/Panel
+@onready var panel = $CanvasLayer/Panel
 @onready var error_lbl = $CanvasLayer/Control/ErrorLabel
 
 var http_request: HTTPRequest

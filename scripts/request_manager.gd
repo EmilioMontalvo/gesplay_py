@@ -17,7 +17,7 @@ func _on_request_completed_health(result, response_code, headers, body):
 	var response = json.get_data()
 	# Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
 	print(response)
-	if response["status"]=="ok":
+	if response_code==200:
 		api_is_up=true
 	
 
@@ -27,13 +27,13 @@ method: HTTPClient.Method = 0, body={}):
 	
 	var body_string = JSON.new().stringify(body)
 	var route=api_route+endpoint
-	var error = http_request.request(route, [], method, body_string)
+	var error = http_request.request(route, headers, method, body_string)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
 func get_auth_headers():
-	var h_token="Authorization: Bearer "+token
-	return ["accept: application/json",h_token]
+	var h_token = ["Authorization: Bearer " + token]
+	return PackedStringArray(h_token)
 
 func get_endpoint_path(endpoint:String):
 	return api_route + endpoint

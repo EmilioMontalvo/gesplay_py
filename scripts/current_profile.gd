@@ -39,4 +39,5 @@ func delete_last_profile():
 	DataSaver.delete_last_profile_file()
 
 func reload_data():
-	set_data_from_dic(DataSaver.load_profile_by_id(id))
+	if GlobalConf.invite_mode:
+		set_data_from_dic(DataSaver.load_profile_by_id(id))

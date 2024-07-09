@@ -11,19 +11,29 @@ func _ready():
 	if not can_delete:
 		delete_button.disabled = true
 	$ProfileButton/ProfileName.text = profile_data.get("first_name") + " " + profile_data.get("last_name")
-	var profile_image = Image.load_from_file(profile_data.get("image_path"))
-	var texture_image = ImageTexture.create_from_image(profile_image)
-	$ProfileButton/TextureProfile.texture = texture_image
+	# var profile_image = Image.load_from_file(profile_data.get("image_path"))
+	# var texture_image = ImageTexture.create_from_image(profile_image)
+	# $ProfileButton/TextureProfile.texture = texture_image
 
 func _on_delete_pressed():
-	var profile_id = profile_data.get("id")
-	var success = DataSaver.delete_profile(profile_id)
-	if success == OK:
+	var profile_id = str(profile_data.get("id"))
+	if GlobalConf.invite_mode:
+		var success = DataSaver.delete_profile(profile_id)
+		if success == OK:
+			if profile_id == CurrentProfile.id:
+				CurrentProfile.is_profile_selected = false
+				CurrentProfile.delete_last_profile()
+			profile_deleted.emit()
+			queue_free()
+	else:
+		ApiDataSaver.delete_profile(profile_id)
 		if profile_id == CurrentProfile.id:
 			CurrentProfile.is_profile_selected = false
 			CurrentProfile.delete_last_profile()
 		profile_deleted.emit()
 		queue_free()
+
+	
 
 func _on_edit_pressed():
 	var new_profile_instance = preload("res://scenes/menu/pages/new_profile2.tscn").instantiate()

@@ -80,12 +80,18 @@ func _on_acept_pressed():
 	if is_editing:
 		var profile_edited = get_data_as_json()
 		profile_edited["id"] = profile_data["id"]
-		DataSaver.save_profile(profile_edited)
+		if GlobalConf.invite_mode:
+			DataSaver.save_profile(profile_edited)
+		else:
+			ApiDataSaver.edit_profile(profile_edited)
 		CurrentProfile.reload_data()
 	else:
-		DataSaver.save_profile(get_data_as_json())
-		DataSaver.save_settings(Constants.DEFAULT_SETTINGS, profile_id)
-		GameDataController.save_initial_game_data(profile_id)
+		if GlobalConf.invite_mode:
+			DataSaver.save_profile(get_data_as_json())
+			DataSaver.save_settings(Constants.DEFAULT_SETTINGS, profile_id)
+			GameDataController.save_initial_game_data(profile_id)
+		else:
+			ApiDataSaver.save_profile(get_data_as_json())
 	if CurrentProfile.is_first_profile:
 		CurrentProfile.is_first_profile = false
 	MenuManager.load_menu(3)
@@ -106,7 +112,8 @@ func _on_file_dialog_file_selected(path):
 	
 func set_profile_image_preview(path: String):
 	panel_image.visible = true
-	var profile_image = Image.load_from_file(path)
-	var texture = ImageTexture.create_from_image(profile_image)
-	texture.set_size_override(Vector2i(150,150))
-	texture_image_profile.texture = texture
+	if GlobalConf.invite_mode:
+		var profile_image = Image.load_from_file(path)
+		var texture = ImageTexture.create_from_image(profile_image)
+		texture.set_size_override(Vector2i(150,150))
+		texture_image_profile.texture = texture

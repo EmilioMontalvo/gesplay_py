@@ -17,10 +17,11 @@ func _ready():
 	confirmation_dialog.set_dialog_text(DIALOG_TEXT)
 	
 func set_profile_image(path: String):
-	var profile_image = Image.load_from_file(path)
-	var texture = ImageTexture.create_from_image(profile_image)
-	texture.set_size_override(Vector2i(48,48))
-	$MarginContainer/HBoxContainer/ProfileImage.texture = texture
+	if GlobalConf.invite_mode:
+		var profile_image = Image.load_from_file(path)
+		var texture = ImageTexture.create_from_image(profile_image)
+		texture.set_size_override(Vector2i(48,48))
+		$MarginContainer/HBoxContainer/ProfileImage.texture = texture
 	
 func _on_option_selected(id: int):
 	if dialog_message:

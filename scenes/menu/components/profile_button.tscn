@@ -101,7 +101,6 @@ offset_bottom = 86.0
 text = "Nombre Perfil"
 clip_text = true
 max_lines_visible = 1
-visible_characters = 14
 
 [node name="TextureRect2" type="TextureRect" parent="ProfileButton"]
 layout_mode = 0

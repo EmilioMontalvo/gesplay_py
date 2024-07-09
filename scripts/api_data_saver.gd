@@ -2,6 +2,7 @@ class_name ApiDataSaver
 
 const PROFILES_ENDPOINT: String = "/profiles/me"
 const LAST_PROFILE_ENDPOINT: String = "/profiles/last"
+const DELETE_PROFILE_ENDPOINT: String = "/profiles"
 const SETTINGS_ENDPOINT: String = "/game-settings"
 const GAME_DATA_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}"
 const LEVEL_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}/level/{level}"
@@ -12,6 +13,10 @@ static func save_profile(profile_data: Dictionary):
 	var endpoint = PROFILES_ENDPOINT
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, profile_data)
 
+static func edit_profile(profile_data: Dictionary):
+	var endpoint = PROFILES_ENDPOINT + "/" + profile_data.get("id")
+	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_PUT, profile_data)
+
 #func load_profiles() -> Array:
 #	var endpoint = PROFILES_ENDPOINT
 #	return RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_GET)
@@ -21,7 +26,7 @@ static func save_profile(profile_data: Dictionary):
 #	return RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_GET)
 
 static func delete_profile(profile_id: String):
-	var endpoint = PROFILES_ENDPOINT + "/" + profile_id
+	var endpoint = DELETE_PROFILE_ENDPOINT + "/" + profile_id
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_DELETE)
 
 #func save_last_profile_id(profile_id: String):

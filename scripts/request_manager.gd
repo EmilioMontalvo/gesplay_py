@@ -27,7 +27,7 @@ method: HTTPClient.Method = 0, body={}):
 	
 	var body_string = JSON.new().stringify(body)
 	var route=api_route+endpoint
-	var error = http_request.request(route, headers, method, body_string)
+	var error = http_request.request(route, custom_headers, method, body_string)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 

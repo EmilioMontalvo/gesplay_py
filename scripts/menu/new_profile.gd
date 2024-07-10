@@ -12,11 +12,14 @@ var image_path: String
 var profile_id: String
 var dir_access: DirAccess
 var custom_profile_image: Image
+var current_profile_image: Image
 var profile_data: Dictionary
 var has_custom_image: bool = false
 var first_attempt_name: bool = true
 var first_attempt_image: bool = true
 var is_editing: bool = false
+var request_save_profile: HTTPRequest
+var request_save_profile_signal: Signal
 
 var CUSTOM_IMAGES_PATH = "user://custom_images/"
 
@@ -33,7 +36,15 @@ func _ready():
 		txt_firt_name.text = profile_data["first_name"]
 		txt_last_name.text = profile_data["last_name"]
 		image_path = profile_data["image_path"]
-		set_profile_image_preview(image_path)                                                                                   
+		if GlobalConf.invite_mode:
+			set_profile_image_preview(image_path)
+		else:
+			set_init_profile_image_preview_api(image_path)
+	if not GlobalConf.invite_mode:
+		request_save_profile = HTTPRequest.new()
+		add_child(request_save_profile)
+		request_save_profile.request_completed.connect(_on_request_save_profile_completed)
+		request_save_profile_signal = request_save_profile.request_completed                                                                                   
  
 func _on_file_upload_pressed():
 	file_dialog.visible = true
@@ -73,10 +84,11 @@ func _on_acept_pressed():
 	profile_id = MinosUUIDGenerator.generate_new_UUID()
 	if has_custom_image:
 		custom_profile_image.resize(72,72)
-		DirAccess.make_dir_absolute(CUSTOM_IMAGES_PATH)
-		var new_image_path = CUSTOM_IMAGES_PATH + (profile_data.get("id") if is_editing else profile_id) + ".png"
-		custom_profile_image.save_png(new_image_path)
-		image_path = new_image_path
+		if GlobalConf.invite_mode:
+			DirAccess.make_dir_absolute(CUSTOM_IMAGES_PATH)
+			var new_image_path = CUSTOM_IMAGES_PATH + (profile_data.get("id") if is_editing else profile_id) + ".png"
+			custom_profile_image.save_png(new_image_path)
+			image_path = new_image_path
 	if is_editing:
 		var profile_edited = get_data_as_json()
 		profile_edited["id"] = profile_data["id"]
@@ -91,7 +103,14 @@ func _on_acept_pressed():
 			DataSaver.save_settings(Constants.DEFAULT_SETTINGS, profile_id)
 			GameDataController.save_initial_game_data(profile_id)
 		else:
-			ApiDataSaver.save_profile(get_data_as_json())
+			request_save_profile.request(
+				RequestManager.get_endpoint_path(ApiDataSaver.PROFILES_ENDPOINT),
+				RequestManager.get_auth_headers(),
+				HTTPClient.METHOD_POST,
+				JSON.stringify(get_data_as_json())
+			)
+			await request_save_profile_signal
+			#ApiDataSaver.save_profile(get_data_as_json())
 	if CurrentProfile.is_first_profile:
 		CurrentProfile.is_first_profile = false
 	MenuManager.load_menu(3)
@@ -112,8 +131,26 @@ func _on_file_dialog_file_selected(path):
 	
 func set_profile_image_preview(path: String):
 	panel_image.visible = true
-	if GlobalConf.invite_mode:
-		var profile_image = Image.load_from_file(path)
-		var texture = ImageTexture.create_from_image(profile_image)
-		texture.set_size_override(Vector2i(150,150))
-		texture_image_profile.texture = texture
+	current_profile_image = Image.load_from_file(path)
+	var texture = ImageTexture.create_from_image(current_profile_image)
+	texture.set_size_override(Vector2i(150,150))
+	texture_image_profile.texture = texture
+
+func set_init_profile_image_preview_api(image_url):
+	var http_request_profile_image = HTTPRequest.new()
+	add_child(http_request_profile_image)
+	http_request_profile_image.request_completed.connect(_on_request_profile_image_completed)
+
+func _on_request_profile_image_completed(result, response_code, headers, body):
+	var profile_image = Image.new()
+	profile_image.load_png_from_buffer(body)
+	var texture = ImageTexture.create_from_image(profile_image)
+	texture.set_size_override(Vector2i(150,150))
+	texture_image_profile.texture = texture
+
+func _on_request_save_profile_completed(result, response_code, headers, body):
+	var response: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+	var new_profile_id = str(response.get("id"))
+	var image_to_send = current_profile_image
+	image_to_send.resize(72,72)
+	ApiDataSaver.save_image_profile(image_to_send,new_profile_id) 

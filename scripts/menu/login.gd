@@ -163,3 +163,7 @@ func enable_input():
 	register_link.disabled=false
 
 
+
+
+func _on_show_password_toggled(toggled_on):
+	password_input.secret=not toggled_on

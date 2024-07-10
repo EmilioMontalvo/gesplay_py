@@ -45,7 +45,7 @@ func save_profile_progress():
 	if GlobalConf.invite_mode:
 		DataSaver.save_profile(get_profile_data())
 	else:
-		ApiDataSaver.save_profile(get_profile_data())
+		ApiDataSaver.save_profile_progress(get_profile_data())
 
 func delete_last_profile():
 	if GlobalConf.invite_mode:

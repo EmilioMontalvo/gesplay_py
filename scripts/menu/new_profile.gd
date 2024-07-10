@@ -151,6 +151,7 @@ func set_init_profile_image_preview_api(image_url):
 	http_request_profile_image.request(image_url, [], HTTPClient.METHOD_GET)
 
 func _on_request_profile_image_completed(result, response_code, headers, body):
+	panel_image.visible = true
 	var profile_image = Image.new()
 	profile_image.load_png_from_buffer(body)
 	var texture = ImageTexture.create_from_image(profile_image)

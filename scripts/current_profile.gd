@@ -17,7 +17,7 @@ func _ready():
 	http_request_profile.request_completed.connect(_on_request_profile_completed)
 
 func set_data_from_dic(profile_data: Dictionary):
-	id = profile_data.get("id")
+	id = str(profile_data.get("id"))
 	first_name = profile_data.get("first_name")
 	last_name = profile_data.get("last_name")
 	image_path = profile_data.get("image_path")

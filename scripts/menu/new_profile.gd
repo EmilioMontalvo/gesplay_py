@@ -161,4 +161,4 @@ func _on_request_save_profile_completed(result, response_code, headers, body):
 	var new_profile_id = str(response.get("id"))
 	var image_to_send = current_profile_image
 	image_to_send.resize(72,72)
-	ApiDataSaver.save_image_profile(image_to_send,new_profile_id) 
+	ApiDataSaver.update_profile_image(new_profile_id,image_to_send) 

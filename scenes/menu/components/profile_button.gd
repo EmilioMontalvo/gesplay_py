@@ -19,6 +19,7 @@ func _ready():
 		var http_request_profile_image = HTTPRequest.new()
 		add_child(http_request_profile_image)
 		http_request_profile_image.request_completed.connect(_on_request_profile_image_completed)
+		http_request_profile_image.request(profile_data.get("image_path"),[],HTTPClient.METHOD_GET)
 
 
 func _on_delete_pressed():

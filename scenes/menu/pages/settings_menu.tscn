@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_21nlb"]
 [ext_resource type="Script" path="res://scripts/menu/settings_menu.gd" id="2_pkge3"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_ymuiq"]
 [ext_resource type="Texture2D" uid="uid://x2fpjqndbldg" path="res://assets/buttons/icons/PenEdit.png" id="4_ipy7k"]
 [ext_resource type="StyleBox" uid="uid://cb5ks7q8lhwhb" path="res://assets/buttons/resources/style_box_yellow_borderless.tres" id="5_a6g5f"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_pc5c2"]
 [ext_resource type="Texture2D" uid="uid://lbs0cukvihvm" path="res://assets/buttons/icons/arrow.png" id="7_uacma"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="8_fjkx8"]
 [ext_resource type="Texture2D" uid="uid://cwyehm7qqmf3r" path="res://assets/buttons/user_images/place_holder_profile.png" id="10_kamni"]

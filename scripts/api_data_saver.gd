@@ -8,7 +8,7 @@ const GAME_DATA_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}"
 const LEVEL_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}/level/{level}"
 const PROFILE_IMAGE_ENDPOINT: String = "/profiles/me/{profile_id_db}/image"
 const SET_IMAGE_ENDPOINT: String = "/profiles/me/{profile_id_db}/image"
-
+const LOGOUT_ENDPOINT: String="/logout"
 
 static func save_profile(profile_data: Dictionary):
 	var endpoint = PROFILES_ENDPOINT
@@ -138,3 +138,7 @@ static func update_profile_image(profile_id_db: String,image_profile:Image):
 		
 	RequestManager.make_request_raw(endpoint,headers,HTTPClient.METHOD_PUT,body)
 
+
+static func logout():
+	var endpoint=LOGOUT_ENDPOINT
+	RequestManager.make_request(endpoint,RequestManager.get_auth_headers(),HTTPClient.METHOD_POST)

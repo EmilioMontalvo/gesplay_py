@@ -37,4 +37,5 @@ func routing_option(id: int):
 		1:
 			MenuManager.load_menu(MenuManager.MENU_LEVEL.PROFILES)
 		2:
+			ApiDataSaver.logout()
 			MenuManager.load_menu(MenuManager.MENU_LEVEL.LOGIN)

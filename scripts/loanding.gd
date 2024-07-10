@@ -6,5 +6,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	if UdPServer.is_ready and CameraList.is_ready and RequestManager.api_is_up:
+	if UdPServer.is_ready and CameraList.is_ready:
 		MenuManager.load_menu(11)

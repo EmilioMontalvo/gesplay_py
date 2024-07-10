@@ -17,6 +17,10 @@ var lastUnlocked:Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var first=true
+	
+	if unlocked_levels<=0:
+		unlocked_levels=1
+	
 	for x in levelsArray:
 		var instance=level_scene.instantiate()
 		instance.locked=unlocked_levels<1
@@ -30,8 +34,9 @@ func _ready():
 		instance.texturePath=x[4]
 		add_child(instance)
 		unlocked_levels=unlocked_levels-1
-	
-	lastUnlocked.get_child(0).focus_next=NodePath("../../../GoBack")
+		
+	if lastUnlocked:
+		lastUnlocked.get_child(0).focus_next=NodePath("../GoBack")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

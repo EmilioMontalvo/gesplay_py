@@ -95,7 +95,15 @@ func _on_acept_pressed():
 		if GlobalConf.invite_mode:
 			DataSaver.save_profile(profile_edited)
 		else:
-			ApiDataSaver.edit_profile(profile_edited)
+			#ApiDataSaver.edit_profile(profile_edited)
+			var endpoint_path = ApiDataSaver.PROFILES_ENDPOINT + "/" + profile_edited.get("id")
+			request_save_profile.request(
+				RequestManager.get_endpoint_path(endpoint_path),
+				RequestManager.get_auth_headers(),
+				HTTPClient.METHOD_PUT,
+				JSON.stringify(profile_edited)
+			)
+			await request_save_profile_signal
 		CurrentProfile.reload_data()
 	else:
 		if GlobalConf.invite_mode:

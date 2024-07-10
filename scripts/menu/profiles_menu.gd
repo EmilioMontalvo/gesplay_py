@@ -14,7 +14,7 @@ func _ready():
 		if RequestManager.api_is_up:
 			add_child(http_request)
 			http_request.request_completed.connect(_on_request_completed)
-			http_request.request(RequestManager.get_endpoint_path(ApiDataSaver.PROFILES_ENDPOINT), RequestManager.get_auth_headers(), HTTPClient.METHOD_GET)
+			get_profiles_start_request()
 
 func _process(delta):
 	check_profile_selected()
@@ -64,6 +64,13 @@ func clear_profile_container():
 	for profile in profiles:
 		profile_container.remove_child(profile)
 
+func get_profiles_start_request():
+	http_request.request(
+			RequestManager.get_endpoint_path(ApiDataSaver.PROFILES_ENDPOINT), 
+			RequestManager.get_auth_headers(), 
+			HTTPClient.METHOD_GET
+	)
+
 func _on_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		fill_profiles_container_api(JSON.parse_string(body.get_string_from_utf8()))
@@ -71,4 +78,7 @@ func _on_request_completed(result, response_code, headers, body):
 		fill_profiles_container_local()
 
 func _on_profile_deleted():
-	fill_profiles_container_local()
+	if GlobalConf.invite_mode:
+		fill_profiles_container_local()
+	else:
+		get_profiles_start_request()

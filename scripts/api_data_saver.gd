@@ -7,7 +7,7 @@ const SETTINGS_ENDPOINT: String = "/game-settings"
 const GAME_DATA_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}"
 const LEVEL_ENDPOINT: String = "/profiles/{profile_id_db}/game-data/{game}/level/{level}"
 const PROFILE_IMAGE_ENDPOINT: String = "/profiles/me/{profile_id_db}/image"
-
+const SET_IMAGE_ENDPOINT: String = "/profiles/me/{profile_id_db}/image"
 
 
 static func save_profile(profile_data: Dictionary):
@@ -97,3 +97,25 @@ static func load_game_data_click_by_id(profile_id_db: String, game: String="clic
 static func save_game_progress_click(game_data: Dictionary, profile_id_db: String, level: String,game: String="click"):
 	var endpoint = LEVEL_ENDPOINT.format({"profile_id_db": profile_id_db, "game": game, "level": level})
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, JSON.stringify(game_data))
+
+static func update_profile_image(profile_id_db: String,file_path:String):
+	var endpoint = SET_IMAGE_ENDPOINT.format({"profile_id_db": profile_id_db})
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file:		
+		var image_data = file.get_buffer(file.get_length())
+		file.close()
+		
+		var body = PackedByteArray()
+		body.append_array("\r\n--WebKitFormBoundaryePkpFF7tjBAqx29L\r\n".to_utf8_buffer())
+		body.append_array("Content-Disposition: form-data; name=\"file\"; filename=\"icon.png\"\r\n".to_utf8_buffer())
+		body.append_array("Content-Type: image/png\r\n\r\n".to_utf8_buffer())
+		body.append_array(image_data)
+		body.append_array("\r\n--WebKitFormBoundaryePkpFF7tjBAqx29L--\r\n".to_utf8_buffer())
+		
+		var headers = [
+			 RequestManager.get_auth_headers()[0],
+			"Content-Type: multipart/form-data;boundary=\"WebKitFormBoundaryePkpFF7tjBAqx29L\""
+		]
+		
+		RequestManager.make_request_raw(endpoint,headers,HTTPClient.METHOD_PUT,body)
+

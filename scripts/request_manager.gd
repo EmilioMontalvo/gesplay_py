@@ -33,6 +33,16 @@ method: HTTPClient.Method = 0, body={}):
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
+func make_request_raw(endpoint: String, 
+custom_headers: PackedStringArray = PackedStringArray(), 
+method: HTTPClient.Method = 0, request_data_raw: PackedByteArray = PackedByteArray()):
+	
+	var route=api_route+endpoint
+	var error = http_request.request_raw(route, custom_headers, method, request_data_raw)
+	if error != OK:
+		push_error("An error occurred in the HTTP request.")
+
+
 func get_auth_headers():
 	var h_token = ["Authorization: Bearer " + token]
 	return PackedStringArray(h_token)

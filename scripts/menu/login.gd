@@ -44,9 +44,10 @@ func _on_request_completed(result, response_code, headers, body):
 		set_invite_mode()
 
 func _on_login_pressed():
-	SoundControllerMenu.play_music()
+	
 	if GlobalConf.invite_mode:
 		set_invite_mode()
+		SoundControllerMenu.play_music()
 
 	if password_input.text=="" or user_input.text =="":
 		error_lbl.text="Ingrese su correo y contraseña"
@@ -74,6 +75,7 @@ func _on_login_pressed():
 
 func _on_login_request_completed(result, response_code, headers, body):
 	enable_input()
+	SoundControllerMenu.play_music()
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	if response_code==200:
 		RequestManager.token=json["access_token"]

@@ -6,6 +6,8 @@ var endpoint="/register"
 @onready var password=$CanvasLayer/Control/Panel/LineEdit2
 @onready var confirm_password=$CanvasLayer/Control/Panel/LineEdit3
 @onready var error_label=$CanvasLayer/Control/Panel/ErrorLabel
+@onready var register_link=$CanvasLayer/Control/Panel/LinkButton
+@onready var animation=$CanvasLayer/Control/Panel/AnimatedSprite2D
 
 var mail_screen=preload("res://scenes/menu/pages/mail_send.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +25,7 @@ func _process(delta):
 	pass
 
 func _on_request_completed(result, response_code, headers, body):
+	unblock_input()
 	if response_code==400:
 		error_label.text="Ya existe una cuenta con este correo"
 		return
@@ -51,7 +54,7 @@ func _on_button_pressed():
 		"email":email.text,
 		"password":password.text
 	}
-	
+	block_input()
 	if http_request:
 		var route=RequestManager.api_route+endpoint
 		var body_string=JSON.new().stringify(body)
@@ -91,3 +94,19 @@ func validate_password(password: String) -> String:
 		return "La contraseña debe tener al menos un carácter especial."
 
 	return ""  # La contraseña es válida
+
+func block_input():
+	email.editable=false
+	password.editable=false
+	confirm_password.editable=false
+	register_link.disabled=true
+	error_label.text=""
+	animation.visible=true
+
+func unblock_input():
+	email.editable=true
+	password.editable=true
+	confirm_password.editable=true
+	register_link.disabled=false
+	animation.visible=false
+

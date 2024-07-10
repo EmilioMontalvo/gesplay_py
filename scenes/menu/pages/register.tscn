@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs3cj24dgjclq"]
+[gd_scene load_steps=14 format=3 uid="uid://bs3cj24dgjclq"]
 
 [ext_resource type="Script" path="res://scripts/menu/register.gd" id="1_ah40m"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_f0sx1"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="4_u4hay"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="5_ieqo3"]
 [ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="6_c3pwr"]
+[ext_resource type="PackedScene" uid="uid://bwh2w3hl0wi80" path="res://scenes/menu/components/loanding_animation.tscn" id="7_cw283"]
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_oe1aj"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_qfho6"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_7iuf6"]
@@ -152,6 +153,13 @@ theme_override_font_sizes/font_size = 31
 text = "Ya tienes una cuenta?
 "
 label_settings = SubResource("LabelSettings_kre1g")
+
+[node name="AnimatedSprite2D" parent="CanvasLayer/Control/Panel" instance=ExtResource("7_cw283")]
+visible = false
+position = Vector2(249, 223)
+scale = Vector2(0.5, 0.5)
+frame = 21
+frame_progress = 0.4093
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0

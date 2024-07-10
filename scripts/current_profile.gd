@@ -9,6 +9,12 @@ var last_name: String
 var image_path: String
 var max_click_level: int
 var max_cursor_level: int
+var http_request_profile: HTTPRequest
+
+func _ready():
+	http_request_profile = HTTPRequest.new()
+	add_child(http_request_profile)
+	http_request_profile.request_completed.connect(_on_request_profile_completed)
 
 func set_data_from_dic(profile_data: Dictionary):
 	id = profile_data.get("id")
@@ -30,14 +36,31 @@ func get_profile_data() -> Dictionary:
 	return profile_data
 
 func save_actual_profile():
-	DataSaver.save_last_profile_id(id)
+	if GlobalConf.invite_mode:
+		DataSaver.save_last_profile_id(id)
+	else:
+		ApiDataSaver.save_last_profile_id(id)
 	
 func save_profile_progress():
-	DataSaver.save_profile(get_profile_data())
+	if GlobalConf.invite_mode:
+		DataSaver.save_profile(get_profile_data())
+	else:
+		ApiDataSaver.save_profile(get_profile_data())
 
 func delete_last_profile():
-	DataSaver.delete_last_profile_file()
+	if GlobalConf.invite_mode:
+		DataSaver.delete_last_profile_file()
 
 func reload_data():
 	if GlobalConf.invite_mode:
 		set_data_from_dic(DataSaver.load_profile_by_id(id))
+	else:
+		http_request_profile.request(
+			RequestManager.get_endpoint_path(ApiDataSaver.LAST_PROFILE_ENDPOINT),
+			RequestManager.get_auth_headers(),
+			HTTPClient.METHOD_GET
+		)
+		await http_request_profile.request_completed
+
+func _on_request_profile_completed(result, response_code, headers, body):
+	set_data_from_dic(JSON.parse_string(body.get_string_from_utf8()))

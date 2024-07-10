@@ -4,11 +4,13 @@ var http_request: HTTPRequest
 var api_route="http://localhost:8000"
 var api_is_up=false
 var token=null
+var request_completed_signal: Signal
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed_health)	
+	request_completed_signal = http_request.request_completed
 	make_request("/healthcheck",[],HTTPClient.METHOD_GET)
 
 func _on_request_completed_health(result, response_code, headers, body):

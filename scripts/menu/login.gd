@@ -14,7 +14,7 @@ extends Node2D
 
 var http_request: HTTPRequest
 var http_request_login: HTTPRequest
-var http_request_load_data: HTTPRequest
+var http_request_load_last_profile: HTTPRequest
 var endpoint="/token"
 var http_client = HTTPClient.new()
 
@@ -25,6 +25,9 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
 	http_request.request("https://example.com/")
+	http_request_load_last_profile = HTTPRequest.new()
+	add_child(http_request_load_last_profile)
+	http_request_load_last_profile.request_completed.connect(_on_last_profile_request_completed)
 	user_input.grab_focus()
 	
 	if not RequestManager.api_is_up:
@@ -41,6 +44,7 @@ func _on_request_completed(result, response_code, headers, body):
 		set_invite_mode()
 
 func _on_login_pressed():
+	SoundControllerMenu.play_music()
 	if GlobalConf.invite_mode:
 		set_invite_mode()
 
@@ -68,9 +72,6 @@ func _on_login_pressed():
 	
 	block_input()
 
-	
-
-
 func _on_login_request_completed(result, response_code, headers, body):
 	enable_input()
 	var json = JSON.parse_string(body.get_string_from_utf8())
@@ -91,10 +92,26 @@ func _on_login_request_completed(result, response_code, headers, body):
 	if response_code==422:
 		error_lbl.text="Correo o contraseña incorrectos"
 		return
+
+func _on_last_profile_request_completed(result, response_code, headers, body):
+		if response_code == 404 and not CurrentProfile.is_profile_selected:
+			MenuManager.load_menu(3)
+		if response_code == 200:
+			var profile_data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+			profile_data["id"] = str(profile_data.get("id"))
+			CurrentProfile.set_data_from_dic(profile_data)
+			CurrentProfile.is_profile_selected = true
+			#SavedSettingsLoader.load_saved_settings()
+			MenuManager.load_menu(1)
 	
 func load_login_data():
 	#TODO: set current profile
-	MenuManager.load_menu(1)
+	http_request_load_last_profile.request(
+		RequestManager.get_endpoint_path(ApiDataSaver.LAST_PROFILE_ENDPOINT),
+		RequestManager.get_auth_headers(),
+		HTTPClient.METHOD_GET
+	)
+	await http_request_load_last_profile.request_completed
 
 func _on_button_pressed():
 	var last_profile_id: String = DataSaver.load_last_profile_id()

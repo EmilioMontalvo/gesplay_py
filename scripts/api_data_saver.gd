@@ -14,6 +14,10 @@ static func save_profile(profile_data: Dictionary):
 	var endpoint = PROFILES_ENDPOINT
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, profile_data)
 
+static func save_profile_progress(profile_data: Dictionary):
+	var endpoint = PROFILES_ENDPOINT + "/" + profile_data.get("id")
+	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_PUT, profile_data)
+
 static func edit_profile(profile_data: Dictionary):
 	var endpoint = PROFILES_ENDPOINT + "/" + profile_data.get("id")
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_PUT, profile_data)
@@ -79,7 +83,7 @@ static func load_game_data_cursor_by_id(profile_id_db: String, game: String="cur
 
 static func save_game_progress_cursor(game_data: Dictionary, profile_id_db: String, level: String,game: String="cursor"):
 	var endpoint = LEVEL_ENDPOINT.format({"profile_id_db": profile_id_db, "game": game, "level": level})
-	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, game_data)
+	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, JSON.stringify(game_data))
 
 # Game Data Click
 static func save_game_data_click(game_data: Dictionary, profile_id_db: String, game: String="click"):
@@ -92,4 +96,4 @@ static func load_game_data_click_by_id(profile_id_db: String, game: String="clic
 
 static func save_game_progress_click(game_data: Dictionary, profile_id_db: String, level: String,game: String="click"):
 	var endpoint = LEVEL_ENDPOINT.format({"profile_id_db": profile_id_db, "game": game, "level": level})
-	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, game_data)
+	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, JSON.stringify(game_data))

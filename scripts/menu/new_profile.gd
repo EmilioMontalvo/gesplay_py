@@ -148,6 +148,7 @@ func set_init_profile_image_preview_api(image_url):
 	var http_request_profile_image = HTTPRequest.new()
 	add_child(http_request_profile_image)
 	http_request_profile_image.request_completed.connect(_on_request_profile_image_completed)
+	http_request_profile_image.request(image_url, [], HTTPClient.METHOD_GET)
 
 func _on_request_profile_image_completed(result, response_code, headers, body):
 	var profile_image = Image.new()

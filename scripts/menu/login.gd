@@ -103,7 +103,7 @@ func _on_last_profile_request_completed(result, response_code, headers, body):
 			profile_data["id"] = str(profile_data.get("id"))
 			CurrentProfile.set_data_from_dic(profile_data)
 			CurrentProfile.is_profile_selected = true
-			#SavedSettingsLoader.load_saved_settings()
+			SavedSettingsLoader.load_saved_settings()
 			MenuManager.load_menu(1)
 	
 func load_login_data():

@@ -32,13 +32,17 @@ func load_saved_config():
 		sfx = config.get("sfx")
 
 func save_configs():
+	var window_position_value=null
+	if control_computer_window_position!=null:
+		window_position_value=[control_computer_window_position[0],control_computer_window_position[1]]
+	
 	var config = {
 		"camera_id": camera_id,
 		"window_mode": window_mode,
 		"general_sound": general_sound,
 		"music": music,
 		"sfx": sfx,
-		 "control_computer_window_position": control_computer_window_position,
+		"control_computer_window_position": window_position_value,
 		"first_time": first_time,
 		"config_window_id": config_window_id,
 		"contrl_window_size": [contrl_window_size[0],contrl_window_size[1]],
@@ -56,7 +60,13 @@ func set_from_json(json):
 	general_sound = json.get("general_sound")
 	music = json.get("music")
 	sfx = json.get("sfx")
-	control_computer_window_position = json.get("control_computer_window_position")
+	
+	var aux_position=json.get("control_computer_window_position")	
+	if aux_position:
+		control_computer_window_position = Vector2i(aux_position[0],aux_position[1])
+	else:
+		control_computer_window_position = null
+
 	first_time = json.get("first_time")
 	config_window_id = json.get("config_window_id")
 	var aux_size = json.get("contrl_window_size")

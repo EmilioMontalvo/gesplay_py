@@ -25,6 +25,7 @@ func set_profile_image_api(image_url: String):
 	http_request_profile_image =  HTTPRequest.new()
 	add_child(http_request_profile_image)
 	http_request_profile_image.request_completed.connect(_on_profile_image_request_complete)
+	http_request_profile_image.request(image_url,[],HTTPClient.METHOD_GET)
 
 func _on_profile_image_request_complete(result, response_code, headers, body):
 	var profile_image = Image.new()

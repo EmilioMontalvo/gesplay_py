@@ -29,8 +29,7 @@ func _on_btn_report_pressed():
 
 func _on_confirmation_dialog_2_option_selected(option):
 	if option:
-		print("what")
-		OS.shell_open("https://fis.epn.edu.ec/index.php/es/")
+		OS.shell_open("https://gestplay-reports.vercel.app")
 		$ConfirmationDialog2.visible=false
 	else:
 		$ConfirmationDialog2.visible=false

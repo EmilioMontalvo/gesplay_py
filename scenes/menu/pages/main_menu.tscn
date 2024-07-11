@@ -226,10 +226,10 @@ text = "Juegos"
 
 [node name="LeaveApp" parent="." instance=ExtResource("14_ssmoa")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 73.0
-offset_bottom = 73.0
+offset_left = 1304.0
+offset_top = 50.0
+offset_right = 1377.0
+offset_bottom = 123.0
 
 [node name="ButtonProfile" parent="." instance=ExtResource("13_654sp")]
 layout_mode = 0

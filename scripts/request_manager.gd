@@ -1,7 +1,7 @@
 extends Node
 
 var http_request: HTTPRequest
-var api_route="http://localhost:8000"
+var api_route="https://gestplay-backend-latest.onrender.com"
 var api_is_up=false
 var token=null
 var request_completed_signal: Signal

@@ -14,7 +14,7 @@ config/name="gestplay_py"
 run/main_scene="res://scenes/menu/pages/loanding.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://assets/ui/title/Gestplay_logo.png"
-config/windows_native_icon="res://assets/Gestplay_logo.ico"
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 

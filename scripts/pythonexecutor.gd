@@ -4,15 +4,19 @@ extends Node2D
 var DIR = OS.get_executable_path().get_base_dir()
 var interpreter_path = DIR.path_join(".WebcamMouse/env/Scripts/python.exe")
 var script_path = DIR.path_join(".WebcamMouse/main.py")
+var exe_path=DIR.path_join("executables/run_app.exe")
 var thread: Thread
 
 func _ready():
+	print(exe_path)
 	thread = Thread.new()
-	if !OS.has_feature("standalone"): # if NOT exported version
+	if !OS.has_feature("template"): # if NOT exported version
+		print("not exported")
 		interpreter_path = ProjectSettings.globalize_path("res://.WebcamMouse/env/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://.WebcamMouse/main.py")
 		thread.start(activate)
 	else:
+		print("exported",exe_path)
 		thread.start(activate_deploy)
 	
 
@@ -27,8 +31,9 @@ func activate():
 
 func activate_deploy():
 	var output = []
-	var executable = ProjectSettings.globalize_path("res://executables/run_app.exe")
-	var exit_code = OS.execute(executable, [], output)
+	if !OS.has_feature("template"):
+		exe_path = ProjectSettings.globalize_path("res://executables/run_app.exe")
+	var exit_code = OS.execute(exe_path, [], output)
 
 
 func _exit_tree():

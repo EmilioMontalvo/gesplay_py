@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://jhce8kd44akt"]
 
-[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="1_50xwy"]
+[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="1_50xwy"]
 [ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="2_yjyp4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikafc"]

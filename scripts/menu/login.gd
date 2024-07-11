@@ -11,6 +11,7 @@ extends Node2D
 @onready var password_lbl = $CanvasLayer/Control/PasswordLbl
 @onready var panel = $CanvasLayer/Panel
 @onready var error_lbl = $CanvasLayer/Control/ErrorLabel
+@onready var show_password=$CanvasLayer/Control/ShowPassword
 
 var http_request: HTTPRequest
 var http_request_login: HTTPRequest
@@ -137,6 +138,7 @@ func set_invite_mode():
 	login_button.queue_free()
 	user_lbl.queue_free()
 	password_lbl.queue_free()
+	show_password.queue_free()
 	panel.size.y = 179
 	login_guest_button.visible = true
 	no_internet_message.visible = true

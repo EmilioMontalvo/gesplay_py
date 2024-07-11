@@ -50,4 +50,8 @@ func send_update_to_upd():
 func save_config():
 	var json_to_save=get_as_json()
 	json_to_save["color"]=[color[0],color[1],color[2],color[3]]
-	DataSaver.save_settings(json_to_save,CurrentProfile.id)
+	
+	if GlobalConf.invite_mode:
+		DataSaver.save_settings(json_to_save,CurrentProfile.id)
+	else:
+		ApiDataSaver.save_settings(json_to_save, CurrentProfile.id)

@@ -55,5 +55,8 @@ func send_update_to_upd():
 	UdPServer.send_message(get_as_message("update_cursor_config"))
 
 func save_config():
-	DataSaver.save_settings(get_as_json(),CurrentProfile.id)
-
+	
+	if GlobalConf.invite_mode:
+		DataSaver.save_settings(get_as_json(),CurrentProfile.id)
+	else:
+		ApiDataSaver.save_settings(get_as_json(), CurrentProfile.id)

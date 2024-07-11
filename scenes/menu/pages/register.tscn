@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bs3cj24dgjclq"]
+[gd_scene load_steps=17 format=3 uid="uid://bs3cj24dgjclq"]
 
 [ext_resource type="Script" path="res://scripts/menu/register.gd" id="1_ah40m"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_f0sx1"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cderrueb1bexo" path="res://scenes/menu/components/show_password.tscn" id="7_y1fbk"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_qfho6"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_7iuf6"]
+[ext_resource type="PackedScene" uid="uid://btlunhy2vqjiy" path="res://scenes/menu/confirmation_dialog.tscn" id="12_ugkiq"]
+[ext_resource type="PackedScene" uid="uid://b8tm6ao2bi0ob" path="res://scenes/menu/components/leave_app.tscn" id="14_aemsw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kre1g"]
 line_spacing = 5.0
@@ -186,6 +188,24 @@ offset_bottom = 383.0
 texture = ExtResource("6_c3pwr")
 expand_mode = 1
 
+[node name="LeaveApp" parent="CanvasLayer/Control" instance=ExtResource("14_aemsw")]
+layout_mode = 0
+offset_left = 1332.0
+offset_top = 33.0
+offset_right = 1405.0
+offset_bottom = 106.0
+
+[node name="ConfirmationDialog" parent="CanvasLayer/Control" instance=ExtResource("12_ugkiq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+dialog_text = "La aplicación se cerrará"
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 61.0
@@ -198,10 +218,10 @@ stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1221.0
-offset_top = 54.0
-offset_right = 1413.0
-offset_bottom = 220.0
+offset_left = 1138.0
+offset_top = 37.0
+offset_right = 1330.0
+offset_bottom = 203.0
 texture = ExtResource("8_qfho6")
 expand_mode = 3
 stretch_mode = 4
@@ -219,3 +239,4 @@ stretch_mode = 4
 [connection signal="pressed" from="CanvasLayer/Control/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/LinkButton" to="CanvasLayer/Control/Panel/LinkButton" method="_on_pressed"]
 [connection signal="toggled" from="CanvasLayer/Control/Panel/ShowPassword" to="." method="_on_show_password_toggled"]
+[connection signal="option_selected" from="CanvasLayer/Control/ConfirmationDialog" to="." method="_on_confirmation_dialog_option_selected"]

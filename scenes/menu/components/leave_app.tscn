@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8tm6ao2bi0ob"]
+
+[ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="1_jg44u"]
+[ext_resource type="Script" path="res://scripts/menu/leave_app_button.gd" id="2_h2o83"]
+
+[node name="LeaveApp" type="TextureButton"]
+offset_left = 1322.0
+offset_top = 40.0
+offset_right = 1395.0
+offset_bottom = 113.0
+texture_normal = ExtResource("1_jg44u")
+script = ExtResource("2_h2o83")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

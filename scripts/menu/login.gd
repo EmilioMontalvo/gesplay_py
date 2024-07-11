@@ -178,3 +178,10 @@ func enable_input():
 
 func _on_show_password_toggled(toggled_on):
 	password_input.secret=not toggled_on
+
+
+func _on_confirmation_dialog_option_selected(option):
+	if option:
+		get_tree().quit()
+	else:
+		$ConfirmationDialog.visible=false

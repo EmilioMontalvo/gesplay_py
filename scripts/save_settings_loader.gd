@@ -10,17 +10,12 @@ static func load_saved_settings():
 		ClickConf.set_from_json(setttings)
 		CursorConf.set_from_json(setttings,true)
 		CursorIconConf.set_from_json(setttings,true)
+		return true
 	else:
-		var request=HTTPRequest.new()
-		request.request_completed.connect(_on_game_settings_request_completed)
-		GlobalConf.add_child(request)
-		var route=RequestManager.api_route+"/game-settings?profile_id_db="+CurrentProfile.id
-		request.request(route,RequestManager.get_auth_headers(),HTTPClient.METHOD_GET)
+		var settingsNode=ApiSettings.new()
+		GlobalConf.add_child(settingsNode)
+		settingsNode.load_saved_settings()
+		await settingsNode.loaded
+		return settingsNode.loaded_settings
 
-static func _on_game_settings_request_completed(result, response_code, headers, body):
-	if response_code==200:
-		var setttings=JSON.parse_string(body.get_string_from_utf8())
-		GlobalConf.set_from_json(setttings)
-		ClickConf.set_from_json(setttings)
-		CursorConf.set_from_json(setttings,true)
-		CursorIconConf.set_from_json(setttings,true)
+

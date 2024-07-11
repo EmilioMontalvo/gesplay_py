@@ -16,10 +16,14 @@ extends Node2D
 var http_request: HTTPRequest
 var http_request_login: HTTPRequest
 var http_request_load_last_profile: HTTPRequest
+
 var endpoint="/token"
 var http_client = HTTPClient.new()
+var settings_got_loaded=false
 
 signal data_loaded
+signal settings_loaded
+
 
 func _ready():
 	http_request = HTTPRequest.new()
@@ -38,6 +42,9 @@ func _ready():
 		http_request_login = HTTPRequest.new()
 		add_child(http_request_login)
 		http_request_login.request_completed.connect(_on_login_request_completed)
+		
+		#settings request
+
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -104,9 +111,14 @@ func _on_last_profile_request_completed(result, response_code, headers, body):
 			profile_data["id"] = str(profile_data.get("id"))
 			CurrentProfile.set_data_from_dic(profile_data)
 			CurrentProfile.is_profile_selected = true
-			SavedSettingsLoader.load_saved_settings()
-			MenuManager.load_menu(1)
-	
+			
+			if await SavedSettingsLoader.load_saved_settings():
+				MenuManager.load_menu(1)
+			else:
+				error_lbl.text="Error en la conexion intente nuevamente"
+
+
+
 func load_login_data():
 	#TODO: set current profile
 	http_request_load_last_profile.request(
@@ -163,9 +175,6 @@ func enable_input():
 	password_input.editable=true
 	login_button.disabled=false
 	register_link.disabled=false
-
-
-
 
 func _on_show_password_toggled(toggled_on):
 	password_input.secret=not toggled_on

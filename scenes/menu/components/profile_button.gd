@@ -51,7 +51,12 @@ func _on_edit_pressed():
 func _on_profile_button_pressed():
 	CurrentProfile.set_data_from_dic(profile_data)
 	CurrentProfile.is_profile_selected = true
-	MenuManager.load_menu(1)
+	
+	if GlobalConf.invite_mode:
+		MenuManager.load_menu(1)
+	else:
+		SavedSettingsLoader.load_saved_settings()
+		MenuManager.load_menu(1)
 	
 func _on_request_profile_image_completed(result, response_code, headers, body):
 	var profile_image = Image.new()

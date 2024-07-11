@@ -4,3 +4,4 @@ python-dotenv
 python-decouple
 pyautogui
 tensorflow
+pyinstaller

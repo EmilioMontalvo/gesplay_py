@@ -65,8 +65,8 @@ static func delete_last_profile_file():
 	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_DELETE)
 
 static func save_settings(settings: Dictionary, id: String):
-	var endpoint = SETTINGS_ENDPOINT + "/" + id
-	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_POST, settings)
+	var endpoint = SETTINGS_ENDPOINT + "?profile_id_db=" + id
+	RequestManager.make_request(endpoint, RequestManager.get_auth_headers(), HTTPClient.METHOD_PUT, settings)
 
 #func load_settings_by_id(id: String) -> Dictionary:
 #	var endpoint = SETTINGS_ENDPOINT + "/" + id

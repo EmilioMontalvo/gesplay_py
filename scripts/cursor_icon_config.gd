@@ -55,3 +55,9 @@ func save_config():
 		DataSaver.save_settings(json_to_save,CurrentProfile.id)
 	else:
 		ApiDataSaver.save_settings(json_to_save, CurrentProfile.id)
+
+func get_request_json():
+	var json_to_save=get_as_json()
+	json_to_save["color"]=[color[0],color[1],color[2],color[3]]
+	return json_to_save
+

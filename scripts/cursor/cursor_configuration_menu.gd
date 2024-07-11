@@ -39,8 +39,15 @@ func send_new_config(config:CursorConfig):
 
 func _on_acept_button_down():
 	CursorConf.set_from_json(temporalCursorConfig.get_as_json())
-	CursorConf.save_config()
-	CursorIconConf.save_config()
+	
+	if GlobalConf.invite_mode:
+		CursorConf.save_config()
+		CursorIconConf.save_config()
+	else:
+		var request_dic={}
+		request_dic.merge(CursorConf.get_as_json())
+		request_dic.merge(CursorIconConf.get_request_json())
+		ApiDataSaver.save_settings(request_dic,CurrentProfile.id)
 	send_new_config(CursorConf)
 	MenuManager.load_menu(4)
 

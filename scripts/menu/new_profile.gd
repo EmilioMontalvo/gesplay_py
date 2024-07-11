@@ -152,11 +152,13 @@ func set_init_profile_image_preview_api(image_url):
 
 func _on_request_profile_image_completed(result, response_code, headers, body):
 	panel_image.visible = true
+	
 	var profile_image = Image.new()
 	profile_image.load_png_from_buffer(body)
 	var texture = ImageTexture.create_from_image(profile_image)
 	texture.set_size_override(Vector2i(150,150))
 	texture_image_profile.texture = texture
+	current_profile_image = profile_image
 
 func _on_request_save_profile_completed(result, response_code, headers, body):
 	var response: Dictionary = JSON.parse_string(body.get_string_from_utf8())

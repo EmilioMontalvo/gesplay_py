@@ -110,3 +110,7 @@ func unblock_input():
 	register_link.disabled=false
 	animation.visible=false
 
+
+
+func _on_show_password_toggled(toggled_on):
+	password.secret=not toggled_on

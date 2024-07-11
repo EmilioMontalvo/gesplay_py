@@ -183,6 +183,7 @@ script = ExtResource("6_liukh")
 scene = 14
 
 [node name="ShowPassword" parent="CanvasLayer/Control" instance=ExtResource("9_8yugy")]
+layout_mode = 0
 offset_left = 880.0
 offset_top = 614.0
 offset_right = 937.0

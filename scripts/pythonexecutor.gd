@@ -7,11 +7,14 @@ var script_path = DIR.path_join(".WebcamMouse/main.py")
 var thread: Thread
 
 func _ready():
+	thread = Thread.new()
 	if !OS.has_feature("standalone"): # if NOT exported version
 		interpreter_path = ProjectSettings.globalize_path("res://.WebcamMouse/env/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://.WebcamMouse/main.py")
-	thread = Thread.new()
-	thread.start(activate)
+		thread.start(activate)
+	else:
+		thread.start(activate_deploy)
+	
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -21,6 +24,12 @@ func activate():
 	var output=[]
 	var err = OS.execute(interpreter_path, [script_path], output, false,true)
 	print(err)
+
+func activate_deploy():
+	var output = []
+	var executable = ProjectSettings.globalize_path("res://executables/run_app.exe")
+	var exit_code = OS.execute(executable, [], output)
+
 
 func _exit_tree():
 	#TODO: send a message to webcam mouse to finish the process

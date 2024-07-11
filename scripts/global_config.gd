@@ -45,7 +45,10 @@ func save_configs():
 		"window_size_value": window_size_value,
 		"alpha_opacity": alpha_opacity
 	}
-	DataSaver.save_settings(config, CurrentProfile.id)
+	if GlobalConf.invite_mode:
+		DataSaver.save_settings(config, CurrentProfile.id)
+	else:
+		ApiDataSaver.save_settings(config, CurrentProfile.id)
 
 func set_from_json(json):
 	camera_id = json.get("camera_id")

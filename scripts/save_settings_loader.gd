@@ -12,12 +12,12 @@ static func load_saved_settings():
 		CursorIconConf.set_from_json(setttings,true)
 	else:
 		var request=HTTPRequest.new()
-		request.request_completed.connect()
+		request.request_completed.connect(_on_game_settings_request_completed)
 		GlobalConf.add_child(request)
 		var route=RequestManager.api_route+"/game-settings?profile_id_db="+CurrentProfile.id
 		request.request(route,RequestManager.get_auth_headers(),HTTPClient.METHOD_GET)
 
-func game_settings_request_completed(result, response_code, headers, body):
+static func _on_game_settings_request_completed(result, response_code, headers, body):
 	if response_code==200:
 		var setttings=JSON.parse_string(body.get_string_from_utf8())
 		GlobalConf.set_from_json(setttings)

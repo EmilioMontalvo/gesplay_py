@@ -1,16 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://pxnpwvmykvjd"]
+[gd_scene load_steps=16 format=3 uid="uid://pxnpwvmykvjd"]
 
 [ext_resource type="Script" path="res://scripts/menu/login.gd" id="1_cllod"]
 [ext_resource type="PackedScene" uid="uid://cb1f5aet2ji85" path="res://scenes/menu/components/cursor/parallax_background.tscn" id="1_fiuw7"]
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="2_1h0r3"]
 [ext_resource type="Texture2D" uid="uid://djilueu6pyeos" path="res://assets/ui/title/title.png" id="3_aas83"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="4_7knsq"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="4_7knsq"]
 [ext_resource type="Texture2D" uid="uid://80jubgntyvbw" path="res://assets/ui/title/Gestplay_logo.png" id="4_spak6"]
 [ext_resource type="PackedScene" uid="uid://ds5geqnu7s00i" path="res://scenes/menu/components/text.tscn" id="5_pbdmp"]
 [ext_resource type="Script" path="res://scripts/menu/navigation.gd" id="6_liukh"]
 [ext_resource type="Texture2D" uid="uid://cds6cqagopd4p" path="res://assets/icons/EPN_logo_big.png" id="7_25m63"]
 [ext_resource type="Texture2D" uid="uid://qtamrpv51hq0" path="res://assets/icons/logo-FIS-sin-fondo.png" id="8_xrtw7"]
-[ext_resource type="PackedScene" uid="uid://cderrueb1bexo" path="res://scenes/menu/components/show_password.tscn" id="9_8yugy"]
 [ext_resource type="Texture2D" uid="uid://dg5t67ytwuib8" path="res://assets/icons/LudoLab.png" id="9_l25yf"]
 [ext_resource type="PackedScene" uid="uid://bwh2w3hl0wi80" path="res://scenes/menu/components/loanding_animation.tscn" id="9_soniq"]
 [ext_resource type="Texture2D" uid="uid://dnnp364qswtw7" path="res://assets/buttons/icons/cloud.png" id="11_1iv5b"]
@@ -182,13 +181,6 @@ text = "Registrate aquí"
 script = ExtResource("6_liukh")
 scene = 14
 
-[node name="ShowPassword" parent="CanvasLayer/Control" instance=ExtResource("9_8yugy")]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 614.0
-offset_right = 937.0
-offset_bottom = 653.0
-
 [node name="AnimatedSprite2D" parent="CanvasLayer" instance=ExtResource("9_soniq")]
 visible = false
 position = Vector2(717, 637)
@@ -230,4 +222,3 @@ frame_progress = 0.79096
 [connection signal="pressed" from="CanvasLayer/Control/Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LoginGuest" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Register" to="CanvasLayer/Control/Register" method="_on_pressed"]
-[connection signal="toggled" from="CanvasLayer/Control/ShowPassword" to="." method="_on_show_password_toggled"]

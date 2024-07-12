@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://kpjepbg28y37"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_ri4pu"]
-[ext_resource type="FontFile" uid="uid://ba46ueuv40gco" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
+[ext_resource type="FontFile" uid="uid://clg3ch5sg37xq" path="res://assets/font/Montserrat-Bold.ttf" id="2_1jd16"]
 [ext_resource type="Script" path="res://scripts/menu/general_configurations.gd" id="2_ecmw8"]
-[ext_resource type="FontFile" uid="uid://ci522we5jtxt2" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
+[ext_resource type="FontFile" uid="uid://bvoln1h1bh5jr" path="res://assets/font/Montserrat-Medium.ttf" id="6_bvd12"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="8_8w3m3"]
 [ext_resource type="PackedScene" uid="uid://dyptrbjyf36xs" path="res://scenes/menu/components/volume_slider.tscn" id="8_iqox8"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="11_ejfp2"]

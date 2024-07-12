@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/click_game/levels_test.gd" id="1_ssy02"]
 [ext_resource type="Texture2D" uid="uid://cuudarjpgngxb" path="res://assets/click_game/backgrounds/background_summer2/1.png" id="2_eys4x"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/star_points.tscn" id="3_3cjwt"]
+[ext_resource type="PackedScene" uid="uid://qhtyoust6txu" path="res://scenes/menu/pages/click/star_points.tscn" id="3_3cjwt"]
 [ext_resource type="Texture2D" uid="uid://hljk81w240io" path="res://assets/click_game/backgrounds/background_summer2/2.png" id="3_no44p"]
 [ext_resource type="Texture2D" uid="uid://418ffuq75ivq" path="res://assets/click_game/backgrounds/background_summer2/3.png" id="4_1d3nb"]
 [ext_resource type="PackedScene" uid="uid://dp8n785pt4p0l" path="res://scenes/menu/in_game_camera.tscn" id="5_75sas"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://kncjoqc8w2na" path="res://scenes/menu/pages/click/draggble_object.tscn" id="10_cvye2"]
 [ext_resource type="Texture2D" uid="uid://diiso04kgqg55" path="res://assets/click_game/foods/farm/corn.png" id="11_1oyc5"]
 [ext_resource type="PackedScene" uid="uid://b7li755gbijdu" path="res://scenes/menu/pages/click/food_area.tscn" id="12_57w0y"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="14_bn5q4"]
+[ext_resource type="PackedScene" uid="uid://1rpen7c5xfsk" path="res://scenes/menu/pages/click/sound_controller_click.tscn" id="14_bn5q4"]
 
 [node name="LevelTest" type="Node2D"]
 script = ExtResource("1_ssy02")

@@ -228,10 +228,10 @@ stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1235.0
-offset_top = 307.0
-offset_right = 1417.01
-offset_bottom = 473.0
+offset_left = 1156.0
+offset_top = 216.0
+offset_right = 1338.01
+offset_bottom = 382.0
 texture = ExtResource("9_7iuf6")
 expand_mode = 3
 stretch_mode = 4

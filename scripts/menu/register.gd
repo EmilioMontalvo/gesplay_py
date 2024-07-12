@@ -120,4 +120,4 @@ func _on_confirmation_dialog_option_selected(option):
 	if option:
 		get_tree().quit()
 	else:
-		$ConfirmationDialog.visible=false
+		$CanvasLayer/Control/ConfirmationDialog.visible=false

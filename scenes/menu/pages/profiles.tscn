@@ -49,10 +49,10 @@ scene = 2
 
 [node name="Home" parent="." instance=ExtResource("7_ypxo0")]
 layout_mode = 0
-offset_left = 1208.0
-offset_top = 28.0
-offset_right = 1304.0
-offset_bottom = 124.0
+offset_left = 1317.0
+offset_top = 17.0
+offset_right = 1413.0
+offset_bottom = 113.0
 focus_next = NodePath("../HelpButton")
 focus_previous = NodePath("../GoBack")
 
@@ -61,6 +61,7 @@ layout_mode = 0
 focus_next = NodePath("../Home")
 
 [node name="HelpButton" parent="." instance=ExtResource("9_cqyjp")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0

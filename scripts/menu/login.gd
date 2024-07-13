@@ -83,7 +83,7 @@ func _on_login_pressed():
 
 func _on_login_request_completed(result, response_code, headers, body):
 	enable_input()
-	SoundControllerMenu.play_music()
+	
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	if response_code==200:
 		RequestManager.token=json["access_token"]
@@ -121,6 +121,7 @@ func _on_last_profile_request_completed(result, response_code, headers, body):
 
 func load_login_data():
 	#TODO: set current profile
+	SoundControllerMenu.play_music()
 	http_request_load_last_profile.request(
 		RequestManager.get_endpoint_path(ApiDataSaver.LAST_PROFILE_ENDPOINT),
 		RequestManager.get_auth_headers(),

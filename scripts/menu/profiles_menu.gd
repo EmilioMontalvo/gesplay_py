@@ -5,7 +5,7 @@ extends Control
 var http_request: HTTPRequest
 
 func _ready():
-	$HBoxContainer/SearchBar.grab_focus()
+	
 	check_profile_selected()
 	if GlobalConf.invite_mode:
 		fill_profiles_container_local()

@@ -14,9 +14,9 @@ func _on_pressed():
 	else: 
 		UdPServer.send_message(Message.new("resume_mouse",{"info": "mouse resumed"}))
 	
-	paused=not paused
-	set_icon()
+	paused=not paused	
 	GlobalConf.is_camera_mouse_paused=paused
+	set_icon()
 
 func set_icon():
 	$PauseTexture.visible=not GlobalConf.is_camera_mouse_paused

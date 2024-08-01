@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cashahcwmo0ch"]
+[gd_scene load_steps=17 format=3 uid="uid://cashahcwmo0ch"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_6a0o4"]
 [ext_resource type="PackedScene" uid="uid://crxlp4j1ka3r2" path="res://scenes/camera.tscn" id="1_cdmem"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://mt18q1agusq1" path="res://assets/buttons/icons/thick_close.png" id="4_ah08m"]
 [ext_resource type="StyleBox" uid="uid://deo708pmaclnx" path="res://assets/buttons/resources/style_box_cancel.tres" id="4_hpnts"]
 [ext_resource type="Texture2D" uid="uid://dggvaf5bgco0s" path="res://assets/buttons/icons/continue.png" id="5_rhlkx"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="11_3rvfg"]
 [ext_resource type="Texture2D" uid="uid://bfktgwm18qdmg" path="res://assets/buttons/icons/Configuration.png" id="12_kwtxd"]
 [ext_resource type="PackedScene" uid="uid://cmxvd2fe2h8ni" path="res://scenes/menu/components/control_camer_conf_btn.tscn" id="13_pvcjh"]
 
@@ -79,20 +78,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bk4mn")
 
-[node name="HelpButton" parent="DragPanel" instance=ExtResource("11_3rvfg")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 555.0
-offset_top = 44.0
-offset_right = 605.0
-offset_bottom = 94.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_top = 170.0
@@ -113,11 +98,9 @@ offset_top = 9.0
 offset_right = 207.0
 offset_bottom = 175.0
 focus_neighbor_left = NodePath("../Close")
-focus_neighbor_top = NodePath("../../DragPanel/HelpButton")
 focus_neighbor_right = NodePath("../Pause")
 focus_neighbor_bottom = NodePath("../control_camer_conf_btn")
 focus_next = NodePath("../Pause")
-focus_previous = NodePath("../../DragPanel/HelpButton")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/GoBack"]
 layout_mode = 1
@@ -142,7 +125,6 @@ offset_top = 9.0
 offset_right = 414.0
 offset_bottom = 175.0
 focus_neighbor_left = NodePath("../GoBack")
-focus_neighbor_top = NodePath("../../DragPanel/HelpButton")
 focus_neighbor_right = NodePath("../Close")
 focus_neighbor_bottom = NodePath("../control_camer_conf_btn")
 focus_next = NodePath("../Close")
@@ -186,7 +168,6 @@ offset_top = 10.0
 offset_right = 629.0
 offset_bottom = 176.0
 focus_neighbor_left = NodePath("../Pause")
-focus_neighbor_top = NodePath("../../DragPanel/HelpButton")
 focus_neighbor_right = NodePath("../control_camer_conf_btn")
 focus_neighbor_bottom = NodePath("../control_camer_conf_btn")
 focus_next = NodePath("../control_camer_conf_btn")
@@ -228,9 +209,6 @@ offset_right = 636.0
 offset_bottom = 655.0
 focus_neighbor_left = NodePath("../Close")
 focus_neighbor_top = NodePath("../Close")
-focus_neighbor_right = NodePath("../../DragPanel/HelpButton")
-focus_neighbor_bottom = NodePath("../../DragPanel/HelpButton")
-focus_next = NodePath("../../DragPanel/HelpButton")
 focus_previous = NodePath("../Close")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

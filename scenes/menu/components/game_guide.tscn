@@ -52,12 +52,12 @@ theme_override_constants/separation = 30
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 115
+theme_override_constants/separation = 130
 alignment = 2
 
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Guia Juegos"
+text = "Guía Juegos"
 horizontal_alignment = 1
 
 [node name="CloseButton" type="Button" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer2"]

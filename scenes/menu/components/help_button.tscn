@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://dwhav58pp04lf" path="res://assets/buttons/resources/style_box_help.tres" id="1_f4dqd"]
 [ext_resource type="Theme" uid="uid://jhce8kd44akt" path="res://assets/buttons/themes/help_button.tres" id="1_o7kdr"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_cqwta"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="2_cqwta"]
 [ext_resource type="Script" path="res://scripts/menu/help_button.gd" id="3_iqylv"]
 [ext_resource type="Texture2D" uid="uid://h84oyoymvu8d" path="res://assets/cursor_game/levels/icons/level_1.png" id="5_a5dia"]
 [ext_resource type="PackedScene" uid="uid://lrpfqyo4avr2" path="res://scenes/menu/components/game_guide.tscn" id="5_kolq1"]

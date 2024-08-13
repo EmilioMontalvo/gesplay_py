@@ -2707,7 +2707,7 @@ offset_left = 154.0
 offset_top = -362.0
 offset_right = 204.0
 offset_bottom = -312.0
-text_guide = "El gesto que selecciones sera el que debes realizar para hacer el click en la aplicación."
+text_guide = "El gesto que selecciones será el que utilizarás para hacer clic en la aplicación. ¡Elige el que te resulte más cómodo!"
 
 [connection signal="pressed" from="AceptCancel/Acept" to="." method="_on_acept_pressed"]
 [connection signal="pressed" from="AceptCancel/Cancel" to="." method="_on_cancel_pressed"]

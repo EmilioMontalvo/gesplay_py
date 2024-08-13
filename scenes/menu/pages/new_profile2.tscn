@@ -1,12 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://c1yvwiyjrha7b"]
+[gd_scene load_steps=26 format=3 uid="uid://c1yvwiyjrha7b"]
 
 [ext_resource type="Theme" uid="uid://8783p7rjqna0" path="res://assets/buttons/themes/app_theme.tres" id="1_dnlg5"]
 [ext_resource type="Script" path="res://scripts/menu/new_profile.gd" id="2_pjnet"]
 [ext_resource type="PackedScene" uid="uid://bboyqu0jnm5cg" path="res://scenes/menu/components/background.tscn" id="2_qd6ou"]
 [ext_resource type="PackedScene" uid="uid://180a2q81phhy" path="res://scenes/menu/components/title_text.tscn" id="3_x6i2t"]
-[ext_resource type="FontFile" uid="uid://ce7dvicqwcjvr" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
+[ext_resource type="FontFile" uid="uid://gx2nxkrfooih" path="res://assets/font/Montserrat-SemiBold.ttf" id="4_ft2fn"]
 [ext_resource type="PackedScene" uid="uid://cmw45nngcae4v" path="res://scenes/menu/components/acept_cancel_buttons.tscn" id="6_jrv5l"]
-[ext_resource type="PackedScene" uid="uid://jhfkcwhkj4oj" path="res://scenes/menu/components/help_button.tscn" id="7_7h5t8"]
 [ext_resource type="PackedScene" uid="uid://bqq38nb1qecjb" path="res://scenes/menu/components/home.tscn" id="8_lu1k0"]
 [ext_resource type="PackedScene" uid="uid://cqdyjpbtoy343" path="res://scenes/menu/components/go_back.tscn" id="9_yiyny"]
 [ext_resource type="PackedScene" uid="uid://dtrjib6kfem1t" path="res://scenes/menu/components/profile/default_profile_image.tscn" id="10_petv3"]
@@ -134,20 +133,6 @@ offset_top = 840.0
 offset_right = -328.0
 offset_bottom = -128.0
 
-[node name="HelpButton" parent="." instance=ExtResource("7_7h5t8")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1339.0
-offset_top = 71.0
-offset_right = 1389.0
-offset_bottom = 121.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Home" parent="." instance=ExtResource("8_lu1k0")]
 layout_mode = 0
 offset_left = 1222.0
@@ -167,7 +152,7 @@ title = "Open a File"
 initial_position = 4
 size = Vector2i(800, 700)
 theme = SubResource("Theme_a6bow")
-ok_button_text = "Abrir"
+ok_button_text = "Open"
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.png", "*.jpg")
